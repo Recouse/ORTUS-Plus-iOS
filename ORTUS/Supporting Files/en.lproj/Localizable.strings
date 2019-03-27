@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  ORTUS
+
+  Created by Firdavs Khaydarov on 21/03/19.
+  Copyright © 2019 Firdavs. All rights reserved.
+*/
+
+"info" = "Info";
+"success" = "Success";
+"warning" = "Warning";
+"error" = "Error";
+"ok" = "OK";
+"cancel" = "Cancel";
+"back" = "Back";
+
+// News
+"news.title" = "News";
+
+// Schedule
+"schedule.title" = "Schedule";
+
+// Courses
+"courses.title" = "Courses";
+
+// Settings
+"settings.title" = "Settings";

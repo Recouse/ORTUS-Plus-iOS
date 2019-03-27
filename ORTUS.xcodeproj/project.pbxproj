@@ -1,0 +1,954 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */; };
+		FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */; };
+		FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD67224377A1005148AC /* AppDelegate.swift */; };
+		FA90FD6F224377A4005148AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD6E224377A4005148AC /* Assets.xcassets */; };
+		FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD70224377A4005148AC /* LaunchScreen.storyboard */; };
+		FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8022437B51005148AC /* MainTabBarController.swift */; };
+		FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */; };
+		FA90FD8622437B9A005148AC /* Translatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8522437B9A005148AC /* Translatable.swift */; };
+		FA90FD8822437BB2005148AC /* TranslatableModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8722437BB2005148AC /* TranslatableModule.swift */; };
+		FA90FD8B22437BD0005148AC /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8A22437BD0005148AC /* Module.swift */; };
+		FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8C22437BD8005148AC /* ModuleBuilder.swift */; };
+		FA90FD8F22437C7C005148AC /* TranslatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8E22437C7C005148AC /* TranslatableView.swift */; };
+		FA90FD9222437C9D005148AC /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD9122437C9D005148AC /* Styling.swift */; };
+		FA90FD9422437CC2005148AC /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD9322437CC2005148AC /* NavigationController.swift */; };
+		FA90FD9722437D50005148AC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD9622437D50005148AC /* Router.swift */; };
+		FA90FD9922437D5E005148AC /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD9822437D5E005148AC /* Animator.swift */; };
+		FA90FD9C22437D76005148AC /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD9B22437D76005148AC /* Transition.swift */; };
+		FA90FD9E22437D81005148AC /* DefaultTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD9D22437D81005148AC /* DefaultTransition.swift */; };
+		FA90FDA022437D8B005148AC /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD9F22437D8B005148AC /* ModalTransition.swift */; };
+		FA90FDA222437D94005148AC /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDA122437D94005148AC /* PushTransition.swift */; };
+		FA90FDA522437DC5005148AC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDA422437DC5005148AC /* Route.swift */; };
+		FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDA822437F25005148AC /* NewsModuleBuilder.swift */; };
+		FA90FDAE22437F25005148AC /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDA922437F25005148AC /* NewsRouter.swift */; };
+		FA90FDAF22437F25005148AC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDAA22437F25005148AC /* NewsViewController.swift */; };
+		FA90FDB022437F25005148AC /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDAB22437F25005148AC /* NewsView.swift */; };
+		FA90FDB122437F25005148AC /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDAC22437F25005148AC /* NewsViewModel.swift */; };
+		FA90FDB422437F80005148AC /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDB322437F80005148AC /* Notification.swift */; };
+		FA90FDB622438027005148AC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDB522438027005148AC /* Global.swift */; };
+		FA90FDB822438069005148AC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDB722438069005148AC /* UIImage.swift */; };
+		FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */; };
+		FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDBA224380FE005148AC /* SettingsRouter.swift */; };
+		FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDBB224380FE005148AC /* SettingsViewController.swift */; };
+		FA90FDC1224380FE005148AC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDBC224380FE005148AC /* SettingsView.swift */; };
+		FA90FDC2224380FE005148AC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDBD224380FE005148AC /* SettingsViewModel.swift */; };
+		FA90FDC4224385AA005148AC /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDC3224385AA005148AC /* TabBarItem.swift */; };
+		FA90FDCE22438B41005148AC /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDC622438B41005148AC /* Kingfisher.framework */; };
+		FA90FDCF22438B41005148AC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDC722438B41005148AC /* SnapKit.framework */; };
+		FA90FDD022438B41005148AC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDC822438B41005148AC /* Carbon.framework */; };
+		FA90FDD122438B41005148AC /* DifferenceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDC922438B41005148AC /* DifferenceKit.framework */; };
+		FA90FDD222438B41005148AC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDCA22438B41005148AC /* Alamofire.framework */; };
+		FA90FDD322438B41005148AC /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDCB22438B41005148AC /* FBLPromises.framework */; };
+		FA90FDD422438B41005148AC /* Promises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDCC22438B41005148AC /* Promises.framework */; };
+		FA90FDD522438B41005148AC /* Localize_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDCD22438B41005148AC /* Localize_Swift.framework */; };
+		FA90FDDB22438D33005148AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA90FDDD22438D33005148AC /* Localizable.strings */; };
+		FA90FDE12243966B005148AC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDE02243966B005148AC /* API.swift */; };
+		FA90FDE322439676005148AC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDE222439676005148AC /* APIClient.swift */; };
+		FA90FDE62243AE01005148AC /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDE52243AE01005148AC /* NewsApi.swift */; };
+		FA90FDE92243B08F005148AC /* SwiftRichString.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDE72243B08E005148AC /* SwiftRichString.framework */; };
+		FA90FDEA2243B08F005148AC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDE82243B08E005148AC /* KeychainAccess.framework */; };
+		FA90FDED2243B9FD005148AC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEC2243B9FD005148AC /* Article.swift */; };
+		FA90FDEF2243BA2D005148AC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEE2243BA2D005148AC /* Response.swift */; };
+		FA90FDF22243BF6C005148AC /* APIMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDF12243BF6C005148AC /* APIMethod.swift */; };
+		FA90FDF52243C5B5005148AC /* ArticleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDF42243C5B5005148AC /* ArticleComponent.swift */; };
+		FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDF62243C5BF005148AC /* ArticleComponentView.swift */; };
+		FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDF92243CF0E005148AC /* ArticleModuleBuilder.swift */; };
+		FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDFA2243CF0E005148AC /* ArticleRouter.swift */; };
+		FA90FE002243CF0E005148AC /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDFB2243CF0E005148AC /* ArticleViewController.swift */; };
+		FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDFC2243CF0E005148AC /* ArticleView.swift */; };
+		FA90FE022243CF0E005148AC /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDFD2243CF0E005148AC /* ArticleViewModel.swift */; };
+		FA90FE052243CF3B005148AC /* ArticleRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE042243CF3B005148AC /* ArticleRoute.swift */; };
+		FA90FE082243D1E5005148AC /* ArticleSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE072243D1E5005148AC /* ArticleSectionHeader.swift */; };
+		FA90FE0A2243D413005148AC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE092243D413005148AC /* Date.swift */; };
+		FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE0B2243E397005148AC /* TabBarController.swift */; };
+		FA90FE0E2243E3C4005148AC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE0D2243E3C4005148AC /* UIColor.swift */; };
+		FA941BE7224A9D1A00D7B170 /* YandexMobileMetrica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */; };
+		FA941BE8224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */; };
+		FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA941BE9224BA7E800D7B170 /* Keys.swift */; };
+		FAD3CA252244F017009DA6AE /* ArticleContentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */; };
+		FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */; };
+		FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2D2245612C009DA6AE /* UIApplication.swift */; };
+		FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */; };
+		FAF183B02248E76400CA2492 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183AF2248E76400CA2492 /* TokenResponse.swift */; };
+		FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */; };
+		FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B32249096800CA2492 /* CoursesRouter.swift */; };
+		FAF183B92249096800CA2492 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B42249096800CA2492 /* CoursesViewController.swift */; };
+		FAF183BA2249096800CA2492 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B52249096800CA2492 /* CoursesView.swift */; };
+		FAF183BB2249096800CA2492 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B62249096800CA2492 /* CoursesViewModel.swift */; };
+		FAF183BE22490AD800CA2492 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183BD22490AD800CA2492 /* UserViewModel.swift */; };
+		FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C022490FC600CA2492 /* ScheduleModuleBuilder.swift */; };
+		FAF183C622490FC600CA2492 /* ScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C122490FC600CA2492 /* ScheduleRouter.swift */; };
+		FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C222490FC600CA2492 /* ScheduleViewController.swift */; };
+		FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C322490FC600CA2492 /* ScheduleView.swift */; };
+		FAF183C922490FC600CA2492 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C422490FC600CA2492 /* ScheduleViewModel.swift */; };
+		FAF183CD2249126200CA2492 /* MaskLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183CC2249126200CA2492 /* MaskLabel.swift */; };
+		FAF77B222246A51800197641 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B212246A51800197641 /* OAuth.swift */; };
+		FAF77B242246A64200197641 /* OAuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B232246A64200197641 /* OAuthApi.swift */; };
+		FAF77B272246A98500197641 /* FormLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B262246A98500197641 /* FormLabel.swift */; };
+		FAF77B292246AC3C00197641 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B282246AC3C00197641 /* Header.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAD3CA4122456A99009DA6AE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponent.swift; sourceTree = "<group>"; };
+		FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponentView.swift; sourceTree = "<group>"; };
+		FA90FD64224377A1005148AC /* ORTUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORTUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA90FD67224377A1005148AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA90FD6E224377A4005148AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA90FD71224377A4005148AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA90FD73224377A4005148AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA90FD8022437B51005148AC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatableTabBarController.swift; sourceTree = "<group>"; };
+		FA90FD8522437B9A005148AC /* Translatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translatable.swift; sourceTree = "<group>"; };
+		FA90FD8722437BB2005148AC /* TranslatableModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatableModule.swift; sourceTree = "<group>"; };
+		FA90FD8A22437BD0005148AC /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		FA90FD8C22437BD8005148AC /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		FA90FD8E22437C7C005148AC /* TranslatableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatableView.swift; sourceTree = "<group>"; };
+		FA90FD9122437C9D005148AC /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
+		FA90FD9322437CC2005148AC /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		FA90FD9622437D50005148AC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FA90FD9822437D5E005148AC /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		FA90FD9B22437D76005148AC /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		FA90FD9D22437D81005148AC /* DefaultTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTransition.swift; sourceTree = "<group>"; };
+		FA90FD9F22437D8B005148AC /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		FA90FDA122437D94005148AC /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
+		FA90FDA422437DC5005148AC /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		FA90FDA822437F25005148AC /* NewsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModuleBuilder.swift; sourceTree = "<group>"; };
+		FA90FDA922437F25005148AC /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
+		FA90FDAA22437F25005148AC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		FA90FDAB22437F25005148AC /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		FA90FDAC22437F25005148AC /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		FA90FDB322437F80005148AC /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		FA90FDB522438027005148AC /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		FA90FDB722438069005148AC /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleBuilder.swift; sourceTree = "<group>"; };
+		FA90FDBA224380FE005148AC /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		FA90FDBB224380FE005148AC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FA90FDBC224380FE005148AC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA90FDBD224380FE005148AC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		FA90FDC3224385AA005148AC /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		FA90FDC622438B41005148AC /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		FA90FDC722438B41005148AC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		FA90FDC822438B41005148AC /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = Carthage/Build/iOS/Carbon.framework; sourceTree = "<group>"; };
+		FA90FDC922438B41005148AC /* DifferenceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DifferenceKit.framework; path = Carthage/Build/iOS/DifferenceKit.framework; sourceTree = "<group>"; };
+		FA90FDCA22438B41005148AC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		FA90FDCB22438B41005148AC /* FBLPromises.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBLPromises.framework; path = Carthage/Build/iOS/FBLPromises.framework; sourceTree = "<group>"; };
+		FA90FDCC22438B41005148AC /* Promises.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Promises.framework; path = Carthage/Build/iOS/Promises.framework; sourceTree = "<group>"; };
+		FA90FDCD22438B41005148AC /* Localize_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Localize_Swift.framework; path = Carthage/Build/iOS/Localize_Swift.framework; sourceTree = "<group>"; };
+		FA90FDD822438D06005148AC /* lv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = lv; path = lv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FA90FDDC22438D33005148AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA90FDE02243966B005148AC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FA90FDE222439676005148AC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FA90FDE52243AE01005148AC /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
+		FA90FDE72243B08E005148AC /* SwiftRichString.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftRichString.framework; path = Carthage/Build/iOS/SwiftRichString.framework; sourceTree = "<group>"; };
+		FA90FDE82243B08E005148AC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		FA90FDEC2243B9FD005148AC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		FA90FDEE2243BA2D005148AC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		FA90FDF12243BF6C005148AC /* APIMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMethod.swift; sourceTree = "<group>"; };
+		FA90FDF42243C5B5005148AC /* ArticleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleComponent.swift; sourceTree = "<group>"; };
+		FA90FDF62243C5BF005148AC /* ArticleComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleComponentView.swift; sourceTree = "<group>"; };
+		FA90FDF92243CF0E005148AC /* ArticleModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModuleBuilder.swift; sourceTree = "<group>"; };
+		FA90FDFA2243CF0E005148AC /* ArticleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRouter.swift; sourceTree = "<group>"; };
+		FA90FDFB2243CF0E005148AC /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		FA90FDFC2243CF0E005148AC /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		FA90FDFD2243CF0E005148AC /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		FA90FE042243CF3B005148AC /* ArticleRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRoute.swift; sourceTree = "<group>"; };
+		FA90FE072243D1E5005148AC /* ArticleSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSectionHeader.swift; sourceTree = "<group>"; };
+		FA90FE092243D413005148AC /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		FA90FE0B2243E397005148AC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		FA90FE0D2243E3C4005148AC /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileMetrica.framework; path = Carthage/Build/iOS/YandexMobileMetrica.framework; sourceTree = "<group>"; };
+		FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileMetricaCrashes.framework; path = Carthage/Build/iOS/YandexMobileMetricaCrashes.framework; sourceTree = "<group>"; };
+		FA941BE9224BA7E800D7B170 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentComponent.swift; sourceTree = "<group>"; };
+		FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewAdapter.swift; sourceTree = "<group>"; };
+		FAD3CA2D2245612C009DA6AE /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		FAF183AF2248E76400CA2492 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModuleBuilder.swift; sourceTree = "<group>"; };
+		FAF183B32249096800CA2492 /* CoursesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRouter.swift; sourceTree = "<group>"; };
+		FAF183B42249096800CA2492 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		FAF183B52249096800CA2492 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
+		FAF183B62249096800CA2492 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
+		FAF183BD22490AD800CA2492 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		FAF183C022490FC600CA2492 /* ScheduleModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModuleBuilder.swift; sourceTree = "<group>"; };
+		FAF183C122490FC600CA2492 /* ScheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRouter.swift; sourceTree = "<group>"; };
+		FAF183C222490FC600CA2492 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		FAF183C322490FC600CA2492 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		FAF183C422490FC600CA2492 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		FAF183CC2249126200CA2492 /* MaskLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskLabel.swift; sourceTree = "<group>"; };
+		FAF77B212246A51800197641 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
+		FAF77B232246A64200197641 /* OAuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthApi.swift; sourceTree = "<group>"; };
+		FAF77B262246A98500197641 /* FormLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabel.swift; sourceTree = "<group>"; };
+		FAF77B282246AC3C00197641 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA90FD61224377A1005148AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA90FDCE22438B41005148AC /* Kingfisher.framework in Frameworks */,
+				FA90FDCF22438B41005148AC /* SnapKit.framework in Frameworks */,
+				FA90FDD022438B41005148AC /* Carbon.framework in Frameworks */,
+				FA90FDD122438B41005148AC /* DifferenceKit.framework in Frameworks */,
+				FA90FDD222438B41005148AC /* Alamofire.framework in Frameworks */,
+				FA90FDD322438B41005148AC /* FBLPromises.framework in Frameworks */,
+				FA90FDD422438B41005148AC /* Promises.framework in Frameworks */,
+				FA90FDD522438B41005148AC /* Localize_Swift.framework in Frameworks */,
+				FA90FDE92243B08F005148AC /* SwiftRichString.framework in Frameworks */,
+				FA90FDEA2243B08F005148AC /* KeychainAccess.framework in Frameworks */,
+				FA941BE7224A9D1A00D7B170 /* YandexMobileMetrica.framework in Frameworks */,
+				FA941BE8224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA90FD5B224377A0005148AC = {
+			isa = PBXGroup;
+			children = (
+				FA90FD66224377A1005148AC /* ORTUS */,
+				FA90FD65224377A1005148AC /* Products */,
+				FA90FDC522438B41005148AC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA90FD65224377A1005148AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FD64224377A1005148AC /* ORTUS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA90FD66224377A1005148AC /* ORTUS */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FD7C22437B10005148AC /* Extensions */,
+				FA90FD7B22437B09005148AC /* API */,
+				FA90FD7F22437B2D005148AC /* Models */,
+				FA90FD7E22437B1D005148AC /* Views */,
+				FA90FD9522437D33005148AC /* Routing */,
+				FA90FD7A22437AFD005148AC /* Modules */,
+				FA90FD7922437909005148AC /* Supporting Files */,
+				FA90FD67224377A1005148AC /* AppDelegate.swift */,
+				FA90FDB522438027005148AC /* Global.swift */,
+				FA941BE9224BA7E800D7B170 /* Keys.swift */,
+			);
+			path = ORTUS;
+			sourceTree = "<group>";
+		};
+		FA90FD7922437909005148AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FDDD22438D33005148AC /* Localizable.strings */,
+				FA90FD6E224377A4005148AC /* Assets.xcassets */,
+				FA90FD70224377A4005148AC /* LaunchScreen.storyboard */,
+				FA90FD73224377A4005148AC /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA90FD7A22437AFD005148AC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FDA722437F15005148AC /* News */,
+				FAF183BF22490FB500CA2492 /* Schedule */,
+				FAF183B12249095000CA2492 /* Courses */,
+				FA90FDA622437F0E005148AC /* Settings */,
+				FA90FD8922437BC0005148AC /* Main */,
+				FA90FD8A22437BD0005148AC /* Module.swift */,
+				FA90FD8C22437BD8005148AC /* ModuleBuilder.swift */,
+				FAF183BD22490AD800CA2492 /* UserViewModel.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FA90FD7B22437B09005148AC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FAF77B202246A50700197641 /* OAuth */,
+				FA90FDE42243ADF5005148AC /* News */,
+				FA90FDE02243966B005148AC /* API.swift */,
+				FA90FDF12243BF6C005148AC /* APIMethod.swift */,
+				FA90FDE222439676005148AC /* APIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FA90FD7C22437B10005148AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FD8222437B6C005148AC /* Translatable */,
+				FA90FDB222437F69005148AC /* UIKit */,
+				FA90FDB322437F80005148AC /* Notification.swift */,
+				FA90FE092243D413005148AC /* Date.swift */,
+				FAD3CA2D2245612C009DA6AE /* UIApplication.swift */,
+				FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA90FD7E22437B1D005148AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FDF32243C5AA005148AC /* Components */,
+				FA90FD9022437C93005148AC /* Styles */,
+				FA90FD9322437CC2005148AC /* NavigationController.swift */,
+				FA90FE0B2243E397005148AC /* TabBarController.swift */,
+				FA90FDC3224385AA005148AC /* TabBarItem.swift */,
+				FAF183CC2249126200CA2492 /* MaskLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA90FD7F22437B2D005148AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAF183AE2248E75700CA2492 /* OAuth */,
+				FA90FDEC2243B9FD005148AC /* Article.swift */,
+				FA90FDEE2243BA2D005148AC /* Response.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA90FD8222437B6C005148AC /* Translatable */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FD8522437B9A005148AC /* Translatable.swift */,
+				FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */,
+				FA90FD8722437BB2005148AC /* TranslatableModule.swift */,
+				FA90FD8E22437C7C005148AC /* TranslatableView.swift */,
+			);
+			path = Translatable;
+			sourceTree = "<group>";
+		};
+		FA90FD8922437BC0005148AC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FD8022437B51005148AC /* MainTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FA90FD9022437C93005148AC /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FD9122437C9D005148AC /* Styling.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		FA90FD9522437D33005148AC /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FD9A22437D6B005148AC /* Transitions */,
+				FA90FDA322437DBB005148AC /* Routes */,
+				FA90FD9622437D50005148AC /* Router.swift */,
+				FA90FD9822437D5E005148AC /* Animator.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		FA90FD9A22437D6B005148AC /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FD9B22437D76005148AC /* Transition.swift */,
+				FA90FD9D22437D81005148AC /* DefaultTransition.swift */,
+				FA90FD9F22437D8B005148AC /* ModalTransition.swift */,
+				FA90FDA122437D94005148AC /* PushTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		FA90FDA322437DBB005148AC /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FE032243CF2F005148AC /* Article */,
+				FA90FDA422437DC5005148AC /* Route.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		FA90FDA622437F0E005148AC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */,
+				FA90FDBC224380FE005148AC /* SettingsView.swift */,
+				FA90FDBD224380FE005148AC /* SettingsViewModel.swift */,
+				FA90FDBB224380FE005148AC /* SettingsViewController.swift */,
+				FA90FDBA224380FE005148AC /* SettingsRouter.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FA90FDA722437F15005148AC /* News */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FDF82243CEFD005148AC /* Article */,
+				FA90FDA822437F25005148AC /* NewsModuleBuilder.swift */,
+				FA90FDAB22437F25005148AC /* NewsView.swift */,
+				FA90FDAC22437F25005148AC /* NewsViewModel.swift */,
+				FA90FDAA22437F25005148AC /* NewsViewController.swift */,
+				FA90FDA922437F25005148AC /* NewsRouter.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		FA90FDB222437F69005148AC /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FDB722438069005148AC /* UIImage.swift */,
+				FA90FE0D2243E3C4005148AC /* UIColor.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		FA90FDC522438B41005148AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */,
+				FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */,
+				FA90FDE82243B08E005148AC /* KeychainAccess.framework */,
+				FA90FDE72243B08E005148AC /* SwiftRichString.framework */,
+				FA90FDCA22438B41005148AC /* Alamofire.framework */,
+				FA90FDC822438B41005148AC /* Carbon.framework */,
+				FA90FDC922438B41005148AC /* DifferenceKit.framework */,
+				FA90FDCB22438B41005148AC /* FBLPromises.framework */,
+				FA90FDC622438B41005148AC /* Kingfisher.framework */,
+				FA90FDCD22438B41005148AC /* Localize_Swift.framework */,
+				FA90FDCC22438B41005148AC /* Promises.framework */,
+				FA90FDC722438B41005148AC /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA90FDE42243ADF5005148AC /* News */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FDE52243AE01005148AC /* NewsApi.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		FA90FDF32243C5AA005148AC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FAF77B252246A97800197641 /* Form */,
+				FA90FE062243D1CD005148AC /* Article */,
+				FAF77B282246AC3C00197641 /* Header.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FA90FDF82243CEFD005148AC /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FDF92243CF0E005148AC /* ArticleModuleBuilder.swift */,
+				FA90FDFC2243CF0E005148AC /* ArticleView.swift */,
+				FA90FDFD2243CF0E005148AC /* ArticleViewModel.swift */,
+				FA90FDFB2243CF0E005148AC /* ArticleViewController.swift */,
+				FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */,
+				FA90FDFA2243CF0E005148AC /* ArticleRouter.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		FA90FE032243CF2F005148AC /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FE042243CF3B005148AC /* ArticleRoute.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		FA90FE062243D1CD005148AC /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FDF42243C5B5005148AC /* ArticleComponent.swift */,
+				FA90FDF62243C5BF005148AC /* ArticleComponentView.swift */,
+				FA90FE072243D1E5005148AC /* ArticleSectionHeader.swift */,
+				FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */,
+				FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */,
+				FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		FAF183AE2248E75700CA2492 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				FAF183AF2248E76400CA2492 /* TokenResponse.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		FAF183B12249095000CA2492 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */,
+				FAF183B52249096800CA2492 /* CoursesView.swift */,
+				FAF183B62249096800CA2492 /* CoursesViewModel.swift */,
+				FAF183B42249096800CA2492 /* CoursesViewController.swift */,
+				FAF183B32249096800CA2492 /* CoursesRouter.swift */,
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
+		FAF183BF22490FB500CA2492 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FAF183C022490FC600CA2492 /* ScheduleModuleBuilder.swift */,
+				FAF183C322490FC600CA2492 /* ScheduleView.swift */,
+				FAF183C422490FC600CA2492 /* ScheduleViewModel.swift */,
+				FAF183C222490FC600CA2492 /* ScheduleViewController.swift */,
+				FAF183C122490FC600CA2492 /* ScheduleRouter.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		FAF77B202246A50700197641 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				FAF77B212246A51800197641 /* OAuth.swift */,
+				FAF77B232246A64200197641 /* OAuthApi.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		FAF77B252246A97800197641 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				FAF77B262246A98500197641 /* FormLabel.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA90FD63224377A1005148AC /* ORTUS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA90FD76224377A4005148AC /* Build configuration list for PBXNativeTarget "ORTUS" */;
+			buildPhases = (
+				FA90FD60224377A1005148AC /* Sources */,
+				FA90FD61224377A1005148AC /* Frameworks */,
+				FA90FD62224377A1005148AC /* Resources */,
+				FA90FDD622438B47005148AC /* Carthage */,
+				FAD3CA4122456A99009DA6AE /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ORTUS;
+			productName = ORTUS;
+			productReference = FA90FD64224377A1005148AC /* ORTUS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA90FD5C224377A1005148AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Firdavs;
+				TargetAttributes = {
+					FA90FD63224377A1005148AC = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = FA90FD5F224377A1005148AC /* Build configuration list for PBXProject "ORTUS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				lv,
+			);
+			mainGroup = FA90FD5B224377A0005148AC;
+			productRefGroup = FA90FD65224377A1005148AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA90FD63224377A1005148AC /* ORTUS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA90FD62224377A1005148AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */,
+				FA90FDDB22438D33005148AC /* Localizable.strings in Resources */,
+				FA90FD6F224377A4005148AC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FA90FDD622438B47005148AC /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Carbon.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DifferenceKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBLPromises.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Localize_Swift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Promises.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftRichString.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/YandexMobileMetrica.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/YandexMobileMetricaCrashes.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA90FD60224377A1005148AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */,
+				FAF183BE22490AD800CA2492 /* UserViewModel.swift in Sources */,
+				FA90FD9922437D5E005148AC /* Animator.swift in Sources */,
+				FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */,
+				FA90FDC4224385AA005148AC /* TabBarItem.swift in Sources */,
+				FA90FDF22243BF6C005148AC /* APIMethod.swift in Sources */,
+				FAF183C922490FC600CA2492 /* ScheduleViewModel.swift in Sources */,
+				FA90FDB822438069005148AC /* UIImage.swift in Sources */,
+				FA90FD9722437D50005148AC /* Router.swift in Sources */,
+				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
+				FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */,
+				FAF183B92249096800CA2492 /* CoursesViewController.swift in Sources */,
+				FAF77B242246A64200197641 /* OAuthApi.swift in Sources */,
+				FA90FDEF2243BA2D005148AC /* Response.swift in Sources */,
+				FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */,
+				FA90FDE322439676005148AC /* APIClient.swift in Sources */,
+				FA90FD9E22437D81005148AC /* DefaultTransition.swift in Sources */,
+				FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */,
+				FA90FDC2224380FE005148AC /* SettingsViewModel.swift in Sources */,
+				FA90FDB422437F80005148AC /* Notification.swift in Sources */,
+				FAF77B272246A98500197641 /* FormLabel.swift in Sources */,
+				FAF77B222246A51800197641 /* OAuth.swift in Sources */,
+				FA90FDB022437F25005148AC /* NewsView.swift in Sources */,
+				FA90FDAF22437F25005148AC /* NewsViewController.swift in Sources */,
+				FAF183BB2249096800CA2492 /* CoursesViewModel.swift in Sources */,
+				FA90FDE62243AE01005148AC /* NewsApi.swift in Sources */,
+				FA90FE0E2243E3C4005148AC /* UIColor.swift in Sources */,
+				FA90FDA022437D8B005148AC /* ModalTransition.swift in Sources */,
+				FA90FE0A2243D413005148AC /* Date.swift in Sources */,
+				FAD3CA252244F017009DA6AE /* ArticleContentComponent.swift in Sources */,
+				FAF183C622490FC600CA2492 /* ScheduleRouter.swift in Sources */,
+				FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */,
+				FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */,
+				FAF77B292246AC3C00197641 /* Header.swift in Sources */,
+				FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */,
+				FA90FDED2243B9FD005148AC /* Article.swift in Sources */,
+				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
+				FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */,
+				FA90FDB622438027005148AC /* Global.swift in Sources */,
+				FA90FD8F22437C7C005148AC /* TranslatableView.swift in Sources */,
+				FA90FD8822437BB2005148AC /* TranslatableModule.swift in Sources */,
+				FAF183B02248E76400CA2492 /* TokenResponse.swift in Sources */,
+				FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */,
+				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
+				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
+				FA90FD9C22437D76005148AC /* Transition.swift in Sources */,
+				FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */,
+				FA90FDAE22437F25005148AC /* NewsRouter.swift in Sources */,
+				FA90FDA522437DC5005148AC /* Route.swift in Sources */,
+				FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */,
+				FAF183BA2249096800CA2492 /* CoursesView.swift in Sources */,
+				FA90FDC1224380FE005148AC /* SettingsView.swift in Sources */,
+				FAF183CD2249126200CA2492 /* MaskLabel.swift in Sources */,
+				FA90FE052243CF3B005148AC /* ArticleRoute.swift in Sources */,
+				FA90FE022243CF0E005148AC /* ArticleViewModel.swift in Sources */,
+				FA90FD8622437B9A005148AC /* Translatable.swift in Sources */,
+				FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */,
+				FA90FDA222437D94005148AC /* PushTransition.swift in Sources */,
+				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
+				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
+				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
+				FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */,
+				FA90FDF52243C5B5005148AC /* ArticleComponent.swift in Sources */,
+				FA90FDB122437F25005148AC /* NewsViewModel.swift in Sources */,
+				FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */,
+				FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */,
+				FA90FE002243CF0E005148AC /* ArticleViewController.swift in Sources */,
+				FA90FD9422437CC2005148AC /* NavigationController.swift in Sources */,
+				FA90FD9222437C9D005148AC /* Styling.swift in Sources */,
+				FA90FDE12243966B005148AC /* API.swift in Sources */,
+				FA90FD8B22437BD0005148AC /* Module.swift in Sources */,
+				FA90FE082243D1E5005148AC /* ArticleSectionHeader.swift in Sources */,
+				FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FA90FD70224377A4005148AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA90FD71224377A4005148AC /* Base */,
+				FA90FDD822438D06005148AC /* lv */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA90FDDD22438D33005148AC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA90FDDC22438D33005148AC /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA90FD74224377A4005148AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		FA90FD75224377A4005148AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA90FD77224377A4005148AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RL7M4Z58CJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/ORTUS/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA90FD78224377A4005148AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RL7M4Z58CJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/ORTUS/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA90FD5F224377A1005148AC /* Build configuration list for PBXProject "ORTUS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA90FD74224377A4005148AC /* Debug */,
+				FA90FD75224377A4005148AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA90FD76224377A4005148AC /* Build configuration list for PBXNativeTarget "ORTUS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA90FD77224377A4005148AC /* Debug */,
+				FA90FD78224377A4005148AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA90FD5C224377A1005148AC /* Project object */;
+}
