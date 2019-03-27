@@ -10,7 +10,6 @@ github "ra1028/Carbon"
 github "google/promises"
 github "kishikawakatsumi/KeychainAccess"
 github "marmelroy/Localize-Swift"
-github "malcommac/SwiftRichString"
 
 # Analytics
 github "yandexmobile/metrica-sdk-ios" ~> 3.6.0

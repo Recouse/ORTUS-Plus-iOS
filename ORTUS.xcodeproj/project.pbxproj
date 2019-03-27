@@ -54,7 +54,6 @@
 		FA90FDE12243966B005148AC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDE02243966B005148AC /* API.swift */; };
 		FA90FDE322439676005148AC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDE222439676005148AC /* APIClient.swift */; };
 		FA90FDE62243AE01005148AC /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDE52243AE01005148AC /* NewsApi.swift */; };
-		FA90FDE92243B08F005148AC /* SwiftRichString.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDE72243B08E005148AC /* SwiftRichString.framework */; };
 		FA90FDEA2243B08F005148AC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA90FDE82243B08E005148AC /* KeychainAccess.framework */; };
 		FA90FDED2243B9FD005148AC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEC2243B9FD005148AC /* Article.swift */; };
 		FA90FDEF2243BA2D005148AC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEE2243BA2D005148AC /* Response.swift */; };
@@ -217,7 +216,6 @@
 				FA90FDD322438B41005148AC /* FBLPromises.framework in Frameworks */,
 				FA90FDD422438B41005148AC /* Promises.framework in Frameworks */,
 				FA90FDD522438B41005148AC /* Localize_Swift.framework in Frameworks */,
-				FA90FDE92243B08F005148AC /* SwiftRichString.framework in Frameworks */,
 				FA90FDEA2243B08F005148AC /* KeychainAccess.framework in Frameworks */,
 				FA941BE7224A9D1A00D7B170 /* YandexMobileMetrica.framework in Frameworks */,
 				FA941BE8224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework in Frameworks */,
@@ -642,7 +640,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Promises.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftRichString.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/YandexMobileMetrica.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/YandexMobileMetricaCrashes.framework",
 			);
