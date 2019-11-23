@@ -90,7 +90,6 @@
 		FA941BE7224A9D1A00D7B170 /* YandexMobileMetrica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */; };
 		FA941BE8224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */; };
 		FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA941BE9224BA7E800D7B170 /* Keys.swift */; };
-		FABBF3F4235107FC00D4D593 /* FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABBF3F3235107FB00D4D593 /* FSCalendar.framework */; };
 		FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3F823511BA600D4D593 /* EventComponent.swift */; };
 		FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FA23511BB300D4D593 /* EventComponentView.swift */; };
 		FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FC2351293E00D4D593 /* Lecture.swift */; };
@@ -268,7 +267,6 @@
 				FA90FDD222438B41005148AC /* Alamofire.framework in Frameworks */,
 				FA90FDD322438B41005148AC /* FBLPromises.framework in Frameworks */,
 				FA90FDD422438B41005148AC /* Promises.framework in Frameworks */,
-				FABBF3F4235107FC00D4D593 /* FSCalendar.framework in Frameworks */,
 				FA90FDD522438B41005148AC /* Localize_Swift.framework in Frameworks */,
 				FA90FDEA2243B08F005148AC /* KeychainAccess.framework in Frameworks */,
 				FA941BE7224A9D1A00D7B170 /* YandexMobileMetrica.framework in Frameworks */,
