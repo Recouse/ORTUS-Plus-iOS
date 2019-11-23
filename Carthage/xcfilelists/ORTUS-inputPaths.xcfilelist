@@ -2,7 +2,6 @@ $(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
 $(SRCROOT)/Carthage/Build/iOS/Carbon.framework
 $(SRCROOT)/Carthage/Build/iOS/DifferenceKit.framework
 $(SRCROOT)/Carthage/Build/iOS/FBLPromises.framework
-$(SRCROOT)/Carthage/Build/iOS/FSCalendar.framework
 $(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework
 $(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework
 $(SRCROOT)/Carthage/Build/iOS/Localize_Swift.framework
