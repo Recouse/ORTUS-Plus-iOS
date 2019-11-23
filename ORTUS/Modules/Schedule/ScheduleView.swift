@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FSCalendar
 
 class ScheduleView: UIView {
     let toolbarSegmentedControl = UISegmentedControl()
