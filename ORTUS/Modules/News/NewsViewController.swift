@@ -18,7 +18,6 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
     var refreshControl: UIRefreshControl!
     
     lazy var renderer = Renderer(
-        target: tableView,
         adapter: UITableViewAdapter(),
         updater: UITableViewUpdater()
     )
@@ -103,6 +102,7 @@ extension NewsViewController {
     }
     
     func prepareData() {
+        renderer.target = tableView
         renderer.adapter.didSelect = { [unowned self] context in
             guard let component = context.node.component(as: ArticleComponent.self) else {
                 return

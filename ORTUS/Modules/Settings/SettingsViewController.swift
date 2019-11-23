@@ -17,7 +17,6 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
     weak var tableView: UITableView! { return settingsView.tableView }
     
     private lazy var renderer = Renderer(
-        target: tableView,
         adapter: UITableViewAdapter(),
         updater: UITableViewUpdater()
     )
@@ -112,6 +111,8 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
 
 extension SettingsViewController {
     func prepareData() {
+        renderer.target = tableView
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(authComplete),

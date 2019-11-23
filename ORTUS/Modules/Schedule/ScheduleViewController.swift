@@ -7,11 +7,44 @@
 //
 
 import UIKit
+import Carbon
+import SafariServices
 
 class ScheduleViewController: TranslatableModule, ModuleViewModel {
     var viewModel: ScheduleViewModel
     
     weak var scheduleView: ScheduleView! { return view as? ScheduleView }
+    weak var tableView: UITableView! { return scheduleView.tableView }
+    
+    var refreshControl: UIRefreshControl!
+    
+    let toolbarSegmentedControl = UISegmentedControl(items: [])
+    
+    var selectedScheduleGrouping: Int = 0
+    
+    lazy var toolbar: UIToolbar = {
+        let bar = UIToolbar()
+        bar.delegate = self
+
+        let barItem = UIBarButtonItem(customView: self.toolbarSegmentedControl)
+
+        bar.setItems([barItem], animated: false)
+
+        return bar
+    }()
+    
+    
+    lazy var renderer = Renderer(
+        adapter: ScheduleTableViewAdapter(),
+        updater: UITableViewUpdater()
+    )
+    
+    let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        return dateFormatter
+    }()
     
     init(viewModel: ScheduleViewModel) {
         self.viewModel = viewModel
@@ -30,11 +63,153 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //
+        prepareNavigationItem()
+        prepareToolbar()
+        prepareRefreshControl()
+        prepareData()
+        
+        loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hideBorderLine()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.showBorderLine()
     }
     
     override func prepareLocales() {
         title = "schedule.title".localized()
+        toolbarSegmentedControl.removeAllSegments()
+        for (index, grouping) in ScheduleGrouping.allCases.enumerated() {
+            toolbarSegmentedControl.insertSegment(
+                withTitle: grouping.rawValue.capitalized,
+                at: index,
+                animated: false)
+        }
+        toolbarSegmentedControl.selectedSegmentIndex = selectedScheduleGrouping
+    }
+    
+    func loadData() {
+        viewModel.loadSchedule().always {
+            self.render()
+        }.catch { error in
+            print(error)
+        }.always {
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
+    func render() {
+        var data: [Section] = []
+        let today = Date()
+        guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today) else {
+            return
+        }
+                
+        for (key, schedule) in viewModel.schedule {
+            if selectedScheduleGrouping != 2 {
+                guard key == dateFormatter.string(from: selectedScheduleGrouping == 0 ? today : tomorrow) else {
+                    continue
+                }
+            }
+            
+            data.append(
+                Section(
+                    id: key,
+                    header: selectedScheduleGrouping == 2 ? ViewNode(ScheduleDateHeader(title: key)) : nil,
+                    cells: schedule.compactMap {
+                        if let event = $0.item(as: Event.self) {
+                            return CellNode(EventComponent(id: event.title, event: event))
+                        }
+                        
+                        if let lecture = $0.item(as: Lecture.self) {
+                            return CellNode(LectureComponent(id: lecture.id, lecture: lecture))
+                        }
+                        
+                        return nil
+                    }
+                )
+            )
+            
+            if selectedScheduleGrouping != 2 {
+                break
+            }
+        }
+        
+        renderer.render(data)
+    }
+    
+    @objc func selectScheduleGrouping() {
+        selectedScheduleGrouping = toolbarSegmentedControl.selectedSegmentIndex
+        
+        render()
+    }
+    
+    @objc func refresh() {
+        loadData()
+    }
+    
+    func open(event: Event) {
+        guard let url = event.link.generatePinAuthURL() else {
+            return
+        }
+        
+        let controller = SFSafariViewController(url: url)
+        controller.delegate = self
+        
+        present(controller, animated: true, completion: nil)
+    }
+}
+
+extension ScheduleViewController {
+    func prepareNavigationItem() {
+        navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    func prepareToolbar() {
+        view.addSubview(toolbar)
+        toolbar.translatesAutoresizingMaskIntoConstraints = false
+        toolbar.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.left.right.equalToSuperview()
+        }
+        
+        toolbarSegmentedControl.addTarget(self, action: #selector(selectScheduleGrouping), for: .valueChanged)
+    }
+    
+    func prepareRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    func prepareData() {
+        renderer.target = tableView
+        renderer.adapter.didSelect = { [unowned self] context in
+            if let event = context.node.component(as: EventComponent.self)?.event {
+                self.open(event: event)
+            }
+            
+            //
+        }
+    }
+}
+
+extension ScheduleViewController: UIToolbarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .top
+    }
+}
+
+extension ScheduleViewController: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

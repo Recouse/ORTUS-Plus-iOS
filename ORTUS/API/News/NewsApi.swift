@@ -10,6 +10,7 @@ import Alamofire
 
 enum NewsApi: API {
     case publicArticles
+    case articles
     
     var method: HTTPMethod {
         switch self {
@@ -20,7 +21,7 @@ enum NewsApi: API {
     
     var path: String {
         switch self {
-        case .publicArticles:
+        default:
             return "oauth/news"
         }
     }
@@ -29,6 +30,8 @@ enum NewsApi: API {
         switch self {
         case .publicArticles:
             return parameters(for: .getPublicArticles)
+        case .articles:
+            return parameters(for: .getArticles)
         }
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Carbon
 
-struct Header: Component, Equatable {
+struct Header: Carbon.Component, Equatable {
     var title: String
     
     func renderContent() -> HeaderView {
@@ -28,7 +28,11 @@ struct Header: Component, Equatable {
 class HeaderView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "darkGray")
+        if #available(iOS 13.0, *) {
+            label.textColor = .secondaryLabel
+        } else {
+            label.textColor = .darkGray
+        }
         label.font = .systemFont(ofSize: 13)
         
         return label

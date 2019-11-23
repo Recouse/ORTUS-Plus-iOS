@@ -19,7 +19,10 @@ struct ArticleComponent: IdentifiableComponent {
     }
     
     func render(in content: ArticleComponentView) {
-        content.imageView.kf.setImage(with: URL(string: article.imageURL))
+        if let imageURL = article.imageURL {
+            content.imageView.kf.setImage(with: URL(string: imageURL))
+        }
+        
         content.authorLabel.text = article.author
         content.titleLabel.text = article.title
     }

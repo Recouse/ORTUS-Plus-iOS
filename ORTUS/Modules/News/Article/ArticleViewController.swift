@@ -30,7 +30,6 @@ class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentab
     }()
     
     lazy var renderer = Renderer(
-        target: tableView,
         adapter: adapter,
         updater: UITableViewUpdater()
     )
@@ -78,7 +77,6 @@ class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .white
@@ -126,6 +124,8 @@ class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentab
     }
     
     func handle(_ url: URL) {
+        guard UIApplication.shared.canOpenURL(url) else { return }
+        
         UIApplication.shared.open(url, options: [.universalLinksOnly: true]) { (success) in
             if !success {
                 let vc = SFSafariViewController(url: url)
@@ -155,6 +155,8 @@ class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentab
 
 extension ArticleViewController {
     func prepareNavigationItem() {
+        navigationItem.largeTitleDisplayMode = .never
+        
         translateBarButtonItem = UIBarButtonItem(image: UIImage(named: "translate"), style: .plain, target: self, action: #selector(translate))
         navigationItem.rightBarButtonItem = translateBarButtonItem
     }
@@ -168,7 +170,12 @@ extension ArticleViewController {
     }
     
     func prepareData() {
-        headerView.imageView.kf.setImage(with: URL(string: viewModel.article.imageURL))
+        renderer.target = tableView
+        
+        if let imageURL = viewModel.article.imageURL {
+            headerView.imageView.kf.setImage(with: URL(string: imageURL))
+        }
+        
         headerView.titleLabel.text = viewModel.article.title
     }
 }
@@ -202,4 +209,3 @@ extension ArticleViewController: ArticleTableViewAdapterDelegate {
         updateHeaderView()
     }
 }
-

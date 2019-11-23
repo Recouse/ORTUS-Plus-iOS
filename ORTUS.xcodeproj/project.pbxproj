@@ -3,12 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0927D12347D1E400D32827 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D02347D1E400D32827 /* NotificationModel.swift */; };
+		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
+		FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA206231234344CE007ED9BA /* Alamofire+Promises.swift */; };
+		FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623423434DBB007ED9BA /* CoursesApi.swift */; };
+		FA20623823434DF2007ED9BA /* ScheduleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623723434DF2007ED9BA /* ScheduleApi.swift */; };
+		FA20623A23434EE5007ED9BA /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623923434EE5007ED9BA /* EmptyResponse.swift */; };
+		FA20624E23452B65007ED9BA /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20624D23452B65007ED9BA /* Course.swift */; };
+		FA2062C723453DEB007ED9BA /* CourseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062C623453DEB007ED9BA /* CourseComponent.swift */; };
+		FA2062C923453E00007ED9BA /* CourseComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062C823453E00007ED9BA /* CourseComponentView.swift */; };
+		FA2062DB234628A6007ED9BA /* InboxModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D6234628A6007ED9BA /* InboxModuleBuilder.swift */; };
+		FA2062DC234628A6007ED9BA /* InboxRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D7234628A6007ED9BA /* InboxRouter.swift */; };
+		FA2062DD234628A6007ED9BA /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D8234628A6007ED9BA /* InboxViewController.swift */; };
+		FA2062DE234628A6007ED9BA /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D9234628A6007ED9BA /* InboxView.swift */; };
+		FA2062DF234628A6007ED9BA /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062DA234628A6007ED9BA /* InboxViewModel.swift */; };
 		FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */; };
 		FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */; };
+		FA4111F1234FC15A002BA33D /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F0234FC15A002BA33D /* Schedule.swift */; };
+		FA4111F3234FC17A002BA33D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F2234FC17A002BA33D /* Event.swift */; };
+		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
 		FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD67224377A1005148AC /* AppDelegate.swift */; };
 		FA90FD6F224377A4005148AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD6E224377A4005148AC /* Assets.xcassets */; };
 		FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD70224377A4005148AC /* LaunchScreen.storyboard */; };
@@ -73,6 +90,15 @@
 		FA941BE7224A9D1A00D7B170 /* YandexMobileMetrica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */; };
 		FA941BE8224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */; };
 		FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA941BE9224BA7E800D7B170 /* Keys.swift */; };
+		FABBF3F4235107FC00D4D593 /* FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABBF3F3235107FB00D4D593 /* FSCalendar.framework */; };
+		FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3F823511BA600D4D593 /* EventComponent.swift */; };
+		FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FA23511BB300D4D593 /* EventComponentView.swift */; };
+		FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FC2351293E00D4D593 /* Lecture.swift */; };
+		FABBF3FF23512A4100D4D593 /* LectureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FE23512A4100D4D593 /* LectureComponent.swift */; };
+		FABBF40123512A4D00D4D593 /* LectureComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF40023512A4D00D4D593 /* LectureComponentView.swift */; };
+		FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF9397238897C800F78FF1 /* ScheduleDateHeader.swift */; };
+		FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */; };
+		FABF939C2389CB6100F78FF1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF939B2389CB6100F78FF1 /* String.swift */; };
 		FAD3CA252244F017009DA6AE /* ArticleContentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */; };
 		FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */; };
 		FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2D2245612C009DA6AE /* UIApplication.swift */; };
@@ -110,8 +136,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA0927D02347D1E400D32827 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		FA0927D32347E3B000D32827 /* NotificationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsApi.swift; sourceTree = "<group>"; };
+		FA206231234344CE007ED9BA /* Alamofire+Promises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Promises.swift"; sourceTree = "<group>"; };
+		FA20623423434DBB007ED9BA /* CoursesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesApi.swift; sourceTree = "<group>"; };
+		FA20623723434DF2007ED9BA /* ScheduleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleApi.swift; sourceTree = "<group>"; };
+		FA20623923434EE5007ED9BA /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		FA20624D23452B65007ED9BA /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		FA2062C623453DEB007ED9BA /* CourseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseComponent.swift; sourceTree = "<group>"; };
+		FA2062C823453E00007ED9BA /* CourseComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseComponentView.swift; sourceTree = "<group>"; };
+		FA2062D6234628A6007ED9BA /* InboxModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxModuleBuilder.swift; sourceTree = "<group>"; };
+		FA2062D7234628A6007ED9BA /* InboxRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxRouter.swift; sourceTree = "<group>"; };
+		FA2062D8234628A6007ED9BA /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
+		FA2062D9234628A6007ED9BA /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		FA2062DA234628A6007ED9BA /* InboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
 		FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponent.swift; sourceTree = "<group>"; };
 		FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponentView.swift; sourceTree = "<group>"; };
+		FA4111F0234FC15A002BA33D /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		FA4111F2234FC17A002BA33D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		FA4111F6234FCDE2002BA33D /* CVCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CVCalendar.framework; path = Carthage/Build/iOS/CVCalendar.framework; sourceTree = "<group>"; };
+		FA6252192387F8D2009C3FF7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		FA90FD64224377A1005148AC /* ORTUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORTUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA90FD67224377A1005148AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA90FD6E224377A4005148AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,6 +224,15 @@
 		FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileMetrica.framework; path = Carthage/Build/iOS/YandexMobileMetrica.framework; sourceTree = "<group>"; };
 		FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileMetricaCrashes.framework; path = Carthage/Build/iOS/YandexMobileMetricaCrashes.framework; sourceTree = "<group>"; };
 		FA941BE9224BA7E800D7B170 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		FABBF3F3235107FB00D4D593 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = Carthage/Build/iOS/FSCalendar.framework; sourceTree = "<group>"; };
+		FABBF3F823511BA600D4D593 /* EventComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComponent.swift; sourceTree = "<group>"; };
+		FABBF3FA23511BB300D4D593 /* EventComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComponentView.swift; sourceTree = "<group>"; };
+		FABBF3FC2351293E00D4D593 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		FABBF3FE23512A4100D4D593 /* LectureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponent.swift; sourceTree = "<group>"; };
+		FABBF40023512A4D00D4D593 /* LectureComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponentView.swift; sourceTree = "<group>"; };
+		FABF9397238897C800F78FF1 /* ScheduleDateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDateHeader.swift; sourceTree = "<group>"; };
+		FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewAdapter.swift; sourceTree = "<group>"; };
+		FABF939B2389CB6100F78FF1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentComponent.swift; sourceTree = "<group>"; };
 		FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewAdapter.swift; sourceTree = "<group>"; };
 		FAD3CA2D2245612C009DA6AE /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -215,6 +268,7 @@
 				FA90FDD222438B41005148AC /* Alamofire.framework in Frameworks */,
 				FA90FDD322438B41005148AC /* FBLPromises.framework in Frameworks */,
 				FA90FDD422438B41005148AC /* Promises.framework in Frameworks */,
+				FABBF3F4235107FC00D4D593 /* FSCalendar.framework in Frameworks */,
 				FA90FDD522438B41005148AC /* Localize_Swift.framework in Frameworks */,
 				FA90FDEA2243B08F005148AC /* KeychainAccess.framework in Frameworks */,
 				FA941BE7224A9D1A00D7B170 /* YandexMobileMetrica.framework in Frameworks */,
@@ -225,6 +279,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0927CF2347D1CE00D32827 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				FA0927D02347D1E400D32827 /* NotificationModel.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		FA0927D22347E39900D32827 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				FA0927D32347E3B000D32827 /* NotificationsApi.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		FA20623323434DAA007ED9BA /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				FA20623423434DBB007ED9BA /* CoursesApi.swift */,
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
+		FA20623623434DE3007ED9BA /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FA20623723434DF2007ED9BA /* ScheduleApi.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		FA20624C23452B51007ED9BA /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				FA20624D23452B65007ED9BA /* Course.swift */,
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
+		FA2062C523453DD4007ED9BA /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				FA2062C623453DEB007ED9BA /* CourseComponent.swift */,
+				FA2062C823453E00007ED9BA /* CourseComponentView.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		FA2062D52346288C007ED9BA /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				FA2062D6234628A6007ED9BA /* InboxModuleBuilder.swift */,
+				FA2062D9234628A6007ED9BA /* InboxView.swift */,
+				FA2062DA234628A6007ED9BA /* InboxViewModel.swift */,
+				FA2062D8234628A6007ED9BA /* InboxViewController.swift */,
+				FA2062D7234628A6007ED9BA /* InboxRouter.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
+		FA4111EF234FC14A002BA33D /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FA4111F0234FC15A002BA33D /* Schedule.swift */,
+				FA4111F2234FC17A002BA33D /* Event.swift */,
+				FABBF3FC2351293E00D4D593 /* Lecture.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
 		FA90FD5B224377A0005148AC = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +401,7 @@
 				FA90FDA722437F15005148AC /* News */,
 				FAF183BF22490FB500CA2492 /* Schedule */,
 				FAF183B12249095000CA2492 /* Courses */,
+				FA2062D52346288C007ED9BA /* Inbox */,
 				FA90FDA622437F0E005148AC /* Settings */,
 				FA90FD8922437BC0005148AC /* Main */,
 				FA90FD8A22437BD0005148AC /* Module.swift */,
@@ -290,6 +416,9 @@
 			children = (
 				FAF77B202246A50700197641 /* OAuth */,
 				FA90FDE42243ADF5005148AC /* News */,
+				FA20623623434DE3007ED9BA /* Schedule */,
+				FA20623323434DAA007ED9BA /* Courses */,
+				FA0927D22347E39900D32827 /* Notifications */,
 				FA90FDE02243966B005148AC /* API.swift */,
 				FA90FDF12243BF6C005148AC /* APIMethod.swift */,
 				FA90FDE222439676005148AC /* APIClient.swift */,
@@ -306,6 +435,8 @@
 				FA90FE092243D413005148AC /* Date.swift */,
 				FAD3CA2D2245612C009DA6AE /* UIApplication.swift */,
 				FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */,
+				FA206231234344CE007ED9BA /* Alamofire+Promises.swift */,
+				FABF939B2389CB6100F78FF1 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,9 +457,13 @@
 		FA90FD7F22437B2D005148AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA4111EF234FC14A002BA33D /* Schedule */,
+				FA0927CF2347D1CE00D32827 /* Notifications */,
+				FA20624C23452B51007ED9BA /* Courses */,
 				FAF183AE2248E75700CA2492 /* OAuth */,
 				FA90FDEC2243B9FD005148AC /* Article.swift */,
 				FA90FDEE2243BA2D005148AC /* Response.swift */,
+				FA20623923434EE5007ED9BA /* EmptyResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -421,6 +556,7 @@
 			children = (
 				FA90FDB722438069005148AC /* UIImage.swift */,
 				FA90FE0D2243E3C4005148AC /* UIColor.swift */,
+				FA6252192387F8D2009C3FF7 /* UINavigationController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -428,6 +564,8 @@
 		FA90FDC522438B41005148AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FABBF3F3235107FB00D4D593 /* FSCalendar.framework */,
+				FA4111F6234FCDE2002BA33D /* CVCalendar.framework */,
 				FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */,
 				FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */,
 				FA90FDE82243B08E005148AC /* KeychainAccess.framework */,
@@ -455,6 +593,8 @@
 		FA90FDF32243C5AA005148AC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FABBF3F723511B9400D4D593 /* Schedule */,
+				FA2062C523453DD4007ED9BA /* Course */,
 				FAF77B252246A97800197641 /* Form */,
 				FA90FE062243D1CD005148AC /* Article */,
 				FAF77B282246AC3C00197641 /* Header.swift */,
@@ -496,6 +636,18 @@
 			path = Article;
 			sourceTree = "<group>";
 		};
+		FABBF3F723511B9400D4D593 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FABBF3F823511BA600D4D593 /* EventComponent.swift */,
+				FABBF3FA23511BB300D4D593 /* EventComponentView.swift */,
+				FABBF3FE23512A4100D4D593 /* LectureComponent.swift */,
+				FABBF40023512A4D00D4D593 /* LectureComponentView.swift */,
+				FABF9397238897C800F78FF1 /* ScheduleDateHeader.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
 		FAF183AE2248E75700CA2492 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +675,7 @@
 				FAF183C322490FC600CA2492 /* ScheduleView.swift */,
 				FAF183C422490FC600CA2492 /* ScheduleViewModel.swift */,
 				FAF183C222490FC600CA2492 /* ScheduleViewController.swift */,
+				FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */,
 				FAF183C122490FC600CA2492 /* ScheduleRouter.swift */,
 			);
 			path = Schedule;
@@ -555,8 +708,8 @@
 				FA90FD60224377A1005148AC /* Sources */,
 				FA90FD61224377A1005148AC /* Frameworks */,
 				FA90FD62224377A1005148AC /* Resources */,
-				FA90FDD622438B47005148AC /* Carthage */,
 				FAD3CA4122456A99009DA6AE /* Embed App Extensions */,
+				7ECDA010DEB264585D3F9A9B /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -623,28 +776,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FA90FDD622438B47005148AC /* Carthage */ = {
+		7ECDA010DEB264585D3F9A9B /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"$(SRCROOT)/Carthage/xcfilelists/ORTUS-inputPaths.xcfilelist",
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Carbon.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/DifferenceKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FBLPromises.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Localize_Swift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Promises.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/YandexMobileMetrica.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/YandexMobileMetricaCrashes.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
+				"$(SRCROOT)/Carthage/xcfilelists/ORTUS-outputPaths.xcfilelist",
 			);
 			outputPaths = (
 			);
@@ -659,18 +803,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA20624E23452B65007ED9BA /* Course.swift in Sources */,
 				FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */,
+				FA2062DF234628A6007ED9BA /* InboxViewModel.swift in Sources */,
 				FAF183BE22490AD800CA2492 /* UserViewModel.swift in Sources */,
 				FA90FD9922437D5E005148AC /* Animator.swift in Sources */,
 				FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */,
 				FA90FDC4224385AA005148AC /* TabBarItem.swift in Sources */,
 				FA90FDF22243BF6C005148AC /* APIMethod.swift in Sources */,
+				FA4111F3234FC17A002BA33D /* Event.swift in Sources */,
+				FABBF3FF23512A4100D4D593 /* LectureComponent.swift in Sources */,
 				FAF183C922490FC600CA2492 /* ScheduleViewModel.swift in Sources */,
 				FA90FDB822438069005148AC /* UIImage.swift in Sources */,
+				FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */,
 				FA90FD9722437D50005148AC /* Router.swift in Sources */,
 				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
+				FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */,
 				FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */,
 				FAF183B92249096800CA2492 /* CoursesViewController.swift in Sources */,
+				FABF939C2389CB6100F78FF1 /* String.swift in Sources */,
 				FAF77B242246A64200197641 /* OAuthApi.swift in Sources */,
 				FA90FDEF2243BA2D005148AC /* Response.swift in Sources */,
 				FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */,
@@ -679,9 +830,11 @@
 				FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */,
 				FA90FDC2224380FE005148AC /* SettingsViewModel.swift in Sources */,
 				FA90FDB422437F80005148AC /* Notification.swift in Sources */,
+				FABBF40123512A4D00D4D593 /* LectureComponentView.swift in Sources */,
 				FAF77B272246A98500197641 /* FormLabel.swift in Sources */,
 				FAF77B222246A51800197641 /* OAuth.swift in Sources */,
 				FA90FDB022437F25005148AC /* NewsView.swift in Sources */,
+				FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */,
 				FA90FDAF22437F25005148AC /* NewsViewController.swift in Sources */,
 				FAF183BB2249096800CA2492 /* CoursesViewModel.swift in Sources */,
 				FA90FDE62243AE01005148AC /* NewsApi.swift in Sources */,
@@ -691,22 +844,30 @@
 				FAD3CA252244F017009DA6AE /* ArticleContentComponent.swift in Sources */,
 				FAF183C622490FC600CA2492 /* ScheduleRouter.swift in Sources */,
 				FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */,
+				FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */,
 				FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */,
 				FAF77B292246AC3C00197641 /* Header.swift in Sources */,
+				FA20623823434DF2007ED9BA /* ScheduleApi.swift in Sources */,
 				FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */,
 				FA90FDED2243B9FD005148AC /* Article.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
 				FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */,
 				FA90FDB622438027005148AC /* Global.swift in Sources */,
 				FA90FD8F22437C7C005148AC /* TranslatableView.swift in Sources */,
+				FA2062DC234628A6007ED9BA /* InboxRouter.swift in Sources */,
+				FA4111F1234FC15A002BA33D /* Schedule.swift in Sources */,
 				FA90FD8822437BB2005148AC /* TranslatableModule.swift in Sources */,
 				FAF183B02248E76400CA2492 /* TokenResponse.swift in Sources */,
 				FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */,
+				FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */,
 				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
 				FA90FD9C22437D76005148AC /* Transition.swift in Sources */,
 				FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */,
 				FA90FDAE22437F25005148AC /* NewsRouter.swift in Sources */,
+				FA2062C923453E00007ED9BA /* CourseComponentView.swift in Sources */,
+				FA2062DB234628A6007ED9BA /* InboxModuleBuilder.swift in Sources */,
+				FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */,
 				FA90FDA522437DC5005148AC /* Route.swift in Sources */,
 				FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */,
 				FAF183BA2249096800CA2492 /* CoursesView.swift in Sources */,
@@ -714,21 +875,29 @@
 				FAF183CD2249126200CA2492 /* MaskLabel.swift in Sources */,
 				FA90FE052243CF3B005148AC /* ArticleRoute.swift in Sources */,
 				FA90FE022243CF0E005148AC /* ArticleViewModel.swift in Sources */,
+				FA2062C723453DEB007ED9BA /* CourseComponent.swift in Sources */,
 				FA90FD8622437B9A005148AC /* Translatable.swift in Sources */,
 				FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */,
 				FA90FDA222437D94005148AC /* PushTransition.swift in Sources */,
+				FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */,
+				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
+				FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
+				FA2062DD234628A6007ED9BA /* InboxViewController.swift in Sources */,
 				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
 				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
 				FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */,
 				FA90FDF52243C5B5005148AC /* ArticleComponent.swift in Sources */,
 				FA90FDB122437F25005148AC /* NewsViewModel.swift in Sources */,
+				FA2062DE234628A6007ED9BA /* InboxView.swift in Sources */,
 				FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */,
 				FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */,
 				FA90FE002243CF0E005148AC /* ArticleViewController.swift in Sources */,
 				FA90FD9422437CC2005148AC /* NavigationController.swift in Sources */,
+				FA20623A23434EE5007ED9BA /* EmptyResponse.swift in Sources */,
 				FA90FD9222437C9D005148AC /* Styling.swift in Sources */,
 				FA90FDE12243966B005148AC /* API.swift in Sources */,
+				FA0927D12347D1E400D32827 /* NotificationModel.swift in Sources */,
 				FA90FD8B22437BD0005148AC /* Module.swift in Sources */,
 				FA90FE082243D1E5005148AC /* ArticleSectionHeader.swift in Sources */,
 				FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */,
@@ -810,7 +979,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -867,7 +1036,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -883,21 +1052,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ORTUS/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -906,21 +1076,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ORTUS/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,0 +1,5 @@
+use_frameworks!
+
+target "CalendarKitDemo" do
+	pod 'CalendarKit', path: '../'
+end

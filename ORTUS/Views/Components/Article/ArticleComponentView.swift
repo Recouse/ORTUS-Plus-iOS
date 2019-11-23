@@ -35,20 +35,12 @@ class ArticleComponentView: UIView {
         return label
     }()
     
-    let separatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "gray")
-        
-        return view
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         prepareImageView()
         prepareAuthorLabel()
         prepareTitleLabel()
-        prepareSeparatorView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -82,16 +74,6 @@ extension ArticleComponentView {
             $0.left.equalTo(imageView.snp.right).offset(10)
             $0.right.equalToSuperview().inset(Global.UI.edgeInset)
             $0.bottom.equalTo(imageView).priority(250)
-        }
-    }
-    
-    func prepareSeparatorView() {
-        addSubview(separatorView)
-        separatorView.snp.makeConstraints {
-            $0.height.equalTo(1)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-            $0.right.equalToSuperview()
-            $0.bottom.equalToSuperview()
         }
     }
 }

@@ -16,13 +16,21 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        interactivePopGestureRecognizer?.delegate = self
+        
         prepareNavigationBar()
     }
     
     func prepareNavigationBar() {
         navigationBar.prefersLargeTitles = true
         navigationBar.isTranslucent = true
-        navigationBar.setBackgroundImage(UIColor.white.uiImage, for: .default)
+//        navigationBar.setBackgroundImage(UIColor.white.uiImage, for: .default)
 //        navigationBar.shadowImage = UIImage()
+    }
+}
+
+extension NavigationController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
     }
 }

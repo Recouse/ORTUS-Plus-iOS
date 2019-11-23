@@ -13,12 +13,14 @@ import Localize_Swift
 struct Global {    
     struct Key {
         static let accessToken = "access_token"
+        static let accessTokenEncrypted = "access_token_encrypted"
         static let refreshToken = "refresh_token"
-        static let tokenExpiresIn = "token_expires_in"
+        static let tokenExpiresOn = "expires_on"
     }
     
     struct Server {
         static let baseURL = "https://apps.rtu.lv/mobile-api/v1/"
+        static let pinAuthURL = "https://id2.rtu.lv/openam/UI/Login"
     }
     
     struct Locale {
@@ -29,11 +31,11 @@ struct Global {
     
     // UI
     struct UI {
-        static let edgeInset: CGFloat = 15
+        static let edgeInset: CGFloat = 16
         
         // TabBar
         enum TabBar: Int {
-            case news, schedule, courses, settings
+            case news, schedule, courses, inbox, settings
         }
     }
 }

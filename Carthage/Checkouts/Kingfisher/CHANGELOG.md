@@ -2,6 +2,86 @@
 
 -----
 
+## [5.7.1 - Thread Things](https://github.com/onevcat/Kingfisher/releases/tag/5.7.1) (2019-08-11)
+
+#### Fix
+* Setting `runLoopMode` for `AnimatedImageView` will trigger animation restart normally. [#1253](https://github.com/onevcat/Kingfisher/pull/1253)
+* A possible thread issue when removing storage object from memory cache by the cache policy. [#1255](https://github.com/onevcat/Kingfisher/pull/1255)
+* Manipulating on `AnimateImageView`'s frame array is now thread safe. [#1257](https://github.com/onevcat/Kingfisher/pull/1257)
+
+---
+
+## [5.7.0 - Summer Bird](https://github.com/onevcat/Kingfisher/releases/tag/5.7.0) (2019-07-03)
+
+#### Add
+* Mark `cacheFileURL(forKey:)` of `DiskStorage` to public. [#1214](https://github.com/onevcat/Kingfisher/issues/1214)
+* Mark `KingfisherManager` initializer to public so other dependencies can customize the manager behavior. [#1216](https://github.com/onevcat/Kingfisher/issues/1216)
+
+#### Fix
+* Performance improvement on progressive JPEG scanning. [#1218](https://github.com/onevcat/Kingfisher/pull/1218)
+* Fix a potential thread issue when checking progressive JPEG. [#1220](https://github.com/onevcat/Kingfisher/pull/1220)
+
+#### Remove
+* The deprecated `Result` extensions for Swift 4 back compatibility are removed. [#1224](https://github.com/onevcat/Kingfisher/pull/1224)
+
+---
+
+## [5.6.0 - The Sands of Time](https://github.com/onevcat/Kingfisher/releases/tag/5.6.0) (2019-06-11)
+
+#### Add
+* Support extending memory cache TTL to a specified time instead of the fixed original expire setting. Use the `.memoryCacheAccessExtendingExpiration` to set a customize expiration extending duration when accessing the image. [#1196](https://github.com/onevcat/Kingfisher/pull/1196)
+* Add prebuilt binary framework when releasing to GitHub. Further supporting of fully compatible binary framework would come after Swift module stability. [#1194](https://github.com/onevcat/Kingfisher/pull/1194)
+
+#### Fix
+* Resizing performance for animated images should be improved dramatically. [#1189](https://github.com/onevcat/Kingfisher/pull/1189)
+* A small optimization on MD5 calculation for image file cache key. [#1183](https://github.com/onevcat/Kingfisher/pull/1183)
+
+---
+
+## [5.5.0 - Progressive JPEG](https://github.com/onevcat/Kingfisher/releases/tag/5.5.0) (2019-05-17)
+
+#### Add
+* Add support for loading progressive JPEG images. This feature is still in beta and will be improved in the next few releases. To try it out, make sure you are loading a progressive JPEG image with a `.progressiveJPEG` options passed in. Thanks @lixiang1994 [#1181](https://github.com/onevcat/Kingfisher/pull/1181)
+* Choose to use `Swift.Result` as the default result type when Swift 5.0 or above is applied. [#1146](https://github.com/onevcat/Kingfisher/pull/1146)
+
+#### Fix
+* Apply to some modern Swift syntax, which may also improve internal performance a bit. [#1181](https://github.com/onevcat/Kingfisher/pull/1181)
+
+---
+
+## [5.4.0 - Accio Support](https://github.com/onevcat/Kingfisher/releases/tag/5.4.0) (2019-04-24)
+
+#### Add
+* Add support for building project with [Accio](https://github.com/JamitLabs/Accio) (and Swift Package Manager). [#1153](https://github.com/onevcat/Kingfisher/pull/1153)
+
+#### Fix
+* Now `maxCachePeriodInSecond` of cache would treat 0 as expiring correctly. [#1160](https://github.com/onevcat/Kingfisher/pull/1160)
+* Normalization of image now returns an image with `.up` as orientation. [#1163](https://github.com/onevcat/Kingfisher/pull/1163)
+
+---
+
+## [5.3.1 - Prefetching Thread](https://github.com/onevcat/Kingfisher/releases/tag/5.3.1) (2019-03-28)
+
+#### Fix
+* Some thread issues which may cause crash when loading images by `ImagePrefetcher`. [#1150](https://github.com/onevcat/Kingfisher/pull/1150)
+* Setting a negative value by the deprecated `maxCachePeriodInSecond` API now expires the cache correctly. [#1145](https://github.com/onevcat/Kingfisher/pull/1145)
+
+---
+
+## [5.3.0 - Prefetching Sources](https://github.com/onevcat/Kingfisher/releases/tag/5.3.0) (2019-03-24)
+
+#### Add
+* Now `ImagePretcher` also supports using `Source` as fetching target. [#1142](https://github.com/onevcat/Kingfisher/pull/1142)
+* An option to skip file name hashing when storing image to disk cashe. [#1140](https://github.com/onevcat/Kingfisher/pull/1140)
+* Supports multiple Swift versions for CocoaPods 1.7.0.
+
+#### Fix
+* An issue that loading a downsampled image from original version might lead to different scale and potential memory performance problem. [#1126](https://github.com/onevcat/Kingfisher/pull/1126)
+* Marking setter of `kf` wrapper as `nonmutating` and seperate value/reference version of `KingfisherCompatible`. This allows mutating properties on `kf` even with a `let` declaration. [#1134](https://github.com/onevcat/Kingfisher/pull/1134)
+* A regression which causes stack overflow when using `ImagePretcher` to load huge ammount of images. [#1143](https://github.com/onevcat/Kingfisher/pull/1143)
+
+---
+
 ## [5.2.0 - Swift 5.0](https://github.com/onevcat/Kingfisher/releases/tag/5.2.0) (2019-02-27)
 
 #### Add

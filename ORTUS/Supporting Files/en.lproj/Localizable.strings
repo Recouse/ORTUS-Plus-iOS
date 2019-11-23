@@ -23,5 +23,8 @@
 // Courses
 "courses.title" = "Courses";
 
+// Inbox
+"inbox.title" = "Inbox";
+
 // Settings
 "settings.title" = "Settings";

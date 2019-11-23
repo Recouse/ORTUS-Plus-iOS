@@ -7,16 +7,18 @@
 //
 
 import Alamofire
+import KeychainAccess
 
 enum OAuthApi: API {
     case auth
     case token(code: String)
+    case refreshToken
     
     var method: HTTPMethod {
         switch self {
         case .auth:
             return .get
-        case .token:
+        case .token, .refreshToken:
             return .post
         }
     }
@@ -27,6 +29,10 @@ enum OAuthApi: API {
             return "https://id2.rtu.lv/openam/oauth2/authorize"
         case let .token(code):
             return "https://id2.rtu.lv/openam/oauth2/access_token?client_id=\(Global.clientID)&client_secret=\(Global.clientSecret)&redirect_uri=\(OAuth.redirectURI)&grant_type=authorization_code&code=\(code)"
+        case .refreshToken:
+            let keychain = Keychain()
+            
+            return "https://id2.rtu.lv/openam/oauth2/access_token?client_id=\(Global.clientID)&client_secret=\(Global.clientSecret)&redirect_uri=\(OAuth.redirectURI)&grant_type=refresh_token&refresh_token=\(keychain[Global.Key.refreshToken] ?? "")"
         }
     }
     

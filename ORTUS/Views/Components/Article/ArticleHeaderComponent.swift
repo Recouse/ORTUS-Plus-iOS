@@ -9,7 +9,7 @@
 import UIKit
 import Carbon
 
-struct ArticleHeaderComponent: Component, Equatable {
+struct ArticleHeaderComponent: Carbon.Component, Equatable {
     var article: Article
     
     func renderContent() -> ArticleHeaderComponentView {
@@ -17,7 +17,10 @@ struct ArticleHeaderComponent: Component, Equatable {
     }
     
     func render(in content: ArticleHeaderComponentView) {
-        content.imageView.kf.setImage(with: URL(string: article.imageURL))
+        if let imageURL = article.imageURL {
+            content.imageView.kf.setImage(with: URL(string: imageURL))
+        }
+        
         content.titleLabel.text = article.title
     }
     

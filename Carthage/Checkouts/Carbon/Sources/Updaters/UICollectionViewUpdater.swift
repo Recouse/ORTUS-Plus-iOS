@@ -2,8 +2,12 @@ import UIKit
 
 /// An updater for managing diffing updates to render data to the `UICollectionView`.
 open class UICollectionViewUpdater<Adapter: Carbon.Adapter & UICollectionViewDelegate & UICollectionViewDataSource>: Updater {
-    /// A Bool value indicating whether that enable diffing animations. Default is true.
+    /// A Bool value indicating whether that enable diffing animation. Default is true.
     open var isAnimationEnabled = true
+
+    /// A Bool value indicating whether that enable diffing animation while target is
+    /// scrolling. Default is false.
+    open var isAnimationEnabledWhileScrolling = true
 
     /// A Bool value indicating whether that skips reload components. Default is false.
     open var skipReloadComponents = false
@@ -11,6 +15,10 @@ open class UICollectionViewUpdater<Adapter: Carbon.Adapter & UICollectionViewDel
     /// A Bool value indicating whether that to always render visible components
     /// after diffing updated. Default is false.
     open var alwaysRenderVisibleComponents = false
+
+    /// A Bool value indicating whether that to reset content offset after
+    /// updated if not scrolling. Default is false.
+    open var keepsContentOffset = false
 
     /// Max number of changes that can be animated for diffing updates. Default is 300.
     open var animatableChangeCount = 300
@@ -84,6 +92,8 @@ open class UICollectionViewUpdater<Adapter: Carbon.Adapter & UICollectionViewDel
         }
 
         func performAnimatedUpdates() {
+            let contentOffsetBeforeUpdates = target.contentOffset
+
             CATransaction.begin()
             CATransaction.setCompletionBlock(completion)
 
@@ -128,9 +138,16 @@ open class UICollectionViewUpdater<Adapter: Carbon.Adapter & UICollectionViewDel
             renderVisibleComponentsIfNeeded()
 
             CATransaction.commit()
+
+            if keepsContentOffset && target._isContetRectContainsBounds && !target._isScrolling {
+                target.contentOffset = CGPoint(
+                    x: min(target._maxContentOffsetX, contentOffsetBeforeUpdates.x),
+                    y: min(target._maxContentOffsetY, contentOffsetBeforeUpdates.y)
+                )
+            }
         }
 
-        if isAnimationEnabled {
+        if isAnimationEnabled && (!target._isScrolling || isAnimationEnabledWhileScrolling) {
             performAnimatedUpdates()
         }
         else {

@@ -19,6 +19,30 @@ advertisement**.
 
 ## Changelog
 
+### Version 3.8.2
+SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/175948/YandexMobileMetrica-3.8.2-ios-fd6bf496-ed60-4d84-978a-a8f9a818b566.zip)
+
+* Fixed an issue with serialization of revenue decimal price.
+
+### Version 3.8.1
+SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/175948/YandexMobileMetrica-3.8.1-ios-05f06e48-1975-4ece-9947-1562868bfc84.zip)
+
+* Fixed an issue with "helper" command line tool in dynamic frameworks.
+
+### Version 3.8.0
+SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/128534/YandexMobileMetrica-3.8.0-ios-4a829c81-8941-4676-9136-48a22f386501.zip)
+
+* Added a command line tool for dSYM uploading.
+
+### Version 3.7.1
+SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/175948/YandexMobileMetrica-3.7.1-ios-066381b6-39c3-4794-949f-2391e0ea618f.zip)
+* Added support of NSDecimalNumber for a price in YMMRevenueInfo.
+* Added the API to control sessions manually (see the sessionsAutoTracking property of YMMYandexMetricaConfiguration).
+* Added the configuration flag to handle activation as a session start (see handleActivationAsSessionStart of YMMYandexMetricaConfiguration).
+* Stopped supporting the reportReferralUrl method. The method is deprecated.
+* Stopped supporting the double type for the price field in the YMMRevenueInfo class. The field is deprecated.
+* Fixed an issue with additional information in crash logs (active_time_since_launch, active_time_since_last_crash etc).
+
 ### Version 3.6.0
 SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/175948/YandexMobileMetrica-3.6.0-ios-702bb3c2-76a5-4b77-9dd3-b743d5996080.zip)
 

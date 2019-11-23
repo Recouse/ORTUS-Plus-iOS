@@ -20,8 +20,12 @@ open class UITableViewUpdater<Adapter: Carbon.Adapter & UITableViewDelegate & UI
     /// An animation for row reloads. Default is fade.
     open var reloadRowsAnimation = UITableView.RowAnimation.fade
 
-    /// A Bool value indicating whether that enable diffing animations. Default is true.
+    /// A Bool value indicating whether that enable diffing animation. Default is true.
     open var isAnimationEnabled = true
+
+    /// A Bool value indicating whether that enable diffing animation while target is
+    /// scrolling. Default is false.
+    open var isAnimationEnabledWhileScrolling = true
 
     /// A Bool value indicating whether that skips reload components. Default is false.
     open var skipReloadComponents = false
@@ -29,6 +33,10 @@ open class UITableViewUpdater<Adapter: Carbon.Adapter & UITableViewDelegate & UI
     /// A Bool value indicating whether that to always render visible components
     /// after diffing updated. Default is false.
     open var alwaysRenderVisibleComponents = false
+
+    /// A Bool value indicating whether that to reset content offset after
+    /// updated if not scrolling. Default is false.
+    open var keepsContentOffset = false
 
     /// Max number of changes that can be animated for diffing updates. Default is 300.
     open var animatableChangeCount = 300
@@ -114,6 +122,8 @@ open class UITableViewUpdater<Adapter: Carbon.Adapter & UITableViewDelegate & UI
         }
 
         func performAnimatedUpdates() {
+            let contentOffsetYBeforeUpdates = target.contentOffset.y
+
             CATransaction.begin()
             CATransaction.setCompletionBlock(completion)
 
@@ -158,9 +168,13 @@ open class UITableViewUpdater<Adapter: Carbon.Adapter & UITableViewDelegate & UI
             renderVisibleComponentsIfNeeded()
 
             CATransaction.commit()
+
+            if keepsContentOffset && target._isContetRectContainsBounds && !target._isScrolling {
+                target.contentOffset.y = min(target._maxContentOffsetY, contentOffsetYBeforeUpdates)
+            }
         }
 
-        if isAnimationEnabled {
+        if isAnimationEnabled && (!target._isScrolling || isAnimationEnabledWhileScrolling) {
             performAnimatedUpdates()
         }
         else {

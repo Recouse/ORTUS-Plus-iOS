@@ -17,6 +17,7 @@ extension ArticleRoute where Self: RouterProtocol {
     func openArticle(_ article: Article) {
         let transition = self.transition
         let module = ArticleModuleBuilder.build(with: article, customTransition: transition)
+        module.hidesBottomBarWhenPushed = true
         
         open(module, transition: transition, completion: nil)
     }

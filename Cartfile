@@ -1,15 +1,15 @@
 # Networking
-github "Alamofire/Alamofire" "5.0.0-beta.3"
+github "Alamofire/Alamofire" "5.0.0-rc.3"
 github "onevcat/Kingfisher" ~> 5.0
 
 # UI
-github "SnapKit/SnapKit" ~> 4.0.0
-github "ra1028/Carbon"
+github "SnapKit/SnapKit" ~> 5.0.0
+github "ra1028/Carbon" ~> 0.3.0
 
 # Utilities
-github "google/promises"
+github "google/promises" ~> 1.2.8
 github "kishikawakatsumi/KeychainAccess"
 github "marmelroy/Localize-Swift"
 
 # Analytics
-github "yandexmobile/metrica-sdk-ios" ~> 3.6.0
+github "yandexmobile/metrica-sdk-ios" ~> 3.7.0

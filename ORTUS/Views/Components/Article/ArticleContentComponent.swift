@@ -12,7 +12,7 @@ import Carbon
 import WebKit
 import SafariServices
 
-class ArticleContentComponent: Component, Equatable, ArticleContentViewDelegate {
+class ArticleContentComponent: Carbon.Component, Equatable, ArticleContentViewDelegate {
     var onContentChange: (() -> Void)?
     
     var onLinkActivated: ((_ url: URL) -> Void)?
@@ -123,6 +123,14 @@ class ArticleContentView: UIView, WKNavigationDelegate {
             let url = navigationAction.request.url else {
             decisionHandler(.allow)
             return
+        }
+        
+        if url.scheme == "tel" || url.scheme == "mailto" {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                decisionHandler(.cancel)
+                return
+            }
         }
         
         self.delegate?.linkActivated(url)

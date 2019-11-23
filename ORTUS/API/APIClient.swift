@@ -19,30 +19,27 @@ class APIClient {
         decoder: JSONDecoder = JSONDecoder()
     ) -> Promise<T> {
         return Promise { fulfill, reject in
-            AF.request(route).responseDecodable (decoder: decoder) { (response: DataResponse<T>) in
-                switch response.result {
-                case .success(let responseObject):
-                    fulfill(responseObject)
-                case .failure(let error):
-                    reject(error)
-                }
-            }
+            OAuth.refreshToken().then { _ in
+                requestWithResponse(ofType: responseType, route: route, decoder: decoder)
+            }.then { response in
+                fulfill(response)
+            }.catch { reject($0) }
         }
     }
     
-    @discardableResult
-    static func performRequest(route: API) -> Promise<Bool> {
-        return Promise { fulfill, reject in
-            AF.request(route).responseData { response in
-                switch response.result {
-                case .success:
-                    fulfill(true)
-                case .failure(let error):
-                    reject(error)
-                }
-            }
-        }
-    }
+//    @discardableResult
+//    static func performRequest(route: API) -> Promise<Bool> {
+//        return Promise { fulfill, reject in
+//            AF.request(route).responseData { response in
+//                switch response.result {
+//                case .success:
+//                    fulfill(true)
+//                case .failure(let error):
+//                    reject(error)
+//                }
+//            }
+//        }
+//    }
     
     @discardableResult
     static func postFormData<T: Decodable> (
@@ -66,7 +63,24 @@ class APIClient {
                     
                     $0.append(parameterValue.data(using: .utf8) ?? Data(), withName: key)
                 }
-            }, with: route).responseDecodable { (response: DataResponse<T>) in
+            }, with: route).responseDecodable { (response: DataResponse<T, AFError>) in
+                switch response.result {
+                case .success(let responseObject):
+                    fulfill(responseObject)
+                case .failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    fileprivate static func requestWithResponse<T: Decodable>(
+        ofType type: T.Type,
+        route: API,
+        decoder: JSONDecoder = JSONDecoder()
+    ) -> Promise<T> {
+        return Promise { fulfill, reject in
+            AF.request(route).responseDecodable (decoder: decoder) { (response: DataResponse<T, AFError>) in
                 switch response.result {
                 case .success(let responseObject):
                     fulfill(responseObject)

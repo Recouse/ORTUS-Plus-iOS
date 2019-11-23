@@ -9,7 +9,7 @@
 import UIKit
 import Carbon
 
-struct ArticleSectionHeader: Component, Equatable {
+struct ArticleSectionHeader: Carbon.Component, Equatable {
     let dateFormatter = DateFormatter()
     
     var date: Date
@@ -24,7 +24,7 @@ struct ArticleSectionHeader: Component, Equatable {
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
-        return CGSize(width: bounds.width, height: 50)
+        return CGSize(width: bounds.width, height: 55)
     }
 }
 
@@ -43,7 +43,7 @@ class ArticleSectionHeaderView: UIView {
         dateLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(5)
         }
     }
     

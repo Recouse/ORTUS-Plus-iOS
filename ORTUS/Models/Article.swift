@@ -18,7 +18,8 @@ struct Article: Codable {
     let text: String
     let id: Int
     let date: Date
-    let title, author, imageURL: String
+    let title, author: String
+    let imageURL: String?
 }
 
 class ArticleDecoder: JSONDecoder {

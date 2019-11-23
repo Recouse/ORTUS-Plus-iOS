@@ -24,7 +24,8 @@ class NewsViewModel: ViewModel {
         return Promise { fulfill, reject in
             APIClient.performRequest(
                 ArticlesResponse.self,
-                route: NewsApi.publicArticles,
+                route: UserViewModel.isLoggedIn ? NewsApi.articles : NewsApi.publicArticles,
+//                route: NewsApi.publicArticles,
                 decoder: ArticleDecoder()
             ).then { response in
                 self.articles = Dictionary(grouping: response.result.articles, by: {

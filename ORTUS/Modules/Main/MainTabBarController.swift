@@ -83,6 +83,32 @@ class MainTabBarController: TranslatableTabBarController {
         return controller
     }()
     
+    // TODO: Inbox
+    // Notifications
+//    let inboxItem: UITabBarItem = {
+//        let item = UITabBarItem()
+//        item.tag = Global.UI.TabBar.inbox.rawValue
+//        item.badgeValue = "2"
+//
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            let image = UIImage(named: "inbox")?.forceLoad()
+//
+//            DispatchQueue.main.async {
+//                item.image = image
+//            }
+//        }
+//
+//        return item
+//    }()
+//
+//    lazy var inboxController: NavigationController = { [unowned self] in
+//        let module = InboxModuleBuilder.build()
+//        let controller = NavigationController(rootViewController: module)
+//        controller.tabBarItem = self.inboxItem
+//
+//        return controller
+//    }()
+    
     // Settings
     lazy var settingsItem: UITabBarItem = {
         var item = UITabBarItem()
@@ -135,6 +161,8 @@ class MainTabBarController: TranslatableTabBarController {
         newsItem.title = "news.title".localized()
         scheduleItem.title = "schedule.title".localized()
         coursesItem.title = "courses.title".localized()
+        // TODO: Inbox
+//        inboxItem.title = "inbox.title".localized()
         settingsItem.title = "settings.title".localized()
     }
     
@@ -146,6 +174,8 @@ class MainTabBarController: TranslatableTabBarController {
         if UserViewModel.isLoggedIn {
             modules.append(scheduleController)
             modules.append(coursesController)
+            // TODO: Inbox
+//            modules.append(inboxController)
         }
         
         modules.append(settingsController)

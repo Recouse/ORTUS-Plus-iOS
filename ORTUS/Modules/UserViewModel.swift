@@ -20,7 +20,7 @@ class UserViewModel {
         let keychain = Keychain()
         keychain[Global.Key.accessToken] = nil
         keychain[Global.Key.refreshToken] = nil
-        keychain[Global.Key.tokenExpiresIn] = nil
+        keychain[Global.Key.tokenExpiresOn] = nil
         
         NotificationCenter.default.post(name: .userSignedOut, object: nil)
     }
