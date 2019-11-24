@@ -47,13 +47,15 @@ final class OAuth {
         }
     }
     
-    static func refreshToken() -> Promise<Bool> {
+    static func refreshToken(forced: Bool = false) -> Promise<String> {
         let keychain = Keychain()
         let currentDate = Date()
-        if let expiresOn = keychain[Global.Key.tokenExpiresOn],
+        if !forced, let expiresOn = keychain[Global.Key.tokenExpiresOn],
             let expiresOnDate = TimeInterval(expiresOn) {
             if currentDate.timeIntervalSince1970 < expiresOnDate {
-                return Promise { fulfill, reject in fulfill(true) }
+                return Promise { fulfill, reject in
+                    fulfill(keychain[Global.Key.accessTokenEncrypted] ?? "")
+                }
             }
         }
         
@@ -64,7 +66,7 @@ final class OAuth {
             ).then { response in
                 OAuth.updateTokenData(from: response)
                 
-                fulfill(true)
+                fulfill(response.accessTokenEncrypted)
             }.catch { reject($0) }
         }
     }

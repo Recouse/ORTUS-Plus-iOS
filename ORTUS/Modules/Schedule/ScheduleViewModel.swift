@@ -23,10 +23,17 @@ class ScheduleViewModel: ViewModel {
     }
     
     func loadSchedule() -> Promise<Bool> {
+        let today = Date()
+        var date = today
+        
+        if Calendar.current.component(.weekday, from: today) == 1 {
+            date = Calendar.current.date(byAdding: .day, value: 1, to: today) ?? today
+        }
+        
         return Promise { fulfill, reject in
             APIClient.performRequest(
                 ScheduleResponse.self,
-                route: ScheduleApi.schedule(date: Date())
+                route: ScheduleApi.schedule(date: date)
             ).then { response in
                 let sortedResponse = response.result.sorted(by: {
                     let dateFormatter = DateFormatter()

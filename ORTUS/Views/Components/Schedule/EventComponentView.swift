@@ -82,6 +82,7 @@ extension EventComponentView {
         addSubview(contentSeparator)
         contentSeparator.snp.makeConstraints {
             $0.width.equalTo(2)
+            $0.height.greaterThanOrEqualTo(30)
             $0.top.bottom.equalToSuperview().offset(7).inset(7)
             $0.left.equalToSuperview().offset(Global.UI.edgeInset * 2 + dateEstimatedWidth + 7)
         }

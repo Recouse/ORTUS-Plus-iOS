@@ -79,14 +79,16 @@ class CoursesViewController: TranslatableModule, ModuleViewModel {
     }
     
     func open(course: Course) {
-        guard let url = course.link.generatePinAuthURL() else {
-            return
+        OAuth.refreshToken().then { accessTokenEncrypted in
+            guard let url = course.link.generatePinAuthURL(withToken: accessTokenEncrypted) else {
+                return
+            }
+            
+            let safariController = SFSafariViewController(url: url)
+            safariController.delegate = self
+            
+            self.present(safariController, animated: true, completion: nil)
         }
-        
-        let safariController = SFSafariViewController(url: url)
-        safariController.delegate = self
-        
-        present(safariController, animated: true, completion: nil)
     }
     
     @objc func refresh() {

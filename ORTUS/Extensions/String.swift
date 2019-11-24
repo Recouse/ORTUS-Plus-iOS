@@ -7,25 +7,11 @@
 //
 
 import Foundation
-import KeychainAccess
 
 extension String {
-    func generatePinAuthURL() -> URL? {
-        let keychain = Keychain()
+    func generatePinAuthURL(withToken token: String) -> URL? {
+        let string = "\(Global.Server.pinAuthURL)?module=PINAuth&locale=en&token=\(token)&goto=\(self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")"
         
-        let queryItems = [
-            URLQueryItem(name: "module", value: "PINAuth"),
-            URLQueryItem(name: "locale", value: "en"),
-            URLQueryItem(name: "token", value: keychain[Global.Key.accessTokenEncrypted]),
-            URLQueryItem(name: "goto", value: self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed))
-        ]
-        
-        guard var urlComponents = URLComponents(string: Global.Server.pinAuthURL) else {
-            return nil
-        }
-        
-        urlComponents.queryItems = queryItems
-        
-        return urlComponents.url
+        return URL(string: string)
     }
 }

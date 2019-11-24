@@ -28,11 +28,16 @@ enum ScheduleApi: API {
     var parameters: Parameters? {
         switch self {
         case let .schedule(date):
-            var params = parameters(for: .getUserSchedule)
+            var p = parameters(for: .getUserSchedule)
             
-            print(date)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             
-            return params
+            var params = p["params"] as? [String]
+            params?.insert(dateFormatter.string(from: date), at: 1)
+            p["params"] = params
+            
+            return p
         }
     }
 }

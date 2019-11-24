@@ -156,20 +156,34 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     }
     
     func open(event: Event) {
-        guard let url = event.link.generatePinAuthURL() else {
-            return
+        OAuth.refreshToken().then { accessTokenEncrypted in
+            guard let url = event.link.generatePinAuthURL(withToken: accessTokenEncrypted) else {
+                return
+            }
+            
+            let controller = SFSafariViewController(url: url)
+            controller.delegate = self
+            
+            self.present(controller, animated: true, completion: nil)
         }
-        
-        let controller = SFSafariViewController(url: url)
-        controller.delegate = self
-        
-        present(controller, animated: true, completion: nil)
     }
 }
 
 extension ScheduleViewController {
     func prepareNavigationItem() {
         navigationItem.largeTitleDisplayMode = .never
+        
+//        let leftButton = UIButton()
+//        leftButton.setImage(UIImage(named: "chevronLeft"), for: .normal)
+//        leftButton.imageView?.contentMode = .scaleAspectFit
+//        leftButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
+//        
+//        let rightButton = UIButton()
+//        rightButton.setImage(UIImage(named: "chevronRight"), for: .normal)
+//        rightButton.imageView?.contentMode = .scaleAspectFit
+//        rightButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
     
     func prepareToolbar() {
