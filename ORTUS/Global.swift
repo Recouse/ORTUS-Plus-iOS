@@ -38,6 +38,10 @@ struct Global {
             case news, schedule, courses, inbox, settings
         }
     }
+    
+    static let telegramChatUsername = "ortusplus"
+    static let telegramChatURL = "https://t.me/\(Self.telegramChatUsername)"
+    static let telegramChatDeepURL = "tg://resolve?domain=\(Self.telegramChatUsername)"
 }
 
 enum HTTPHeaderField: String {

@@ -59,6 +59,15 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
                         self.addAccount()
                     }))
                 ]
+            ),
+            Section(
+                id: "other",
+                header: ViewNode(Header(title: "Other".uppercased())),
+                cells: [
+                    CellNode(FormLabel(title: "Report a bug", onSelect: { [unowned self] in
+                        self.reportBug()
+                    }))
+                ]
             )
         )
     }
@@ -106,6 +115,14 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
     
     @objc func signedOut() {
         render()
+    }
+    
+    func reportBug() {
+        guard let url = URL(string: Global.telegramChatURL) else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
 
