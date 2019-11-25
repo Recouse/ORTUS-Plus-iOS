@@ -18,7 +18,7 @@ struct Schedule: Codable {
 struct ScheduleItem {
     var item: Codable
     
-    var time: String
+    var time: String = "00:00"
     
     var timeDate: Date {
         let dateFormatter = DateFormatter()

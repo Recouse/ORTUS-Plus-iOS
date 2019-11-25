@@ -77,20 +77,14 @@ class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.alpha = 0
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        navigationController?.navigationBar.setBackgroundImage(UIColor.white.uiImage, for: .default)
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
-        navigationController?.navigationBar.tintColor = view.tintColor
-        navigationController?.navigationBar.backgroundColor = .clear
+        navigationController?.navigationBar.alpha = 1
         UIApplication.shared.statusBarView?.backgroundColor = .clear
-        navigationController?.navigationBar.barStyle = .default
     }
     
     override func prepareLocales() {
@@ -138,7 +132,11 @@ class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentab
         alert(type: .info, message: "This will be available soon!")
     }
     
-    func updateStatusBar(offset: CGFloat) {
+    @objc func back() {
+        viewModel.router.close()
+    }
+    
+    fileprivate func updateStatusBar(offset: CGFloat) {
         let statusBarCurrentStyle = statusBarStyle
         
         if offset >= 1 {
@@ -157,8 +155,8 @@ extension ArticleViewController {
     func prepareNavigationItem() {
         navigationItem.largeTitleDisplayMode = .never
         
-        translateBarButtonItem = UIBarButtonItem(image: UIImage(named: "translate"), style: .plain, target: self, action: #selector(translate))
-        navigationItem.rightBarButtonItem = translateBarButtonItem
+//        translateBarButtonItem = UIBarButtonItem(image: UIImage(named: "translate"), style: .plain, target: self, action: #selector(translate))
+//        navigationItem.rightBarButtonItem = translateBarButtonItem
     }
     
     func prepareHeaderView() {
@@ -177,6 +175,7 @@ extension ArticleViewController {
         }
         
         headerView.titleLabel.text = viewModel.article.title
+        headerView.backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
 }
 
@@ -186,23 +185,10 @@ extension ArticleViewController: ArticleTableViewAdapterDelegate {
         
         if offset > 1 {
             offset = 1
-            let color = UIColor(red: 1, green: 1, blue: 1, alpha: offset)
-            let navigationcolor = UIColor(hue: 211.29/360, saturation: offset, brightness: 1, alpha: 1)
-
-            navigationController?.navigationBar.tintColor = navigationcolor
-            navigationController?.navigationBar.backgroundColor = color
-            UIApplication.shared.statusBarView?.backgroundColor = color
-
-            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: navigationcolor]
-            navigationController?.navigationBar.barStyle = .default
+            
+            navigationController?.navigationBar.alpha = offset
         } else {
-            let color = UIColor.init(red: 1, green: 1, blue: 1, alpha: offset)
-            navigationController?.navigationBar.tintColor = .white
-            navigationController?.navigationBar.backgroundColor = color
-            UIApplication.shared.statusBarView?.backgroundColor = color
-
-            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-            navigationController?.navigationBar.barStyle = .black
+            navigationController?.navigationBar.alpha = offset
         }
 
         updateStatusBar(offset: offset)

@@ -25,6 +25,7 @@ class NewsViewModel: ViewModel {
             APIClient.performRequest(
                 ArticlesResponse.self,
                 route: UserViewModel.isLoggedIn ? NewsApi.articles : NewsApi.publicArticles,
+                isPublic: !UserViewModel.isLoggedIn,
 //                route: NewsApi.publicArticles,
                 decoder: ArticleDecoder()
             ).then { response in

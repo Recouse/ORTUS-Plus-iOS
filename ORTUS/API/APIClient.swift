@@ -16,14 +16,25 @@ class APIClient {
     static func performRequest<T: Decodable> (
         _ responseType: T.Type,
         route: API,
+        isPublic: Bool = false,
         decoder: JSONDecoder = JSONDecoder()
     ) -> Promise<T> {
         return Promise { fulfill, reject in
-            OAuth.refreshToken().then { _ in
-                requestWithResponse(ofType: responseType, route: route, decoder: decoder)
-            }.then { response in
-                fulfill(response)
-            }.catch { reject($0) }
+            if isPublic {
+                requestWithResponse(
+                    ofType: responseType,
+                    route: route,
+                    decoder: decoder
+                ).then { response in
+                    fulfill(response)
+                }.catch { reject($0) }
+            } else {
+                OAuth.refreshToken().then { _ in
+                    requestWithResponse(ofType: responseType, route: route, decoder: decoder)
+                }.then { response in
+                    fulfill(response)
+                }.catch { reject($0) }
+            }
         }
     }
     
