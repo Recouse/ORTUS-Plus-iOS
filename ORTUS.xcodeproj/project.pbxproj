@@ -98,6 +98,7 @@
 		FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF9397238897C800F78FF1 /* ScheduleDateHeader.swift */; };
 		FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */; };
 		FABF939C2389CB6100F78FF1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF939B2389CB6100F78FF1 /* String.swift */; };
+		FABF93A1238BB15E00F78FF1 /* EventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF93A0238BB15E00F78FF1 /* EventLogger.swift */; };
 		FAD3CA252244F017009DA6AE /* ArticleContentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */; };
 		FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */; };
 		FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2D2245612C009DA6AE /* UIApplication.swift */; };
@@ -232,6 +233,7 @@
 		FABF9397238897C800F78FF1 /* ScheduleDateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDateHeader.swift; sourceTree = "<group>"; };
 		FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewAdapter.swift; sourceTree = "<group>"; };
 		FABF939B2389CB6100F78FF1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FABF93A0238BB15E00F78FF1 /* EventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLogger.swift; sourceTree = "<group>"; };
 		FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentComponent.swift; sourceTree = "<group>"; };
 		FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewAdapter.swift; sourceTree = "<group>"; };
 		FAD3CA2D2245612C009DA6AE /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */,
 				FA206231234344CE007ED9BA /* Alamofire+Promises.swift */,
 				FABF939B2389CB6100F78FF1 /* String.swift */,
+				FABF93A0238BB15E00F78FF1 /* EventLogger.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 			files = (
 				FA20624E23452B65007ED9BA /* Course.swift in Sources */,
 				FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */,
+				FABF93A1238BB15E00F78FF1 /* EventLogger.swift in Sources */,
 				FA2062DF234628A6007ED9BA /* InboxViewModel.swift in Sources */,
 				FAF183BE22490AD800CA2492 /* UserViewModel.swift in Sources */,
 				FA90FD9922437D5E005148AC /* Animator.swift in Sources */,

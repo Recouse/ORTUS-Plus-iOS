@@ -79,6 +79,8 @@ class CoursesViewController: TranslatableModule, ModuleViewModel {
     }
     
     func open(course: Course) {
+        EventLogger.log(.openedCourse(id: course.id, name: course.name))
+        
         OAuth.refreshToken().then { accessTokenEncrypted in
             guard let url = course.link.generatePinAuthURL(withToken: accessTokenEncrypted) else {
                 return

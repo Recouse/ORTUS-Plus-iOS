@@ -156,6 +156,8 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     }
     
     func open(event: Event) {
+        EventLogger.log(.openedEvent)
+        
         OAuth.refreshToken().then { accessTokenEncrypted in
             guard let url = event.link.generatePinAuthURL(withToken: accessTokenEncrypted) else {
                 return

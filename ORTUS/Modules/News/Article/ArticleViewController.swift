@@ -57,6 +57,11 @@ class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        EventLogger.log(.openedArticle(
+            id: viewModel.article.id,
+            title: viewModel.article.title
+        ))
+        
         prepareNavigationItem()
         prepareHeaderView()
         prepareData()
