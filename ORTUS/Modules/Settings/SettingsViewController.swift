@@ -55,10 +55,11 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
                 cells: [
                     UserViewModel.isLoggedIn ? CellNode(FormLogout(title: "Sign Out", onSelect: { [unowned self] in
                         self.signOut()
-                    })) : CellNode(FormAuth(title: "Add Account", onSelect: { [unowned self] in
+                    })) : CellNode(FormAuth(title: "Sign In", onSelect: { [unowned self] in
                         self.addAccount()
                     }))
-                ]
+                ],
+                footer: UserViewModel.isLoggedIn ? nil : ViewNode(Footer(description: "Sign in to your ORTUS account to get schedule and courses list"))
             ),
             Section(
                 id: "other",

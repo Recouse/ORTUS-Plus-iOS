@@ -23,13 +23,7 @@ struct EventComponent: IdentifiableComponent {
         if event.allDayEvent {
             content.timeLabel.text = "all-day"
         } else {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
-            let eventDate = dateFormatter.date(from: event.datetime)
-            dateFormatter.dateFormat = "HH:mm"
-            if let date = eventDate {
-                content.timeLabel.text = dateFormatter.string(from: date)
-            }
+            content.timeLabel.text = event.time
         }
     }
     

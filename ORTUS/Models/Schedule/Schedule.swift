@@ -20,11 +20,11 @@ struct ScheduleItem {
     
     var time: String = "00:00"
     
-    var timeDate: Date {
+    var timeDate: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         
-        return dateFormatter.date(from: time)! // Force unwrap because it always returns a date
+        return dateFormatter.date(from: time)
     }
     
     init<I: Codable>(_ item: I, time: String) {

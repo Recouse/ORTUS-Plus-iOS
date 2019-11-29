@@ -16,6 +16,8 @@ class SettingsView: UIView {
 //        tableView.separatorStyle = .noe
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.sectionFooterHeight = UITableView.automaticDimension
+        tableView.estimatedSectionFooterHeight = UITableView.automaticDimension
         
         return tableView
     }()
