@@ -28,7 +28,7 @@ class ArticleDecoder: JSONDecoder {
     override init() {
         super.init()
         
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        dateFormatter.setAPIDefaultFormat()
         dateDecodingStrategy = .formatted(dateFormatter)
     }
 }

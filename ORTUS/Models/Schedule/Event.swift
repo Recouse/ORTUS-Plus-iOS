@@ -16,7 +16,7 @@ struct Event: Codable {
     
     var time: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        dateFormatter.setAPIDefaultFormat()
         
         guard let date = dateFormatter.date(from: datetime) else {
             return "00:00"

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA02851723952F8200436C9F /* APIDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02851623952F8200436C9F /* APIDateFormatter.swift */; };
 		FA0927D12347D1E400D32827 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D02347D1E400D32827 /* NotificationModel.swift */; };
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
 		FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA206231234344CE007ED9BA /* Alamofire+Promises.swift */; };
@@ -137,6 +138,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA02851623952F8200436C9F /* APIDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDateFormatter.swift; sourceTree = "<group>"; };
 		FA0927D02347D1E400D32827 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		FA0927D32347E3B000D32827 /* NotificationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsApi.swift; sourceTree = "<group>"; };
 		FA206231234344CE007ED9BA /* Alamofire+Promises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Promises.swift"; sourceTree = "<group>"; };
@@ -158,7 +160,7 @@
 		FA4111F6234FCDE2002BA33D /* CVCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CVCalendar.framework; path = Carthage/Build/iOS/CVCalendar.framework; sourceTree = "<group>"; };
 		FA6252192387F8D2009C3FF7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		FA90FD64224377A1005148AC /* ORTUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORTUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA90FD67224377A1005148AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA90FD67224377A1005148AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		FA90FD6E224377A4005148AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA90FD71224377A4005148AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA90FD73224377A4005148AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				FA206231234344CE007ED9BA /* Alamofire+Promises.swift */,
 				FABF939B2389CB6100F78FF1 /* String.swift */,
 				FABF93A0238BB15E00F78FF1 /* EventLogger.swift */,
+				FA02851623952F8200436C9F /* APIDateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
 				FA2062DD234628A6007ED9BA /* InboxViewController.swift in Sources */,
+				FA02851723952F8200436C9F /* APIDateFormatter.swift in Sources */,
 				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
 				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
 				FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */,
@@ -1058,7 +1062,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1082,7 +1086,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

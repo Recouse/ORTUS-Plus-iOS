@@ -22,7 +22,7 @@ struct ScheduleItem {
     
     var timeDate: Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.setAPIDefaultFormat(to: .time)
         
         return dateFormatter.date(from: time)
     }
