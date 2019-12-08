@@ -6,6 +6,6 @@
 //  Copyright (c) 2019 Firdavs. All rights reserved.
 //
 
-final class SettingsRouter: Router<SettingsViewController> {
-    typealias Routes = Closable
+final class SettingsRouter: Router<SettingsViewController>, LoginRoute {
+    typealias Routes = LoginRoute & Closable
 }

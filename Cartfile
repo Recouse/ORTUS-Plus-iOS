@@ -5,6 +5,7 @@ github "onevcat/Kingfisher" ~> 5.0
 # UI
 github "SnapKit/SnapKit" ~> 5.0.0
 github "ra1028/Carbon" ~> 0.3.0
+github "uias/Pageboy" ~> 3.2
 
 # Utilities
 github "google/promises" ~> 1.2.8

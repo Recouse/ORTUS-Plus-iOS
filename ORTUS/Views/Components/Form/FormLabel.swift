@@ -41,7 +41,7 @@ struct FormLabel: IdentifiableComponent {
 class FormLabelView: UIControl {
     lazy var label: UILabel = {
         let label = UILabel()
-        label.textColor = self.tintColor
+        label.textColor = Asset.Colors.tintColor.color
         label.textAlignment = .center
         
         return label

@@ -19,14 +19,18 @@
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal enum Colors {
+    internal static let darkGray = ColorAsset(name: "darkGray")
+    internal static let gray = ColorAsset(name: "gray")
+    internal static let lightGray = ColorAsset(name: "lightGray")
     internal static let oracle = ColorAsset(name: "oracle")
+    internal static let tintColor = ColorAsset(name: "tintColor")
     internal static let tradewind = ColorAsset(name: "tradewind")
   }
   internal enum Images {
     internal static let translate = ImageAsset(name: "translate")
-    internal static let darkGray = ColorAsset(name: "darkGray")
-    internal static let gray = ColorAsset(name: "gray")
-    internal static let lightGray = ColorAsset(name: "lightGray")
+    internal static let onboardingCourses = ImageAsset(name: "onboardingCourses")
+    internal static let onboardingNews = ImageAsset(name: "onboardingNews")
+    internal static let onboardingSchedule = ImageAsset(name: "onboardingSchedule")
     internal static let courses = ImageAsset(name: "courses")
     internal static let inbox = ImageAsset(name: "inbox")
     internal static let news = ImageAsset(name: "news")
@@ -35,6 +39,7 @@ internal enum Asset {
     internal static let chevronLeft = ImageAsset(name: "chevronLeft")
     internal static let chevronRight = ImageAsset(name: "chevronRight")
     internal static let course = ImageAsset(name: "course")
+    internal static let rtuLogo = ImageAsset(name: "rtuLogo")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

@@ -117,7 +117,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
     @objc func signedOut() {
         EventLogger.log(.signedOut)
         
-        render()
+        viewModel.router.openLogin()
     }
     
     func reportBug() {

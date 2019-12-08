@@ -91,6 +91,13 @@
 		FA941BE7224A9D1A00D7B170 /* YandexMobileMetrica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */; };
 		FA941BE8224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */; };
 		FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA941BE9224BA7E800D7B170 /* Keys.swift */; };
+		FA990A56239D1D0400BE9ACA /* LoginOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A55239D1D0400BE9ACA /* LoginOnboardingViewController.swift */; };
+		FA990A58239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A57239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift */; };
+		FA990A5B239D1DAA00BE9ACA /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A5A239D1DAA00BE9ACA /* UIWindow.swift */; };
+		FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A5C239D1F5800BE9ACA /* MainTabBarControllerRoute.swift */; };
+		FA990A5F239D20E800BE9ACA /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA990A5E239D20E800BE9ACA /* Pageboy.framework */; };
+		FA990A63239D6F8600BE9ACA /* LoginOnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A62239D6F8600BE9ACA /* LoginOnboardingContentView.swift */; };
+		FA990A65239D7EB900BE9ACA /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A64239D7EB900BE9ACA /* LoginRoute.swift */; };
 		FAA425AC23912206008F5897 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA425AB23912206008F5897 /* Footer.swift */; };
 		FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3F823511BA600D4D593 /* EventComponent.swift */; };
 		FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FA23511BB300D4D593 /* EventComponentView.swift */; };
@@ -113,6 +120,8 @@
 		FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB35239D0D1700120F96 /* LinearGradient.swift */; };
 		FAE3AB3A239D0ED300120F96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE3AB39239D0ED300120F96 /* Colors.xcassets */; };
 		FAE3AB3D239D100500120F96 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB3C239D100400120F96 /* Assets.swift */; };
+		FAE3AB3F239D119200120F96 /* LoginStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB3E239D119200120F96 /* LoginStyle.swift */; };
+		FAE3AB42239D141600120F96 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB41239D141600120F96 /* Button.swift */; };
 		FAF183B02248E76400CA2492 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183AF2248E76400CA2492 /* TokenResponse.swift */; };
 		FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */; };
 		FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B32249096800CA2492 /* CoursesRouter.swift */; };
@@ -235,6 +244,13 @@
 		FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileMetrica.framework; path = Carthage/Build/iOS/YandexMobileMetrica.framework; sourceTree = "<group>"; };
 		FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileMetricaCrashes.framework; path = Carthage/Build/iOS/YandexMobileMetricaCrashes.framework; sourceTree = "<group>"; };
 		FA941BE9224BA7E800D7B170 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		FA990A55239D1D0400BE9ACA /* LoginOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOnboardingViewController.swift; sourceTree = "<group>"; };
+		FA990A57239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOnboardingContentViewController.swift; sourceTree = "<group>"; };
+		FA990A5A239D1DAA00BE9ACA /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		FA990A5C239D1F5800BE9ACA /* MainTabBarControllerRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerRoute.swift; sourceTree = "<group>"; };
+		FA990A5E239D20E800BE9ACA /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
+		FA990A62239D6F8600BE9ACA /* LoginOnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOnboardingContentView.swift; sourceTree = "<group>"; };
+		FA990A64239D7EB900BE9ACA /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 		FAA425AB23912206008F5897 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		FABBF3F3235107FB00D4D593 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = Carthage/Build/iOS/FSCalendar.framework; sourceTree = "<group>"; };
 		FABBF3F823511BA600D4D593 /* EventComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComponent.swift; sourceTree = "<group>"; };
@@ -258,6 +274,8 @@
 		FAE3AB35239D0D1700120F96 /* LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
 		FAE3AB39239D0ED300120F96 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FAE3AB3C239D100400120F96 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		FAE3AB3E239D119200120F96 /* LoginStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStyle.swift; sourceTree = "<group>"; };
+		FAE3AB41239D141600120F96 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FAF183AF2248E76400CA2492 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModuleBuilder.swift; sourceTree = "<group>"; };
 		FAF183B32249096800CA2492 /* CoursesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRouter.swift; sourceTree = "<group>"; };
@@ -288,6 +306,7 @@
 				FA90FDD122438B41005148AC /* DifferenceKit.framework in Frameworks */,
 				FA90FDD222438B41005148AC /* Alamofire.framework in Frameworks */,
 				FA90FDD322438B41005148AC /* FBLPromises.framework in Frameworks */,
+				FA990A5F239D20E800BE9ACA /* Pageboy.framework in Frameworks */,
 				FA90FDD422438B41005148AC /* Promises.framework in Frameworks */,
 				FA90FDD522438B41005148AC /* Localize_Swift.framework in Frameworks */,
 				FA90FDEA2243B08F005148AC /* KeychainAccess.framework in Frameworks */,
@@ -468,6 +487,7 @@
 		FA90FD7E22437B1D005148AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAE3AB40239D140B00120F96 /* Buttons */,
 				FA90FDF32243C5AA005148AC /* Components */,
 				FA90FD9022437C93005148AC /* Styles */,
 				FA90FD9322437CC2005148AC /* NavigationController.swift */,
@@ -516,6 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				FA90FD9122437C9D005148AC /* Styling.swift */,
+				FAE3AB3E239D119200120F96 /* LoginStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -546,6 +567,8 @@
 			isa = PBXGroup;
 			children = (
 				FA90FE032243CF2F005148AC /* Article */,
+				FA990A5C239D1F5800BE9ACA /* MainTabBarControllerRoute.swift */,
+				FA990A64239D7EB900BE9ACA /* LoginRoute.swift */,
 				FA90FDA422437DC5005148AC /* Route.swift */,
 			);
 			path = Routes;
@@ -579,6 +602,7 @@
 		FA90FDB222437F69005148AC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				FA990A5A239D1DAA00BE9ACA /* UIWindow.swift */,
 				FA90FDB722438069005148AC /* UIImage.swift */,
 				FA90FE0D2243E3C4005148AC /* UIColor.swift */,
 				FA6252192387F8D2009C3FF7 /* UINavigationController.swift */,
@@ -589,6 +613,7 @@
 		FA90FDC522438B41005148AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA990A5E239D20E800BE9ACA /* Pageboy.framework */,
 				FABBF3F3235107FB00D4D593 /* FSCalendar.framework */,
 				FA4111F6234FCDE2002BA33D /* CVCalendar.framework */,
 				FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */,
@@ -662,6 +687,16 @@
 			path = Article;
 			sourceTree = "<group>";
 		};
+		FA990A54239D1CF000BE9ACA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FA990A55239D1D0400BE9ACA /* LoginOnboardingViewController.swift */,
+				FA990A62239D6F8600BE9ACA /* LoginOnboardingContentView.swift */,
+				FA990A57239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		FABBF3F723511B9400D4D593 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,6 +712,7 @@
 		FABF6DBD239C4C9000F57F8A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				FA990A54239D1CF000BE9ACA /* Onboarding */,
 				FABF6DBE239C4CAB00F57F8A /* LoginModuleBuilder.swift */,
 				FABF6DC1239C4CAB00F57F8A /* LoginView.swift */,
 				FABF6DC2239C4CAB00F57F8A /* LoginViewModel.swift */,
@@ -701,6 +737,14 @@
 				FAE3AB3C239D100400120F96 /* Assets.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		FAE3AB40239D140B00120F96 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				FAE3AB41239D141600120F96 /* Button.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		FAF183AE2248E75700CA2492 /* OAuth */ = {
@@ -906,11 +950,13 @@
 				FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */,
 				FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */,
 				FAF77B292246AC3C00197641 /* Header.swift in Sources */,
+				FA990A63239D6F8600BE9ACA /* LoginOnboardingContentView.swift in Sources */,
 				FA20623823434DF2007ED9BA /* ScheduleApi.swift in Sources */,
 				FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */,
 				FA90FDED2243B9FD005148AC /* Article.swift in Sources */,
 				FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
+				FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */,
 				FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */,
 				FA90FDB622438027005148AC /* Global.swift in Sources */,
 				FA90FD8F22437C7C005148AC /* TranslatableView.swift in Sources */,
@@ -922,8 +968,10 @@
 				FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */,
 				FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */,
 				FABF6DC7239C4CAB00F57F8A /* LoginViewModel.swift in Sources */,
+				FA990A5B239D1DAA00BE9ACA /* UIWindow.swift in Sources */,
 				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
+				FAE3AB42239D141600120F96 /* Button.swift in Sources */,
 				FA90FD9C22437D76005148AC /* Transition.swift in Sources */,
 				FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */,
 				FA90FDAE22437F25005148AC /* NewsRouter.swift in Sources */,
@@ -935,11 +983,13 @@
 				FAF183BA2249096800CA2492 /* CoursesView.swift in Sources */,
 				FA90FDC1224380FE005148AC /* SettingsView.swift in Sources */,
 				FAF183CD2249126200CA2492 /* MaskLabel.swift in Sources */,
+				FAE3AB3F239D119200120F96 /* LoginStyle.swift in Sources */,
 				FA90FE052243CF3B005148AC /* ArticleRoute.swift in Sources */,
 				FA90FE022243CF0E005148AC /* ArticleViewModel.swift in Sources */,
 				FA2062C723453DEB007ED9BA /* CourseComponent.swift in Sources */,
 				FABF6DC5239C4CAB00F57F8A /* LoginViewController.swift in Sources */,
 				FA90FD8622437B9A005148AC /* Translatable.swift in Sources */,
+				FA990A56239D1D0400BE9ACA /* LoginOnboardingViewController.swift in Sources */,
 				FABF6DC6239C4CAB00F57F8A /* LoginView.swift in Sources */,
 				FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */,
 				FA90FDA222437D94005148AC /* PushTransition.swift in Sources */,
@@ -947,6 +997,7 @@
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
 				FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */,
+				FA990A58239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
 				FA2062DD234628A6007ED9BA /* InboxViewController.swift in Sources */,
 				FA02851723952F8200436C9F /* APIDateFormatter.swift in Sources */,
@@ -959,6 +1010,7 @@
 				FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */,
 				FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */,
 				FA90FE002243CF0E005148AC /* ArticleViewController.swift in Sources */,
+				FA990A65239D7EB900BE9ACA /* LoginRoute.swift in Sources */,
 				FA90FD9422437CC2005148AC /* NavigationController.swift in Sources */,
 				FA20623A23434EE5007ED9BA /* EmptyResponse.swift in Sources */,
 				FA90FD9222437C9D005148AC /* Styling.swift in Sources */,
@@ -1118,7 +1170,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1142,7 +1194,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

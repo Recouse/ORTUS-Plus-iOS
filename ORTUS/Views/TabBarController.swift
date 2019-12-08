@@ -12,18 +12,13 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        prepareTabBar()
+        prepareTabBar()
     }
 }
 
 
 extension TabBarController {
     func prepareTabBar() {
-        tabBar.backgroundImage = UIColor.clear.uiImage
-        
-        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
-        blurView.frame = tabBar.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        tabBar.insertSubview(blurView, at: 0)
+        tabBar.tintColor = Asset.Colors.tintColor.color
     }
 }

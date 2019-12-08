@@ -13,20 +13,14 @@ struct CourseComponent: IdentifiableComponent {
     var id: String
     var course: Course
     
-    let colors: [UIColor] = [
-        .systemBlue, .systemGreen, .systemOrange, .systemPink,
-        .systemPurple, .systemRed, .systemTeal, .systemYellow
-    ]
-    
     func renderContent() -> CourseComponentView {
         return CourseComponentView()
     }
     
     func render(in content: CourseComponentView) {
-//        if let color = colors.randomElement() {
-        content.imageContainerView.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.2)
-        content.imageView.tintColor = .systemBlue
-//        }
+        content.imageContainerView.backgroundColor = Asset.Colors.tintColor.color.withAlphaComponent(0.2)
+        content.imageView.tintColor = Asset.Colors.tintColor.color
+        
         content.imageView.image = Asset.Images.course.image
         content.titleLabel.text = course.name
     }
