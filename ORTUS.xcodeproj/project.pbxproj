@@ -28,7 +28,7 @@
 		FA4111F3234FC17A002BA33D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F2234FC17A002BA33D /* Event.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
 		FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD67224377A1005148AC /* AppDelegate.swift */; };
-		FA90FD6F224377A4005148AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD6E224377A4005148AC /* Assets.xcassets */; };
+		FA90FD6F224377A4005148AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD6E224377A4005148AC /* Images.xcassets */; };
 		FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD70224377A4005148AC /* LaunchScreen.storyboard */; };
 		FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8022437B51005148AC /* MainTabBarController.swift */; };
 		FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */; };
@@ -97,6 +97,11 @@
 		FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FC2351293E00D4D593 /* Lecture.swift */; };
 		FABBF3FF23512A4100D4D593 /* LectureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FE23512A4100D4D593 /* LectureComponent.swift */; };
 		FABBF40123512A4D00D4D593 /* LectureComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF40023512A4D00D4D593 /* LectureComponentView.swift */; };
+		FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF6DBE239C4CAB00F57F8A /* LoginModuleBuilder.swift */; };
+		FABF6DC4239C4CAB00F57F8A /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF6DBF239C4CAB00F57F8A /* LoginRouter.swift */; };
+		FABF6DC5239C4CAB00F57F8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF6DC0239C4CAB00F57F8A /* LoginViewController.swift */; };
+		FABF6DC6239C4CAB00F57F8A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF6DC1239C4CAB00F57F8A /* LoginView.swift */; };
+		FABF6DC7239C4CAB00F57F8A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF6DC2239C4CAB00F57F8A /* LoginViewModel.swift */; };
 		FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF9397238897C800F78FF1 /* ScheduleDateHeader.swift */; };
 		FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */; };
 		FABF939C2389CB6100F78FF1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF939B2389CB6100F78FF1 /* String.swift */; };
@@ -105,6 +110,8 @@
 		FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */; };
 		FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2D2245612C009DA6AE /* UIApplication.swift */; };
 		FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */; };
+		FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB35239D0D1700120F96 /* LinearGradient.swift */; };
+		FAE3AB3A239D0ED300120F96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE3AB39239D0ED300120F96 /* Colors.xcassets */; };
 		FAF183B02248E76400CA2492 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183AF2248E76400CA2492 /* TokenResponse.swift */; };
 		FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */; };
 		FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B32249096800CA2492 /* CoursesRouter.swift */; };
@@ -161,7 +168,7 @@
 		FA6252192387F8D2009C3FF7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		FA90FD64224377A1005148AC /* ORTUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORTUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA90FD67224377A1005148AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		FA90FD6E224377A4005148AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA90FD6E224377A4005148AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA90FD71224377A4005148AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA90FD73224377A4005148AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA90FD8022437B51005148AC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -234,6 +241,11 @@
 		FABBF3FC2351293E00D4D593 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		FABBF3FE23512A4100D4D593 /* LectureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponent.swift; sourceTree = "<group>"; };
 		FABBF40023512A4D00D4D593 /* LectureComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponentView.swift; sourceTree = "<group>"; };
+		FABF6DBE239C4CAB00F57F8A /* LoginModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleBuilder.swift; sourceTree = "<group>"; };
+		FABF6DBF239C4CAB00F57F8A /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		FABF6DC0239C4CAB00F57F8A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FABF6DC1239C4CAB00F57F8A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FABF6DC2239C4CAB00F57F8A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FABF9397238897C800F78FF1 /* ScheduleDateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDateHeader.swift; sourceTree = "<group>"; };
 		FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewAdapter.swift; sourceTree = "<group>"; };
 		FABF939B2389CB6100F78FF1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -242,6 +254,8 @@
 		FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewAdapter.swift; sourceTree = "<group>"; };
 		FAD3CA2D2245612C009DA6AE /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		FAE3AB35239D0D1700120F96 /* LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
+		FAE3AB39239D0ED300120F96 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FAF183AF2248E76400CA2492 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModuleBuilder.swift; sourceTree = "<group>"; };
 		FAF183B32249096800CA2492 /* CoursesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRouter.swift; sourceTree = "<group>"; };
@@ -380,6 +394,7 @@
 				FA90FD7E22437B1D005148AC /* Views */,
 				FA90FD9522437D33005148AC /* Routing */,
 				FA90FD7A22437AFD005148AC /* Modules */,
+				FAE3AB37239D0E8800120F96 /* Resources */,
 				FA90FD7922437909005148AC /* Supporting Files */,
 				FA90FD67224377A1005148AC /* AppDelegate.swift */,
 				FA90FDB522438027005148AC /* Global.swift */,
@@ -392,7 +407,6 @@
 			isa = PBXGroup;
 			children = (
 				FA90FDDD22438D33005148AC /* Localizable.strings */,
-				FA90FD6E224377A4005148AC /* Assets.xcassets */,
 				FA90FD70224377A4005148AC /* LaunchScreen.storyboard */,
 				FA90FD73224377A4005148AC /* Info.plist */,
 			);
@@ -402,6 +416,7 @@
 		FA90FD7A22437AFD005148AC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FABF6DBD239C4C9000F57F8A /* Login */,
 				FA90FDA722437F15005148AC /* News */,
 				FAF183BF22490FB500CA2492 /* Schedule */,
 				FAF183B12249095000CA2492 /* Courses */,
@@ -456,6 +471,7 @@
 				FA90FE0B2243E397005148AC /* TabBarController.swift */,
 				FA90FDC3224385AA005148AC /* TabBarItem.swift */,
 				FAF183CC2249126200CA2492 /* MaskLabel.swift */,
+				FAE3AB35239D0D1700120F96 /* LinearGradient.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -655,6 +671,27 @@
 			path = Schedule;
 			sourceTree = "<group>";
 		};
+		FABF6DBD239C4C9000F57F8A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FABF6DBE239C4CAB00F57F8A /* LoginModuleBuilder.swift */,
+				FABF6DC1239C4CAB00F57F8A /* LoginView.swift */,
+				FABF6DC2239C4CAB00F57F8A /* LoginViewModel.swift */,
+				FABF6DC0239C4CAB00F57F8A /* LoginViewController.swift */,
+				FABF6DBF239C4CAB00F57F8A /* LoginRouter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FAE3AB37239D0E8800120F96 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA90FD6E224377A4005148AC /* Images.xcassets */,
+				FAE3AB39239D0ED300120F96 /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FAF183AE2248E75700CA2492 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,8 +812,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */,
+				FAE3AB3A239D0ED300120F96 /* Colors.xcassets in Resources */,
 				FA90FDDB22438D33005148AC /* Localizable.strings in Resources */,
-				FA90FD6F224377A4005148AC /* Assets.xcassets in Resources */,
+				FA90FD6F224377A4005148AC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +857,7 @@
 				FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */,
 				FA90FDC4224385AA005148AC /* TabBarItem.swift in Sources */,
 				FA90FDF22243BF6C005148AC /* APIMethod.swift in Sources */,
+				FABF6DC4239C4CAB00F57F8A /* LoginRouter.swift in Sources */,
 				FA4111F3234FC17A002BA33D /* Event.swift in Sources */,
 				FABBF3FF23512A4100D4D593 /* LectureComponent.swift in Sources */,
 				FAF183C922490FC600CA2492 /* ScheduleViewModel.swift in Sources */,
@@ -858,6 +897,7 @@
 				FA20623823434DF2007ED9BA /* ScheduleApi.swift in Sources */,
 				FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */,
 				FA90FDED2243B9FD005148AC /* Article.swift in Sources */,
+				FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
 				FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */,
 				FA90FDB622438027005148AC /* Global.swift in Sources */,
@@ -869,6 +909,7 @@
 				FAF183B02248E76400CA2492 /* TokenResponse.swift in Sources */,
 				FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */,
 				FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */,
+				FABF6DC7239C4CAB00F57F8A /* LoginViewModel.swift in Sources */,
 				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
 				FA90FD9C22437D76005148AC /* Transition.swift in Sources */,
@@ -885,10 +926,13 @@
 				FA90FE052243CF3B005148AC /* ArticleRoute.swift in Sources */,
 				FA90FE022243CF0E005148AC /* ArticleViewModel.swift in Sources */,
 				FA2062C723453DEB007ED9BA /* CourseComponent.swift in Sources */,
+				FABF6DC5239C4CAB00F57F8A /* LoginViewController.swift in Sources */,
 				FA90FD8622437B9A005148AC /* Translatable.swift in Sources */,
+				FABF6DC6239C4CAB00F57F8A /* LoginView.swift in Sources */,
 				FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */,
 				FA90FDA222437D94005148AC /* PushTransition.swift in Sources */,
 				FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */,
+				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
 				FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
@@ -1062,7 +1106,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1086,7 +1130,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

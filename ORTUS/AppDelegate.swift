@@ -7,17 +7,24 @@
 //
 
 import UIKit
-import Localize_Swift
 import YandexMobileMetrica
+import KeychainAccess
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
+    let keychain = Keychain()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
                 
         prepareAnalytics()
-        prepareMainTabBarController()
+        
+        if keychain[Global.Key.accessToken] == nil {
+            prepareLoginController()
+        } else {
+            prepareMainTabBarController()
+        }
         
         return true
     }
@@ -39,6 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+    }
+    
+    fileprivate func prepareLoginController() {
+        let loginController = LoginModuleBuilder.build()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = loginController
         window?.makeKeyAndVisible()
     }
 }
