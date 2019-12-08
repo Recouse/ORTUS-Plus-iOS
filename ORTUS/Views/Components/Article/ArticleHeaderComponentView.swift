@@ -12,7 +12,7 @@ class ArticleHeaderComponentView: UIView {
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = UIColor(named: "lightGray")
+        imageView.backgroundColor = Asset.Colors.lightGray.color
         imageView.clipsToBounds = true
         
         return imageView

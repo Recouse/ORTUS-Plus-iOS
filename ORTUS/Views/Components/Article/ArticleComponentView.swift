@@ -11,7 +11,7 @@ import UIKit
 class ArticleComponentView: UIView {
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor(named: "lightGray")
+        imageView.backgroundColor = Asset.Colors.lightGray.color
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 6
         imageView.clipsToBounds = true
@@ -21,7 +21,7 @@ class ArticleComponentView: UIView {
     
     let authorLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "darkGray")
+        label.textColor = Asset.Colors.darkGray.color
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         
         return label
