@@ -27,7 +27,7 @@ struct CourseComponent: IdentifiableComponent {
         content.imageContainerView.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.2)
         content.imageView.tintColor = .systemBlue
 //        }
-        content.imageView.image = UIImage(named: "course")
+        content.imageView.image = Asset.Images.course.image
         content.titleLabel.text = course.name
     }
     

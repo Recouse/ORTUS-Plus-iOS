@@ -36,7 +36,7 @@ class CourseComponentView: UIView {
     
     let rightAccessoryView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "chevronRight")
+        imageView.image = Asset.Images.chevronRight.image
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .gray
         

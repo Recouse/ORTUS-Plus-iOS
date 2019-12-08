@@ -17,7 +17,7 @@ class MainTabBarController: TranslatableTabBarController {
         item.tag = Global.UI.TabBar.news.rawValue
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let image = UIImage(named: "news")?.forceLoad()
+            let image = Asset.Images.news.image.forceLoad()
             
             DispatchQueue.main.async {
                 item.image = image
@@ -41,7 +41,7 @@ class MainTabBarController: TranslatableTabBarController {
         item.tag = Global.UI.TabBar.schedule.rawValue
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let image = UIImage(named: "schedule")?.forceLoad()
+            let image = Asset.Images.schedule.image.forceLoad()
             
             DispatchQueue.main.async {
                 item.image = image
@@ -65,7 +65,7 @@ class MainTabBarController: TranslatableTabBarController {
         item.tag = Global.UI.TabBar.courses.rawValue
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let image = UIImage(named: "courses")?.forceLoad()
+            let image = Asset.Images.courses.image.forceLoad()
             
             DispatchQueue.main.async {
                 item.image = image
@@ -115,7 +115,7 @@ class MainTabBarController: TranslatableTabBarController {
         item.tag = Global.UI.TabBar.settings.rawValue
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let image = UIImage(named: "settings")?.forceLoad()
+            let image = Asset.Images.settings.image.forceLoad()
             
             DispatchQueue.main.async {
                 item.image = image

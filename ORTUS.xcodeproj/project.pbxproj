@@ -112,6 +112,7 @@
 		FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */; };
 		FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB35239D0D1700120F96 /* LinearGradient.swift */; };
 		FAE3AB3A239D0ED300120F96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE3AB39239D0ED300120F96 /* Colors.xcassets */; };
+		FAE3AB3D239D100500120F96 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB3C239D100400120F96 /* Assets.swift */; };
 		FAF183B02248E76400CA2492 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183AF2248E76400CA2492 /* TokenResponse.swift */; };
 		FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */; };
 		FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B32249096800CA2492 /* CoursesRouter.swift */; };
@@ -256,6 +257,7 @@
 		FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		FAE3AB35239D0D1700120F96 /* LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
 		FAE3AB39239D0ED300120F96 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		FAE3AB3C239D100400120F96 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		FAF183AF2248E76400CA2492 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModuleBuilder.swift; sourceTree = "<group>"; };
 		FAF183B32249096800CA2492 /* CoursesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRouter.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				FA90FD7E22437B1D005148AC /* Views */,
 				FA90FD9522437D33005148AC /* Routing */,
 				FA90FD7A22437AFD005148AC /* Modules */,
+				FAE3AB3B239D0FBF00120F96 /* Generated */,
 				FAE3AB37239D0E8800120F96 /* Resources */,
 				FA90FD7922437909005148AC /* Supporting Files */,
 				FA90FD67224377A1005148AC /* AppDelegate.swift */,
@@ -692,6 +695,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		FAE3AB3B239D0FBF00120F96 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				FAE3AB3C239D100400120F96 /* Assets.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		FAF183AE2248E75700CA2492 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,6 +885,7 @@
 				FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */,
 				FA90FDE322439676005148AC /* APIClient.swift in Sources */,
 				FA90FD9E22437D81005148AC /* DefaultTransition.swift in Sources */,
+				FAE3AB3D239D100500120F96 /* Assets.swift in Sources */,
 				FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */,
 				FA90FDC2224380FE005148AC /* SettingsViewModel.swift in Sources */,
 				FA90FDB422437F80005148AC /* Notification.swift in Sources */,

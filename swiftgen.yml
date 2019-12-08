@@ -1,0 +1,7 @@
+xcassets:
+  inputs:
+    - ORTUS/Resources/Images.xcassets
+    - ORTUS/Resources/Colors.xcassets
+  outputs:
+    templateName: swift4
+    output: ORTUS/Generated/Assets.swift

@@ -9,7 +9,11 @@
 import UIKit
 
 class LoginView: UIView {
-    let backgrounView = LinearGradient(.topToBottom, fromColor: UIColor(named: "tradewind")!, toColor: UIColor(named: "oracle")!)
+    let backgrounView = LinearGradient(
+        .topToBottom,
+        fromColor: Asset.Colors.tradewind.color,
+        toColor: Asset.Colors.oracle.color
+    )
     
     override init(frame: CGRect) {
         super.init(frame: frame)
