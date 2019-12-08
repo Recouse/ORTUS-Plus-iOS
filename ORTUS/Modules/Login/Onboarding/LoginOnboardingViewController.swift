@@ -39,11 +39,16 @@ class LoginOnboardingViewController: PageboyViewController {
         
         autoScroller.enable(withIntermissionDuration: .custom(duration: 5))
     }
+    
+    @objc func selectPage() {
+        scrollToPage(.at(index: pageControl.currentPage), animated: true)
+    }
 }
 
 extension LoginOnboardingViewController {
     func preparePageControl() {
         pageControl = UIPageControl()
+        pageControl.addTarget(self, action: #selector(selectPage), for: .valueChanged)
         pageControl.pageIndicatorTintColor = UIColor.white.withAlphaComponent(0.5)
         pageControl.currentPageIndicatorTintColor = .white
         pageControl.currentPage = 0
