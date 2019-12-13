@@ -10,21 +10,10 @@ import UIKit
 
 extension UINavigationController {
     func showBorderLine() {
-//        getBorderLine()?.isHidden = false
         navigationBar.setValue(false, forKey: "hidesShadow")
     }
 
     func hideBorderLine() {
-//        getBorderLine()?.isHidden = true
         navigationBar.setValue(true, forKey: "hidesShadow")
-    }
-
-    private func getBorderLine() -> UIImageView? {
-        return navigationBar.subviews
-            .flatMap { $0.subviews }
-            .compactMap { $0 as? UIImageView }
-            .filter { $0.bounds.size.width == navigationBar.bounds.size.width }
-            .filter { $0.bounds.size.height <= 2 }
-            .first
     }
 }
