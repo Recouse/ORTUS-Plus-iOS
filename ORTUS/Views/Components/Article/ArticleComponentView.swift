@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ArticleComponentView: UIView {
+class ArticleComponentView: UIControl {
+    var onSelect: (() -> Void)?
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = Asset.Colors.lightGray.color
@@ -41,10 +43,16 @@ class ArticleComponentView: UIView {
         prepareImageView()
         prepareAuthorLabel()
         prepareTitleLabel()
+        
+        addTarget(self, action: #selector(selected), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func selected() {
+        onSelect?()
     }
 }
 

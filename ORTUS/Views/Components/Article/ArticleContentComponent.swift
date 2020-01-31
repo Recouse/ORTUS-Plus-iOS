@@ -12,14 +12,16 @@ import Carbon
 import WebKit
 import SafariServices
 
-class ArticleContentComponent: Carbon.Component, Equatable, ArticleContentViewDelegate {
+class ArticleContentComponent: IdentifiableComponent, Equatable, ArticleContentViewDelegate {    
     var onContentChange: (() -> Void)?
     
     var onLinkActivated: ((_ url: URL) -> Void)?
     
+    var id: Int
     var article: Article
     
-    init(article: Article, onContentChange: (() -> Void)?, onLinkActivated: ((_ url: URL) -> Void)?) {
+    init(id: Int, article: Article, onContentChange: (() -> Void)?, onLinkActivated: ((_ url: URL) -> Void)?) {
+        self.id = id
         self.article = article
         self.onContentChange = onContentChange
         self.onLinkActivated = onLinkActivated

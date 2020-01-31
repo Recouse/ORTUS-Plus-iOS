@@ -10,9 +10,15 @@ import UIKit
 
 class SettingsView: UIView {
     let tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        var style: UITableView.Style = .grouped
+        
+        if #available(iOS 13.0, *) {
+            style = .insetGrouped
+        }
+        
+        let tableView = UITableView(frame: .zero, style: style)
         tableView.backgroundView = nil
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .groupTableViewBackground
 //        tableView.separatorStyle = .noe
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension

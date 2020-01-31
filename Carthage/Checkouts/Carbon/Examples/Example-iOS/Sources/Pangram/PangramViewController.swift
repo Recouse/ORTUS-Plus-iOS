@@ -18,7 +18,6 @@ final class PangramViewController: UIViewController {
         super.viewDidLoad()
 
         title = "Pangram"
-        toolBar.isTranslucent = false
         collectionView.contentInset.top = 44
         renderer.target = collectionView
 
@@ -26,29 +25,18 @@ final class PangramViewController: UIViewController {
     }
 
     func render() {
-        if isSorted {
-            renderer.render(
-                "ABC DEF GHI JKL MNO PQR STU VWY XZ".split(separator: " ").enumerated().map { offset, word in
-                    Section(
-                        id: offset,
-                        cells: word.map { text in
-                            CellNode(PangramLabel(text: String(text)))
-                        }
-                    )
+        let pangram = isSorted
+            ? ["ABC", "DEF", "GHI", "JKL", "MNO", "PQR", "STU", "VWY", "XZ"]
+            : ["THE", "QUICK", "BROWN", "FOX", "JUMPS", "OVER", "THE", "LAZY", "DOG"]
+
+        renderer.render {
+            Group(of: pangram.enumerated()) { offset, word in
+                Section(id: offset) {
+                    Group(of: word) { text in
+                        PangramLabel(text: String(text))
+                    }
                 }
-            )
-        }
-        else {
-            renderer.render(
-                "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG".split(separator: " ").enumerated().map { offset, word in
-                    Section(
-                        id: offset,
-                        cells: word.map { text in
-                            CellNode(PangramLabel(text: String(text)))
-                        }
-                    )
-                }
-            )
+            }
         }
     }
 

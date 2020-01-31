@@ -54,7 +54,7 @@ class InboxViewController: TranslatableModule, ModuleViewModel {
         
         var data: [Section] = []
         
-        renderer.render(data)
+//        renderer.render {  }
     }
     
     func loadData() {
@@ -91,13 +91,13 @@ extension InboxViewController {
     
     func prepareData() {
         renderer.target = tableView
-        renderer.adapter.didSelect = { [unowned self] context in
-            guard let component = context.node.component(as: CourseComponent.self) else {
-                return
-            }
-            
-            //
-        }
+//        renderer.adapter.didSelect = { [unowned self] context in
+//            guard let component = context.node.component(as: CourseComponent.self) else {
+//                return
+//            }
+//
+//            //
+//        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(scrollToTop), name: .scrollToTop, object: nil)
     }

@@ -13,12 +13,15 @@ import Kingfisher
 struct ArticleComponent: IdentifiableComponent {
     var id: String
     var article: Article
+    var onSelect: (() -> Void)?
     
     func renderContent() -> ArticleComponentView {
         return ArticleComponentView()
     }
     
     func render(in content: ArticleComponentView) {
+        content.onSelect = onSelect
+        
         if let imageURL = article.imageURL {
             content.imageView.kf.setImage(with: URL(string: imageURL))
         }

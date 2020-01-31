@@ -97,22 +97,20 @@ class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentab
     }
     
     func render() {
-        renderer.render(
-            Section(
-                id: "article",
-                cells: [
-                    CellNode(id: "content", ArticleContentComponent(
-                        article: viewModel.article,
-                        onContentChange: { [unowned self] in
-                            self.updateTableView()
-                        },
-                        onLinkActivated: { [unowned self] url in
-                            self.handle(url)
-                        }
-                    ))
-                ]
-            )
-        )
+        renderer.render {
+            Section(id: "article") {
+                ArticleContentComponent(
+                    id: viewModel.article.id,
+                    article: viewModel.article,
+                    onContentChange: { [unowned self] in
+                        self.updateTableView()
+                    },
+                    onLinkActivated: { [unowned self] url in
+                        self.handle(url)
+                    }
+                )
+            }
+        }
     }
     
     func updateTableView() {

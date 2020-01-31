@@ -112,37 +112,37 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
             return
         }
                 
-        for (key, schedule) in viewModel.schedule {
-            if selectedScheduleGrouping != 2 {
-                guard key == dateFormatter.string(from: selectedScheduleGrouping == 0 ? today : tomorrow) else {
-                    continue
-                }
-            }
-            
-            data.append(
-                Section(
-                    id: key,
-                    header: selectedScheduleGrouping == 2 ? ViewNode(ScheduleDateHeader(title: key)) : nil,
-                    cells: schedule.compactMap {
-                        if let event = $0.item(as: Event.self) {
-                            return CellNode(EventComponent(id: event.title, event: event))
-                        }
-                        
-                        if let lecture = $0.item(as: Lecture.self) {
-                            return CellNode(LectureComponent(id: lecture.id, lecture: lecture))
-                        }
-                        
-                        return nil
-                    }
-                )
-            )
-            
-            if selectedScheduleGrouping != 2 {
-                break
-            }
-        }
+//        for (key, schedule) in viewModel.schedule {
+//            if selectedScheduleGrouping != 2 {
+//                guard key == dateFormatter.string(from: selectedScheduleGrouping == 0 ? today : tomorrow) else {
+//                    continue
+//                }
+//            }
+//            
+//            data.append(
+//                Section(
+//                    id: key,
+//                    header: selectedScheduleGrouping == 2 ? ViewNode(ScheduleDateHeader(title: key)) : nil,
+//                    cells: schedule.compactMap {
+//                        if let event = $0.item(as: Event.self) {
+//                            return CellNode(EventComponent(id: event.title, event: event))
+//                        }
+//                        
+//                        if let lecture = $0.item(as: Lecture.self) {
+//                            return CellNode(LectureComponent(id: lecture.id, lecture: lecture))
+//                        }
+//                        
+//                        return nil
+//                    }
+//                )
+//            )
+//            
+//            if selectedScheduleGrouping != 2 {
+//                break
+//            }
+//        }
         
-        renderer.render(data)
+//        renderer.render(data)
     }
     
     @objc func selectScheduleGrouping() {

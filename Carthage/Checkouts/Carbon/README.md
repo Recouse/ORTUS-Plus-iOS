@@ -1,38 +1,36 @@
-<H1 align="center">
-Carbon
-</H1>
+<p align="center">
+<img src="https://raw.githubusercontent.com/ra1028/Carbon/master/assets/logo/png/logo_carbon_bnr3_white.png" width=700>
+</p>
+
 <H4 align="center">
 A declarative library for building component-based user interfaces</br>
 in UITableView and UICollectionView.</br>
 </H4>
 
+|Declarative|Component-Based|Non-Destructive|
+|:----------|:--------------|:--------------|
+|Provides a declarative design with power of diffing algorithm for building list UIs.|Declare component once, it can be reused regardless kind of the list element.|Solves the various problems by architecture and algorithm without destructing UIKit.|
+
+<br>
+
 <p align="center">
-<a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift5-orange.svg"/></a>
 <a href="https://github.com/ra1028/Carbon/releases/latest"><img alt="Release" src="https://img.shields.io/github/release/ra1028/Carbon.svg"/></a>
 <a href="https://cocoapods.org/pods/Carbon"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/Carbon.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/carthage-compatible-yellow.svg"/></a>
 </br>
-<a href="https://dev.azure.com/ra1028/GitHub/_build/latest?definitionId=2&branchName=master"><img alt="Build Status" src="https://dev.azure.com/ra1028/GitHub/_apis/build/status/ra1028.Carbon?branchName=master"/></a>
+<a href="https://github.com/ra1028/Carbon/actions"><img alt="CI Status" src="https://github.com/ra1028/Carbon/workflows/GitHub%20Actions/badge.svg"/></a>
+<a href="https://developer.apple.com/swift"><img alt="Swift 5.1" src="https://img.shields.io/badge/language-Swift 5.1-orange.svg"/></a>
 <a href="https://developer.apple.com/"><img alt="Platform" src="https://img.shields.io/badge/platform-iOS-green.svg"/></a>
 <a href="https://github.com/ra1028/Carbon/blob/master/LICENSE"><img alt="Lincense" src="https://img.shields.io/badge/License-Apache%202.0-black.svg"/></a>
 </p>
-
-<p align="center">
-Made with ❤️ by <a href="https://github.com/ra1028">Ryo Aoyama</a>
-</p>
-
----
-
-|Declarative|Component-Based|Non-Destructive|
-|:----------|:--------------|:--------------|
-|Provides a declarative design with power of diffing algorithm for building list UIs.|Declare component once, it can be reused regardless kind of the list element.|Solves the various problems by architecture and algorithm without destructing UIKit.|
 
 ---
 
 ## Introduction
 
-Carbon is a library for building component-based user interfaces in UITableView and UICollectionView inspired by [React](https://reactjs.org).  
+Carbon is a library for building component-based user interfaces in UITableView and UICollectionView inspired by [SwiftUI](https://developer.apple.com/xcode/swiftui) and [React](https://reactjs.org).  
 This make it painless to build and maintain the complex UIs.  
+Since components made with `Carbon` can be works directly on `SwiftUI`, the cost of future migration can be greatly reduced.  
 
 Uses [DifferenceKit](https://github.com/ra1028/DifferenceKit) which is highly optimized based on Paul Heckel's paper for diffing.  
 Declarative design and diffing algorithm make your code more predictable, debugging easier and providing beautiful animations to users.  
@@ -43,27 +41,48 @@ Our goal is similar to [Instagram/IGListKit](https://github.com/Instagram/IGList
 
 ## Examples
 
-<img src="https://raw.githubusercontent.com/ra1028/Carbon/master/assets/hello.png" height=260 align=right>
+|![Pangram](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/pangram.gif)|![Kyoto](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/kyoto.gif)|![Emoji](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/emoji.gif)|![Todo](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/todo.gif)|![Form](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/form.gif)|
+|:----------------------------:|:------------------------:|:------------------------:|:----------------------:|:----------------------:|
+
+---
+
+<img src="https://raw.githubusercontent.com/ra1028/Carbon/master/assets/hello.png" height=240 align=right>
 
 ```swift
-renderer.render(
-    Section(
-        id: ID.greet,
-        header: ViewNode(Header(title: "GREET")),
-        cells: [
-            CellNode(HelloMessage(name: "Vincent")),
-            CellNode(HelloMessage(name: "Jules")),
-            CellNode(HelloMessage(name: "Butch"))
-        ],
-        footer: ViewNode(Footer(text: "💡 Tap anywhere"))
-    )
-)
+renderer.render {
+    Header("GREET")
+        .identified(by: \.title)
+
+    HelloMessage("Vincent")
+    HelloMessage("Jules")
+    HelloMessage("Mia")
+
+    Footer("👋 Greeting from Carbon")
+        .identified(by: \.text)
+}
 ```
 
 ---
 
-|![Pangram](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/pangram.gif)|![Kyoto](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/kyoto.gif)|![Emoji](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/emoji.gif)|![Todo](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/todo.gif)|![Form](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/form.gif)|
-|:----------------------------:|:------------------------:|:------------------------:|:----------------------:|:----------------------:|
+### [SwiftUI Compatibility](https://github.com/ra1028/Carbon#swiftui-compatibility-1)
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        ScrollView {
+            VStack {
+                Text("GREET")
+                    .font(.title)
+                    .padding(.horizontal, 16)
+
+                HelloMessage("World")
+                    .frame(height: 60)
+                    .background(Color.red)
+            }
+        }
+    }
+}
+```
 
 ---
 
@@ -73,7 +92,7 @@ renderer.render(
 - [Example Apps](https://github.com/ra1028/Carbon/tree/master/Examples)
 - [Playground](https://github.com/ra1028/Carbon/blob/master/Carbon.playground/Contents.swift)
 
-#### Build for Development
+### Build for Development
 
 ```sh
 $ git clone https://github.com/ra1028/Carbon.git
@@ -91,107 +110,46 @@ Described here are the fundamentals for building list UIs with Carbon.
 For more advanced usage, see the [Advanced Guide](https://github.com/ra1028/Carbon#advanced-guide).  
 And the more practical examples are [here](https://github.com/ra1028/Carbon/tree/master/Examples).  
 
-#### Component
+### Component
+
 `Component` is the base unit of the UI in Carbon.  
 All elements are made up of components, and it can be animated by diffing update.  
-`UIView`, `UIViewController`, and its subclasses are laid out with edge constraints by default. Other classes can also be rendered as `Content` by implementing `layout` function to component.
 
-The value returned by `referenceSize` is used as the size of component on the list UI. Note that UITableView ignores width.  
-If returning `nil`, it falls back to default such as `UITableView.rowHeight` or `UICollectionViewFlowLayout.itemSize`.  
-Therefore, automatic sizing can also be used.  
+`UIView`, `UIViewController` and its subclasses are available as `content` of component by default.  
+You can declare fixed size component by implementing `referenceSize(in bounds: CGRect) -> CGSize?`. The default is to return nil and falls back to a value such as `UITableView.rowHeight` or `UICollectionViewFlowLayout.itemSize`.  
+See [here](https://github.com/ra1028/Carbon#component-in-depth) for more depth of component.
 
-Definition below is the simplest implementation. It's not mandatory to conform to `Equatable`.  
-If the component have values that can't equality comparison ​​such as closure, it can explicitly shift off the comparisons by implementing `shouldContentUpdate`.  
+Definition below is the simplest implementation.  
 
 ```swift
-struct HelloMessage: Component, Equatable {
+struct HelloMessage: Component {
     var name: String
 
     func renderContent() -> UILabel {
-        return UILabel()
+        UILabel()
     }
 
     func render(in content: UILabel) {
         content.text = "Hello \(name)"
     }
-
-    func referenceSize(in bounds: CGRect) -> CGSize? {
-        return CGSize(width: bounds.width, height: 44)
-    }
 }
 ```
 
-#### ViewNode
+Component used as a cell requires to specify an arbitrary `id`.  
+Give an `id` by `Component.identified(by:)` or declare it by using [`IdentifiableComponent`](https://github.com/ra1028/Carbon#identifiablecomponent) protocol.
 
-This is a node representing header or footer.  
-The node is wrap an instance of type conforming to `Component` protocol and works as an intermediary with `DifferenceKit` for diffing.  
+### Renderer
 
-```swift
-ViewNode(HelloMessage(name: "Vincent"))
-```
-
-#### CellNode
-
-`CellNode` is a node representing cell.  
-Unlike in the ViewNode, this needs an `id` which `Hashable` type to identify from among a lot of cells.  
-The `id` is used to find the same component in the list data before and after changed, then calculate the all kind of diff.  
-- deletes
-- inserts
-- moves
-- updates
-
-```swift
-CellNode(id: 0, HelloMessage(name: "Jules"))
-```
-
-The `id` can be predefined if conforming to [`IdentifiableComponent`](https://github.com/ra1028/Carbon#identifiablecomponent).  
-
-```swift
-CellNode(HelloMessage(name: "Jules"))
-```
-
-#### Section
-
-`Section` has a header, a footer and a group of cells.  
-A group of cells can be contains nil, then skipped rendering of it cell.  
-This also needs to specify `id` for identify from among multiple sections, then can be calculate the all kind of diff.  
-- section deletes
-- section inserts
-- section moves
-- section updates
-
-```swift
-let emptySection = Section(id: 0)
-```
-
-```swift
-let hidesHelloMia: Bool = ...
-
-let section = Section(
-    id: "hello",
-    header: ViewNode(HelloMessage(name: "Vincent")),
-    cells: [
-        CellNode(HelloMessage(name: "Jules")),
-        CellNode(HelloMessage(name: "Butch")),
-        hidesHelloMia ? nil : CellNode(HelloMessage(name: "Mia"))
-    ],
-    footer: ViewNode(HelloMessage(name: "Marsellus"))
-)
-```
-
-#### Renderer
-
-The components are displayed on top of list UI by `render` via `Renderer`.  
+The components are displayed on the list UI by `Renderer.render`.  
 Boilerplates such as registering element types to a table view are no longer needed in Carbon.  
 
 The adapter acts as delegate and dataSource, the updater handles updates.  
-You can also change the behaviors by inheriting the class and customizing it.  
-There are also `UITableViewReloadDataUpdater` and` UICollectionViewReloadDataUpdater` which update by `reloadData` without diffing update.  
-Note that it doesn't retain `target` inside `Renderer` because it avoids circular references.  
+You can also change the behaviors by inheriting and customizing it.  
+There are also `UITableViewReloadDataUpdater` and `UICollectionViewReloadDataUpdater` which update by `reloadData` without diffing updates.  
 
-When `render` called again, the updater calculates the diff from currently rendering components and update them with system animation.  
-Since there are several style syntaxes for passing group of sections, please check the [API docs](https://ra1028.github.io/Carbon/Classes/Renderer.html).  
+When `render` called again, the updater calculates the diff from the currently rendered components and updates them with the system animation.  
 
+Renderer for UITableView:
 ```swift
 @IBOutlet var tableView: UITableView!
 
@@ -200,13 +158,14 @@ let renderer = Renderer(
     updater: UITableViewUpdater()
 )
 
-override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+override func viewDidLoad() {
+    super.viewDidLoad()
 
     renderer.target = tableView
 }
 ```
 
+Renderer for UICollectionView:
 ```swift
 @IBOutlet var collectionView: UICollectionView!
 
@@ -215,46 +174,111 @@ let renderer = Renderer(
     updater: UICollectionViewUpdater()
 )
 
-override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+override func viewDidLoad() {
+    super.viewDidLoad()
 
     renderer.target = collectionView
 }
 ```
 
+Render Components:
 ```swift
-let hidesBottomSection: Bool = ...
+renderer.render {
+    Header("GREET")
+        .identified(by: \.title)
 
-renderer.render(
+    HelloMessage("Butch")
+    HelloMessage("Fabianne")
+}
+```
+
+### Section
+
+A section can include header, footer and cells.  
+This also needs to specify `id` for identify from among multiple sections.  
+The cells can be declared using a function builder as below:
+
+```swift
+let appearsBottomSection: Bool = ...
+let appearsFourthMan: Bool = ...
+
+renderer.render {
     Section(
-        id: "top section",
-        cells: [
-            CellNode(HelloMessage(name: "Vincent")),
-            CellNode(HelloMessage(name: "Jules")),
-            CellNode(HelloMessage(name: "Butch"))
-        ]
-    ),
-    hidesBottomSection ? nil : Section(
-        id: "bottom section",
-        header: ViewNode(HelloMessage(name: "Pumpkin")),
-        cells: [
-            CellNode(HelloMessage(name: "Marsellus")),
-            CellNode(HelloMessage(name: "Mia"))
-        ],
-        footer: ViewNode(HelloMessage(name: "Honey Bunny"))
+        id: "Bottom",
+        header: Header("GREET"),
+        footer: Footer("👋 Greeting from Carbon"),
+        cells: {
+            HelloMessage("Marsellus")
+            HelloMessage("The Wolf")
+        }
     )
-)
+
+    if appearsBottomSection {
+        Section(id: "Top") {
+            HelloMessage("Brett")
+            HelloMessage("Roger")
+
+            if appearsFourthMan {
+                HelloMessage("Fourth Man")
+            }
+        }
+    }
+}
+```
+
+### Group
+
+The number of limit to declare cells or section with function builder syntax is until `10`. You can avoid that limitation by grouping with `Group`.  
+It can also be used to create a cell or section from an array with N elements.  
+
+Group of Components:
+```swift
+renderer.render {
+    Group {
+        Header("GREET")
+            .identified(by: \.title)
+
+        HelloMessage("Vincent")
+        HelloMessage("Jules")
+    }
+
+    Group(of: ["Pumpkin", "Honey Bunny"]) { name in
+        HelloMessage(name)
+    }
+}
+```
+
+Group of Sections:
+```swift
+renderer.render {
+    Group {
+        Section(id: 0) {
+            HelloMessage("Jimmie")
+        }
+
+        Section(id: 1) {
+            HelloMessage("Bonnie")
+        }
+    }
+
+    Group(of: ["Lance", "Jody"]) { name in
+        Section(id: name) {
+            HelloMessage(name)
+        }
+    }
+}
 ```
 
 <H3 align="center">
 <a href="https://ra1028.github.io/Carbon">[See More Usage]</a>
+<a href="https://github.com/ra1028/Carbon/tree/master/Examples/Example-iOS">[See Example App]</a>
 </H3>
 
 ---
 
 ## Advanced Guide
 
-#### Custom Content
+### Custom Content
 
 Of course, the content of component can use custom class. You can also instantiate it from Xib.  
 It can be inherited whichever class, but the common means is inherit `UIView` or `UIViewController`.  
@@ -268,45 +292,96 @@ class HelloMessageContent: UIView {
 ```
 
 ``` swift
-struct HelloMessage: Component, Equatable {
+struct HelloMessage: Component {
     var name: String
 
     func renderContent() -> HelloMessageContent {
-        return HelloMessageContent.loadFromNib()  // Extension for instantiate from Xib. Not in Carbon.
+        HelloMessageContent.loadFromNib()  // Extension for instantiate from Xib. Not in Carbon.
     }
 
     func render(in content: HelloMessageContent) {
         content.label.text = "Hello \(name)"
     }
-
-    ...
+}
 ```
 
-#### IdentifiableComponent
+### IdentifiableComponent
 
 `IdentifiableComponent` is a component that simply can predefine an identifier.  
 It can be omitted the definition of `id` if the component conforms to `Hashable`.  
 
 ```swift
-struct HelloMessage: IdentifiableComponent, Equatable {
+struct HelloMessage: IdentifiableComponent {
     var name: String
 
     var id: String {
-        return name
+        name
     }
 
     ...
 ```
 
-#### Selection
+### SwiftUI Compatibility
+
+Components made with `Carbon` are compatible with `SwiftUI`.  
+The component can easily works as SwiftUI by composing with `View` protocol.  
+Currently SwiftUI doesn't support self-sizing, so can use `UIView.intrinsicContentSize` or specify the height explicitly by `Component.referenceSize(in:)` or `View.frame(height:)`.  
+
+```swift
+struct HelloMessage: Component, View {
+    ...
+}
+```
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("GREET")
+
+            HelloMessage("World")
+                .frame(height: 60)
+
+            Spacer()
+        }
+    }
+}
+```
+
+### Component in-Depth
+
+Components can define more detailed behaviors.  
+Following are part of it.  
+
+- **shouldContentUpdate(with next: Self) -> Bool**  
+If the result is `true`, the component displayed as a cell is reloaded individually, header or footer is reloaded with entire section.  
+By default it returns `false`, but the updater will always re-render visible components changed.  
+
+- **referenceSize(in bounds: CGRect) -> CGSize?**  
+Defining the size of component on the list UI.  
+You can use default value such as `UITableView.rowHeight` or `UICollectionViewLayout.itemSize` by returning `nil`.  
+Returns `nil` by default.  
+
+- **shouldRender(next: Self, in content: Content) -> Bool**  
+By returning `false`, you can skip component re-rendering when reloading or dequeuing element.  
+Instead of re-rendering, detects component changes by comparing with next value.  
+This is recommended to use only for performance tuning.  
+
+- **contentWillDisplay(_ content: Content)**  
+Invoked every time of before a component got into visible area.  
+
+- **contentDidEndDisplay(_ content: Content)**  
+Invoked every time of after a component went out from visible area.  
+
+[See more](https://ra1028.github.io/Carbon/Protocols/Component.html)
+
+### Selection
 
 Cell selection can be handled by setting `didSelect` to the instance of `UITableViewAdapter` or `UICollectionViewAdapter`.  
 
 ```swift
-adapter.didSelect { context in
-    print(context.tableView)
-    print(context.node)
-    print(context.indexPath)
+renderer.adapter.didSelect { context in
+    print(context)
 }
 ```
 
@@ -325,30 +400,23 @@ class MenuItemContent: UIControl {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
         addTarget(self, action: #selector(handleSelect), for: .touchUpInside)
     }
 }
+```
 
+```swift
 struct MenuItem: Component {
     var text: String
     var onSelect: () -> Void
 
     func renderContent() -> MenuItemContent {
-        return MenuItemContent.loadFromNib()
+        MenuItemContent.loadFromNib()
     }
 
     func render(in content: MenuItemContent) {
         content.label.text = text
         content.onSelect = onSelect
-    }
-
-    func shouldContentUpdate(with next: MenuItem) -> Bool {
-        return text != next.text
-    }
-
-    func referenceSize(in bounds: CGRect) -> CGSize? {
-        return CGSize(width: bounds.width, height: 44)
     }
 }
 ```
@@ -358,47 +426,25 @@ In this way, in order to cancel the selection by scrolling, you need to implemen
 ```swift
 extension UITableView {
     open override func touchesShouldCancel(in view: UIView) -> Bool {
-        return true
+        true
     }
 }
 
 extension UICollectionView {
     open override func touchesShouldCancel(in view: UIView) -> Bool {
-        return true
+        true
     }
 }
 ```
 
-#### Component in-Depth
-
-Components can define more detailed behaviors.  
-Following are part of it.  
-
-- **shouldContentUpdate**  
-If the result is `true`, the component displayed as a cell is reloaded individually, header or footer is reloaded with entire section.  
-It can be omitted by conforming to `Equitable`.  
-
-- **shouldRender**  
-By returning `false`, you can skip component re-rendering when reloading or dequeuing element.  
-You can re-render only when component is changed, if implement to call `shouldContentUpdate` within here.  
-This is recommended to use only for performance tuning.  
-
-- **contentWillDisplay**  
-Invoked every time of before a component got into visible area.  
-
-- **contentDidEndDisplay**  
-Invoked every time of after a component went out from visible area.  
-
-[See more](https://ra1028.github.io/Carbon/Protocols/Component.html)
-
-#### Adapter Customization
+### Adapter Customization
 
 You can add methods of `delegate`, `dataSource` by subclassing each adapter.  
 
 ```swift
 class CustomTableViewdapter: UITableViewAdapter {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Header title for section\(section)"
+        "Header title for section\(section)"
     }
 }
 
@@ -408,23 +454,47 @@ let renderer = Renderer(
 )
 ```
 
-Furthermore, it can be customized the class of the elements(cell/header/footer) which becomes the container of component by setting it to `config`.  
-
-- **config**  
-The configuration which having the classes of elements. It can be specified only when adapter is initialized.  
+Furthermore, it can be customized the class of the elements(cell/header/footer) which becomes the container of components by overriding some methods in adapter as following.  
+You can also use `xib` by giving nib as parameter of init of the return value Registration.  
 
 ```swift
-let config = UITableViewAdapter.Config(
-    cellClass: CustomCell.self,
-    headerViewClass: CustomHeaderView.self,
-    footerViewClass: CustomFooterView.self
-)
-let adapter = UITableViewAdapter(config: config)
+class CustomTableViewAdapter: UITableViewAdapter {
+    // Use custom cell.
+    override func cellRegistration(tableView: UITableView, indexPath: IndexPath, node: CellNode) -> CellRegistration {
+        CellRegistration(class: CustomTableViewCell.self)
+    }
+
+    // Use custom header view.
+    override func headerViewRegistration(tableView: UITableView, section: Int, node: ViewNode) -> ViewRegistration {
+        ViewRegistration(class: CustomTableViewHeaderFooterView.self)
+    }
+
+    // Use custom footer view.
+    override func footerViewRegistration(tableView: UITableView, section: Int, node: ViewNode) -> ViewRegistration {
+        ViewRegistration(class: CustomTableViewHeaderFooterView.self)
+    }
+}
 ```
 
-[See more](https://ra1028.github.io/Carbon/Adapters.html)
+In UICollectionViewAdapter, you can select the node corresponding to a certain kind.  
 
-#### Updater Customization
+```swift
+class CustomCollectionViewAdapter: UICollectionViewAdapter {
+    override func supplementaryViewNode(forElementKind kind: String, collectionView: UICollectionView, at indexPath: IndexPath) -> ViewNode? {
+        switch kind {
+        case "CustomSupplementaryViewKindSectionHeader":
+            return headerNode(in: indexPath.section)
+
+        default:
+            return super.supplementaryViewNode(forElementKind: kind, collectionView: collectionView, at: indexPath)
+        }
+    }
+}
+```
+
+[See more](https://ra1028.github.io/Carbon/Adapter.html)
+
+### Updater Customization
 
 It can be modify the updating behavior of the list UI by inheriting `Updater`.  
 This is important thing to make Carbon well adapted to your project.  
@@ -436,48 +506,69 @@ Default is `true`.
 
 - **isAnimationEnabledWhileScrolling**  
 Indicating whether enables animation for diffing updates while target is scrolling, setting `false` will perform it  using `UIView.performWithoutAnimation`.  
-Default is `true`.  
+Default is `false`.  
 
 - **animatableChangeCount**  
 The max number of changes to perform diffing updates. It falls back to `reloadData` if it exceeded.  
 Default is `300`.  
 
-- **skipReloadComponents**  
-Indicates whether to explicitly avoid `UITableView.reloadRows`, `UICollectionView.reloadItems`.  
-Try it when an animation glitch occurs.  
-Default is `false`.  
-
-- **alwaysRenderVisibleComponents**  
-Indicates whether to always call `render` of the component in the visible area after updating.  
-Should use this in case of using the above mentioned `skipReloadComponents`.  
-Default is `false`.  
-
 - **keepsContentOffset**  
 Indicating whether that to reset content offset after updated.  
 The content offset become unintended position after diffing updates in some case.
  If set `true`, revert content offset after updates.  
-Default is `false`.  
+Default is `true`.  
 
-[See more](https://ra1028.github.io/Carbon/Updaters.html)
+[See more](https://ra1028.github.io/Carbon/Updater.html)
 
-#### Element-Specific Behaviors
+### Without FunctionBuilder Syntax
 
-The `content` of component can be received some emement-specific events such as when highlighted, selected, or immediately after rendered, by conforming to protocols below.  
-We recommend to do implementation that doesn't count on this protocols.  
+Carbon can also build a UI with declarative syntax without function builder as following.  
 
-- **UITableViewCellContent**
-- **UITableViewHeaderFooterViewContent**
-- **UICollectionViewCellContent**
-- **UICollectionReusableViewContent**
+- **ViewNode**
 
-[See more](https://ra1028.github.io/Carbon/Content%20Protocols.html)
+This is a node representing header or footer. The node is wrap an instance of type conforming to `Component` protocol.  
+
+```swift
+ViewNode(Header("GREET"))
+```
+
+- **CellNode**
+
+`CellNode` is a node representing cell.  
+Unlike in the ViewNode, this needs an `id` which `Hashable` type to identify from among a lot of cells.  
+The `id` is used to find the same component in the list data before and after changed.  
+
+```swift
+CellNode(id: 0, HelloMessage("Jules"))
+CellNode(HelloMessage("Jules").identified(by: \.name))
+CellNode(HelloMessage("Jules"))  // Using `IdentifiableComponent`.
+```
+
+- **Section** and render
+
+```swift
+renderer.render(
+    Section(
+        id: "Section",
+        header: ViewNode(Header("GREET")),
+        cells: [
+            CellNode(HelloMessage("Vincent")),
+            CellNode(HelloMessage("Mia")),
+            CellNode(HelloMessage("Jules"))
+        ],
+        footer: ViewNode(Footer("👋 Greeting from Carbon"))
+    )
+)
+```
+
+[See more](https://ra1028.github.io/Carbon/Node.html)
 
 ---
 
 ## Requirements
 
-- Swift 4.2+
-- iOS 10.0+
+- Swift 5.1+
+- Xcode 11.0+
 
 ---
 
@@ -493,6 +584,12 @@ pod 'Carbon'
 Add the following to your `Cartfile`:
 ```
 github "ra1028/Carbon"
+```
+
+### [Swift Package Manager](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app)
+Select Xcode menu `File > Swift Packages > Add Package Dependency...` and enter repository URL with GUI.
+```
+Repository: https://github.com/ra1028/Carbon
 ```
 
 ---
@@ -528,3 +625,7 @@ Libraries for list UIs using diffing algorithm that I have sincerely ❤️ and 
 ## License
 
 Carbon is released under the [Apache 2.0 License](https://github.com/ra1028/Carbon/blob/master/LICENSE).  
+
+---
+
+![Carbon Logo](https://raw.githubusercontent.com/ra1028/Carbon/master/assets/logo/png/logo_carbon_bnr1_white.png)

@@ -21,6 +21,7 @@ class UserViewModel {
         keychain[Global.Key.accessToken] = nil
         keychain[Global.Key.refreshToken] = nil
         keychain[Global.Key.tokenExpiresOn] = nil
+        keychain[Global.Key.ortusPinCode] = nil
         
         NotificationCenter.default.post(name: .userSignedOut, object: nil)
     }

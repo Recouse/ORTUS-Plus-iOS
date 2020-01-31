@@ -18,7 +18,7 @@ class CoursesViewController: TranslatableModule, ModuleViewModel {
     
     var refreshControl: UIRefreshControl!
     
-    lazy var renderer = Renderer(
+    let renderer = Renderer(
         adapter: UITableViewAdapter(),
         updater: UITableViewUpdater()
     )
@@ -40,6 +40,7 @@ class CoursesViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        prepareNavigationItem()
         prepareRefreshControl()
         prepareData()
         
@@ -52,22 +53,26 @@ class CoursesViewController: TranslatableModule, ModuleViewModel {
     
     func render() {
         refreshControl.endRefreshing()
-        
-        var data: [Section] = []
-        
-        for semester in viewModel.semesters {
-            data.append(
+
+        renderer.render {
+            Group(of: viewModel.semesters) { semester in
                 Section(
                     id: semester.name ?? "",
-                    header: ViewNode(Header(title: semester.name?.uppercased() ?? "")),
-                    cells: semester.courses.map {
-                        CellNode(CourseComponent(id: $0.id, course: $0))
+                    header: Header(title: semester.name?.uppercased() ?? ""),
+                    cells: {
+                        Group(of: semester.courses) { course in
+                            CourseComponent(
+                                id: course.id,
+                                course: course,
+                                onSelect: { [unowned self] in
+                                    self.open(course: course)
+                                }
+                            ).identified(by: \.course.id)
+                        }
                     }
                 )
-            )
+            }
         }
-        
-        renderer.render(data)
     }
     
     func loadData() {
@@ -81,16 +86,7 @@ class CoursesViewController: TranslatableModule, ModuleViewModel {
     func open(course: Course) {
         EventLogger.log(.openedCourse(id: course.id, name: course.name))
         
-        OAuth.refreshToken().then { accessTokenEncrypted in
-            guard let url = course.link.generatePinAuthURL(withToken: accessTokenEncrypted) else {
-                return
-            }
-            
-            let safariController = SFSafariViewController(url: url)
-            safariController.delegate = self
-            
-            self.present(safariController, animated: true, completion: nil)
-        }
+        viewModel.router.openCourse(course)
     }
     
     @objc func refresh() {
@@ -109,6 +105,11 @@ class CoursesViewController: TranslatableModule, ModuleViewModel {
 }
 
 extension CoursesViewController {
+    func prepareNavigationItem() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "", style: .plain, target: nil, action: nil)
+    }
+    
     func prepareRefreshControl() {
         refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
@@ -117,13 +118,6 @@ extension CoursesViewController {
     
     func prepareData() {
         renderer.target = tableView
-        renderer.adapter.didSelect = { [unowned self] context in
-            guard let component = context.node.component(as: CourseComponent.self) else {
-                return
-            }
-            
-            self.open(course: component.course)
-        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(scrollToTop), name: .scrollToTop, object: nil)
     }

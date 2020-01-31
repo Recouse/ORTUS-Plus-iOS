@@ -27,6 +27,13 @@
 		FA4111F1234FC15A002BA33D /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F0234FC15A002BA33D /* Schedule.swift */; };
 		FA4111F3234FC17A002BA33D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F2234FC17A002BA33D /* Event.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
+		FA8714CA23E40B9000DB728C /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714C923E40B9000DB728C /* FormTextField.swift */; };
+		FA8714D323E40DD100DB728C /* PinSettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714CE23E40DD100DB728C /* PinSettingsModuleBuilder.swift */; };
+		FA8714D423E40DD100DB728C /* PinSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714CF23E40DD100DB728C /* PinSettingsRouter.swift */; };
+		FA8714D523E40DD100DB728C /* PinSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D023E40DD100DB728C /* PinSettingsViewController.swift */; };
+		FA8714D623E40DD100DB728C /* PinSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D123E40DD100DB728C /* PinSettingsView.swift */; };
+		FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D223E40DD100DB728C /* PinSettingsViewModel.swift */; };
+		FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */; };
 		FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD67224377A1005148AC /* AppDelegate.swift */; };
 		FA90FD6F224377A4005148AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD6E224377A4005148AC /* Images.xcassets */; };
 		FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD70224377A4005148AC /* LaunchScreen.storyboard */; };
@@ -111,6 +118,12 @@
 		FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */; };
 		FABF939C2389CB6100F78FF1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF939B2389CB6100F78FF1 /* String.swift */; };
 		FABF93A1238BB15E00F78FF1 /* EventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF93A0238BB15E00F78FF1 /* EventLogger.swift */; };
+		FAD18D5623B1746600C0D89B /* CourseModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD18D5123B1746600C0D89B /* CourseModuleBuilder.swift */; };
+		FAD18D5723B1746600C0D89B /* CourseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD18D5223B1746600C0D89B /* CourseRouter.swift */; };
+		FAD18D5823B1746600C0D89B /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD18D5323B1746600C0D89B /* CourseViewController.swift */; };
+		FAD18D5923B1746600C0D89B /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD18D5423B1746600C0D89B /* CourseView.swift */; };
+		FAD18D5A23B1746600C0D89B /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD18D5523B1746600C0D89B /* CourseViewModel.swift */; };
+		FAD18D5F23B1767600C0D89B /* CourseRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD18D5E23B1767600C0D89B /* CourseRoute.swift */; };
 		FAD3CA252244F017009DA6AE /* ArticleContentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */; };
 		FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */; };
 		FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2D2245612C009DA6AE /* UIApplication.swift */; };
@@ -136,6 +149,7 @@
 		FAF77B242246A64200197641 /* OAuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B232246A64200197641 /* OAuthApi.swift */; };
 		FAF77B272246A98500197641 /* FormLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B262246A98500197641 /* FormLabel.swift */; };
 		FAF77B292246AC3C00197641 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B282246AC3C00197641 /* Header.swift */; };
+		FAF99DD023E48D6E006E056D /* CourseJS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF99DCF23E48D6E006E056D /* CourseJS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -173,6 +187,13 @@
 		FA4111F2234FC17A002BA33D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FA4111F6234FCDE2002BA33D /* CVCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CVCalendar.framework; path = Carthage/Build/iOS/CVCalendar.framework; sourceTree = "<group>"; };
 		FA6252192387F8D2009C3FF7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		FA8714C923E40B9000DB728C /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		FA8714CE23E40DD100DB728C /* PinSettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsModuleBuilder.swift; sourceTree = "<group>"; };
+		FA8714CF23E40DD100DB728C /* PinSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsRouter.swift; sourceTree = "<group>"; };
+		FA8714D023E40DD100DB728C /* PinSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsViewController.swift; sourceTree = "<group>"; };
+		FA8714D123E40DD100DB728C /* PinSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsView.swift; sourceTree = "<group>"; };
+		FA8714D223E40DD100DB728C /* PinSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsViewModel.swift; sourceTree = "<group>"; };
+		FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsRoute.swift; sourceTree = "<group>"; };
 		FA90FD64224377A1005148AC /* ORTUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORTUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA90FD67224377A1005148AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		FA90FD6E224377A4005148AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -262,6 +283,12 @@
 		FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewAdapter.swift; sourceTree = "<group>"; };
 		FABF939B2389CB6100F78FF1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FABF93A0238BB15E00F78FF1 /* EventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLogger.swift; sourceTree = "<group>"; };
+		FAD18D5123B1746600C0D89B /* CourseModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModuleBuilder.swift; sourceTree = "<group>"; };
+		FAD18D5223B1746600C0D89B /* CourseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRouter.swift; sourceTree = "<group>"; };
+		FAD18D5323B1746600C0D89B /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
+		FAD18D5423B1746600C0D89B /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		FAD18D5523B1746600C0D89B /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		FAD18D5E23B1767600C0D89B /* CourseRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRoute.swift; sourceTree = "<group>"; };
 		FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentComponent.swift; sourceTree = "<group>"; };
 		FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewAdapter.swift; sourceTree = "<group>"; };
 		FAD3CA2D2245612C009DA6AE /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -287,6 +314,7 @@
 		FAF77B232246A64200197641 /* OAuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthApi.swift; sourceTree = "<group>"; };
 		FAF77B262246A98500197641 /* FormLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabel.swift; sourceTree = "<group>"; };
 		FAF77B282246AC3C00197641 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		FAF99DCF23E48D6E006E056D /* CourseJS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseJS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +409,26 @@
 				FABBF3FC2351293E00D4D593 /* Lecture.swift */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		FA8714CD23E40DBB00DB728C /* PinSettings */ = {
+			isa = PBXGroup;
+			children = (
+				FA8714CE23E40DD100DB728C /* PinSettingsModuleBuilder.swift */,
+				FA8714D123E40DD100DB728C /* PinSettingsView.swift */,
+				FA8714D223E40DD100DB728C /* PinSettingsViewModel.swift */,
+				FA8714D023E40DD100DB728C /* PinSettingsViewController.swift */,
+				FA8714CF23E40DD100DB728C /* PinSettingsRouter.swift */,
+			);
+			path = PinSettings;
+			sourceTree = "<group>";
+		};
+		FA8714D823E40E5F00DB728C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		FA90FD5B224377A0005148AC = {
@@ -557,6 +605,8 @@
 		FA90FDA322437DBB005148AC /* Routes */ = {
 			isa = PBXGroup;
 			children = (
+				FA8714D823E40E5F00DB728C /* Settings */,
+				FAD18D5D23B1766800C0D89B /* Course */,
 				FA90FE032243CF2F005148AC /* Article */,
 				FA990A5C239D1F5800BE9ACA /* MainTabBarControllerRoute.swift */,
 				FA990A64239D7EB900BE9ACA /* LoginRoute.swift */,
@@ -568,6 +618,7 @@
 		FA90FDA622437F0E005148AC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FA8714CD23E40DBB00DB728C /* PinSettings */,
 				FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */,
 				FA90FDBC224380FE005148AC /* SettingsView.swift */,
 				FA90FDBD224380FE005148AC /* SettingsViewModel.swift */,
@@ -713,6 +764,27 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		FAD18D5023B1744600C0D89B /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				FAD18D5123B1746600C0D89B /* CourseModuleBuilder.swift */,
+				FAD18D5423B1746600C0D89B /* CourseView.swift */,
+				FAD18D5523B1746600C0D89B /* CourseViewModel.swift */,
+				FAD18D5323B1746600C0D89B /* CourseViewController.swift */,
+				FAD18D5223B1746600C0D89B /* CourseRouter.swift */,
+				FAF99DCF23E48D6E006E056D /* CourseJS.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		FAD18D5D23B1766800C0D89B /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				FAD18D5E23B1767600C0D89B /* CourseRoute.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
 		FAE3AB37239D0E8800120F96 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,6 +821,7 @@
 		FAF183B12249095000CA2492 /* Courses */ = {
 			isa = PBXGroup;
 			children = (
+				FAD18D5023B1744600C0D89B /* Course */,
 				FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */,
 				FAF183B52249096800CA2492 /* CoursesView.swift */,
 				FAF183B62249096800CA2492 /* CoursesViewModel.swift */,
@@ -784,6 +857,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF77B262246A98500197641 /* FormLabel.swift */,
+				FA8714C923E40B9000DB728C /* FormTextField.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -912,9 +986,12 @@
 				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
 				FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */,
 				FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */,
+				FAD18D5723B1746600C0D89B /* CourseRouter.swift in Sources */,
+				FA8714D423E40DD100DB728C /* PinSettingsRouter.swift in Sources */,
 				FAF183B92249096800CA2492 /* CoursesViewController.swift in Sources */,
 				FABF939C2389CB6100F78FF1 /* String.swift in Sources */,
 				FAF77B242246A64200197641 /* OAuthApi.swift in Sources */,
+				FAF99DD023E48D6E006E056D /* CourseJS.swift in Sources */,
 				FA90FDEF2243BA2D005148AC /* Response.swift in Sources */,
 				FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */,
 				FA90FDE322439676005148AC /* APIClient.swift in Sources */,
@@ -927,6 +1004,7 @@
 				FAF77B272246A98500197641 /* FormLabel.swift in Sources */,
 				FAF77B222246A51800197641 /* OAuth.swift in Sources */,
 				FA90FDB022437F25005148AC /* NewsView.swift in Sources */,
+				FA8714D523E40DD100DB728C /* PinSettingsViewController.swift in Sources */,
 				FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */,
 				FA90FDAF22437F25005148AC /* NewsViewController.swift in Sources */,
 				FAF183BB2249096800CA2492 /* CoursesViewModel.swift in Sources */,
@@ -934,15 +1012,19 @@
 				FA90FE0E2243E3C4005148AC /* UIColor.swift in Sources */,
 				FA90FDA022437D8B005148AC /* ModalTransition.swift in Sources */,
 				FA90FE0A2243D413005148AC /* Date.swift in Sources */,
+				FAD18D5F23B1767600C0D89B /* CourseRoute.swift in Sources */,
 				FAD3CA252244F017009DA6AE /* ArticleContentComponent.swift in Sources */,
 				FAF183C622490FC600CA2492 /* ScheduleRouter.swift in Sources */,
+				FAD18D5A23B1746600C0D89B /* CourseViewModel.swift in Sources */,
 				FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */,
 				FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */,
 				FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */,
 				FAF77B292246AC3C00197641 /* Header.swift in Sources */,
+				FA8714D623E40DD100DB728C /* PinSettingsView.swift in Sources */,
 				FA990A63239D6F8600BE9ACA /* LoginOnboardingContentView.swift in Sources */,
 				FA20623823434DF2007ED9BA /* ScheduleApi.swift in Sources */,
 				FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */,
+				FAD18D5923B1746600C0D89B /* CourseView.swift in Sources */,
 				FA90FDED2243B9FD005148AC /* Article.swift in Sources */,
 				FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
@@ -957,10 +1039,13 @@
 				FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */,
 				FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */,
 				FABF6DC7239C4CAB00F57F8A /* LoginViewModel.swift in Sources */,
+				FAD18D5823B1746600C0D89B /* CourseViewController.swift in Sources */,
 				FA990A5B239D1DAA00BE9ACA /* UIWindow.swift in Sources */,
 				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
 				FAE3AB42239D141600120F96 /* Button.swift in Sources */,
+				FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */,
+				FAD18D5623B1746600C0D89B /* CourseModuleBuilder.swift in Sources */,
 				FA90FD9C22437D76005148AC /* Transition.swift in Sources */,
 				FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */,
 				FA90FDAE22437F25005148AC /* NewsRouter.swift in Sources */,
@@ -979,13 +1064,16 @@
 				FA90FD8622437B9A005148AC /* Translatable.swift in Sources */,
 				FA990A56239D1D0400BE9ACA /* LoginOnboardingViewController.swift in Sources */,
 				FABF6DC6239C4CAB00F57F8A /* LoginView.swift in Sources */,
+				FA8714CA23E40B9000DB728C /* FormTextField.swift in Sources */,
 				FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */,
+				FA8714D323E40DD100DB728C /* PinSettingsModuleBuilder.swift in Sources */,
 				FA90FDA222437D94005148AC /* PushTransition.swift in Sources */,
 				FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */,
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
 				FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */,
 				FA990A58239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift in Sources */,
+				FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
 				FA2062DD234628A6007ED9BA /* InboxViewController.swift in Sources */,
 				FA02851723952F8200436C9F /* APIDateFormatter.swift in Sources */,
@@ -1092,7 +1180,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1148,7 +1236,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -12,12 +12,15 @@ import Carbon
 struct CourseComponent: IdentifiableComponent {
     var id: String
     var course: Course
+    var onSelect: (() -> Void)?
     
     func renderContent() -> CourseComponentView {
         return CourseComponentView()
     }
     
     func render(in content: CourseComponentView) {
+        content.onSelect = onSelect
+        
         content.imageContainerView.backgroundColor = Asset.Colors.tintColor.color.withAlphaComponent(0.2)
         content.imageView.tintColor = Asset.Colors.tintColor.color
         

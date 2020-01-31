@@ -14,47 +14,52 @@ xcodebuild_arguments:
   - -scheme
   - Carbon
 custom_categories:
-  - name: Components
+  - name: Element
     children:
-    - Component
-    - IdentifiableComponent
-    - AnyComponent
-  - name: Nodes
+      - Component
+      - IdentifiableComponent
+      - AnyComponent
+      - Section
+      - Group
+  - name: ComponentWrapper
     children:
-    - CellNode
-    - ViewNode
-  - name: Section
+      - IdentifiedComponentWrapper
+      - ComponentWrapping
+  - name: Node
     children:
-    - Section
+      - CellNode
+      - ViewNode
   - name: Renderer
     children:
-    - Renderer
-  - name: Adapters
+      - Renderer
+  - name: Adapter
     children:
-    - Adapter
-    - UITableViewAdapter
-    - UICollectionViewAdapter
-    - UICollectionViewFlowLayoutAdapter
-  - name: Updaters
+      - Adapter
+      - UITableViewAdapter
+      - UICollectionViewAdapter
+      - UICollectionViewFlowLayoutAdapter
+  - name: Updater
     children:
-    - Updater
-    - UITableViewUpdater
-    - UITableViewReloadDataUpdater
-    - UICollectionViewUpdater
-    - UICollectionViewReloadDataUpdater
-  - name: Interfaces
+      - Updater
+      - UITableViewUpdater
+      - UITableViewReloadDataUpdater
+      - UICollectionViewUpdater
+      - UICollectionViewReloadDataUpdater
+  - name: Interface
     children:
-    - UITableViewComponentCell
-    - UITableViewComponentHeaderFooterView
-    - UICollectionViewComponentCell
-    - UICollectionComponentReusableView
-  - name: Content Protocols
+      - ComponentRenderable
+      - UITableViewComponentCell
+      - UITableViewComponentHeaderFooterView
+      - UICollectionViewComponentCell
+      - UICollectionComponentReusableView
+  - name: Builder
     children:
-    - UITableViewCellContent
-    - UITableViewHeaderFooterViewContent
-    - UICollectionViewCellContent
-    - UICollectionReusableViewContent
-  - name: Changesets
+      - CellsBuilder
+      - SectionsBuilder
+      - CellsBuildable
+      - SectionsBuildable
+      - Optional
+  - name: Changeset
     children:
-    - DataChangeset
-    - StagedDataChangeset
+      - DataChangeset
+      - StagedDataChangeset

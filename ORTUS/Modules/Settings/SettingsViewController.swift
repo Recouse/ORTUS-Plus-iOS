@@ -11,12 +11,16 @@ import Carbon
 import SafariServices
 
 class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresentable {
+    enum ID {
+        case pinCode, reportBug, signOut
+    }
+
     var viewModel: SettingsViewModel
     
     weak var settingsView: SettingsView! { return view as? SettingsView }
     weak var tableView: UITableView! { return settingsView.tableView }
     
-    private lazy var renderer = Renderer(
+    let renderer = Renderer(
         adapter: UITableViewAdapter(),
         updater: UITableViewUpdater()
     )
@@ -48,29 +52,80 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
     }
     
     func render() {
-        renderer.render(
+//        renderer.render(
+//            Section(
+//                id: "pin",
+//                header: ViewNode(Header(title: "PIN Code".uppercased())),
+//                cells: [
+//                    CellNode(
+//                        FormLabel(title: "PIN Code Settings", onSelect: { [unowned self] in
+//                            self.setPinCode()
+//                        })
+//                    )
+//                ]
+//            ),
+//            Section(
+//                id: "other",
+//                header: ViewNode(Header(title: "Other".uppercased())),
+//                cells: [
+//                    CellNode(
+//                        FormLabel(title: "Report a bug", onSelect: { [unowned self] in
+//                            self.reportBug()
+//                        })
+//                    )
+//                ]
+//            ),
+//            Section(
+//                id: "signout",
+//                header: ViewNode(Header(title: "")),
+//                cells: [
+//                    CellNode(
+//                        FormLabel(
+//                            title: "Sign Out",
+//                            color: .systemRed,
+//                            onSelect: { [unowned self] in
+//                                self.signOut()
+//                            }
+//                        )
+//                    )
+//                ]
+//            )
+//        )
+        renderer.render {
             Section(
-                id: "account",
-                header: ViewNode(Header(title: "Account".uppercased())),
-                cells: [
-                    UserViewModel.isLoggedIn ? CellNode(FormLogout(title: "Sign Out", onSelect: { [unowned self] in
-                        self.signOut()
-                    })) : CellNode(FormAuth(title: "Sign In", onSelect: { [unowned self] in
-                        self.addAccount()
-                    }))
-                ],
-                footer: UserViewModel.isLoggedIn ? nil : ViewNode(Footer(description: "Sign in to your ORTUS account to get schedule and courses list"))
-            ),
+                id: "pin",
+                header: Header(title: "PIN Code".uppercased()),
+                cells: {
+                    FormLabel(title: "PIN Code Settings", onSelect: { [unowned self] in
+                        self.setPinCode()
+                    })
+                }
+            )
+            
             Section(
                 id: "other",
-                header: ViewNode(Header(title: "Other".uppercased())),
-                cells: [
-                    CellNode(FormLabel(title: "Report a bug", onSelect: { [unowned self] in
+                header: Header(title: "Other".uppercased()),
+                cells: {
+                    FormLabel(title: "Report a bug", onSelect: { [unowned self] in
                         self.reportBug()
-                    }))
-                ]
+                    })
+                }
             )
-        )
+            
+            Section(
+                id: "signout",
+                header: Header(title: ""),
+                cells: {
+                    FormLabel(
+                        title: "Sign Out",
+                        color: .systemRed,
+                        onSelect: { [unowned self] in
+                            self.signOut()
+                        }
+                    )
+                }
+            )
+        }
     }
     
     func addAccount() {
@@ -102,6 +157,10 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
             
             self.alert(message: "Error on processing. Please try again.")
         }
+    }
+    
+    func setPinCode() {
+        viewModel.router.openPinSettings()
     }
     
     func signOut() {

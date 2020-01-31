@@ -9,11 +9,9 @@
 import UIKit
 import Carbon
 
-typealias FormAuth = FormLabel
-typealias FormLogout = FormLabel
-
 struct FormLabel: IdentifiableComponent {
     var title: String
+    var color: UIColor = Asset.Colors.tintColor.color
     var onSelect: () -> Void
     
     var id: String {
@@ -25,6 +23,7 @@ struct FormLabel: IdentifiableComponent {
     }
     
     func render(in content: FormLabelView) {
+        content.label.textColor = color
         content.label.text = title
         content.onSelect = onSelect
     }
@@ -41,7 +40,6 @@ struct FormLabel: IdentifiableComponent {
 class FormLabelView: UIControl {
     lazy var label: UILabel = {
         let label = UILabel()
-        label.textColor = Asset.Colors.tintColor.color
         label.textAlignment = .center
         
         return label
@@ -51,6 +49,12 @@ class FormLabelView: UIControl {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        if #available(iOS 13.0, *) {
+            backgroundColor = .secondarySystemGroupedBackground
+        } else {
+            backgroundColor = .white
+        }
         
         addSubview(label)
         label.snp.makeConstraints {

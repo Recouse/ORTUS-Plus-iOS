@@ -54,26 +54,36 @@ enum B {
 }
 
 class MockComponent: Component, Equatable {
+    let reuseIdentifier: String
     let referenceSize: CGSize?
+    let intrinsicContentSize: CGSize
     let shouldContentUpdate: Bool
     let shouldRender: Bool
+    let content: UIView
 
     private(set) weak var contentCapturedOnWillDisplay: UIView?
     private(set) weak var contentCapturedOnDidEndDisplay: UIView?
     private(set) weak var contentCapturedOnRender: UIView?
+    private(set) weak var contentCapturedOnLayout: UIView?
 
     init(
+        reuseIdentifier: String = "MockComponent",
         referenceSize: CGSize? = nil,
+        intrinsicContentSize: CGSize = .zero,
         shouldContentUpdate: Bool = false,
-        shouldRender: Bool = false
+        shouldRender: Bool = false,
+        content: UIView = UIView()
         ) {
+        self.reuseIdentifier = reuseIdentifier
         self.referenceSize = referenceSize
+        self.intrinsicContentSize = intrinsicContentSize
         self.shouldContentUpdate = shouldContentUpdate
         self.shouldRender = shouldRender
+        self.content = content
     }
 
     func renderContent() -> UIView {
-        return UIView()
+        return content
     }
 
     func render(in content: UIView) {
@@ -90,6 +100,14 @@ class MockComponent: Component, Equatable {
 
     func referenceSize(in bounds: CGRect) -> CGSize? {
         return referenceSize
+    }
+
+    func layout(content: UIView, in container: UIView) {
+        contentCapturedOnLayout = content
+    }
+
+    func intrinsicContentSize(for content: UIView) -> CGSize {
+        return intrinsicContentSize
     }
 
     func contentWillDisplay(_ content: UIView) {
@@ -113,9 +131,29 @@ final class MockIdentifiableComponent<ID: Hashable>: MockComponent, Identifiable
     }
 }
 
+struct MockComponentWrapper<Wrapped: Component>: ComponentWrapping {
+    var wrapped: Wrapped
+}
+
 final class MockTarget: Equatable {
     static func == (lhs: MockTarget, rhs: MockTarget) -> Bool {
         return lhs === rhs
+    }
+}
+
+struct MockCellsBuildable: CellsBuildable {
+    var cells: [CellNode]
+
+    func buildCells() -> [CellNode] {
+        return cells
+    }
+}
+
+struct MockSectionsBuildable: SectionsBuildable {
+    var sections: [Section]
+
+    func buildSections() -> [Section] {
+        return sections
     }
 }
 
@@ -141,21 +179,12 @@ final class MockUpdater: Updater {
         adapterCapturedOnPrepare = adapter
     }
 
-    func performUpdates(target: MockTarget, adapter: MockAdapter, data: [Section], completion: (() -> Void)?) {
+    func performUpdates(target: MockTarget, adapter: MockAdapter, data: [Section]) {
         adapter.data = data
         targetCapturedOnUpdates = target
         adapterCapturedOnUpdates = adapter
-        completion?()
     }
 }
-
-final class MockTableViewCell: UITableViewComponentCell {}
-
-final class MockTableViewHeaderFooterView: UITableViewComponentHeaderFooterView {}
-
-final class MockCollectionViewCell: UICollectionViewComponentCell {}
-
-final class MockCollectionReusableView: UICollectionComponentReusableView {}
 
 final class MockTableView: UITableView {
     var isReloadDataCalled = false
@@ -186,6 +215,7 @@ final class MockTableView: UITableView {
     var customCellForRowAt: ((IndexPath) -> UITableViewCell?)?
     var customHeaderViewForSection: ((Int) -> UITableViewHeaderFooterView)?
     var customFooterViewForSection: ((Int) -> UITableViewHeaderFooterView)?
+    var customRectForSection: (Int) -> CGRect = { _ in CGRect(x: 0, y: 0, width: 500, height: 500) }
 
     override var numberOfSections: Int {
         return customNumberOfSections ?? super.numberOfSections
@@ -208,7 +238,7 @@ final class MockTableView: UITableView {
     }
 
     override func rect(forSection section: Int) -> CGRect {
-        return CGRect(x: 0, y: 0, width: 500, height: 500)
+        return customRectForSection(section)
     }
 
     override func layoutSubviews() {
@@ -363,120 +393,11 @@ final class MockCollectionViewUpdater: UICollectionViewUpdater<MockCollectionVie
 
 final class MockCollectionViewReloadDataUpdater: UICollectionViewReloadDataUpdater<MockCollectionViewFlowLayoutAdapter> {}
 
-final class MockComponentContainer: ComponentContainer {
-    var renderedContent: Any?
-    var renderedComponent: AnyComponent?
-    let containerView: UIView
+final class MockComponentContainer: ComponentRenderable {
+    let componentContainerView: UIView
 
-    var contentCapturedOnDidRender: Any?
-    var componentCapturedOnDidRender: AnyComponent?
-
-    init(containerView: UIView = UIView()) {
-        self.containerView = containerView
-    }
-
-    func didRenderContent(_ content: Any) {
-        contentCapturedOnDidRender = content
-    }
-    func didRenderComponent(_ component: AnyComponent) {
-        componentCapturedOnDidRender = component
-    }
-}
-
-final class MockTableViewCellContent: UITableViewCellContent {
-    var cellCapturedOnPrepareForReuse: UITableViewCell?
-    var cellCapturedOnHighlighted: UITableViewCell?
-    var cellCapturedOnSelected: UITableViewCell?
-    var cellCapturedOnEditing: UITableViewCell?
-    var cellCapturedOnDidRender: UITableViewCell?
-    var cellCapturedOnDidRenderComponent: UITableViewCell?
-
-    func cellDidPrepareForReuse(_ cell: UITableViewCell) {
-        cellCapturedOnPrepareForReuse = cell
-    }
-
-    func cellDidSetHighlighted(_ cell: UITableViewCell, isHighlighted: Bool, animated: Bool) {
-        cellCapturedOnHighlighted = cell
-    }
-
-    func cellDidSetSelected(_ cell: UITableViewCell, isSelected: Bool, animated: Bool) {
-        cellCapturedOnSelected = cell
-    }
-
-    func cellDidSetEditing(_ cell: UITableViewCell, isEditing: Bool, animated: Bool) {
-        cellCapturedOnEditing = cell
-    }
-
-    func didRender(in cell: UITableViewCell) {
-        cellCapturedOnDidRender = cell
-    }
-
-    func didRenderComponent(in cell: UITableViewCell) {
-        cellCapturedOnDidRenderComponent = cell
-    }
-}
-
-final class MockTableViewHeaderFooterViewContent: UITableViewHeaderFooterViewContent {
-    var viewCapturedOnPrepareForReuse: UITableViewHeaderFooterView?
-    var viewCapturedOnDidRender: UITableViewHeaderFooterView?
-    var viewCapturedOnDidRenderComponent: UITableViewHeaderFooterView?
-
-    func viwDidPrepareForReuse(_ view: UITableViewHeaderFooterView) {
-        viewCapturedOnPrepareForReuse = view
-    }
-
-    func didRender(in view: UITableViewHeaderFooterView) {
-        viewCapturedOnDidRender = view
-    }
-
-    func didRenderComponent(in view: UITableViewHeaderFooterView) {
-        viewCapturedOnDidRenderComponent = view
-    }
-}
-
-final class MockCollectionViewCellContent: UICollectionViewCellContent {
-    var cellCapturedOnPrepareForReuse: UICollectionViewCell?
-    var cellCapturedOnHighlighted: UICollectionViewCell?
-    var cellCapturedOnSelected: UICollectionViewCell?
-    var cellCapturedOnDidRender: UICollectionViewCell?
-    var cellCapturedOnDidRenderComponent: UICollectionViewCell?
-
-    func cellDidPrepareForReuse(_ cell: UICollectionViewCell) {
-        cellCapturedOnPrepareForReuse = cell
-    }
-
-    func cellDidSetHighlighted(_ cell: UICollectionViewCell, isHighlighted: Bool) {
-        cellCapturedOnHighlighted = cell
-    }
-
-    func cellDidSetSelected(_ cell: UICollectionViewCell, isSelected: Bool) {
-        cellCapturedOnSelected = cell
-    }
-
-    func didRender(in cell: UICollectionViewCell) {
-        cellCapturedOnDidRender = cell
-    }
-
-    func didRenderComponent(in cell: UICollectionViewCell) {
-        cellCapturedOnDidRenderComponent = cell
-    }
-}
-
-final class MockCollectionReusableViewContent: UICollectionReusableViewContent {
-    var viewCapturedOnPrepareForReuse: UICollectionReusableView?
-    var viewCapturedOnDidRender: UICollectionReusableView?
-    var viewCapturedOnDidRenderComponent: UICollectionReusableView?
-
-    func viewDidPrepareForReuse(_ view: UICollectionReusableView) {
-        viewCapturedOnPrepareForReuse = view
-    }
-
-    func didRender(in view: UICollectionReusableView) {
-        viewCapturedOnDidRender = view
-    }
-
-    func didRenderComponent(in view: UICollectionReusableView) {
-        viewCapturedOnDidRenderComponent = view
+    init(componentContainerView: UIView = UIView()) {
+        self.componentContainerView = componentContainerView
     }
 }
 
@@ -497,10 +418,55 @@ final class MockScrollView: UIScrollView {
     }
 }
 
+final class MockCustomTableViewCell1: UITableViewCell, ComponentRenderable {}
+final class MockCustomTableViewCell2: UITableViewCell, ComponentRenderable {}
+final class MockCustomXibTableViewCell: UITableViewCell, ComponentRenderable {}
+final class MockCustomTableViewHeaderFooterView1: UITableViewHeaderFooterView, ComponentRenderable {}
+final class MockCustomTableViewHeaderFooterView2: UITableViewHeaderFooterView, ComponentRenderable {}
+final class MockCustomXibTableViewHeaderFooterView: UITableViewHeaderFooterView, ComponentRenderable {}
+
+final class MockCustomTableViewAdapter: UITableViewAdapter {
+    var cellRegistration = CellRegistration(class: MockCustomTableViewCell1.self)
+    var headerRegistration = ViewRegistration(class: MockCustomTableViewHeaderFooterView1.self)
+    var footerRegistration = ViewRegistration(class: MockCustomTableViewHeaderFooterView1.self)
+
+    override func cellRegistration(tableView: UITableView, indexPath: IndexPath, node: CellNode) -> CellRegistration {
+        return cellRegistration
+    }
+
+    override func headerViewRegistration(tableView: UITableView, section: Int, node: ViewNode) -> ViewRegistration {
+        return headerRegistration
+    }
+
+    override func footerViewRegistration(tableView: UITableView, section: Int, node: ViewNode) -> ViewRegistration {
+        return footerRegistration
+    }
+}
+
+final class MockCustomCollectionViewCell1: UICollectionViewCell, ComponentRenderable {}
+final class MockCustomCollectionViewCell2: UICollectionViewCell, ComponentRenderable {}
+final class MockCustomXibCollectionViewCell: UICollectionViewCell, ComponentRenderable {}
+final class MockCustomCollectionViewReusableView1: UICollectionReusableView, ComponentRenderable {}
+final class MockCustomCollectionViewReusableView2: UICollectionReusableView, ComponentRenderable {}
+final class MockCustomXibCollectionViewReusableView: UICollectionReusableView, ComponentRenderable {}
+
+final class MockCustomCollectionViewAdapter: UICollectionViewAdapter {
+    var cellRegistration = CellRegistration(class: MockCustomCollectionViewCell1.self)
+    var supplementaryViewRegistrations: [String: ViewRegistration] = [:]
+
+    override func cellRegistration(collectionView: UICollectionView, indexPath: IndexPath, node: CellNode) -> CellRegistration {
+        return cellRegistration
+    }
+
+    override func supplementaryViewRegistration(forElementKind kind: String, collectionView: UICollectionView, indexPath: IndexPath, node: ViewNode) -> ViewRegistration {
+        return supplementaryViewRegistrations[kind] ?? ViewRegistration(class: MockCustomCollectionViewReusableView1.self)
+    }
+}
+
 /// Extract `renderedContent` from specified container.
 func renderedContent<T>(of container: Any, as type: T.Type) -> T? {
     guard
-        let container = container as? ComponentContainer,
+        let container = container as? ComponentRenderable,
         let content = container.renderedContent as? T else {
             XCTFail()
             return nil
@@ -558,5 +524,11 @@ extension XCTestCase {
         wait(for: [expectation], timeout: 3)
 
         testing()
+    }
+}
+
+extension UINib {
+    convenience init(for class: AnyClass) {
+        self.init(nibName: String(describing: `class`), bundle: Bundle(for: `class`))
     }
 }

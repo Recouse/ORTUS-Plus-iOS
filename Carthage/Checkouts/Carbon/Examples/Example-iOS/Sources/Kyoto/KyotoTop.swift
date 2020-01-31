@@ -1,16 +1,12 @@
-import UIKit
+import SwiftUI
 import Carbon
 
-struct KyotoTop: Component, Equatable {
+struct KyotoTop: Component, View, Hashable {
     func renderContent() -> KyotoTopContent {
-        return .loadFromNib()
+        .loadFromNib()
     }
 
     func render(in content: KyotoTopContent) {}
-
-    func referenceSize(in bounds: CGRect) -> CGSize? {
-        return CGSize(width: bounds.width, height: 452)
-    }
 }
 
 final class KyotoTopContent: UIView, NibLoadable {}

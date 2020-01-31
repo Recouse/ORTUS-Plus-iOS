@@ -17,7 +17,7 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
     
     var refreshControl: UIRefreshControl!
     
-    lazy var renderer = Renderer(
+    let renderer = Renderer(
         adapter: UITableViewAdapter(),
         updater: UITableViewUpdater()
     )
@@ -53,17 +53,27 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
     func render() {
         refreshControl.endRefreshing()
         
-        let data = viewModel.articles.keys.sorted(by: { $0.compare($1) == .orderedDescending }).map {
-            Section(
-                id: $0.hashValue,
-                header: ViewNode(ArticleSectionHeader(date: $0)),
-                cells: (self.viewModel.articles[$0] ?? []).map { article in
-                    CellNode(ArticleComponent(id: article.title, article: article))
-                }
-            )
-        }
+        let dates = viewModel.articles.keys.sorted(by: { $0.compare($1) == .orderedDescending })
         
-        renderer.render(data)
+        renderer.render {
+            Group(of: dates) { date in
+                Section(
+                    id: date.hashValue,
+                    header: ArticleSectionHeader(date: date),
+                    cells: {
+                        Group(of: self.viewModel.articles[date] ?? []) { article in
+                            ArticleComponent(
+                                id: article.title,
+                                article: article,
+                                onSelect: { [unowned self] in
+                                    self.viewModel.router.openArticle(article)
+                                }
+                            ).identified(by: \.article.title)
+                        }
+                    }
+                )
+            }
+        }
     }
     
     func loadData() {
@@ -91,8 +101,11 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
 
 extension NewsViewController {
     func prepareNavigationItem() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "back".localized(), style: .plain,
-                                                           target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "back".localized(),
+            style: .plain,
+            target: nil,
+            action: nil)
     }
     
     func prepareRefreshControl() {
@@ -103,13 +116,6 @@ extension NewsViewController {
     
     func prepareData() {
         renderer.target = tableView
-        renderer.adapter.didSelect = { [unowned self] context in
-            guard let component = context.node.component(as: ArticleComponent.self) else {
-                return
-            }
-            
-            self.viewModel.router.openArticle(component.article)
-        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(scrollToTop), name: .scrollToTop, object: nil)
     }

@@ -55,7 +55,7 @@ final class AnyComponentTests: XCTestCase {
     }
 
     func testLayout() {
-        let component = MockComponent()
+        let component = A.Component()
         let anyComponent = AnyComponent(component)
         let anyContent = anyComponent.renderContent()
         let frame = CGRect(x: 0, y: 0, width: 200, height: 300)
@@ -64,6 +64,31 @@ final class AnyComponentTests: XCTestCase {
         anyComponent.layout(content: anyContent, in: container)
         container.layoutIfNeeded()
         XCTAssertEqual((anyContent as? MockComponent.Content)?.frame, frame)
+    }
+
+    func testIntrinsicContentSizeForView() {
+        struct TestComponent: Component {
+            func renderContent() -> UILabel {
+                return UILabel()
+            }
+
+            func render(in content: UILabel) {
+                content.text = "Test"
+            }
+        }
+
+        let component = TestComponent()
+        let content = component.renderContent()
+        let anyComponent = AnyComponent(component)
+        let anyContent = anyComponent.renderContent()
+
+        component.render(in: content)
+        anyComponent.render(in: anyContent)
+
+        XCTAssertEqual(
+            component.intrinsicContentSize(for: content),
+            anyComponent.intrinsicContentSize(for: anyContent)
+        )
     }
 
     func testShouldContentUpdate() {

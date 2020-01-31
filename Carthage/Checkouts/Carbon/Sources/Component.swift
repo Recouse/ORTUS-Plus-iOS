@@ -1,14 +1,17 @@
 import UIKit
 
-/// Represents a component of a list UI such as `UITableView` or `UICollectionView`.
-///
-/// - Note: Components are designed to be available for `UITableView`, `UICollectionView`,
-///         and its cell, header, footer, and other generally elements.
+/// A component represents a small reusable piece of code of element to be rendered.
+/// This behaves as all elements of UIKit's UITableView and UICollectionView, and can
+/// be easily support SwiftUI by used in conjunction with the `View` protocol.
 ///
 /// Example for the simple component:
 ///
-///     struct Label: Component, Equatable {
+///     struct Label: Component {
 ///         var text: String
+///
+///         init(_ text: String) {
+///             self.text = text
+///         }
 ///
 ///         func renderContent() -> UILabel {
 ///             return UILabel()
@@ -17,14 +20,20 @@ import UIKit
 ///         func render(in content: UILabel) {
 ///             content.text = text
 ///         }
-///
-///         func referenceSize(in bounds: CGRect) -> CGSize? {
-///             return CGSize(width: bounds.width, height: 44)
-///         }
 ///     }
 ///
-///     let view = ViewNode(Label(text: "Hello"))
-///     let cell = CellNode(id: 0, Label(text: "World"))
+/// Example for use with SwiftUI:
+///
+///     extension Label: View {}
+///
+///     struct ContentView: View {
+///         var body: some View {
+///             VStack {
+///                 Text("This is SwiftUI view")
+///                 Label("This is Carbon component")
+///             }
+///         }
+///     }
 public protocol Component {
     /// A type that represents a content to be render on the element of list UI.
     associatedtype Content
@@ -42,6 +51,11 @@ public protocol Component {
     ///   - content: An instance of `Content` laid out on the element of list UI.
     func render(in content: Content)
 
+    // MARK: - Rendering - optional
+
+    /// A string used to identify a element that is reusable. Default is the type name of `self`.
+    var reuseIdentifier: String { get }
+
     /// Returns the referencing size of content to render on the list UI.
     ///
     /// - Parameter:
@@ -58,7 +72,7 @@ public protocol Component {
 
     /// Returns a `Bool` value indicating whether the content should be reloaded.
     ///
-    /// - Note: Unlike `Equitable`, this doesn't compare whether the two values
+    /// - Note: Unlike `Equatable`, this doesn't compare whether the two values
     ///         exactly equal. It's can be ignore property comparisons, if not expect
     ///         to reload content.
     ///
@@ -67,11 +81,6 @@ public protocol Component {
     ///
     /// - Returns: A `Bool` value indicating whether the content should be reloaded.
     func shouldContentUpdate(with next: Self) -> Bool
-
-    // MARK: - Rendering - optional
-
-    /// A string used to identify a element that is reusable. Default is the type name of `Content`.
-    var reuseIdentifier: String { get }
 
     /// Returns a `Bool` value indicating whether component should be render again.
     ///
@@ -91,6 +100,14 @@ public protocol Component {
     ///   - container: A container view to layout content.
     func layout(content: Content, in container: UIView)
 
+    /// The natural size for the passed content.
+    ///
+    /// - Parameter:
+    ///   - content: An instance of content.
+    ///
+    /// - Returns: A `CGSize` value represents a natural size of the passed content.
+    func intrinsicContentSize(for content: Content) -> CGSize
+
     // MARK: - Lifecycle - optional
 
     /// Invoked every time of before a component got into visible area.
@@ -107,10 +124,42 @@ public protocol Component {
 }
 
 public extension Component {
-    /// A string used to identify a element that is reusable. Default is the type name of `Content`.
+    /// A string used to identify a element that is reusable. Default is the type name of `self`.
     @inlinable
     var reuseIdentifier: String {
-        return String(reflecting: Content.self)
+        return String(reflecting: Self.self)
+    }
+
+    /// Returns the referencing size of content to render on the list UI. Returns nil by default.
+    ///
+    /// - Parameter:
+    ///   - bounds: A value of `CGRect` containing the size of the list UI itself,
+    ///             such as `UITableView` or `UICollectionView`.
+    ///
+    /// - Note: Only `CGSize.height` is used to determine the size of element
+    ///         in `UITableView`.
+    ///
+    /// - Returns: The referencing size of content to render on the list UI.
+    ///            If returns nil, the element of list UI falls back to its default size
+    ///            like `UITableView.rowHeight` or `UICollectionViewFlowLayout.itemSize`.
+    @inlinable
+    func referenceSize(in bounds: CGRect) -> CGSize? {
+        return nil
+    }
+
+    /// Returns a `Bool` value indicating whether the content should be reloaded. Default is false.
+    ///
+    /// - Note: Unlike `Equatable`, this doesn't compare whether the two values
+    ///         exactly equal. It's can be ignore property comparisons, if not expect
+    ///         to reload content.
+    ///
+    /// - Parameter:
+    ///   - next: The next value to be compared to the receiver.
+    ///
+    /// - Returns: A `Bool` value indicatig whether the content should be reloaded.
+    @inlinable
+    func shouldContentUpdate(with next: Self) -> Bool {
+        return false
     }
 
     /// Returns a `Bool` value indicating whether component should be render again.
@@ -140,20 +189,6 @@ public extension Component {
     func contentDidEndDisplay(_ content: Content) {}
 }
 
-public extension Component where Self: Equatable {
-    /// Returns a `Bool` value indicating whether the content should be reloaded.
-    ///
-    /// - Parameter:
-    ///   - next: The next value to be compared to the receiver.
-    ///
-    /// - Returns: A `Bool` value indicating whether the content should be reloaded.
-    ///            Default is the result of comparison by `Equatable.==`.
-    @inlinable
-    func shouldContentUpdate(with next: Self) -> Bool {
-        return self != next
-    }
-}
-
 public extension Component where Content: UIView {
     /// Layout the content on top of element of the list UI.
     ///
@@ -163,6 +198,16 @@ public extension Component where Content: UIView {
     ///                Default is laid out with edge constraints.
     func layout(content: Content, in container: UIView) {
         container.addSubviewWithEdgeConstraints(content)
+    }
+
+    /// The natural size for the passed content.
+    ///
+    /// - Parameter:
+    ///   - content: An instance of content.
+    ///
+    /// - Returns: A `CGSize` value represents a natural size of the passed content.
+    func intrinsicContentSize(for content: Content) -> CGSize {
+        return content.intrinsicContentSize
     }
 }
 
@@ -175,6 +220,16 @@ public extension Component where Content: UIViewController {
     ///                Default is laid out with edge constraints.
     func layout(content: Content, in container: UIView) {
         container.addSubviewWithEdgeConstraints(content.view)
+    }
+
+    /// The natural size for the passed content.
+    ///
+    /// - Parameter:
+    ///   - content: An instance of content.
+    ///
+    /// - Returns: A `CGSize` value represents a natural size of the passed content.
+    func intrinsicContentSize(for content: Content) -> CGSize {
+        return content.view.intrinsicContentSize
     }
 }
 

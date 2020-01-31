@@ -24,7 +24,7 @@ final class TodoViewController: UIViewController, UITextViewDelegate {
     }
 
     private let renderer = Renderer(
-        adapter: TodoTableViewAdapter(),
+        adapter: TodoSwipeCellKitAdapter(),
         updater: UITableViewUpdater()
     )
 
@@ -35,59 +35,61 @@ final class TodoViewController: UIViewController, UITextViewDelegate {
         addButton.layer.cornerRadius = addButton.bounds.height / 2
         inputTextView.textContainerInset = .zero
         inputContainerView.layer.cornerRadius = 24
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.contentInset.bottom = view.bounds.height - addButton.frame.minY
-
         renderer.target = tableView
-        renderer.updater.skipReloadComponents = true
-        renderer.updater.alwaysRenderVisibleComponents = true
 
         render()
     }
 
     func render() {
-        renderer.render(
-            Section(
-                id: ID.task,
-                header: state.todos.isEmpty
-                    ? ViewNode(TodoEmpty())
-                    : ViewNode(Header(title: "TASKS")),
-                cells: state.todos.enumerated().map { offset, todo in
-                    CellNode(TodoText(todo: todo, isCompleted: false) { [weak self] event in
-                        switch event {
-                        case .toggleCompleted:
-                            self?.state.todos.remove(at: offset)
-                            self?.state.completed.insert(todo, at: 0)
+        renderer.render {
+            if state.todos.isEmpty {
+                Section(id: ID.task, header: TodoEmpty())
+            }
+            else {
+                Section(
+                    id: ID.task,
+                    header: Header("TASKS (\(state.todos.count))"),
+                    cells: {
+                        Group(of: state.todos.enumerated()) { offset, todo in
+                            TodoText(todo: todo, isCompleted: false) { [weak self] event in
+                                switch event {
+                                case .toggleCompleted:
+                                    self?.state.todos.remove(at: offset)
+                                    self?.state.completed.append(todo)
 
-                        case .delete:
-                            self?.state.todos.remove(at: offset)
+                                case .delete:
+                                    self?.state.todos.remove(at: offset)
+                                }
+                            }
                         }
-                    })
-                }
-            ),
-            Section(
-                id: ID.completed,
-                header: state.completed.isEmpty
-                    ? nil
-                    : ViewNode(Header(title: "COMPLETED")),
-                cells: state.completed.enumerated().map { offset, todo in
-                    CellNode(TodoText(todo: todo, isCompleted: true) { [weak self] event in
-                        switch event {
-                        case .toggleCompleted:
-                            self?.state.completed.remove(at: offset)
-                            self?.state.todos.insert(todo, at: 0)
+                })
+            }
 
-                        case .delete:
-                            self?.state.completed.remove(at: offset)
+            if !state.completed.isEmpty {
+                Section(
+                    id: ID.completed,
+                    header: Header("COMPLETED (\(state.completed.count))"),
+                    cells: {
+                        Group(of: state.completed.enumerated()) { offset, todo in
+                            TodoText(todo: todo, isCompleted: true) { [weak self] event in
+                                switch event {
+                                case .toggleCompleted:
+                                    self?.state.completed.remove(at: offset)
+                                    self?.state.todos.append(todo)
+
+                                case .delete:
+                                    self?.state.completed.remove(at: offset)
+                                }
+                            }
                         }
-                    })
-                }
-            )
-        )
+                })
+            }
+        }
     }
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

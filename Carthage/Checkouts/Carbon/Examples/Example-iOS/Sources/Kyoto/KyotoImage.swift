@@ -1,12 +1,12 @@
-import UIKit
+import SwiftUI
 import Carbon
 
-struct KyotoImage: IdentifiableComponent, Hashable {
+struct KyotoImage: IdentifiableComponent, View, Hashable {
     var title: String
     var image: UIImage
 
     func renderContent() -> KyotoImageContent {
-        return .loadFromNib()
+        .loadFromNib()
     }
 
     func render(in content: KyotoImageContent) {
@@ -15,9 +15,7 @@ struct KyotoImage: IdentifiableComponent, Hashable {
     }
 
     func referenceSize(in bounds: CGRect) -> CGSize? {
-        let shortSide = min(bounds.width, bounds.height)
-        let length = ceil(shortSide * 0.425)
-        return CGSize(width: length, height: length)
+        CGSize(width: bounds.width, height: 150)
     }
 }
 

@@ -24,6 +24,7 @@ class NavigationController: UINavigationController {
     func prepareNavigationBar() {
         navigationBar.prefersLargeTitles = true
         navigationBar.isTranslucent = true
+        navigationBar.tintColor = Asset.Colors.tintColor.color
 //        navigationBar.setBackgroundImage(UIColor.white.uiImage, for: .default)
 //        navigationBar.shadowImage = UIImage()
     }

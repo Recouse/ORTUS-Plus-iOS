@@ -5,7 +5,13 @@ public struct AnyComponent: Component {
     @usableFromInline
     internal let box: AnyComponentBox
 
-    /// A string used to identify a element that is reusable. Default is the type name of `Content`.
+    /// The value wrapped by this instance.
+    @inlinable
+    public var base: Any {
+        return box.base
+    }
+
+    /// A string used to identify a element that is reusable. Default is the type name of `self`.
     @inlinable
     public var reuseIdentifier: String {
         return box.reuseIdentifier
@@ -59,7 +65,7 @@ public struct AnyComponent: Component {
 
     /// Returns a `Bool` value indicating whether the content should be reloaded.
     ///
-    /// - Note: Unlike `Equitable`, this doesn't compare whether the two values
+    /// - Note: Unlike `Equatable`, this doesn't compare whether the two values
     ///         exactly equal. It's can be ignore property comparisons, if not expect
     ///         to reload content.
     ///
@@ -94,6 +100,17 @@ public struct AnyComponent: Component {
     @inlinable
     public func layout(content: Any, in container: UIView) {
         box.layout(content: content, in: container)
+    }
+
+    /// The natural size for the passed content.
+    ///
+    /// - Parameter:
+    ///   - content: An instance of content.
+    ///
+    /// - Returns: A `CGSize` value represents a natural size of the passed content.
+    @inlinable
+    public func intrinsicContentSize(for content: Any) -> CGSize {
+        return box.intrinsicContentSize(for: content)
     }
 
     /// Invoked every time of before a component got into visible area.
@@ -140,6 +157,7 @@ internal protocol AnyComponentBox {
     func render(in content: Any)
     func referenceSize(in bounds: CGRect) -> CGSize?
     func layout(content: Any, in container: UIView)
+    func intrinsicContentSize(for content: Any) -> CGSize
     func shouldContentUpdate(with next: AnyComponentBox) -> Bool
     func shouldRender(next: AnyComponentBox, in content: Any) -> Bool
 
@@ -150,45 +168,52 @@ internal protocol AnyComponentBox {
 @usableFromInline
 internal struct ComponentBox<Base: Component>: AnyComponentBox {
     @usableFromInline
-    internal let baseComponent: Base
+    let baseComponent: Base
 
     @inlinable
-    internal var base: Any {
+    var base: Any {
         return baseComponent
     }
 
     @inlinable
-    internal var reuseIdentifier: String {
+    var reuseIdentifier: String {
         return baseComponent.reuseIdentifier
     }
 
     @inlinable
-    internal init(_ base: Base) {
+    init(_ base: Base) {
         baseComponent = base
     }
 
     @inlinable
-    internal func renderContent() -> Any {
+    func renderContent() -> Any {
         return baseComponent.renderContent()
     }
 
     @inlinable
-    internal func render(in content: Any) {
+    func render(in content: Any) {
         guard let content = content as? Base.Content else { return }
 
         baseComponent.render(in: content)
     }
 
     @inlinable
-    internal func referenceSize(in bounds: CGRect) -> CGSize? {
+    func referenceSize(in bounds: CGRect) -> CGSize? {
         return baseComponent.referenceSize(in: bounds)
     }
 
     @inlinable
-    internal func layout(content: Any, in container: UIView) {
+    func layout(content: Any, in container: UIView) {
         guard let content = content as? Base.Content else { return }
 
         baseComponent.layout(content: content, in: container)
+    }
+
+    @inlinable
+    func intrinsicContentSize(for content: Any) -> CGSize {
+        guard let content = content as? Base.Content else { return .zero }
+
+        return baseComponent.intrinsicContentSize(for: content)
     }
 
     @inlinable
@@ -206,14 +231,14 @@ internal struct ComponentBox<Base: Component>: AnyComponentBox {
     }
 
     @inlinable
-    internal func contentWillDisplay(_ content: Any) {
+    func contentWillDisplay(_ content: Any) {
         guard let content = content as? Base.Content else { return }
 
         baseComponent.contentWillDisplay(content)
     }
 
     @inlinable
-    internal func contentDidEndDisplay(_ content: Any) {
+    func contentDidEndDisplay(_ content: Any) {
         guard let content = content as? Base.Content else { return }
 
         baseComponent.contentDidEndDisplay(content)

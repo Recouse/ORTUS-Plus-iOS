@@ -14,4 +14,8 @@ extension String {
         
         return URL(string: string)
     }
+    
+    func format(_ arguments: CVarArg...) -> Self {
+        String(format: self, arguments)
+    }
 }

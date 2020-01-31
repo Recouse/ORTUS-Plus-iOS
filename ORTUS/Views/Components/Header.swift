@@ -21,7 +21,7 @@ struct Header: Carbon.Component, Equatable {
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
-        return CGSize(width: bounds.width, height: 64)
+        return CGSize(width: bounds.width, height: 44)
     }
 }
 
