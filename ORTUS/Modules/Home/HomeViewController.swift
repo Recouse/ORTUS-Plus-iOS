@@ -11,7 +11,7 @@ import Carbon
 
 class HomeViewController: TranslatableModule, ModuleViewModel {
     enum ID: String {
-        case news, grades
+        case news, grades, ortus
     }
     
     var viewModel: HomeViewModel
@@ -63,7 +63,7 @@ class HomeViewController: TranslatableModule, ModuleViewModel {
                     id: ID.news.rawValue,
                     title: "News",
                     icon: Asset.Images.news.image,
-                    color: .systemGreen
+                    color: .systemPurple
                 ) { [unowned self] in
                     self.viewModel.router.openNews()
                 }
@@ -75,6 +75,15 @@ class HomeViewController: TranslatableModule, ModuleViewModel {
                     color: .systemBlue
                 ) { [unowned self] in
                     self.viewModel.router.openGrades()
+                }
+                
+                IconTextComponent(
+                    id: ID.ortus.rawValue,
+                    title: "ORTUS Website",
+                    icon: Asset.Images.ortusLogo.image,
+                    color: .systemGreen
+                ) { [unowned self] in
+                    self.viewModel.router.openBrowser(Global.ortusURL)
                 }
             })
             
