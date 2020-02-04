@@ -12,6 +12,7 @@ import Localize_Swift
 
 struct Global {    
     struct Key {
+        static let firstInstall = "first_install"
         static let accessToken = "access_token"
         static let accessTokenEncrypted = "access_token_encrypted"
         static let refreshToken = "refresh_token"

@@ -92,6 +92,8 @@ class NotificationsViewController: TranslatableModule, ModuleViewModel {
     }
     
     func open(_ notification: NotificationModel) {
+        EventLogger.log(.openedNotification)
+        
         viewModel.router.openBrowser(notification.link)
     }
 }

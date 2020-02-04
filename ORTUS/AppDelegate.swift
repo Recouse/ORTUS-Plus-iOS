@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let keychain = Keychain()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-                
+        // Clear keychain on a new installation
+        clearKeychain()
+        
         prepareAnalytics()
         
         if keychain[Global.Key.accessToken] == nil {
@@ -33,6 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         OAuth.resolve(url)
         
         return true
+    }
+    
+    private func clearKeychain() {
+        if UserDefaults.standard.object(forKey: Global.Key.firstInstall) == nil {
+            keychain[Global.Key.accessToken] = nil
+            keychain[Global.Key.refreshToken] = nil
+            keychain[Global.Key.tokenExpiresOn] = nil
+            keychain[Global.Key.ortusPinCode] = nil
+            
+            UserDefaults.standard.set(false, forKey: Global.Key.firstInstall)
+        }
     }
     
     fileprivate func prepareAnalytics() {

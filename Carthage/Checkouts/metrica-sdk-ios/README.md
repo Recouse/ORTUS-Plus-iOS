@@ -19,6 +19,24 @@ advertisement**.
 
 ## Changelog
 
+### Version 3.9.4
+SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/48248/YandexMobileMetrica-3.9.4-ios-9d093f38-8a48-434a-bc01-5226212f2b07.zip)
+
+* Fixed possible crashes which affected the AppMetrica SDK versions 3.9.0 to 3.9.3.
+
+### Version 3.9.2
+SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/128534/YandexMobileMetrica-3.9.2-ios-2a9196d3-c8d5-4db0-bda6-a72beb9d0026.zip)
+
+* Fixed the issue with invalid `appmetrica_device_id` generation.
+* Fixed possible deadlock during activation.
+
+### Version 3.9.1
+
+* Fixed the reportReferralUrl method. It is no longer deprecated.
+* Fixed getting information about code and subcode for Mach exceptions.
+* Fixed framework for tvOS.
+* Improved stability and performance.
+
 ### Version 3.8.2
 SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/175948/YandexMobileMetrica-3.8.2-ios-fd6bf496-ed60-4d84-978a-a8f9a818b566.zip)
 
@@ -36,6 +54,7 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile
 
 ### Version 3.7.1
 SDK archive: [**download**](https://storage.mds.yandex.net/get-appmetrica-mobile-sdk/175948/YandexMobileMetrica-3.7.1-ios-066381b6-39c3-4794-949f-2391e0ea618f.zip)
+
 * Added support of NSDecimalNumber for a price in YMMRevenueInfo.
 * Added the API to control sessions manually (see the sessionsAutoTracking property of YMMYandexMetricaConfiguration).
 * Added the configuration flag to handle activation as a session start (see handleActivationAsSessionStart of YMMYandexMetricaConfiguration).

@@ -32,7 +32,9 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        EventLogger.log(.openedGrades)
         
+        prepareNavigationItem()
     }
     
     override func prepareLocales() {
@@ -41,5 +43,7 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
 }
 
 extension GradesViewController {
-    
+    func prepareNavigationItem() {
+        navigationItem.largeTitleDisplayMode = .never
+    }
 }

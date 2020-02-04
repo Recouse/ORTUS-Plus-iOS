@@ -37,6 +37,8 @@ class SemesterViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        EventLogger.log(.openedSemester(name: viewModel.semester.name ?? "Other"))
+        
         prepareNavigationItem()
         prepareData()
         

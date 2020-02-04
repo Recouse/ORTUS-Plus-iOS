@@ -14,4 +14,4 @@ github "kishikawakatsumi/KeychainAccess"
 github "marmelroy/Localize-Swift"
 
 # Analytics
-github "yandexmobile/metrica-sdk-ios" ~> 3.7.0
+github "yandexmobile/metrica-sdk-ios" ~> 3.9.0

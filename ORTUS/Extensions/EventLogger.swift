@@ -13,7 +13,10 @@ class EventLogger {
     enum EventType {
         case openedArticle(id: Int, title: String)
         case openedCourse(id: String, name: String)
+        case openedSemester(name: String)
         case openedEvent
+        case openedGrades
+        case openedNotification
         case signedOut
         
         var name: String {
@@ -22,8 +25,14 @@ class EventLogger {
                 return "Opened Article"
             case .openedCourse:
                 return "Opened Course"
+            case .openedSemester:
+                return "Opened Semester"
             case .openedEvent:
                 return "Opened Event"
+            case .openedGrades:
+                return "Opened Grades"
+            case .openedNotification:
+                return "Opened Notification"
             case .signedOut:
                 return "Signed Out"
             }
@@ -39,6 +48,10 @@ class EventLogger {
             case let .openedCourse(id, name):
                 return [
                     "id": id,
+                    "name": name
+                ]
+            case let .openedSemester(name):
+                return [
                     "name": name
                 ]
             default:
