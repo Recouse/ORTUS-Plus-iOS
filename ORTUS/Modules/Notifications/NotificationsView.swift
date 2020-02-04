@@ -1,5 +1,5 @@
 //
-//  InboxView.swift
+//  NotificationsView.swift
 //  ORTUS
 //
 //  Created by Firdavs Khaydarov on 03/10/19.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class InboxView: UIView {
+class NotificationsView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundView = nil
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .groupTableViewBackground
         tableView.separatorStyle = .singleLine
         
         return tableView

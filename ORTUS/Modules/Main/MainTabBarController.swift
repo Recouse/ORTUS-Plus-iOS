@@ -11,26 +11,32 @@ import UIKit
 class MainTabBarController: TranslatableTabBarController {
     var isFirstAppear: Bool = true
     
-    // News
-    lazy var newsItem: UITabBarItem = {
+    // Home
+    lazy var homeItem: UITabBarItem = {
         var item = UITabBarItem()
-        item.tag = Global.UI.TabBar.news.rawValue
+        item.tag = Global.UI.TabBar.home.rawValue
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            let image = Asset.Images.news.image.forceLoad()
-            
-            DispatchQueue.main.async {
-                item.image = image
+        if #available(iOS 13.0, *) {
+            item.image = UIImage(systemName: "house")
+        } else {
+            DispatchQueue.global(qos: .userInitiated).async {
+                let image = Asset.Images.home.image.forceLoad()
+                let selectedImage = Asset.Images.homeSelected.image.forceLoad()
+                
+                DispatchQueue.main.async {
+                    item.image = image
+                    item.selectedImage = selectedImage
+                }
             }
         }
         
         return item
     }()
     
-    lazy var newsController: NavigationController = { [unowned self] in
+    lazy var homeController: NavigationController = { [unowned self] in
         let module = NewsModuleBuilder.build()
         let controller = NavigationController(rootViewController: module)
-        controller.tabBarItem = self.newsItem
+        controller.tabBarItem = self.homeItem
         
         return controller
     }()
@@ -40,11 +46,15 @@ class MainTabBarController: TranslatableTabBarController {
         let item = UITabBarItem()
         item.tag = Global.UI.TabBar.schedule.rawValue
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            let image = Asset.Images.schedule.image.forceLoad()
-            
-            DispatchQueue.main.async {
-                item.image = image
+        if #available(iOS 13.0, *) {
+            item.image = UIImage(systemName: "calendar")
+        } else {
+            DispatchQueue.global(qos: .userInitiated).async {
+                let image = Asset.Images.schedule.image.forceLoad()
+                
+                DispatchQueue.main.async {
+                    item.image = image
+                }
             }
         }
         
@@ -59,77 +69,34 @@ class MainTabBarController: TranslatableTabBarController {
         return controller
     }()
     
-    // Courses
-    let coursesItem: UITabBarItem = {
-        let item = UITabBarItem()
-        item.tag = Global.UI.TabBar.courses.rawValue
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            let image = Asset.Images.courses.image.forceLoad()
-            
-            DispatchQueue.main.async {
-                item.image = image
-            }
-        }
-        
-        return item
-    }()
-    
-    lazy var coursesController: NavigationController = { [unowned self] in
-        let module = CoursesModuleBuilder.build()
-        let controller = NavigationController(rootViewController: module)
-        controller.tabBarItem = self.coursesItem
-        
-        return controller
-    }()
-    
-    // TODO: Inbox
     // Notifications
-//    let inboxItem: UITabBarItem = {
-//        let item = UITabBarItem()
-//        item.tag = Global.UI.TabBar.inbox.rawValue
-//        item.badgeValue = "2"
-//
-//        DispatchQueue.global(qos: .userInitiated).async {
-//            let image = UIImage(named: "inbox")?.forceLoad()
-//
-//            DispatchQueue.main.async {
-//                item.image = image
-//            }
-//        }
-//
-//        return item
-//    }()
-//
-//    lazy var inboxController: NavigationController = { [unowned self] in
-//        let module = InboxModuleBuilder.build()
-//        let controller = NavigationController(rootViewController: module)
-//        controller.tabBarItem = self.inboxItem
-//
-//        return controller
-//    }()
-    
-    // Settings
-    lazy var settingsItem: UITabBarItem = {
-        var item = UITabBarItem()
-        item.tag = Global.UI.TabBar.settings.rawValue
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            let image = Asset.Images.settings.image.forceLoad()
-            
-            DispatchQueue.main.async {
-                item.image = image
+    let notificationsItem: UITabBarItem = {
+        let item = UITabBarItem()
+        item.tag = Global.UI.TabBar.notifications.rawValue
+
+        if #available(iOS 13.0, *) {
+            item.image = UIImage(systemName: "bell")
+            item.selectedImage = UIImage(systemName: "bell.fill")
+        } else {
+            DispatchQueue.global(qos: .userInitiated).async {
+                let image = Asset.Images.notifications.image.forceLoad()
+                let selectedImage = Asset.Images.notificationsSelected.image.forceLoad()
+                
+                DispatchQueue.main.async {
+                    item.image = image
+                    item.selectedImage = selectedImage
+                }
             }
         }
-        
+
         return item
     }()
-    
-    lazy var settingsController: NavigationController = { [unowned self] in
-        let module = SettingsModuleBuilder.build()
+
+    lazy var notificationsController: NavigationController = { [unowned self] in
+        let module = NotificationsModuleBuilder.build()
         let controller = NavigationController(rootViewController: module)
-        controller.tabBarItem = self.settingsItem
-        
+        controller.tabBarItem = self.notificationsItem
+
         return controller
     }()
     
@@ -140,14 +107,8 @@ class MainTabBarController: TranslatableTabBarController {
         
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(prepareViewControllers),
-            name: .authComplete,
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(prepareViewControllers),
-            name: .userSignedOut,
+            selector: #selector(updateNotificationsItem(_:)),
+            name: .updatedNotificationsCount,
             object: nil)
     }
     
@@ -158,34 +119,33 @@ class MainTabBarController: TranslatableTabBarController {
     }
     
     override func prepareLocales() {
-        newsItem.title = "news.title".localized()
+        homeItem.title = "home.title".localized()
         scheduleItem.title = "schedule.title".localized()
-        coursesItem.title = "courses.title".localized()
-        // TODO: Inbox
-//        inboxItem.title = "inbox.title".localized()
-        settingsItem.title = "settings.title".localized()
+        notificationsItem.title = "notifications.title".localized()
     }
     
-    @objc func prepareViewControllers() {
-        var modules: [UIViewController] = []
-        
-        modules.append(newsController)
-        
-        if UserViewModel.isLoggedIn {
-            modules.append(scheduleController)
-            modules.append(coursesController)
-            // TODO: Inbox
-//            modules.append(inboxController)
+    func prepareViewControllers() {
+        viewControllers = [
+            homeController,
+            scheduleController,
+            notificationsController
+        ]
+    }
+    
+    @objc func updateNotificationsItem(_ notification: Notification) {
+        guard let userInfo = notification.userInfo as? [String: Int] else {
+            return
         }
         
-        modules.append(settingsController)
-        
-        viewControllers = modules
-        
-        if UserViewModel.isLoggedIn, isFirstAppear {
-            selectedIndex = 1
-            isFirstAppear = false
+        if let notificationsCount = userInfo["count"], notificationsCount > 0 {
+            notificationsItem.badgeValue = "\(notificationsCount)"
+            UIApplication.shared.applicationIconBadgeNumber = notificationsCount
+            
+            return
         }
+        
+        notificationsItem.badgeValue = nil
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 }
 

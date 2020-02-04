@@ -47,7 +47,7 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
     }
     
     override func prepareLocales() {
-        title = "news.title".localized()
+        navigationItem.title = "news.title".localized()
     }
     
     func render() {
@@ -87,16 +87,6 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
     @objc func refresh() {
         loadData()
     }
-    
-    @objc func scrollToTop() {
-        guard let tabBarController = navigationController?.tabBarController,
-            tabBarController.selectedIndex == Global.UI.TabBar.news.rawValue,
-            !tableView.visibleCells.isEmpty else {
-            return
-        }
-        
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-    }
 }
 
 extension NewsViewController {
@@ -116,8 +106,6 @@ extension NewsViewController {
     
     func prepareData() {
         renderer.target = tableView
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(scrollToTop), name: .scrollToTop, object: nil)
     }
 }
 

@@ -17,13 +17,15 @@
 		FA20624E23452B65007ED9BA /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20624D23452B65007ED9BA /* Course.swift */; };
 		FA2062C723453DEB007ED9BA /* CourseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062C623453DEB007ED9BA /* CourseComponent.swift */; };
 		FA2062C923453E00007ED9BA /* CourseComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062C823453E00007ED9BA /* CourseComponentView.swift */; };
-		FA2062DB234628A6007ED9BA /* InboxModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D6234628A6007ED9BA /* InboxModuleBuilder.swift */; };
-		FA2062DC234628A6007ED9BA /* InboxRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D7234628A6007ED9BA /* InboxRouter.swift */; };
-		FA2062DD234628A6007ED9BA /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D8234628A6007ED9BA /* InboxViewController.swift */; };
-		FA2062DE234628A6007ED9BA /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D9234628A6007ED9BA /* InboxView.swift */; };
-		FA2062DF234628A6007ED9BA /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062DA234628A6007ED9BA /* InboxViewModel.swift */; };
+		FA2062DB234628A6007ED9BA /* NotificationsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D6234628A6007ED9BA /* NotificationsModuleBuilder.swift */; };
+		FA2062DC234628A6007ED9BA /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D7234628A6007ED9BA /* NotificationsRouter.swift */; };
+		FA2062DD234628A6007ED9BA /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D8234628A6007ED9BA /* NotificationsViewController.swift */; };
+		FA2062DE234628A6007ED9BA /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D9234628A6007ED9BA /* NotificationsView.swift */; };
+		FA2062DF234628A6007ED9BA /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062DA234628A6007ED9BA /* NotificationsViewModel.swift */; };
 		FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */; };
 		FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */; };
+		FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AEBD23E8CB8300C4A70C /* NotificationComponent.swift */; };
+		FA39AEC023E8CB8F00C4A70C /* NotificationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AEBF23E8CB8F00C4A70C /* NotificationComponentView.swift */; };
 		FA4111F1234FC15A002BA33D /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F0234FC15A002BA33D /* Schedule.swift */; };
 		FA4111F3234FC17A002BA33D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F2234FC17A002BA33D /* Event.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
@@ -176,13 +178,15 @@
 		FA20624D23452B65007ED9BA /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		FA2062C623453DEB007ED9BA /* CourseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseComponent.swift; sourceTree = "<group>"; };
 		FA2062C823453E00007ED9BA /* CourseComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseComponentView.swift; sourceTree = "<group>"; };
-		FA2062D6234628A6007ED9BA /* InboxModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxModuleBuilder.swift; sourceTree = "<group>"; };
-		FA2062D7234628A6007ED9BA /* InboxRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxRouter.swift; sourceTree = "<group>"; };
-		FA2062D8234628A6007ED9BA /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
-		FA2062D9234628A6007ED9BA /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
-		FA2062DA234628A6007ED9BA /* InboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
+		FA2062D6234628A6007ED9BA /* NotificationsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModuleBuilder.swift; sourceTree = "<group>"; };
+		FA2062D7234628A6007ED9BA /* NotificationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRouter.swift; sourceTree = "<group>"; };
+		FA2062D8234628A6007ED9BA /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		FA2062D9234628A6007ED9BA /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		FA2062DA234628A6007ED9BA /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponent.swift; sourceTree = "<group>"; };
 		FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponentView.swift; sourceTree = "<group>"; };
+		FA39AEBD23E8CB8300C4A70C /* NotificationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponent.swift; sourceTree = "<group>"; };
+		FA39AEBF23E8CB8F00C4A70C /* NotificationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponentView.swift; sourceTree = "<group>"; };
 		FA4111F0234FC15A002BA33D /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		FA4111F2234FC17A002BA33D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FA4111F6234FCDE2002BA33D /* CVCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CVCalendar.framework; path = Carthage/Build/iOS/CVCalendar.framework; sourceTree = "<group>"; };
@@ -389,16 +393,25 @@
 			path = Course;
 			sourceTree = "<group>";
 		};
-		FA2062D52346288C007ED9BA /* Inbox */ = {
+		FA2062D52346288C007ED9BA /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				FA2062D6234628A6007ED9BA /* InboxModuleBuilder.swift */,
-				FA2062D9234628A6007ED9BA /* InboxView.swift */,
-				FA2062DA234628A6007ED9BA /* InboxViewModel.swift */,
-				FA2062D8234628A6007ED9BA /* InboxViewController.swift */,
-				FA2062D7234628A6007ED9BA /* InboxRouter.swift */,
+				FA2062D6234628A6007ED9BA /* NotificationsModuleBuilder.swift */,
+				FA2062D9234628A6007ED9BA /* NotificationsView.swift */,
+				FA2062DA234628A6007ED9BA /* NotificationsViewModel.swift */,
+				FA2062D8234628A6007ED9BA /* NotificationsViewController.swift */,
+				FA2062D7234628A6007ED9BA /* NotificationsRouter.swift */,
 			);
-			path = Inbox;
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		FA39AEBC23E8CB7200C4A70C /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				FA39AEBD23E8CB8300C4A70C /* NotificationComponent.swift */,
+				FA39AEBF23E8CB8F00C4A70C /* NotificationComponentView.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		FA4111EF234FC14A002BA33D /* Schedule */ = {
@@ -484,7 +497,7 @@
 				FA90FDA722437F15005148AC /* News */,
 				FAF183BF22490FB500CA2492 /* Schedule */,
 				FAF183B12249095000CA2492 /* Courses */,
-				FA2062D52346288C007ED9BA /* Inbox */,
+				FA2062D52346288C007ED9BA /* Notifications */,
 				FA90FDA622437F0E005148AC /* Settings */,
 				FA90FD8922437BC0005148AC /* Main */,
 				FA90FD8A22437BD0005148AC /* Module.swift */,
@@ -685,6 +698,7 @@
 		FA90FDF32243C5AA005148AC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FA39AEBC23E8CB7200C4A70C /* Notifications */,
 				FABBF3F723511B9400D4D593 /* Schedule */,
 				FA2062C523453DD4007ED9BA /* Course */,
 				FAF77B252246A97800197641 /* Form */,
@@ -971,7 +985,7 @@
 				FA20624E23452B65007ED9BA /* Course.swift in Sources */,
 				FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */,
 				FABF93A1238BB15E00F78FF1 /* EventLogger.swift in Sources */,
-				FA2062DF234628A6007ED9BA /* InboxViewModel.swift in Sources */,
+				FA2062DF234628A6007ED9BA /* NotificationsViewModel.swift in Sources */,
 				FAF183BE22490AD800CA2492 /* UserViewModel.swift in Sources */,
 				FA90FD9922437D5E005148AC /* Animator.swift in Sources */,
 				FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */,
@@ -984,6 +998,7 @@
 				FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */,
 				FA90FD9722437D50005148AC /* Router.swift in Sources */,
 				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
+				FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */,
 				FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */,
 				FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */,
 				FAD18D5723B1746600C0D89B /* CourseRouter.swift in Sources */,
@@ -1027,11 +1042,12 @@
 				FAD18D5923B1746600C0D89B /* CourseView.swift in Sources */,
 				FA90FDED2243B9FD005148AC /* Article.swift in Sources */,
 				FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */,
+				FA39AEC023E8CB8F00C4A70C /* NotificationComponentView.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
 				FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */,
 				FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */,
 				FA90FDB622438027005148AC /* Global.swift in Sources */,
-				FA2062DC234628A6007ED9BA /* InboxRouter.swift in Sources */,
+				FA2062DC234628A6007ED9BA /* NotificationsRouter.swift in Sources */,
 				FA4111F1234FC15A002BA33D /* Schedule.swift in Sources */,
 				FAA425AC23912206008F5897 /* Footer.swift in Sources */,
 				FA90FD8822437BB2005148AC /* TranslatableModule.swift in Sources */,
@@ -1050,7 +1066,7 @@
 				FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */,
 				FA90FDAE22437F25005148AC /* NewsRouter.swift in Sources */,
 				FA2062C923453E00007ED9BA /* CourseComponentView.swift in Sources */,
-				FA2062DB234628A6007ED9BA /* InboxModuleBuilder.swift in Sources */,
+				FA2062DB234628A6007ED9BA /* NotificationsModuleBuilder.swift in Sources */,
 				FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */,
 				FA90FDA522437DC5005148AC /* Route.swift in Sources */,
 				FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */,
@@ -1075,14 +1091,14 @@
 				FA990A58239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift in Sources */,
 				FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
-				FA2062DD234628A6007ED9BA /* InboxViewController.swift in Sources */,
+				FA2062DD234628A6007ED9BA /* NotificationsViewController.swift in Sources */,
 				FA02851723952F8200436C9F /* APIDateFormatter.swift in Sources */,
 				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
 				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
 				FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */,
 				FA90FDF52243C5B5005148AC /* ArticleComponent.swift in Sources */,
 				FA90FDB122437F25005148AC /* NewsViewModel.swift in Sources */,
-				FA2062DE234628A6007ED9BA /* InboxView.swift in Sources */,
+				FA2062DE234628A6007ED9BA /* NotificationsView.swift in Sources */,
 				FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */,
 				FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */,
 				FA90FE002243CF0E005148AC /* ArticleViewController.swift in Sources */,

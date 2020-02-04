@@ -14,6 +14,9 @@
 "cancel" = "Cancel";
 "back" = "Back";
 
+// Home
+"home.title" = "Home";
+
 // News
 "news.title" = "News";
 
@@ -23,8 +26,8 @@
 // Courses
 "courses.title" = "Courses";
 
-// Inbox
-"inbox.title" = "Inbox";
+// Notifications
+"notifications.title" = "Notifications";
 
 // Settings
 "settings.title" = "Settings";

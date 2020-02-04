@@ -42,7 +42,7 @@ struct Global {
         
         // TabBar
         enum TabBar: Int {
-            case news, schedule, courses, inbox, settings
+            case home, schedule, notifications
         }
     }
     

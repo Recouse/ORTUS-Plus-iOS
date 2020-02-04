@@ -1,5 +1,5 @@
 //
-//  InboxViewController.swift
+//  NotificationsViewController.swift
 //  ORTUS
 //
 //  Created by Firdavs Khaydarov on 03/10/19.
@@ -9,11 +9,11 @@
 import UIKit
 import Carbon
 
-class InboxViewController: TranslatableModule, ModuleViewModel {
-    var viewModel: InboxViewModel
+class NotificationsViewController: TranslatableModule, ModuleViewModel {
+    var viewModel: NotificationsViewModel
     
-    weak var inboxView: InboxView! { return view as? InboxView }
-    weak var tableView: UITableView! { return inboxView.tableView }
+    weak var notificationsView: NotificationsView! { return view as? NotificationsView }
+    weak var tableView: UITableView! { return notificationsView.tableView }
     
     var refreshControl: UIRefreshControl!
     
@@ -22,7 +22,7 @@ class InboxViewController: TranslatableModule, ModuleViewModel {
         updater: UITableViewUpdater()
     )
     
-    init(viewModel: InboxViewModel) {
+    init(viewModel: NotificationsViewModel) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
@@ -33,7 +33,7 @@ class InboxViewController: TranslatableModule, ModuleViewModel {
     }
     
     override func loadView() {
-        view = InboxView()
+        view = NotificationsView()
     }
     
     override func viewDidLoad() {
@@ -46,20 +46,30 @@ class InboxViewController: TranslatableModule, ModuleViewModel {
     }
     
     override func prepareLocales() {
-        navigationItem.title = "inbox.title".localized()
+        navigationItem.title = "notifications.title".localized()
     }
     
     func render() {
         refreshControl.endRefreshing()
         
-        var data: [Section] = []
-        
-//        renderer.render {  }
+        renderer.render {
+            Section(id: "notifications") {
+                Group(of: viewModel.notifications) { notification in
+                    NotificationComponent(
+                        id: notification.id,
+                        notification: notification,
+                        onSelect: { [unowned self] in
+                            self.open(notification)
+                        }
+                    )
+                }
+            }
+        }
     }
     
     func loadData() {
         viewModel.loadNotifications().then { response in
-            print(self.viewModel.notifications)
+            self.render()
         }.catch { error in
             print(error)
         }.always {
@@ -73,16 +83,20 @@ class InboxViewController: TranslatableModule, ModuleViewModel {
     
     @objc func scrollToTop() {
         guard let tabBarController = navigationController?.tabBarController,
-            tabBarController.selectedIndex == Global.UI.TabBar.inbox.rawValue,
+            tabBarController.selectedIndex == Global.UI.TabBar.notifications.rawValue,
             !tableView.visibleCells.isEmpty else {
             return
         }
         
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
+    
+    func open(_ notification: NotificationModel) {
+        print(notification)
+    }
 }
 
-extension InboxViewController {
+extension NotificationsViewController {
     func prepareRefreshControl() {
         refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
@@ -91,13 +105,6 @@ extension InboxViewController {
     
     func prepareData() {
         renderer.target = tableView
-//        renderer.adapter.didSelect = { [unowned self] context in
-//            guard let component = context.node.component(as: CourseComponent.self) else {
-//                return
-//            }
-//
-//            //
-//        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(scrollToTop), name: .scrollToTop, object: nil)
     }

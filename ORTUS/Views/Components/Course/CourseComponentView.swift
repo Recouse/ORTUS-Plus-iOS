@@ -40,7 +40,11 @@ class CourseComponentView: UIControl {
         let imageView = UIImageView()
         imageView.image = Asset.Images.chevronRight.image
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .gray
+        if #available(iOS 13.0, *) {
+            imageView.tintColor = .separator
+        } else {
+            imageView.tintColor = .gray
+        }
         
         return imageView
     }()

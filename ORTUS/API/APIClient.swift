@@ -38,20 +38,6 @@ class APIClient {
         }
     }
     
-//    @discardableResult
-//    static func performRequest(route: API) -> Promise<Bool> {
-//        return Promise { fulfill, reject in
-//            AF.request(route).responseData { response in
-//                switch response.result {
-//                case .success:
-//                    fulfill(true)
-//                case .failure(let error):
-//                    reject(error)
-//                }
-//            }
-//        }
-//    }
-    
     @discardableResult
     static func postFormData<T: Decodable> (
         _ responseType: T.Type,

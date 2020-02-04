@@ -19,7 +19,10 @@ class CoursesViewModel: ViewModel {
     
     func loadCourses() -> Promise<Bool> {
         return Promise { fulfill, reject in
-            APIClient.performRequest(CoursesResponse.self, route: CoursesApi.courses).then { response in
+            APIClient.performRequest(
+                CoursesResponse.self,
+                route: CoursesApi.courses
+            ).then { response in
                 self.semesters = response.result
                 
                 fulfill(true)
