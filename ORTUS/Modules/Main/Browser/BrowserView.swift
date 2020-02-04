@@ -1,5 +1,5 @@
 //
-//  CourseView.swift
+//  BrowserView.swift
 //  ORTUS
 //
 //  Created by Firdavs Khaydarov on 24/12/19.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class CourseView: UIView {
+class BrowserView: UIView {
     let loadingOverview: UIView = {
         let view = UIView()
         if #available(iOS 13.0, *) {

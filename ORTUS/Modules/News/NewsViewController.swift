@@ -91,6 +91,8 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
 
 extension NewsViewController {
     func prepareNavigationItem() {
+        navigationItem.largeTitleDisplayMode = .never
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "back".localized(),
             style: .plain,

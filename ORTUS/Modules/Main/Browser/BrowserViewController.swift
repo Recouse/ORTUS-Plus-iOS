@@ -1,5 +1,5 @@
 //
-//  CourseViewController.swift
+//  BrowserViewController.swift
 //  ORTUS
 //
 //  Created by Firdavs Khaydarov on 24/12/19.
@@ -9,17 +9,17 @@
 import UIKit
 import WebKit
 
-class CourseViewController: TranslatableModule, ModuleViewModel {
-    var viewModel: CourseViewModel
+class BrowserViewController: TranslatableModule, ModuleViewModel {
+    var viewModel: BrowserViewModel
     
-    weak var courseView: CourseView! { return view as? CourseView }
-    weak var loadingOverview: UIView! { return courseView.loadingOverview }
+    weak var browserView: BrowserView! { return view as? BrowserView }
+    weak var loadingOverview: UIView! { return browserView.loadingOverview }
     
     var webView: WKWebView!
     
     var initialPinNavigation: WKNavigation?
     
-    init(viewModel: CourseViewModel) {
+    init(viewModel: BrowserViewModel) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
@@ -30,7 +30,7 @@ class CourseViewController: TranslatableModule, ModuleViewModel {
     }
     
     override func loadView() {
-        view = CourseView()
+        view = BrowserView()
     }
     
     override func viewDidLoad() {
@@ -43,12 +43,14 @@ class CourseViewController: TranslatableModule, ModuleViewModel {
         showLoadingOverview(animated: false)
     }
     
-    override func prepareLocales() {
-        navigationItem.title = viewModel.course.name
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "title" {
+            navigationItem.title = webView.title
+        }
     }
     
     func showLoadingOverview(animated: Bool) {
-        courseView.bringSubviewToFront(loadingOverview)
+        browserView.bringSubviewToFront(loadingOverview)
         
         if animated {
             loadingOverview.alpha = 0
@@ -71,7 +73,7 @@ class CourseViewController: TranslatableModule, ModuleViewModel {
     }
 }
 
-extension CourseViewController {
+extension BrowserViewController {
     func prepareNavigationItem() {
         navigationItem.largeTitleDisplayMode = .never
     }
@@ -82,7 +84,8 @@ extension CourseViewController {
         
         if let pinCode = viewModel.keychain[Global.Key.ortusPinCode] {
             let contentController = WKUserContentController()
-            let script = String(format: CourseJS.script, pinCode)
+            let js = viewModel.loadBrowserJS()
+            let script = String(format: js, pinCode)
             let userScript = WKUserScript(
                 source: script,
                 injectionTime: .atDocumentEnd,
@@ -97,9 +100,10 @@ extension CourseViewController {
         webView.allowsBackForwardNavigationGestures = true
         webView.navigationDelegate = self
         webView.uiDelegate = self
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
         
         OAuth.refreshToken().then { accessTokenEncrypted in
-            guard let url = self.viewModel.course.link.generatePinAuthURL(withToken: accessTokenEncrypted) else {
+            guard let url = self.viewModel.url.generatePinAuthURL(withToken: accessTokenEncrypted) else {
                 return
             }
 
@@ -117,10 +121,12 @@ extension CourseViewController {
     }
 }
 
-extension CourseViewController: WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate {
+extension BrowserViewController: WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard let body = message.body as? NSDictionary, let event = body["key"] as? String else { return }
-                
+        guard let body = message.body as? NSDictionary, let event = body["key"] as? String else {
+            return
+        }
+        
         if event == Global.Event.loggedIn {
             // A small hack to hide activity indicator after page loading
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

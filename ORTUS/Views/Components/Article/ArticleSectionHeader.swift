@@ -31,7 +31,7 @@ struct ArticleSectionHeader: Carbon.Component, Equatable {
 class ArticleSectionHeaderView: UIView {
     let dateLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 18)
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
         
         return label
     }()

@@ -1,5 +1,5 @@
 //
-//  CourseViewModel.swift
+//  BrowserViewModel.swift
 //  ORTUS
 //
 //  Created by Firdavs Khaydarov on 24/12/19.
@@ -9,20 +9,20 @@
 import Foundation
 import KeychainAccess
 
-class CourseViewModel: ViewModel {
-    let course: Course
+class BrowserViewModel: ViewModel {
+    let url: String
     
-    let router: CourseRouter.Routes
+    let router: BrowserRouter.Routes
     
     let keychain = Keychain()
     
-    init(course: Course, router: CourseRouter.Routes) {
-        self.course = course
+    init(url: String, router: BrowserRouter.Routes) {
+        self.url = url
         self.router = router
     }
     
-    func loadCourseJS() -> String {
-        guard let filepath = Bundle.main.path(forResource: "course", ofType: "js") else {
+    func loadBrowserJS() -> String {
+        guard let filepath = Bundle.main.path(forResource: "browser", ofType: "js") else {
             return ""
         }
         

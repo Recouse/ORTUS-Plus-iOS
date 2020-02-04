@@ -1,16 +1,22 @@
 //
-//  NotificationsView.swift
+//  HomeView.swift
 //  ORTUS
 //
-//  Created by Firdavs Khaydarov on 03/10/19.
-//  Copyright (c) 2019 Firdavs. All rights reserved.
+//  Created by Firdavs Khaydarov on 04/02/20.
+//  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
 import UIKit
 
-class NotificationsView: UIView {
+class HomeView: UIView {
     let tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        var style: UITableView.Style = .grouped
+        
+        if #available(iOS 13.0, *) {
+            style = .insetGrouped
+        }
+        
+        let tableView = UITableView(frame: .zero, style: style)
         tableView.backgroundView = nil
         tableView.backgroundColor = .groupTableViewBackground
         tableView.separatorStyle = .singleLine

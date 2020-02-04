@@ -1,14 +1,14 @@
 //
-//  NotificationsView.swift
+//  SemesterView.swift
 //  ORTUS
 //
-//  Created by Firdavs Khaydarov on 03/10/19.
-//  Copyright (c) 2019 Firdavs. All rights reserved.
+//  Created by Firdavs Khaydarov on 04/02/20.
+//  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
 import UIKit
 
-class NotificationsView: UIView {
+class SemesterView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundView = nil

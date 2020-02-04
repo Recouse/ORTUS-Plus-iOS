@@ -34,7 +34,7 @@ class MainTabBarController: TranslatableTabBarController {
     }()
     
     lazy var homeController: NavigationController = { [unowned self] in
-        let module = NewsModuleBuilder.build()
+        let module = HomeModuleBuilder.build()
         let controller = NavigationController(rootViewController: module)
         controller.tabBarItem = self.homeItem
         

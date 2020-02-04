@@ -92,7 +92,7 @@ class NotificationsViewController: TranslatableModule, ModuleViewModel {
     }
     
     func open(_ notification: NotificationModel) {
-        print(notification)
+        viewModel.router.openBrowser(notification.link)
     }
 }
 

@@ -28,7 +28,7 @@ struct NotificationComponent: IdentifiableComponent {
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
-        return CGSize(width: bounds.width, height: 80)
+        return nil
     }
     
     func shouldContentUpdate(with next: NotificationComponent) -> Bool {

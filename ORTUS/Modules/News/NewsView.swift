@@ -13,7 +13,7 @@ class NewsView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundView = nil
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .groupTableViewBackground
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = UIEdgeInsets(
             top: 0,

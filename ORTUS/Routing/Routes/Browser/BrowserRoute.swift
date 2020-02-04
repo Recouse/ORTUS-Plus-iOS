@@ -1,5 +1,5 @@
 //
-//  CourseRoute.swift
+//  BrowserRoute.swift
 //  ORTUS
 //
 //  Created by Firdavs Khaydarov on 24/12/19.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol CourseRoute: Route {
-    func openCourse(_ course: Course)
+protocol BrowserRoute: Route {
+    func openBrowser(_ url: String)
 }
 
-extension CourseRoute where Self: RouterProtocol {
-    func openCourse(_ course: Course) {
+extension BrowserRoute where Self: RouterProtocol {
+    func openBrowser(_ url: String) {
         let transition = self.transition
-        let module = CourseModuleBuilder.build(with: course, customTransition: transition)
+        let module = BrowserModuleBuilder.build(with: url, customTransition: transition)
         module.hidesBottomBarWhenPushed = true
         
         open(module, transition: transition, completion: nil)

@@ -6,8 +6,8 @@
 //  Copyright (c) 2019 Firdavs. All rights reserved.
 //
 
-final class CoursesRouter: Router<CoursesViewController>, CourseRoute {
-    typealias Routes = CourseRoute & Closable
+final class CoursesRouter: Router<CoursesViewController>, BrowserRoute {
+    typealias Routes = BrowserRoute & Closable
     
     var transition: Transition {
         return PushTransition()

@@ -1,35 +1,34 @@
 //
-//  NotificationComponentView.swift
+//  IconTextComponentView.swift
 //  ORTUS
 //
-//  Created by Firdavs Khaydarov on 03/02/20.
+//  Created by Firdavs Khaydarov on 04/02/20.
 //  Copyright © 2020 Firdavs. All rights reserved.
 //
 
 import UIKit
 
-class NotificationComponentView: UIControl {
+class IconTextComponentView: UIControl {
     var onSelect: (() -> Void)?
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .medium)
-        label.numberOfLines = 2
+    let imageContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray
+        view.layer.cornerRadius = 8
+        view.clipsToBounds = true
         
-        return label
+        return view
     }()
     
-    let dateLabel: UILabel = {
-        let label = UILabel()
-        if #available(iOS 13.0, *) {
-            label.textColor = .secondaryLabel
-        } else {
-            label.textColor = .gray
-        }
-        label.font = .systemFont(ofSize: 16)
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .white
         
-        return label
+        return imageView
     }()
+    
+    let titleLabel = UILabel()
     
     let rightAccessoryView: UIImageView = {
         let imageView = UIImageView()
@@ -53,6 +52,19 @@ class NotificationComponentView: UIControl {
             backgroundColor = .white
         }
         
+        addSubview(imageContainerView)
+        imageContainerView.snp.makeConstraints {
+            $0.size.equalTo(40)
+            $0.centerY.equalToSuperview()
+            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
+        }
+        
+        addSubview(imageView)
+        imageView.snp.makeConstraints {
+            $0.size.equalTo(imageContainerView).multipliedBy(0.5)
+            $0.center.equalTo(imageContainerView)
+        }
+        
         addSubview(rightAccessoryView)
         rightAccessoryView.snp.makeConstraints {
             $0.size.equalTo(14)
@@ -62,17 +74,9 @@ class NotificationComponentView: UIControl {
         
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(10)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
+            $0.centerY.equalToSuperview()
+            $0.left.equalTo(imageContainerView.snp.right).offset(15)
             $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
-        }
-        
-        addSubview(dateLabel)
-        dateLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-            $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
-            $0.bottom.equalToSuperview().inset(10).priority(250)
         }
         
         addTarget(self, action: #selector(selected), for: .touchUpInside)

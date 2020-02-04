@@ -26,6 +26,9 @@
 // Courses
 "courses.title" = "Courses";
 
+// Grades
+"grades.title" = "Grades";
+
 // Notifications
 "notifications.title" = "Notifications";
 

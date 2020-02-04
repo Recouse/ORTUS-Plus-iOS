@@ -86,7 +86,7 @@ class CoursesViewController: TranslatableModule, ModuleViewModel {
     func open(course: Course) {
         EventLogger.log(.openedCourse(id: course.id, name: course.name))
         
-        viewModel.router.openCourse(course)
+        viewModel.router.openBrowser(course.link)
     }
     
     @objc func refresh() {
