@@ -130,6 +130,13 @@
 		FAB74C2E23E9FAB8004C7BC6 /* NewsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C2D23E9FAB8004C7BC6 /* NewsRoute.swift */; };
 		FAB74C3123E9FAFD004C7BC6 /* GradesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3023E9FAFD004C7BC6 /* GradesRoute.swift */; };
 		FAB74C3323EA0650004C7BC6 /* browser.js in Resources */ = {isa = PBXBuildFile; fileRef = FAB74C3223EA0650004C7BC6 /* browser.js */; };
+		FAB74C3823EAA6B6004C7BC6 /* MarksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3723EAA6B6004C7BC6 /* MarksApi.swift */; };
+		FAB74C3B23EAAD01004C7BC6 /* StudyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3A23EAAD01004C7BC6 /* StudyProgram.swift */; };
+		FAB74C3D23EAAD33004C7BC6 /* MarkSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3C23EAAD33004C7BC6 /* MarkSemester.swift */; };
+		FAB74C3F23EAAD5A004C7BC6 /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3E23EAAD5A004C7BC6 /* Mark.swift */; };
+		FAB74C4223EAB1C5004C7BC6 /* GradeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C4123EAB1C5004C7BC6 /* GradeComponent.swift */; };
+		FAB74C4423EAB1D1004C7BC6 /* GradeComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C4323EAB1D1004C7BC6 /* GradeComponentView.swift */; };
+		FAB74C4623EAB2EC004C7BC6 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C4523EAB2EC004C7BC6 /* CircleView.swift */; };
 		FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3F823511BA600D4D593 /* EventComponent.swift */; };
 		FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FA23511BB300D4D593 /* EventComponentView.swift */; };
 		FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FC2351293E00D4D593 /* Lecture.swift */; };
@@ -319,6 +326,13 @@
 		FAB74C2D23E9FAB8004C7BC6 /* NewsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRoute.swift; sourceTree = "<group>"; };
 		FAB74C3023E9FAFD004C7BC6 /* GradesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesRoute.swift; sourceTree = "<group>"; };
 		FAB74C3223EA0650004C7BC6 /* browser.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = browser.js; sourceTree = "<group>"; };
+		FAB74C3723EAA6B6004C7BC6 /* MarksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksApi.swift; sourceTree = "<group>"; };
+		FAB74C3A23EAAD01004C7BC6 /* StudyProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyProgram.swift; sourceTree = "<group>"; };
+		FAB74C3C23EAAD33004C7BC6 /* MarkSemester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkSemester.swift; sourceTree = "<group>"; };
+		FAB74C3E23EAAD5A004C7BC6 /* Mark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mark.swift; sourceTree = "<group>"; };
+		FAB74C4123EAB1C5004C7BC6 /* GradeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeComponent.swift; sourceTree = "<group>"; };
+		FAB74C4323EAB1D1004C7BC6 /* GradeComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeComponentView.swift; sourceTree = "<group>"; };
+		FAB74C4523EAB2EC004C7BC6 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FABBF3F3235107FB00D4D593 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = Carthage/Build/iOS/FSCalendar.framework; sourceTree = "<group>"; };
 		FABBF3F823511BA600D4D593 /* EventComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComponent.swift; sourceTree = "<group>"; };
 		FABBF3FA23511BB300D4D593 /* EventComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComponentView.swift; sourceTree = "<group>"; };
@@ -576,6 +590,7 @@
 				FA90FDE42243ADF5005148AC /* News */,
 				FA20623623434DE3007ED9BA /* Schedule */,
 				FA20623323434DAA007ED9BA /* Courses */,
+				FAB74C3623EAA6A1004C7BC6 /* Marks */,
 				FA0927D22347E39900D32827 /* Notifications */,
 				FA90FDE02243966B005148AC /* API.swift */,
 				FA90FDF12243BF6C005148AC /* APIMethod.swift */,
@@ -610,6 +625,7 @@
 				FA90FD9322437CC2005148AC /* NavigationController.swift */,
 				FA90FE0B2243E397005148AC /* TabBarController.swift */,
 				FAE3AB35239D0D1700120F96 /* LinearGradient.swift */,
+				FAB74C4523EAB2EC004C7BC6 /* CircleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -617,6 +633,7 @@
 		FA90FD7F22437B2D005148AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAB74C3923EAACF6004C7BC6 /* Marks */,
 				FA4111EF234FC14A002BA33D /* Schedule */,
 				FA0927CF2347D1CE00D32827 /* Notifications */,
 				FA20624C23452B51007ED9BA /* Courses */,
@@ -767,6 +784,7 @@
 				FA39AEBC23E8CB7200C4A70C /* Notifications */,
 				FABBF3F723511B9400D4D593 /* Schedule */,
 				FA2062C523453DD4007ED9BA /* Course */,
+				FAB74C4023EAB1B3004C7BC6 /* Grades */,
 				FAF77B252246A97800197641 /* Form */,
 				FA90FE062243D1CD005148AC /* Article */,
 				FAF77B282246AC3C00197641 /* Header.swift */,
@@ -867,6 +885,33 @@
 			isa = PBXGroup;
 			children = (
 				FAB74C3023E9FAFD004C7BC6 /* GradesRoute.swift */,
+			);
+			path = Grades;
+			sourceTree = "<group>";
+		};
+		FAB74C3623EAA6A1004C7BC6 /* Marks */ = {
+			isa = PBXGroup;
+			children = (
+				FAB74C3723EAA6B6004C7BC6 /* MarksApi.swift */,
+			);
+			path = Marks;
+			sourceTree = "<group>";
+		};
+		FAB74C3923EAACF6004C7BC6 /* Marks */ = {
+			isa = PBXGroup;
+			children = (
+				FAB74C3A23EAAD01004C7BC6 /* StudyProgram.swift */,
+				FAB74C3C23EAAD33004C7BC6 /* MarkSemester.swift */,
+				FAB74C3E23EAAD5A004C7BC6 /* Mark.swift */,
+			);
+			path = Marks;
+			sourceTree = "<group>";
+		};
+		FAB74C4023EAB1B3004C7BC6 /* Grades */ = {
+			isa = PBXGroup;
+			children = (
+				FAB74C4123EAB1C5004C7BC6 /* GradeComponent.swift */,
+				FAB74C4323EAB1D1004C7BC6 /* GradeComponentView.swift */,
 			);
 			path = Grades;
 			sourceTree = "<group>";
@@ -1121,6 +1166,7 @@
 				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
 				FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */,
 				FA39AEDE23E9ED3800C4A70C /* HomeViewModel.swift in Sources */,
+				FAB74C4223EAB1C5004C7BC6 /* GradeComponent.swift in Sources */,
 				FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */,
 				FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */,
 				FAD18D5723B1746600C0D89B /* BrowserRouter.swift in Sources */,
@@ -1148,6 +1194,7 @@
 				FAF183BB2249096800CA2492 /* CoursesViewModel.swift in Sources */,
 				FA90FDE62243AE01005148AC /* NewsApi.swift in Sources */,
 				FA90FE0E2243E3C4005148AC /* UIColor.swift in Sources */,
+				FAB74C3D23EAAD33004C7BC6 /* MarkSemester.swift in Sources */,
 				FA90FDA022437D8B005148AC /* ModalTransition.swift in Sources */,
 				FA90FE0A2243D413005148AC /* Date.swift in Sources */,
 				FAD18D5F23B1767600C0D89B /* BrowserRoute.swift in Sources */,
@@ -1157,6 +1204,7 @@
 				FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */,
 				FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */,
 				FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */,
+				FAB74C4423EAB1D1004C7BC6 /* GradeComponentView.swift in Sources */,
 				FAF77B292246AC3C00197641 /* Header.swift in Sources */,
 				FA8714D623E40DD100DB728C /* PinSettingsView.swift in Sources */,
 				FA990A63239D6F8600BE9ACA /* LoginOnboardingContentView.swift in Sources */,
@@ -1218,9 +1266,11 @@
 				FA90FDA222437D94005148AC /* PushTransition.swift in Sources */,
 				FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */,
 				FAB74C2323E9F60D004C7BC6 /* SemesterViewController.swift in Sources */,
+				FAB74C3F23EAAD5A004C7BC6 /* Mark.swift in Sources */,
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
 				FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */,
+				FAB74C3823EAA6B6004C7BC6 /* MarksApi.swift in Sources */,
 				FAB74C1223E9F391004C7BC6 /* GradesRouter.swift in Sources */,
 				FA990A58239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift in Sources */,
 				FAB74C1A23E9F478004C7BC6 /* TextComponentView.swift in Sources */,
@@ -1229,6 +1279,7 @@
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
 				FA2062DD234628A6007ED9BA /* NotificationsViewController.swift in Sources */,
 				FA39AEDD23E9ED3800C4A70C /* HomeView.swift in Sources */,
+				FAB74C3B23EAAD01004C7BC6 /* StudyProgram.swift in Sources */,
 				FA02851723952F8200436C9F /* APIDateFormatter.swift in Sources */,
 				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
 				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
@@ -1242,6 +1293,7 @@
 				FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */,
 				FA90FE002243CF0E005148AC /* ArticleViewController.swift in Sources */,
 				FA990A65239D7EB900BE9ACA /* LoginRoute.swift in Sources */,
+				FAB74C4623EAB2EC004C7BC6 /* CircleView.swift in Sources */,
 				FA90FD9422437CC2005148AC /* NavigationController.swift in Sources */,
 				FA20623A23434EE5007ED9BA /* EmptyResponse.swift in Sources */,
 				FA90FD9222437C9D005148AC /* Styling.swift in Sources */,

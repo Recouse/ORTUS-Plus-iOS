@@ -15,6 +15,7 @@ enum APIMethod: String {
     case getUserSchedule
     case getUserCourses
     case getUserNotifications
+    case getUserMarks
     
     var parameters: [String] {
         var values: [String] = []
