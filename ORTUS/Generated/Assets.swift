@@ -38,8 +38,6 @@ internal enum Asset {
     internal static let notificationsSelected = ImageAsset(name: "notificationsSelected")
     internal static let schedule = ImageAsset(name: "schedule")
     internal static let settings = ImageAsset(name: "settings")
-    internal static let chevronLeft = ImageAsset(name: "chevronLeft")
-    internal static let chevronRight = ImageAsset(name: "chevronRight")
     internal static let course = ImageAsset(name: "course")
     internal static let external = ImageAsset(name: "external")
     internal static let news = ImageAsset(name: "news")

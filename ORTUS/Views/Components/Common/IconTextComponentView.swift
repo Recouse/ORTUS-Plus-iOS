@@ -32,7 +32,7 @@ class IconTextComponentView: UIControl {
     
     let rightAccessoryView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Asset.Images.chevronRight.image
+        imageView.image = UIImage(named: "chevronRight")
         imageView.contentMode = .scaleAspectFit
         if #available(iOS 13.0, *) {
             imageView.tintColor = .tertiaryLabel
@@ -67,7 +67,7 @@ class IconTextComponentView: UIControl {
         
         addSubview(rightAccessoryView)
         rightAccessoryView.snp.makeConstraints {
-            $0.size.equalTo(14)
+            $0.size.equalTo(18)
             $0.centerY.equalToSuperview()
             $0.right.equalToSuperview().inset(Global.UI.edgeInset)
         }

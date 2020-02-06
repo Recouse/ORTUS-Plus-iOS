@@ -37,6 +37,12 @@ struct Global {
         }
     }
     
+    struct QuickAction {
+        static let ortusAction = "OrtusAction"
+        static let schedule = "ScheduleAction"
+        static let notifications = "NotificationsAction"
+    }
+    
     // UI
     struct UI {
         static let edgeInset: CGFloat = 16

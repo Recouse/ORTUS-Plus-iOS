@@ -37,7 +37,7 @@ class ArticleHeaderComponentView: UIView {
     let backButton: UIButton = {
         let button = UIButton()
         button.tintColor = .white
-        button.setImage(Asset.Images.chevronLeft.image, for: .normal)
+        button.setImage(UIImage(named: "chevronRight"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         
