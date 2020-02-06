@@ -51,7 +51,7 @@ class SemesterViewController: TranslatableModule, ModuleViewModel {
     
     func render() {
         renderer.render {
-            Section(id: "courses", header: Header(title: "")) {
+            Section(id: "courses") {
                 Group(of: viewModel.semester.courses) { course in
                     CourseComponent(
                         id: course.id,

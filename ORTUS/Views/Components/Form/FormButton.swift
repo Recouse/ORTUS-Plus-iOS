@@ -1,5 +1,5 @@
 //
-//  FormLabel.swift
+//  FormButton.swift
 //  ORTUS
 //
 //  Created by Firdavs Khaydarov on 23/03/19.
@@ -9,7 +9,7 @@
 import UIKit
 import Carbon
 
-struct FormLabel: IdentifiableComponent {
+struct FormButton: IdentifiableComponent {
     var title: String
     var color: UIColor = Asset.Colors.tintColor.color
     var onSelect: () -> Void
@@ -28,7 +28,7 @@ struct FormLabel: IdentifiableComponent {
         content.onSelect = onSelect
     }
     
-    func shouldContentUpdate(with next: FormLabel) -> Bool {
+    func shouldContentUpdate(with next: FormButton) -> Bool {
         return title != next.title
     }
     

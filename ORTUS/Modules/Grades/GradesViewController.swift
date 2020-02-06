@@ -71,6 +71,7 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
     
     func loadData() {
         viewModel.loadMarks().always {
+            self.refreshControl.endRefreshing()
             self.render()
         }
     }

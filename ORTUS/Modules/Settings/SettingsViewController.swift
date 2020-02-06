@@ -52,51 +52,12 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
     }
     
     func render() {
-//        renderer.render(
-//            Section(
-//                id: "pin",
-//                header: ViewNode(Header(title: "PIN Code".uppercased())),
-//                cells: [
-//                    CellNode(
-//                        FormLabel(title: "PIN Code Settings", onSelect: { [unowned self] in
-//                            self.setPinCode()
-//                        })
-//                    )
-//                ]
-//            ),
-//            Section(
-//                id: "other",
-//                header: ViewNode(Header(title: "Other".uppercased())),
-//                cells: [
-//                    CellNode(
-//                        FormLabel(title: "Report a bug", onSelect: { [unowned self] in
-//                            self.reportBug()
-//                        })
-//                    )
-//                ]
-//            ),
-//            Section(
-//                id: "signout",
-//                header: ViewNode(Header(title: "")),
-//                cells: [
-//                    CellNode(
-//                        FormLabel(
-//                            title: "Sign Out",
-//                            color: .systemRed,
-//                            onSelect: { [unowned self] in
-//                                self.signOut()
-//                            }
-//                        )
-//                    )
-//                ]
-//            )
-//        )
         renderer.render {
             Section(
                 id: "pin",
                 header: Header(title: "PIN Code".uppercased()),
                 cells: {
-                    FormLabel(title: "PIN Code Settings", onSelect: { [unowned self] in
+                    FormSection(title: "PIN Code Settings", onSelect: { [unowned self] in
                         self.setPinCode()
                     })
                 }
@@ -106,9 +67,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
                 id: "other",
                 header: Header(title: "Other".uppercased()),
                 cells: {
-                    FormLabel(title: "Report a bug", onSelect: { [unowned self] in
-                        self.reportBug()
-                    })
+                    FormLink(title: "Report a bug", url: Global.telegramChatURL)
                 }
             )
             
@@ -116,7 +75,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
                 id: "signout",
                 header: Header(title: ""),
                 cells: {
-                    FormLabel(
+                    FormButton(
                         title: "Sign Out",
                         color: .systemRed,
                         onSelect: { [unowned self] in
@@ -177,14 +136,6 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
         EventLogger.log(.signedOut)
         
         viewModel.router.openLogin()
-    }
-    
-    func reportBug() {
-        guard let url = URL(string: Global.telegramChatURL) else {
-            return
-        }
-        
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
 

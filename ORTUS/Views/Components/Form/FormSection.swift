@@ -1,32 +1,42 @@
 //
-//  IconTextComponentView.swift
+//  FormSection.swift
 //  ORTUS
 //
-//  Created by Firdavs Khaydarov on 04/02/20.
+//  Created by Firdavs Khaydarov on 06/02/20.
 //  Copyright © 2020 Firdavs. All rights reserved.
 //
 
 import UIKit
+import Carbon
 
-class IconTextComponentView: UIControl {
+struct FormSection: IdentifiableComponent {
+    var title: String
+    var onSelect: () -> Void
+    
+    var id: String {
+        return title
+    }
+    
+    func renderContent() -> FormSectionView {
+        return FormSectionView()
+    }
+    
+    func render(in content: FormSectionView) {
+        content.titleLabel.text = title
+        content.onSelect = onSelect
+    }
+    
+    func shouldContentUpdate(with next: FormSection) -> Bool {
+        return title != next.title
+    }
+    
+    func referenceSize(in bounds: CGRect) -> CGSize? {
+        return CGSize(width: bounds.width, height: 44)
+    }
+}
+
+class FormSectionView: UIControl {
     var onSelect: (() -> Void)?
-    
-    let imageContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemGray
-        view.layer.cornerRadius = 8
-        view.clipsToBounds = true
-        
-        return view
-    }()
-    
-    let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .white
-        
-        return imageView
-    }()
     
     let titleLabel = UILabel()
     
@@ -52,19 +62,6 @@ class IconTextComponentView: UIControl {
             backgroundColor = .white
         }
         
-        addSubview(imageContainerView)
-        imageContainerView.snp.makeConstraints {
-            $0.size.equalTo(40)
-            $0.centerY.equalToSuperview()
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-        }
-        
-        addSubview(imageView)
-        imageView.snp.makeConstraints {
-            $0.size.equalTo(imageContainerView).multipliedBy(0.5)
-            $0.center.equalTo(imageContainerView)
-        }
-        
         addSubview(rightAccessoryView)
         rightAccessoryView.snp.makeConstraints {
             $0.size.equalTo(14)
@@ -75,7 +72,7 @@ class IconTextComponentView: UIControl {
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.left.equalTo(imageContainerView.snp.right).offset(15)
+            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
             $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
         }
         

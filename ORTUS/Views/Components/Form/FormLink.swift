@@ -1,38 +1,51 @@
 //
-//  IconTextComponentView.swift
+//  FormLink.swift
 //  ORTUS
 //
-//  Created by Firdavs Khaydarov on 04/02/20.
+//  Created by Firdavs Khaydarov on 06/02/20.
 //  Copyright © 2020 Firdavs. All rights reserved.
 //
 
 import UIKit
+import Carbon
 
-class IconTextComponentView: UIControl {
+struct FormLink: IdentifiableComponent {
+    var title: String
+    var url: String
     var onSelect: (() -> Void)?
     
-    let imageContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemGray
-        view.layer.cornerRadius = 8
-        view.clipsToBounds = true
-        
-        return view
-    }()
+    var id: String {
+        return title
+    }
     
-    let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .white
-        
-        return imageView
-    }()
+    func renderContent() -> FormLinkView {
+        return FormLinkView()
+    }
+    
+    func render(in content: FormLinkView) {
+        content.url = url
+        content.titleLabel.text = title
+        content.onSelect = onSelect
+    }
+    
+    func shouldContentUpdate(with next: FormLink) -> Bool {
+        return title != next.title
+    }
+    
+    func referenceSize(in bounds: CGRect) -> CGSize? {
+        return CGSize(width: bounds.width, height: 44)
+    }
+}
+
+class FormLinkView: UIControl {
+    var url: String = ""
+    var onSelect: (() -> Void)?
     
     let titleLabel = UILabel()
     
     let rightAccessoryView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Asset.Images.chevronRight.image
+        imageView.image = Asset.Images.external.image
         imageView.contentMode = .scaleAspectFit
         if #available(iOS 13.0, *) {
             imageView.tintColor = .tertiaryLabel
@@ -52,22 +65,9 @@ class IconTextComponentView: UIControl {
             backgroundColor = .white
         }
         
-        addSubview(imageContainerView)
-        imageContainerView.snp.makeConstraints {
-            $0.size.equalTo(40)
-            $0.centerY.equalToSuperview()
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-        }
-        
-        addSubview(imageView)
-        imageView.snp.makeConstraints {
-            $0.size.equalTo(imageContainerView).multipliedBy(0.5)
-            $0.center.equalTo(imageContainerView)
-        }
-        
         addSubview(rightAccessoryView)
         rightAccessoryView.snp.makeConstraints {
-            $0.size.equalTo(14)
+            $0.size.equalTo(16)
             $0.centerY.equalToSuperview()
             $0.right.equalToSuperview().inset(Global.UI.edgeInset)
         }
@@ -75,7 +75,7 @@ class IconTextComponentView: UIControl {
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.left.equalTo(imageContainerView.snp.right).offset(15)
+            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
             $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
         }
         
@@ -88,5 +88,13 @@ class IconTextComponentView: UIControl {
     
     @objc func selected() {
         onSelect?()
+        
+        guard let url = URL(string: url) else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }

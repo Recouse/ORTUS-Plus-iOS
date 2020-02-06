@@ -41,6 +41,7 @@ internal enum Asset {
     internal static let chevronLeft = ImageAsset(name: "chevronLeft")
     internal static let chevronRight = ImageAsset(name: "chevronRight")
     internal static let course = ImageAsset(name: "course")
+    internal static let external = ImageAsset(name: "external")
     internal static let news = ImageAsset(name: "news")
     internal static let ortusLogo = ImageAsset(name: "ortusLogo")
     internal static let rtuLogo = ImageAsset(name: "rtuLogo")
