@@ -69,7 +69,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
             
             Section(
                 id: "other",
-                header: Header(title: "Other".uppercased()),
+                header: Header(title: ""),
                 cells: {
                     FormLink(title: "Report a bug", url: Global.telegramChatURL)
                 }
