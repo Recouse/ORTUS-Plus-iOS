@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Clear keychain on a new installation
-        clearKeychain()
+        prepareOnFirstInstall()
         
         prepareAnalytics()
         
@@ -47,14 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         processShortcut(shortcutItem)
     }
     
-    private func clearKeychain() {
-        if UserDefaults.standard.object(forKey: Global.Key.firstInstall) == nil {
+    private func prepareOnFirstInstall() {
+        if UserDefaults.standard.value(for: .firstInstall) == nil {
             keychain[Global.Key.accessToken] = nil
             keychain[Global.Key.refreshToken] = nil
             keychain[Global.Key.tokenExpiresOn] = nil
             keychain[Global.Key.ortusPinCode] = nil
             
-            UserDefaults.standard.set(false, forKey: Global.Key.firstInstall)
+            UserDefaults.standard.set(true, for: .showEvents)
+            UserDefaults.standard.set(false, for: .firstInstall)
         }
     }
     

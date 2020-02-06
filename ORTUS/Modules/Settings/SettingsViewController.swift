@@ -54,11 +54,15 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
     func render() {
         renderer.render {
             Section(
-                id: "pin",
-                header: Header(title: "PIN Code".uppercased()),
+                id: "settings",
+                header: Header(title: ""),
                 cells: {
-                    FormSection(title: "PIN Code Settings", onSelect: { [unowned self] in
-                        self.setPinCode()
+                    FormSection(title: "PIN Code", onSelect: { [unowned self] in
+                        self.viewModel.router.openPinSettings()
+                    })
+                    
+                    FormSection(title: "Schedule", onSelect: { [unowned self] in
+                        self.viewModel.router.openScheduleSettings()
                     })
                 }
             )
@@ -116,10 +120,6 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
             
             self.alert(message: "Error on processing. Please try again.")
         }
-    }
-    
-    func setPinCode() {
-        viewModel.router.openPinSettings()
     }
     
     func signOut() {

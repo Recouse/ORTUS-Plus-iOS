@@ -139,6 +139,14 @@
 		FAB74C4623EAB2EC004C7BC6 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C4523EAB2EC004C7BC6 /* CircleView.swift */; };
 		FAB74C4823EBE43D004C7BC6 /* FormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C4723EBE43D004C7BC6 /* FormSection.swift */; };
 		FAB74C4A23EBE4E4004C7BC6 /* FormLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C4923EBE4E4004C7BC6 /* FormLink.swift */; };
+		FAB74C4C23EC48B7004C7BC6 /* FormSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C4B23EC48B7004C7BC6 /* FormSwitch.swift */; };
+		FAB74C5523EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C5023EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift */; };
+		FAB74C5623EC4A50004C7BC6 /* ScheduleSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C5123EC4A50004C7BC6 /* ScheduleSettingsRouter.swift */; };
+		FAB74C5723EC4A50004C7BC6 /* ScheduleSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C5223EC4A50004C7BC6 /* ScheduleSettingsViewController.swift */; };
+		FAB74C5823EC4A50004C7BC6 /* ScheduleSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C5323EC4A50004C7BC6 /* ScheduleSettingsView.swift */; };
+		FAB74C5923EC4A50004C7BC6 /* ScheduleSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C5423EC4A50004C7BC6 /* ScheduleSettingsViewModel.swift */; };
+		FAB74C5B23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C5A23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift */; };
+		FAB74C5D23EC4D94004C7BC6 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C5C23EC4D94004C7BC6 /* UserDefaults.swift */; };
 		FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3F823511BA600D4D593 /* EventComponent.swift */; };
 		FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FA23511BB300D4D593 /* EventComponentView.swift */; };
 		FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FC2351293E00D4D593 /* Lecture.swift */; };
@@ -337,6 +345,14 @@
 		FAB74C4523EAB2EC004C7BC6 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FAB74C4723EBE43D004C7BC6 /* FormSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSection.swift; sourceTree = "<group>"; };
 		FAB74C4923EBE4E4004C7BC6 /* FormLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLink.swift; sourceTree = "<group>"; };
+		FAB74C4B23EC48B7004C7BC6 /* FormSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSwitch.swift; sourceTree = "<group>"; };
+		FAB74C5023EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsModuleBuilder.swift; sourceTree = "<group>"; };
+		FAB74C5123EC4A50004C7BC6 /* ScheduleSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsRouter.swift; sourceTree = "<group>"; };
+		FAB74C5223EC4A50004C7BC6 /* ScheduleSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsViewController.swift; sourceTree = "<group>"; };
+		FAB74C5323EC4A50004C7BC6 /* ScheduleSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsView.swift; sourceTree = "<group>"; };
+		FAB74C5423EC4A50004C7BC6 /* ScheduleSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsViewModel.swift; sourceTree = "<group>"; };
+		FAB74C5A23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsRoute.swift; sourceTree = "<group>"; };
+		FAB74C5C23EC4D94004C7BC6 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FABBF3F3235107FB00D4D593 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = Carthage/Build/iOS/FSCalendar.framework; sourceTree = "<group>"; };
 		FABBF3F823511BA600D4D593 /* EventComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComponent.swift; sourceTree = "<group>"; };
 		FABBF3FA23511BB300D4D593 /* EventComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComponentView.swift; sourceTree = "<group>"; };
@@ -517,6 +533,7 @@
 			children = (
 				FAB74C0923E9F00A004C7BC6 /* SettingsRoute.swift */,
 				FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */,
+				FAB74C5A23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -616,6 +633,7 @@
 				FABF939B2389CB6100F78FF1 /* String.swift */,
 				FABF93A0238BB15E00F78FF1 /* EventLogger.swift */,
 				FA02851623952F8200436C9F /* APIDateFormatter.swift */,
+				FAB74C5C23EC4D94004C7BC6 /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -718,6 +736,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8714CD23E40DBB00DB728C /* PinSettings */,
+				FAB74C4D23EC4A1D004C7BC6 /* ScheduleSettings */,
 				FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */,
 				FA90FDBC224380FE005148AC /* SettingsView.swift */,
 				FA90FDBD224380FE005148AC /* SettingsViewModel.swift */,
@@ -920,6 +939,18 @@
 			path = Grades;
 			sourceTree = "<group>";
 		};
+		FAB74C4D23EC4A1D004C7BC6 /* ScheduleSettings */ = {
+			isa = PBXGroup;
+			children = (
+				FAB74C5023EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift */,
+				FAB74C5323EC4A50004C7BC6 /* ScheduleSettingsView.swift */,
+				FAB74C5423EC4A50004C7BC6 /* ScheduleSettingsViewModel.swift */,
+				FAB74C5223EC4A50004C7BC6 /* ScheduleSettingsViewController.swift */,
+				FAB74C5123EC4A50004C7BC6 /* ScheduleSettingsRouter.swift */,
+			);
+			path = ScheduleSettings;
+			sourceTree = "<group>";
+		};
 		FABBF3F723511B9400D4D593 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -1040,6 +1071,7 @@
 				FA8714C923E40B9000DB728C /* FormTextField.swift */,
 				FAB74C4723EBE43D004C7BC6 /* FormSection.swift */,
 				FAB74C4923EBE4E4004C7BC6 /* FormLink.swift */,
+				FAB74C4B23EC48B7004C7BC6 /* FormSwitch.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -1188,12 +1220,14 @@
 				FAB74C0A23E9F00A004C7BC6 /* SettingsRoute.swift in Sources */,
 				FA90FD9E22437D81005148AC /* DefaultTransition.swift in Sources */,
 				FAE3AB3D239D100500120F96 /* Assets.swift in Sources */,
+				FAB74C4C23EC48B7004C7BC6 /* FormSwitch.swift in Sources */,
 				FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */,
 				FA90FDC2224380FE005148AC /* SettingsViewModel.swift in Sources */,
 				FA90FDB422437F80005148AC /* Notification.swift in Sources */,
 				FABBF40123512A4D00D4D593 /* LectureComponentView.swift in Sources */,
 				FAF77B272246A98500197641 /* FormButton.swift in Sources */,
 				FAF77B222246A51800197641 /* OAuth.swift in Sources */,
+				FAB74C5723EC4A50004C7BC6 /* ScheduleSettingsViewController.swift in Sources */,
 				FA90FDB022437F25005148AC /* NewsView.swift in Sources */,
 				FA8714D523E40DD100DB728C /* PinSettingsViewController.swift in Sources */,
 				FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */,
@@ -1209,6 +1243,7 @@
 				FAF183C622490FC600CA2492 /* ScheduleRouter.swift in Sources */,
 				FAD18D5A23B1746600C0D89B /* BrowserViewModel.swift in Sources */,
 				FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */,
+				FAB74C5623EC4A50004C7BC6 /* ScheduleSettingsRouter.swift in Sources */,
 				FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */,
 				FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */,
 				FAB74C4423EAB1D1004C7BC6 /* GradeComponentView.swift in Sources */,
@@ -1216,11 +1251,13 @@
 				FA8714D623E40DD100DB728C /* PinSettingsView.swift in Sources */,
 				FA990A63239D6F8600BE9ACA /* LoginOnboardingContentView.swift in Sources */,
 				FA20623823434DF2007ED9BA /* ScheduleApi.swift in Sources */,
+				FAB74C5D23EC4D94004C7BC6 /* UserDefaults.swift in Sources */,
 				FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */,
 				FAD18D5923B1746600C0D89B /* BrowserView.swift in Sources */,
 				FAB74C2A23E9F976004C7BC6 /* IconTextComponent.swift in Sources */,
 				FAB74C2C23E9F996004C7BC6 /* IconTextComponentView.swift in Sources */,
 				FA90FDED2243B9FD005148AC /* Article.swift in Sources */,
+				FAB74C5B23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift in Sources */,
 				FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */,
 				FA39AEDA23E9ED3800C4A70C /* HomeModuleBuilder.swift in Sources */,
 				FA39AEC023E8CB8F00C4A70C /* NotificationComponentView.swift in Sources */,
@@ -1254,6 +1291,7 @@
 				FA2062C923453E00007ED9BA /* CourseComponentView.swift in Sources */,
 				FA2062DB234628A6007ED9BA /* NotificationsModuleBuilder.swift in Sources */,
 				FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */,
+				FAB74C5823EC4A50004C7BC6 /* ScheduleSettingsView.swift in Sources */,
 				FA90FDA522437DC5005148AC /* Route.swift in Sources */,
 				FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */,
 				FAF183BA2249096800CA2492 /* CoursesView.swift in Sources */,
@@ -1277,11 +1315,13 @@
 				FAB74C3F23EAAD5A004C7BC6 /* Mark.swift in Sources */,
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
+				FAB74C5523EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift in Sources */,
 				FABBF3FD2351293E00D4D593 /* Lecture.swift in Sources */,
 				FAB74C3823EAA6B6004C7BC6 /* MarksApi.swift in Sources */,
 				FAB74C1223E9F391004C7BC6 /* GradesRouter.swift in Sources */,
 				FA990A58239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift in Sources */,
 				FAB74C1A23E9F478004C7BC6 /* TextComponentView.swift in Sources */,
+				FAB74C5923EC4A50004C7BC6 /* ScheduleSettingsViewModel.swift in Sources */,
 				FAB74C1323E9F391004C7BC6 /* GradesViewController.swift in Sources */,
 				FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,

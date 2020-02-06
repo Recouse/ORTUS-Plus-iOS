@@ -1,14 +1,14 @@
 //
-//  PinSettingsView.swift
+//  ScheduleSettingsView.swift
 //  ORTUS
 //
-//  Created by Firdavs Khaydarov on 31/01/20.
+//  Created by Firdavs Khaydarov on 06/02/20.
 //  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
 import UIKit
 
-class PinSettingsView: UIView {
+class ScheduleSettingsView: UIView {
     let tableView: UITableView = {
         var style: UITableView.Style = .grouped
         

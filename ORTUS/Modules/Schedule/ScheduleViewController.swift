@@ -95,8 +95,14 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
         toolbarSegmentedControl.selectedSegmentIndex = selectedScheduleGrouping
     }
     
-    func loadData() {
-        viewModel.loadSchedule().always {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == UserDefaults.Key.showEvents.name {
+            loadData(forceUpdate: false)
+        }
+    }
+    
+    func loadData(forceUpdate: Bool = true) {
+        viewModel.loadSchedule(forceUpdate: forceUpdate).always {
             self.render()
         }.catch { error in
             print(error)
@@ -211,13 +217,12 @@ extension ScheduleViewController {
     
     func prepareData() {
         renderer.target = tableView
-        renderer.adapter.didSelect = { [unowned self] context in
-            if let event = context.node.component(as: EventComponent.self)?.event {
-                self.open(event: event)
-            }
-            
-            //
-        }
+        
+        UserDefaults.standard.addObserver(
+            self,
+            forKeyPath: UserDefaults.Key.showEvents.name,
+            options: .new,
+            context: nil)
     }
 }
 

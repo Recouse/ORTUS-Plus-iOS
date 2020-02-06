@@ -14,15 +14,19 @@ enum ScheduleGrouping: String, CaseIterable {
 }
 
 class ScheduleViewModel: ViewModel {
+    typealias Schedule = [(key: String, value: [ScheduleItem])]
+    
     let router: ScheduleRouter.Routes
     
-    var schedule: [(key: String, value: [ScheduleItem])] = []
+    var response: ScheduleResponse?
+    
+    var schedule: Schedule = []
     
     init(router: ScheduleRouter.Routes) {
         self.router = router
     }
     
-    func loadSchedule() -> Promise<Bool> {
+    func loadSchedule(forceUpdate: Bool = true) -> Promise<Bool> {
         let today = Date()
         var date = today
         
@@ -30,42 +34,59 @@ class ScheduleViewModel: ViewModel {
             date = Calendar.current.date(byAdding: .day, value: 1, to: today) ?? today
         }
         
+        if !forceUpdate, let response = self.response {
+            self.schedule = self.sortSchedule(from: response)
+            
+            return Promise(true)
+        }
+        
         return Promise { fulfill, reject in
             APIClient.performRequest(
                 ScheduleResponse.self,
                 route: ScheduleApi.schedule(date: date)
             ).then { response in
-                let sortedResponse = response.result.sorted(by: {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    
-                    guard let date0 = dateFormatter.date(from: $0.key),
-                        let date1 = dateFormatter.date(from: $1.key) else {
-                        return false
-                    }
-                    
-                    return date0 < date1
-                })
-                
-                var schedule: [(key: String, value: [ScheduleItem])] = []
-                for pair in sortedResponse {
-                    var items: [ScheduleItem] = []
-                    pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.time)) }
-                    pair.value.lectures.forEach { items.append(ScheduleItem($0, time: $0.timeFrom)) }
-                    items.sort(by: {
-                        guard let firstDate = $0.timeDate, let secondDate = $1.timeDate else {
-                            return false
-                        }
-                        
-                        return firstDate < secondDate
-                    })
-                    schedule.append((key: pair.key, value: items))
-                }
-                
-                self.schedule = schedule
+                self.response = response
+                self.schedule = self.sortSchedule(from: response)
                 
                 fulfill(true)
             }.catch { reject($0) }
         }
+    }
+    
+    private func sortSchedule(from response: ScheduleResponse) -> Schedule {
+        let sortedResponse = response.result.sorted(by: {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            guard let date0 = dateFormatter.date(from: $0.key),
+                let date1 = dateFormatter.date(from: $1.key) else {
+                return false
+            }
+            
+            return date0 < date1
+        })
+        
+        var schedule: [(key: String, value: [ScheduleItem])] = []
+        for pair in sortedResponse {
+            var items: [ScheduleItem] = []
+            if UserDefaults.standard.value(for: .showEvents) == true {
+                pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.time)) }
+            }
+            
+            pair.value.lectures.forEach { items.append(ScheduleItem($0, time: $0.timeFrom)) }
+            items.sort(by: {
+                guard let firstDate = $0.timeDate, let secondDate = $1.timeDate else {
+                    return false
+                }
+                
+                return firstDate < secondDate
+            })
+            
+            if !items.isEmpty {
+                schedule.append((key: pair.key, value: items))
+            }
+        }
+        
+        return schedule
     }
 }
