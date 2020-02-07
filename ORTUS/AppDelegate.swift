@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        processShortcut(shortcutItem)
+        processShortcut(shortcutItem, controller: window?.rootViewController)
     }
     
     private func prepareOnFirstInstall() {
@@ -59,23 +59,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    private func processShortcut(_ item: UIApplicationShortcutItem) {
-        guard let mainTabBarController = window?.rootViewController as? MainTabBarController else {
+    private func processShortcut(_ item: UIApplicationShortcutItem, controller: UIViewController?) {
+        guard let mainTabBarController = controller as? MainTabBarController else {
             return
         }
         
-        switch item.type {
-        case Global.QuickAction.ortusAction:
+        preselectIndex(for: item, on: mainTabBarController)
+        
+        if item.type == Global.QuickAction.ortusAction {
             guard let selectedNavigationController = mainTabBarController.viewControllers?[mainTabBarController.selectedIndex] as? NavigationController else {
-                break
+                return
             }
             
             let browserModule = BrowserModuleBuilder.build(with: Global.ortusURL, customTransition: nil)
             selectedNavigationController.pushViewController(browserModule, animated: true)
+        }
+    }
+    
+    private func preselectIndex(for item: UIApplicationShortcutItem?, on tabBarController: MainTabBarController) {
+        switch item?.type {
         case Global.QuickAction.schedule:
-            mainTabBarController.selectedIndex = Global.UI.TabBar.schedule.rawValue
+            tabBarController.selectedIndex = Global.UI.TabBar.schedule.rawValue
         case Global.QuickAction.notifications:
-            mainTabBarController.selectedIndex = Global.UI.TabBar.notifications.rawValue
+            tabBarController.selectedIndex = Global.UI.TabBar.notifications.rawValue
         default:
             break
         }
@@ -90,18 +96,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func prepareMainTabBarController(with item: UIApplicationShortcutItem?) {
         let tabBarController = MainTabBarController()
         
-        switch item?.type {
-        case Global.QuickAction.schedule:
-            tabBarController.selectedIndex = Global.UI.TabBar.schedule.rawValue
-        case Global.QuickAction.notifications:
-            tabBarController.selectedIndex = Global.UI.TabBar.notifications.rawValue
-        default:
-            break
-        }
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
+        
+        preselectIndex(for: item, on: tabBarController)
         
         if item?.type == Global.QuickAction.ortusAction {
             guard let selectedNavigationController = tabBarController.viewControllers?.first as? NavigationController else {

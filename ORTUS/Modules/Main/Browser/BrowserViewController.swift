@@ -129,7 +129,7 @@ extension BrowserViewController: WKScriptMessageHandler, WKNavigationDelegate, W
         
         if event == Global.Event.loggedIn {
             // A small hack to hide activity indicator after page loading
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.async {
                 self.hideLoadingOverview()
             }
         }

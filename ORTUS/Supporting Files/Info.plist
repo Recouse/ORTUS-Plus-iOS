@@ -46,6 +46,33 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>bell</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Notifications</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>NotificationsAction</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeDate</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Schedule</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>ScheduleAction</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>globe</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>ORTUS Website</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OrtusAction</string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -65,32 +92,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-    <key>UIApplicationShortcutItems</key>
-    <array>
-        <dict>
-            <key>UIApplicationShortcutItemType</key>
-            <string>NotificationsAction</string>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>bell</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Notifications</string>
-        </dict>
-        <dict>
-            <key>UIApplicationShortcutItemType</key>
-            <string>ScheduleAction</string>
-            <key>UIApplicationShortcutItemIconType</key>
-            <string>UIApplicationShortcutIconTypeDate</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Schedule</string>
-        </dict>
-        <dict>
-            <key>UIApplicationShortcutItemType</key>
-            <string>OrtusAction</string>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>globe</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>ORTUS Website</string>
-        </dict>
-    </array>
 </dict>
 </plist>
