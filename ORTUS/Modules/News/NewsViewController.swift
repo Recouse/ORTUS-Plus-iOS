@@ -90,9 +90,7 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
 }
 
 extension NewsViewController {
-    func prepareNavigationItem() {
-        navigationItem.largeTitleDisplayMode = .never
-        
+    func prepareNavigationItem() {        
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "back".localized(),
             style: .plain,

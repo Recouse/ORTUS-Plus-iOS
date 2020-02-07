@@ -39,7 +39,6 @@ class SemesterViewController: TranslatableModule, ModuleViewModel {
         
         EventLogger.log(.openedSemester(name: viewModel.semester.name ?? "Other"))
         
-        prepareNavigationItem()
         prepareData()
         
         render()
@@ -73,10 +72,6 @@ class SemesterViewController: TranslatableModule, ModuleViewModel {
 }
 
 extension SemesterViewController {
-    func prepareNavigationItem() {
-        navigationItem.largeTitleDisplayMode = .never
-    }
-    
     func prepareData() {
         renderer.target = tableView
     }

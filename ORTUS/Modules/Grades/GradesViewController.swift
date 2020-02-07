@@ -41,7 +41,6 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
         
         EventLogger.log(.openedGrades)
         
-        prepareNavigationItem()
         prepareRefreshControl()
         prepareData()
         
@@ -56,7 +55,7 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
         guard let semester = viewModel.studyPrograms.first?.semesters.first else {
             return
         }
-                
+                        
         renderer.render {
             Section(
                 id: "grades",
@@ -82,10 +81,6 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
 }
 
 extension GradesViewController {
-    func prepareNavigationItem() {
-        navigationItem.largeTitleDisplayMode = .never
-    }
-    
     func prepareRefreshControl() {
         refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
