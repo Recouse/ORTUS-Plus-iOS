@@ -12,7 +12,7 @@ import SafariServices
 
 class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresentable {
     enum ID {
-        case pinCode, reportBug, signOut
+        case pinCode, reportBug, signOut, version
     }
 
     var viewModel: SettingsViewModel
@@ -54,7 +54,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
     func render() {
         renderer.render {
             Section(
-                id: "settings",
+                id: ID.pinCode,
                 header: Header(title: ""),
                 cells: {
                     FormSection(title: "PIN Code", onSelect: { [unowned self] in
@@ -68,7 +68,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
             )
             
             Section(
-                id: "other",
+                id: ID.reportBug,
                 header: Header(title: ""),
                 cells: {
                     FormLink(title: "Report a bug", url: Global.telegramChatURL)
@@ -76,7 +76,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
             )
             
             Section(
-                id: "signout",
+                id: ID.signOut,
                 header: Header(title: ""),
                 cells: {
                     FormButton(
@@ -85,6 +85,16 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
                         onSelect: { [unowned self] in
                             self.signOut()
                         }
+                    )
+                }
+            )
+            
+            Section(
+                id: ID.version,
+                cells: {
+                    VersionComponent(
+                        version: "\(Bundle.main.versionNumber ?? "") (\(Bundle.main.buildNumber ?? ""))",
+                        onSelect: nil
                     )
                 }
             )

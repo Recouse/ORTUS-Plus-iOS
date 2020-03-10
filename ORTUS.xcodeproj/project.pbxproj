@@ -10,6 +10,9 @@
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
 		FA1DEF872416DAF300704B6E /* LectureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF862416DAF300704B6E /* LectureComponent.swift */; };
 		FA1DEF892416DAFE00704B6E /* LectureComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */; };
+		FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8A2417603100704B6E /* VersionComponent.swift */; };
+		FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8C2417605400704B6E /* VersionComponentView.swift */; };
+		FA1DEF8F241761DC00704B6E /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8E241761DC00704B6E /* Bundle.swift */; };
 		FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA206231234344CE007ED9BA /* Alamofire+Promises.swift */; };
 		FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623423434DBB007ED9BA /* CoursesApi.swift */; };
 		FA20623823434DF2007ED9BA /* ScheduleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623723434DF2007ED9BA /* ScheduleApi.swift */; };
@@ -288,6 +291,9 @@
 		FA0927D32347E3B000D32827 /* NotificationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsApi.swift; sourceTree = "<group>"; };
 		FA1DEF862416DAF300704B6E /* LectureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponent.swift; sourceTree = "<group>"; };
 		FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponentView.swift; sourceTree = "<group>"; };
+		FA1DEF8A2417603100704B6E /* VersionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComponent.swift; sourceTree = "<group>"; };
+		FA1DEF8C2417605400704B6E /* VersionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComponentView.swift; sourceTree = "<group>"; };
+		FA1DEF8E241761DC00704B6E /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		FA206231234344CE007ED9BA /* Alamofire+Promises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Promises.swift"; sourceTree = "<group>"; };
 		FA20623423434DBB007ED9BA /* CoursesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesApi.swift; sourceTree = "<group>"; };
 		FA20623723434DF2007ED9BA /* ScheduleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleApi.swift; sourceTree = "<group>"; };
@@ -819,6 +825,7 @@
 				FABF939B2389CB6100F78FF1 /* String.swift */,
 				FABF93A0238BB15E00F78FF1 /* EventLogger.swift */,
 				FAB74C5C23EC4D94004C7BC6 /* UserDefaults.swift */,
+				FA1DEF8E241761DC00704B6E /* Bundle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1051,6 +1058,8 @@
 				FAB74C1923E9F478004C7BC6 /* TextComponentView.swift */,
 				FAB74C2923E9F976004C7BC6 /* IconTextComponent.swift */,
 				FAB74C2B23E9F996004C7BC6 /* IconTextComponentView.swift */,
+				FA1DEF8A2417603100704B6E /* VersionComponent.swift */,
+				FA1DEF8C2417605400704B6E /* VersionComponentView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1516,6 +1525,7 @@
 				FA90FD9722437D50005148AC /* Router.swift in Sources */,
 				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
 				FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */,
+				FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */,
 				FA39AEDE23E9ED3800C4A70C /* HomeViewModel.swift in Sources */,
 				FAB74C4223EAB1C5004C7BC6 /* GradeComponent.swift in Sources */,
 				FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */,
@@ -1621,6 +1631,7 @@
 				FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */,
 				FAB74C2323E9F60D004C7BC6 /* SemesterViewController.swift in Sources */,
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
+				FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
 				FAB74C5523EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift in Sources */,
 				FAB74C3823EAA6B6004C7BC6 /* MarksApi.swift in Sources */,
@@ -1635,6 +1646,7 @@
 				FA39AEDD23E9ED3800C4A70C /* HomeView.swift in Sources */,
 				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
 				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
+				FA1DEF8F241761DC00704B6E /* Bundle.swift in Sources */,
 				FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */,
 				FA90FDF52243C5B5005148AC /* ArticleComponent.swift in Sources */,
 				FA90FDB122437F25005148AC /* NewsViewModel.swift in Sources */,
