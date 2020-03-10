@@ -6,6 +6,8 @@
 //  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
+import Models
+
 class SemesterViewModel: ViewModel {
     let semester: Semester
     

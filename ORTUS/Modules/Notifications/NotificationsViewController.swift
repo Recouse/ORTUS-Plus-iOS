@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Models
 
 class NotificationsViewController: TranslatableModule, ModuleViewModel {
     var viewModel: NotificationsViewModel

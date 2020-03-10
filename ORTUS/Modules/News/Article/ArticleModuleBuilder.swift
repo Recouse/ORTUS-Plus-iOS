@@ -6,6 +6,8 @@
 //  Copyright (c) 2019 Firdavs. All rights reserved.
 //
 
+import Models
+
 class ArticleModuleBuilder: ModuleBuilder {
     typealias M = ArticleViewController
     typealias P = Article

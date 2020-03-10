@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Response<T: Codable>: Codable {
+public struct Response<T: Codable>: Codable {
     let jsonrpc: String
     let id: Int
-    let result: T
+    public let result: T
 }

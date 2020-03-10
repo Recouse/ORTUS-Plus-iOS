@@ -8,6 +8,7 @@
 
 import Foundation
 import Promises
+import Models
 
 class NotificationsViewModel: ViewModel {
     let router: NotificationsRouter.Routes

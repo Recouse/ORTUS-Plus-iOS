@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Models
 
 class SemesterViewController: TranslatableModule, ModuleViewModel {
     var viewModel: SemesterViewModel

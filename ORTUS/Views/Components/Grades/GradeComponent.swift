@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Models
 
 struct GradeComponent: IdentifiableComponent {
     var id: Int

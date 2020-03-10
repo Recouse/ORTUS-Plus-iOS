@@ -8,4 +8,4 @@
 
 import Foundation
 
-struct EmptyResponse: Codable {}
+public struct EmptyResponse: Codable {}

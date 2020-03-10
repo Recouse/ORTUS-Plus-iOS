@@ -8,26 +8,26 @@
 
 import Foundation
 
-typealias ScheduleResponse = Response<[String: Schedule]>
+public typealias ScheduleResponse = Response<[String: Schedule]>
 
-struct Schedule: Codable {
-    let events: Events
-    let lectures: Lectures
+public struct Schedule: Codable {
+    public let events: Events
+    public let lectures: Lectures
 }
 
-struct ScheduleItem {
-    var item: Codable
+public struct ScheduleItem {
+    public var item: Codable
     
-    var time: String = "00:00"
+    public var time: String = "00:00"
     
-    var timeDate: Date? {
+    public var timeDate: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.setAPIDefaultFormat(to: .time)
         
         return dateFormatter.date(from: time)
     }
     
-    init<I: Codable>(_ item: I, time: String) {
+    public init<I: Codable>(_ item: I, time: String) {
         self.item = item
         self.time = time
     }

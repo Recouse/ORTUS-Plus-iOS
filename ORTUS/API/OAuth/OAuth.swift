@@ -11,6 +11,7 @@ import Alamofire
 import Promises
 import Localize_Swift
 import KeychainAccess
+import Models
 
 final class OAuth {
     static let redirectURI = "ortus://auth"

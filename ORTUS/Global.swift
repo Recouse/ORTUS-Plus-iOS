@@ -22,6 +22,12 @@ struct Global {
         
         // Settings keys
         static let showEvents = "show_events"
+        
+        // App group
+        static let appGroup = "group.me.recouse.ORTUS"
+        
+        // Cache
+        static let scheduleCache = "scheduleCache"
     }
     
     struct Event {

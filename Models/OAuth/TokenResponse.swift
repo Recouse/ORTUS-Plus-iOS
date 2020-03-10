@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct TokenResponse: Codable {
-    let accessToken: String
-    let refreshToken, scope, tokenType: String
-    let expiresIn: Int
+public struct TokenResponse: Codable {
+    public let accessToken: String
+    public let refreshToken, scope, tokenType: String
+    public let expiresIn: Int
 
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
@@ -22,11 +22,11 @@ struct TokenResponse: Codable {
     }
 }
 
-struct RefreshTokenResponse: Codable {
-    let accessToken: String
-    let accessTokenEncrypted: String
-    let scope, tokenType: String
-    let expiresIn: Int
+public struct RefreshTokenResponse: Codable {
+    public let accessToken: String
+    public let accessTokenEncrypted: String
+    public let scope, tokenType: String
+    public let expiresIn: Int
 
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"

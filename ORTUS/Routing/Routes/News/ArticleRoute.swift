@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Models
 
 protocol ArticleRoute: Route {
     func openArticle(_ article: Article)

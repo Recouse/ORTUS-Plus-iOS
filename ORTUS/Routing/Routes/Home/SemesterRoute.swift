@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Models
 
 protocol SemesterRoute: Route {
     func openSemester(_ semester: Semester)

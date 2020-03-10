@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct MarkSemester: Codable {
-    let id: Int
-    let shortName, fullName: String
-    let marks: [Mark]
+public struct MarkSemester: Codable {
+    public let id: Int
+    public let shortName, fullName: String
+    public let marks: [Mark]
 }

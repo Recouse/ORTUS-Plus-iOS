@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Models
 
 struct CourseComponent: IdentifiableComponent {
     var id: String

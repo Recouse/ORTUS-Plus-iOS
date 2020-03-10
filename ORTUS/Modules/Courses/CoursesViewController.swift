@@ -9,6 +9,7 @@
 import UIKit
 import Carbon
 import SafariServices
+import Models
 
 class CoursesViewController: TranslatableModule, ModuleViewModel {
     var viewModel: CoursesViewModel

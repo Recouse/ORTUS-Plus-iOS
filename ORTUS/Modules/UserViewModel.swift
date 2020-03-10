@@ -6,7 +6,7 @@
 //  Copyright © 2019 Firdavs. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import KeychainAccess
 
 class UserViewModel {
@@ -22,6 +22,8 @@ class UserViewModel {
         keychain[Global.Key.refreshToken] = nil
         keychain[Global.Key.tokenExpiresOn] = nil
         keychain[Global.Key.ortusPinCode] = nil
+        
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalNever)
         
         NotificationCenter.default.post(name: .userSignedOut, object: nil)
     }

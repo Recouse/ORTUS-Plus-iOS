@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Models
 
 struct NotificationComponent: IdentifiableComponent {
     var id: String

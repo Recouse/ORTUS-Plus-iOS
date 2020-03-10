@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Models
 
 struct ArticleHeaderComponent: Carbon.Component, Equatable {
     var article: Article

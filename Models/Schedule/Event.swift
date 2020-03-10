@@ -8,13 +8,21 @@
 
 import Foundation
 
-typealias Events = [Event]
+public typealias Events = [Event]
 
-struct Event: Codable {
-    let datetime, title, link, description: String
-    let allDayEvent: Bool
+public struct Event: Codable {
+    public let datetime, title, link, description: String
+    public let allDayEvent: Bool
     
-    var time: String {
+    public init(datetime: String, title: String, link: String, description: String, allDayEvent: Bool) {
+        self.datetime = datetime
+        self.title = title
+        self.link = link
+        self.description = description
+        self.allDayEvent = allDayEvent
+    }
+    
+    public var time: String {
         let dateFormatter = DateFormatter()
         dateFormatter.setAPIDefaultFormat()
         

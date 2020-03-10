@@ -7,6 +7,7 @@
 //
 
 import Promises
+import Models
 
 class HomeViewModel: ViewModel {
     let router: HomeRouter.Routes

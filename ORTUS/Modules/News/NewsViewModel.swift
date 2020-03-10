@@ -8,6 +8,7 @@
 
 import Foundation
 import Promises
+import Models
 
 class NewsViewModel: ViewModel {
     typealias SortedArticles = [Date: [Article]]

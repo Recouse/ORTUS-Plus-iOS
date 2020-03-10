@@ -1,9 +1,9 @@
 //
 //  EventComponent.swift
-//  ORTUS
+//  Schedule
 //
-//  Created by Firdavs Khaydarov on 11/10/19.
-//  Copyright © 2019 Firdavs. All rights reserved.
+//  Created by Firdavs Khaydarov on 09/03/2020.
+//  Copyright © 2020 Firdavs. All rights reserved.
 //
 
 import UIKit
@@ -13,6 +13,7 @@ import Models
 struct EventComponent: IdentifiableComponent {
     var id: String
     var event: Event
+    var date: Date?
     
     func renderContent() -> EventComponentView {
         return EventComponentView()
@@ -21,11 +22,24 @@ struct EventComponent: IdentifiableComponent {
     func render(in content: EventComponentView) {
         content.titleLabel.text = event.title
         
+        var time = ""
+        
         if event.allDayEvent {
-            content.timeLabel.text = "all-day"
+            time += "all-day"
         } else {
-            content.timeLabel.text = event.time
+            time += event.time
         }
+        
+        if let date = date {
+            time += ", "
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE, d MMMM"
+            
+            time += dateFormatter.string(from: date)
+        }
+        
+        content.timeLabel.text = time
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
@@ -36,3 +50,4 @@ struct EventComponent: IdentifiableComponent {
         return event.title != next.event.title
     }
 }
+

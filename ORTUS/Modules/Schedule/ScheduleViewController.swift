@@ -9,6 +9,7 @@
 import UIKit
 import Carbon
 import SafariServices
+import Models
 
 class ScheduleViewController: TranslatableModule, ModuleViewModel {
     var viewModel: ScheduleViewModel

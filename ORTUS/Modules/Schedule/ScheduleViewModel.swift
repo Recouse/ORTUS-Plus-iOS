@@ -6,8 +6,10 @@
 //  Copyright (c) 2019 Firdavs. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Promises
+import Models
+import Storage
 
 enum ScheduleGrouping: String, CaseIterable {
     case today, tomorrow, week
@@ -45,12 +47,39 @@ class ScheduleViewModel: ViewModel {
                 ScheduleResponse.self,
                 route: ScheduleApi.schedule(date: date)
             ).then { response in
+                self.cacheResponse(response)
+                
                 self.response = response
                 self.schedule = self.sortSchedule(from: response)
                 
                 fulfill(true)
             }.catch { reject($0) }
         }
+    }
+    
+    class func refreshSchedule(
+        backgroundFetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
+    ) {
+        let viewModel = ScheduleViewModel(router: ScheduleRouter())
+        viewModel.loadSchedule().then { _ in
+            completionHandler(.newData)
+        }.catch { _ in
+            completionHandler(.failed)
+        }
+    }
+    
+    private func cacheResponse(_ response: ScheduleResponse) {
+        let path = FileManager.sharedContainerURL()
+        let disk = DiskStorage(path: path)
+        let storage = CodableStorage(storage: disk)
+        
+        do {
+            try storage.save(response, for: Global.Key.scheduleCache)
+        } catch {
+            dump(error)
+            print(error.localizedDescription)
+        }
+        
     }
     
     private func sortSchedule(from response: ScheduleResponse) -> Schedule {

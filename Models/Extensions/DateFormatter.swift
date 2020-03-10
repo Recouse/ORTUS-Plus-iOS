@@ -1,14 +1,14 @@
 //
-//  APIDateFormatter.swift
-//  ORTUS
+//  DateFormatter.swift
+//  Models
 //
-//  Created by Firdavs Khaydarov on 02/12/19.
-//  Copyright © 2019 Firdavs. All rights reserved.
+//  Created by Firdavs Khaydarov on 08/03/2020.
+//  Copyright © 2020 Firdavs. All rights reserved.
 //
 
 import Foundation
 
-extension DateFormatter {
+public extension DateFormatter {
     enum APIDefaultFormat {
         case date, time
     }
