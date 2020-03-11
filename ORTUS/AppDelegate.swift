@@ -78,6 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
             
+            EventLogger.log(.openedOrtusShortcut)
+            
             let browserModule = BrowserModuleBuilder.build(with: Global.ortusURL, customTransition: nil)
             selectedNavigationController.pushViewController(browserModule, animated: true)
         }
@@ -86,8 +88,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func preselectIndex(for item: UIApplicationShortcutItem?, on tabBarController: MainTabBarController) {
         switch item?.type {
         case Global.QuickAction.schedule:
+            EventLogger.log(.openedScheduleShortcut)
             tabBarController.selectedIndex = Global.UI.TabBar.schedule.rawValue
         case Global.QuickAction.notifications:
+            EventLogger.log(.openedNotificationsShortCut)
             tabBarController.selectedIndex = Global.UI.TabBar.notifications.rawValue
         default:
             break
