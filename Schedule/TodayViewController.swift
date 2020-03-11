@@ -47,10 +47,10 @@ class TodayViewController: UIViewController {
     func render() {
         var data: [CellNode] = []
         
-        outerLoop: for day in 1...6 {
+        outerLoop: for day in 0...6 {
             let date = Calendar.current.date(byAdding: .day, value: day, to: Date())!
             let dateString = dateFormatter.string(from: date)
-            
+
             for items in schedule {
                 if items.key == dateString {
                     for item in items.value {
@@ -61,38 +61,38 @@ class TodayViewController: UIViewController {
                             // Date from time of event or date from string
                             var eventDate = item.timeDate ?? dateFormatter.date(from: items.key)
                             // Add year, month and day to only time date
-                            
+
                             if eventDate != nil, itemsDate.count == 3 {
                                 eventDate = Calendar.current.date(bySetting: .year, value: itemsDate[0], of: eventDate!)
                                 eventDate = Calendar.current.date(bySetting: .month, value: itemsDate[1], of: eventDate!)
                                 eventDate = Calendar.current.date(bySetting: .day, value: itemsDate[2], of: eventDate!)
-                                
+
                                 if eventDate! < Date() {
                                     continue
                                 }
                             }
-                            
+
                             data.append(CellNode(EventComponent(id: event.title, event: event, date: eventDate)))
                         }
-                        
+
                         if let lecture = item.item(as: Lecture.self) {
                             let time = lecture.timeTill.components(separatedBy: ":")
                                 .compactMap { Int($0) }
                             let date = dateFormatter.date(from: lecture.date)
-                            
+
                             if var lectureDate = date, time.count == 2 {
                                 lectureDate = Calendar.current.date(bySetting: .hour, value: time[0], of: lectureDate)!
                                 lectureDate = Calendar.current.date(bySetting: .minute, value: time[1], of: lectureDate)!
-                                
+
                                 if lectureDate < Date() {
                                     continue
                                 }
                             }
-                            
+
                             data.append(CellNode(LectureComponent(id: lecture.id, lecture: lecture, date: date)))
                         }
                     }
-                    
+
                     if !data.isEmpty {
                         break outerLoop
                     }
@@ -101,6 +101,19 @@ class TodayViewController: UIViewController {
         }
         
         extensionContext?.widgetLargestAvailableDisplayMode = data.count > 2 ? .expanded : .compact
+        
+        if data.isEmpty {
+            data.append(
+                CellNode(
+                    EmptyComponent(
+                        id: "empty",
+                        onSelect: { [unowned self] in
+                            self.openApp()
+                        }
+                    )
+                )
+            )
+        }
         
         renderer.render {
             Group(
@@ -131,8 +144,12 @@ class TodayViewController: UIViewController {
         var schedule: [(key: String, value: [ScheduleItem])] = []
         for pair in sortedResponse {
             var items: [ScheduleItem] = []
-            pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.time)) }
+            
+            if UserDefaults(suiteName: "group.me.recouse.ORTUS")?.bool(forKey: "show_events") == true {
+                pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.time)) }
+            }
             pair.value.lectures.forEach { items.append(ScheduleItem($0, time: $0.timeFrom)) }
+            
             items.sort(by: {
                 guard let firstDate = $0.timeDate, let secondDate = $1.timeDate else {
                     return false
@@ -162,6 +179,8 @@ extension TodayViewController: NCWidgetProviding {
             
             completionHandler(NCUpdateResult.newData)
         } catch {
+            schedule = []
+            
             completionHandler(NCUpdateResult.failed)
         }
         
@@ -173,7 +192,7 @@ extension TodayViewController: NCWidgetProviding {
         
         preferredContentSize = CGSize(
             width: maxSize.width,
-            height: min(tableView.contentSize.height, maxSize.height)
+            height: min(tableView.contentSize.height + 10, maxSize.height)
         )
     }
 }

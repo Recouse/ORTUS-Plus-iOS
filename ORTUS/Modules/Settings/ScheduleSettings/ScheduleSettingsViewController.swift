@@ -56,9 +56,9 @@ class ScheduleSettingsViewController: TranslatableModule, ModuleViewModel {
                 cells: {
                     FormSwitch(
                         title: "Show Events",
-                        isOn: UserDefaults.standard.value(for: .showEvents) ?? false,
+                        isOn: self.viewModel.sharedUserDefaults?.value(for: .showEvents) ?? false,
                         onSwitch: { isOn in
-                            UserDefaults.standard.set(isOn, for: .showEvents)
+                            self.viewModel.sharedUserDefaults?.set(isOn, for: .showEvents)
                         }
                     )
                 }

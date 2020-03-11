@@ -24,6 +24,8 @@ class ScheduleViewModel: ViewModel {
     
     var schedule: Schedule = []
     
+    let sharedUserDefaults = UserDefaults(suiteName: Global.Key.appGroup)
+    
     init(router: ScheduleRouter.Routes) {
         self.router = router
     }
@@ -98,7 +100,7 @@ class ScheduleViewModel: ViewModel {
         var schedule: [(key: String, value: [ScheduleItem])] = []
         for pair in sortedResponse {
             var items: [ScheduleItem] = []
-            if UserDefaults.standard.value(for: .showEvents) == true {
+            if sharedUserDefaults?.value(for: .showEvents) == true {
                 pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.time)) }
             }
             

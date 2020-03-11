@@ -219,11 +219,17 @@ extension ScheduleViewController {
     func prepareData() {
         renderer.target = tableView
         
-        UserDefaults.standard.addObserver(
+        viewModel.sharedUserDefaults?.addObserver(
             self,
             forKeyPath: UserDefaults.Key.showEvents.name,
             options: .new,
-            context: nil)
+            context: nil
+        )
+//        UserDefaults.standard.addObserver(
+//            self,
+//            forKeyPath: UserDefaults.Key.showEvents.name,
+//            options: .new,
+//            context: nil)
     }
 }
 

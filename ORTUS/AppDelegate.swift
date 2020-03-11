@@ -33,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             prepareMainTabBarController(with: shortcutItem)
         }
         
-        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
+        // Set minimum background fetch interval to 1 hour
+        UIApplication.shared.setMinimumBackgroundFetchInterval(60 * 60)
         
         // Return false if app was launched from shortcut
         return shortcutItem == nil
@@ -60,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             keychain[Global.Key.tokenExpiresOn] = nil
             keychain[Global.Key.ortusPinCode] = nil
             
-            UserDefaults.standard.set(true, for: .showEvents)
+            UserDefaults(suiteName: Global.Key.appGroup)?.set(true, for: .showEvents)
             UserDefaults.standard.set(false, for: .firstInstall)
         }
     }

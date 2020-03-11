@@ -23,6 +23,8 @@
 		FA2062DD234628A6007ED9BA /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D8234628A6007ED9BA /* NotificationsViewController.swift */; };
 		FA2062DE234628A6007ED9BA /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D9234628A6007ED9BA /* NotificationsView.swift */; };
 		FA2062DF234628A6007ED9BA /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062DA234628A6007ED9BA /* NotificationsViewModel.swift */; };
+		FA2F31AD2419702A0067F99A /* EmptyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F31AC2419702A0067F99A /* EmptyComponent.swift */; };
+		FA2F31AF241970380067F99A /* EmptyComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F31AE241970380067F99A /* EmptyComponentView.swift */; };
 		FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */; };
 		FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */; };
 		FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AEBD23E8CB8300C4A70C /* NotificationComponent.swift */; };
@@ -306,6 +308,8 @@
 		FA2062D8234628A6007ED9BA /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		FA2062D9234628A6007ED9BA /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		FA2062DA234628A6007ED9BA /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		FA2F31AC2419702A0067F99A /* EmptyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyComponent.swift; sourceTree = "<group>"; };
+		FA2F31AE241970380067F99A /* EmptyComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyComponentView.swift; sourceTree = "<group>"; };
 		FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponent.swift; sourceTree = "<group>"; };
 		FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponentView.swift; sourceTree = "<group>"; };
 		FA39AEBD23E8CB8300C4A70C /* NotificationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponent.swift; sourceTree = "<group>"; };
@@ -682,6 +686,8 @@
 				FA78FE9B2415AD82004AD296 /* EventComponentView.swift */,
 				FA1DEF862416DAF300704B6E /* LectureComponent.swift */,
 				FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */,
+				FA2F31AC2419702A0067F99A /* EmptyComponent.swift */,
+				FA2F31AE241970380067F99A /* EmptyComponentView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1438,12 +1444,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2F31AF241970380067F99A /* EmptyComponentView.swift in Sources */,
 				FA78FE9E2415AD8F004AD296 /* EventComponent.swift in Sources */,
 				FA1DEF872416DAF300704B6E /* LectureComponent.swift in Sources */,
 				FA66427F2413B4FC002A3315 /* TodayView.swift in Sources */,
 				FA1DEF892416DAFE00704B6E /* LectureComponentView.swift in Sources */,
 				FA6642732413B430002A3315 /* TodayViewController.swift in Sources */,
 				FA78FE9C2415AD82004AD296 /* EventComponentView.swift in Sources */,
+				FA2F31AD2419702A0067F99A /* EmptyComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
