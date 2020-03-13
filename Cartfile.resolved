@@ -1,4 +1,4 @@
-github "Alamofire/Alamofire" "5.0.0-rc.3"
+github "Alamofire/Alamofire" "5.0.2"
 github "SnapKit/SnapKit" "5.0.1"
 github "google/promises" "1.2.8"
 github "kishikawakatsumi/KeychainAccess" "v3.2.0"

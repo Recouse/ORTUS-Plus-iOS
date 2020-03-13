@@ -13,7 +13,6 @@
 		FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8A2417603100704B6E /* VersionComponent.swift */; };
 		FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8C2417605400704B6E /* VersionComponentView.swift */; };
 		FA1DEF8F241761DC00704B6E /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8E241761DC00704B6E /* Bundle.swift */; };
-		FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA206231234344CE007ED9BA /* Alamofire+Promises.swift */; };
 		FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623423434DBB007ED9BA /* CoursesApi.swift */; };
 		FA20623823434DF2007ED9BA /* ScheduleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623723434DF2007ED9BA /* ScheduleApi.swift */; };
 		FA2062C723453DEB007ED9BA /* CourseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062C623453DEB007ED9BA /* CourseComponent.swift */; };
@@ -296,7 +295,6 @@
 		FA1DEF8A2417603100704B6E /* VersionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComponent.swift; sourceTree = "<group>"; };
 		FA1DEF8C2417605400704B6E /* VersionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComponentView.swift; sourceTree = "<group>"; };
 		FA1DEF8E241761DC00704B6E /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		FA206231234344CE007ED9BA /* Alamofire+Promises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Promises.swift"; sourceTree = "<group>"; };
 		FA20623423434DBB007ED9BA /* CoursesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesApi.swift; sourceTree = "<group>"; };
 		FA20623723434DF2007ED9BA /* ScheduleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleApi.swift; sourceTree = "<group>"; };
 		FA20623923434EE5007ED9BA /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
@@ -827,7 +825,6 @@
 				FA90FE092243D413005148AC /* Date.swift */,
 				FAD3CA2D2245612C009DA6AE /* UIApplication.swift */,
 				FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */,
-				FA206231234344CE007ED9BA /* Alamofire+Promises.swift */,
 				FABF939B2389CB6100F78FF1 /* String.swift */,
 				FABF93A0238BB15E00F78FF1 /* EventLogger.swift */,
 				FAB74C5C23EC4D94004C7BC6 /* UserDefaults.swift */,
@@ -1611,7 +1608,6 @@
 				FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */,
 				FA8714D323E40DD100DB728C /* PinSettingsModuleBuilder.swift in Sources */,
 				FA90FDA222437D94005148AC /* PushTransition.swift in Sources */,
-				FA206232234344CE007ED9BA /* Alamofire+Promises.swift in Sources */,
 				FAB74C2323E9F60D004C7BC6 /* SemesterViewController.swift in Sources */,
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */,

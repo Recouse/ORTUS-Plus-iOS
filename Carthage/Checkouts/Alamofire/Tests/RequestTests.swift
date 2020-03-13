@@ -51,7 +51,7 @@ final class RequestResponseTestCase: BaseTestCase {
 
     func testRequestResponseWithProgress() {
         // Given
-        let randomBytes = 1 * 1024 * 1024
+        let randomBytes = 1 * 25 * 1024
         let urlString = "https://httpbin.org/bytes/\(randomBytes)"
 
         let expectation = self.expectation(description: "Bytes download progress should be reported: \(urlString)")
@@ -523,7 +523,7 @@ final class RequestResponseTestCase: BaseTestCase {
         eventMonitor.requestDidSuspendTask = { _, _ in expect.fulfill() }
 
         // When
-        let request = session.request(URLRequest.makeHTTPBinRequest()).response { _ in expect.fulfill() }
+        let request = session.request(URLRequest.makeHTTPBinRequest(path: "delay/5")).response { _ in expect.fulfill() }
         // Cancellation stops task creation, so don't cancel the request until the task has been created.
         eventMonitor.requestDidCreateTask = { _, _ in
             DispatchQueue.concurrentPerform(iterations: 100) { i in
@@ -619,7 +619,7 @@ final class RequestResponseTestCase: BaseTestCase {
         eventMonitor.requestDidCancelTask = { _, _ in didCancelTask.fulfill() }
 
         // When
-        let request = session.request(URLRequest.makeHTTPBinRequest()).response { _ in
+        let request = session.request(URLRequest.makeHTTPBinRequest(path: "delay/5")).response { _ in
             responseHandler.fulfill()
         }
 
