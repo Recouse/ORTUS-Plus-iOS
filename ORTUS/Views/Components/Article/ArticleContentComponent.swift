@@ -41,8 +41,16 @@ class ArticleContentComponent: IdentifiableComponent, Equatable, ArticleContentV
                     <meta name="viewport" content="width=device-width, initial-scale=1">
         
                     <style type="text/css">
+                        :root {
+                          color-scheme: light dark;
+                        }
+                        
                         body {font: -apple-system-body !important;}
                         table { width: 100% !important; }
+        
+                        a {
+                            color: #569289;
+                        }
                     </style>
                 </head>
                 <body>
@@ -94,6 +102,12 @@ class ArticleContentView: UIView, WKNavigationDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        if #available(iOS 13.0, *) {
+            backgroundColor = .systemBackground
+        } else {
+            backgroundColor = .white
+        }
         
         addSubview(webView)
         webView.snp.makeConstraints {
