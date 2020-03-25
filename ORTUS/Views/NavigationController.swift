@@ -19,6 +19,7 @@ class NavigationController: UINavigationController {
         interactivePopGestureRecognizer?.delegate = self
         
         prepareNavigationBar()
+        prepareToolbar()
     }
     
     func prepareNavigationBar() {
@@ -27,6 +28,10 @@ class NavigationController: UINavigationController {
         navigationBar.tintColor = Asset.Colors.tintColor.color
 //        navigationBar.setBackgroundImage(UIColor.white.uiImage, for: .default)
 //        navigationBar.shadowImage = UIImage()
+    }
+    
+    func prepareToolbar() {
+        toolbar.tintColor = Asset.Colors.tintColor.color
     }
 }
 

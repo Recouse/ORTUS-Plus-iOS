@@ -19,6 +19,13 @@ class BrowserViewController: TranslatableModule, ModuleViewModel {
     
     var initialPinNavigation: WKNavigation?
     
+    var progressView: UIProgressView!
+    
+    var previousPageItem: UIBarButtonItem!
+    var nextPageItem: UIBarButtonItem!
+    var shareItem: UIBarButtonItem!
+    var refreshItem: UIBarButtonItem!
+    
     init(viewModel: BrowserViewModel) {
         self.viewModel = viewModel
         
@@ -37,15 +44,38 @@ class BrowserViewController: TranslatableModule, ModuleViewModel {
         super.viewDidLoad()
         
         prepareNavigationItem()
+        prepareToolbarItems()
         prepareWebView()
+        prepareProgressView()
         prepareData()
         
         showLoadingOverview(animated: false)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationController?.setToolbarHidden(false, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setToolbarHidden(true, animated: animated)
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "title" {
+        switch keyPath {
+        case #keyPath(WKWebView.title):
             navigationItem.title = webView.title
+        case #keyPath(WKWebView.canGoBack):
+            previousPageItem.isEnabled = webView.canGoBack
+        case #keyPath(WKWebView.canGoForward):
+            nextPageItem.isEnabled = webView.canGoForward
+        case #keyPath(WKWebView.estimatedProgress):
+            progressView.setProgress(Float(webView.estimatedProgress), animated: true)
+        default:
+            break
         }
     }
     
@@ -65,17 +95,72 @@ class BrowserViewController: TranslatableModule, ModuleViewModel {
     }
     
     func hideLoadingOverview() {
+        refreshItem.isEnabled = true
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.loadingOverview.alpha = 0
         }) { _ in
             self.loadingOverview.isHidden = true
         }
     }
+    
+    @objc func previousPage() {
+        webView.goBack()
+    }
+    
+    @objc func nextPage() {
+        webView.goForward()
+    }
+    
+    @objc func share() {
+        guard let url = webView.url else {
+            return
+        }
+        
+        let activityController = UIActivityViewController(
+            activityItems: [url, webView.viewPrintFormatter()],
+            applicationActivities: nil
+        )
+
+        present(activityController, animated: true, completion: nil)
+    }
+    
+    @objc func refresh() {
+        webView.reload()
+    }
 }
 
 extension BrowserViewController {
     func prepareNavigationItem() {
         navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    func prepareToolbarItems() {
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        previousPageItem = UIBarButtonItem(
+            image: UIImage(named: "chevronLeft"),
+            style: .plain,
+            target: self,
+            action: #selector(previousPage))
+        previousPageItem.isEnabled = false
+        
+        nextPageItem = UIBarButtonItem(
+            image: UIImage(named: "chevronRight"),
+            style: .plain,
+            target: self,
+            action: #selector(nextPage))
+        nextPageItem.isEnabled = false
+        
+        shareItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share))
+        
+        refreshItem = UIBarButtonItem(
+            barButtonSystemItem: .refresh,
+            target: self,
+            action: #selector(refresh))
+        refreshItem.isEnabled = false
+        
+        toolbarItems = [previousPageItem, spacer, nextPageItem, spacer, shareItem, spacer, refreshItem]
     }
     
     func prepareWebView() {
@@ -101,6 +186,8 @@ extension BrowserViewController {
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.canGoBack), options: .new, context: nil)
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.canGoForward), options: .new, context: nil)
         
         OAuth.refreshToken().then { accessTokenEncrypted in
             guard let url = self.viewModel.url.generatePinAuthURL(withToken: accessTokenEncrypted) else {
@@ -110,10 +197,33 @@ extension BrowserViewController {
             self.initialPinNavigation = self.webView.load(URLRequest(url: url))
         }
         
+        let edgeInsets = UIEdgeInsets(
+            top: 0,
+            left: 0,
+            bottom: view.safeAreaInsets.bottom,
+            right: 0)
+        webView.scrollView.contentInset = edgeInsets
+        webView.setValue(edgeInsets, forKey: "_obscuredInsets")
+        webView.setValue(true, forKey: "_haveSetObscuredInsets")
+        
+        
         view.addSubview(webView)
         webView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    func prepareProgressView() {
+        progressView = UIProgressView(progressViewStyle: .bar)
+        progressView.tintColor = Asset.Colors.tintColor.color
+        
+        view.addSubview(progressView)
+        progressView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.left.right.equalToSuperview()
+        }
+        
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
     }
     
     func prepareData() {
@@ -161,5 +271,9 @@ extension BrowserViewController: WKScriptMessageHandler, WKNavigationDelegate, W
         }
         
         decisionHandler(.allow)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        progressView.setProgress(0, animated: false)
     }
 }
