@@ -81,6 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             EventLogger.log(.openedOrtusShortcut)
             
             let browserModule = BrowserModuleBuilder.build(with: Global.ortusURL, customTransition: nil)
+            browserModule.hidesBottomBarWhenPushed = true
             selectedNavigationController.pushViewController(browserModule, animated: true)
         }
     }
@@ -119,6 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             let browserModule = BrowserModuleBuilder.build(with: Global.ortusURL, customTransition: nil)
+            browserModule.hidesBottomBarWhenPushed = true
             selectedNavigationController.pushViewController(browserModule, animated: false)
         }
     }

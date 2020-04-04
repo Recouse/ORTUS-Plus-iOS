@@ -24,6 +24,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(WatchKit)
+
 import WatchKit
 
 extension KingfisherWrapper where Base: WKInterfaceImage {
@@ -50,7 +52,7 @@ extension KingfisherWrapper where Base: WKInterfaceImage {
     @discardableResult
     public func setImage(
         with source: Source?,
-        placeholder: Image? = nil,
+        placeholder: KFCrossPlatformImage? = nil,
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
@@ -88,6 +90,7 @@ extension KingfisherWrapper where Base: WKInterfaceImage {
         let task = KingfisherManager.shared.retrieveImage(
             with: source,
             options: options,
+            downloadTaskUpdated: { mutatingSelf.imageTask = $0 },
             completionHandler: { result in
                 CallbackQueue.mainCurrentOrAsync.execute {
                     guard issuedIdentifier == self.taskIdentifier else {
@@ -145,13 +148,13 @@ extension KingfisherWrapper where Base: WKInterfaceImage {
     @discardableResult
     public func setImage(
         with resource: Resource?,
-        placeholder: Image? = nil,
+        placeholder: KFCrossPlatformImage? = nil,
         options: KingfisherOptionsInfo? = nil,
         progressBlock: DownloadProgressBlock? = nil,
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
         return setImage(
-            with: resource.map { .network($0) },
+            with: resource?.convertToSource(),
             placeholder: placeholder,
             options: options,
             progressBlock: progressBlock,
@@ -198,3 +201,5 @@ extension KingfisherWrapper where Base: WKInterfaceImage {
         set { }
     }
 }
+
+#endif

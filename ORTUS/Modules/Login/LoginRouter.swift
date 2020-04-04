@@ -6,7 +6,7 @@
 //  Copyright (c) 2019 Firdavs. All rights reserved.
 //
 
-final class LoginRouter: Router<LoginViewController>, LoginRouter.Routes {
+final class LoginRouter: Router<LoginViewController>, MainTabBarControllerRoute {
     typealias Routes = MainTabBarControllerRoute
 }
 

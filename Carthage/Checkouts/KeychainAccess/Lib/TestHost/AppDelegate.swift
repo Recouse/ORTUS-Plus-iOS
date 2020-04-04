@@ -28,18 +28,14 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     @IBOutlet weak var window: NSWindow!
-
     func applicationDidFinishLaunching(aNotification: NSNotification) {}
-
 }
 #else
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
     #if swift(>=4.2)
