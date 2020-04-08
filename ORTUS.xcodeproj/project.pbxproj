@@ -194,6 +194,7 @@
 		FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */; };
 		FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2D2245612C009DA6AE /* UIApplication.swift */; };
 		FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */; };
+		FAD43273243927A0001DA513 /* ContactsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD43272243927A0001DA513 /* ContactsApi.swift */; };
 		FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB35239D0D1700120F96 /* LinearGradient.swift */; };
 		FAE3AB3A239D0ED300120F96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE3AB39239D0ED300120F96 /* Colors.xcassets */; };
 		FAE3AB3D239D100500120F96 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB3C239D100400120F96 /* Assets.swift */; };
@@ -479,6 +480,7 @@
 		FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewAdapter.swift; sourceTree = "<group>"; };
 		FAD3CA2D2245612C009DA6AE /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		FAD43272243927A0001DA513 /* ContactsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsApi.swift; sourceTree = "<group>"; };
 		FAE3AB35239D0D1700120F96 /* LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
 		FAE3AB39239D0ED300120F96 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FAE3AB3C239D100400120F96 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -809,6 +811,7 @@
 				FA20623323434DAA007ED9BA /* Courses */,
 				FAB74C3623EAA6A1004C7BC6 /* Marks */,
 				FA0927D22347E39900D32827 /* Notifications */,
+				FAD4327124392786001DA513 /* Contacts */,
 				FA90FDE02243966B005148AC /* API.swift */,
 				FA90FDF12243BF6C005148AC /* APIMethod.swift */,
 				FA90FDE222439676005148AC /* APIClient.swift */,
@@ -1180,6 +1183,14 @@
 			path = Browser;
 			sourceTree = "<group>";
 		};
+		FAD4327124392786001DA513 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				FAD43272243927A0001DA513 /* ContactsApi.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		FAE3AB37239D0E8800120F96 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1504,6 +1515,7 @@
 				FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */,
 				FA90FD9722437D50005148AC /* Router.swift in Sources */,
 				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
+				FAD43273243927A0001DA513 /* ContactsApi.swift in Sources */,
 				FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */,
 				FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */,
 				FA39AEDE23E9ED3800C4A70C /* HomeViewModel.swift in Sources */,
