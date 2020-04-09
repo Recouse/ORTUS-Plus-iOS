@@ -6,8 +6,8 @@
 //  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
-final class HomeRouter: Router<HomeViewController>, SettingsRoute, NewsRoute, GradesRoute, SemesterRoute, BrowserRoute {
-    typealias Routes = SettingsRoute & NewsRoute & GradesRoute & SemesterRoute & BrowserRoute & Closable
+final class HomeRouter: Router<HomeViewController>, SettingsRoute, NewsRoute, GradesRoute, ContactsRoute, SemesterRoute, BrowserRoute {
+    typealias Routes = SettingsRoute & NewsRoute & GradesRoute & ContactsRoute & SemesterRoute & BrowserRoute & Closable
     
     var transition: Transition {
         return PushTransition()

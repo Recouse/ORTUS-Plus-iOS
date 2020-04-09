@@ -11,7 +11,7 @@ import Carbon
 
 class HomeViewController: TranslatableModule, ModuleViewModel {
     enum ID: String {
-        case news, grades, ortus
+        case news, grades, contacts, ortus
     }
     
     var viewModel: HomeViewModel
@@ -75,6 +75,15 @@ class HomeViewController: TranslatableModule, ModuleViewModel {
                     color: .systemBlue
                 ) { [unowned self] in
                     self.viewModel.router.openGrades()
+                }
+                
+                IconTextComponent(
+                    id: ID.contacts.rawValue,
+                    title: "Contacts",
+                    icon: UIImage(named: "personCircle"),
+                    color: .systemOrange
+                ) { [unowned self] in
+                    self.viewModel.router.openContacts()
                 }
                 
                 IconTextComponent(
