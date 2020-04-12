@@ -29,8 +29,9 @@ struct LectureComponent: IdentifiableComponent {
 //        content.imageView.tintColor = .systemBlue
 //        }
         
-        content.startTimeLabel.text = lecture.timeFrom
-        content.endTimeLabel.text = lecture.timeTill
+        print(lecture.date)
+        content.startTimeLabel.text = lecture.timeFromParsed
+        content.endTimeLabel.text = lecture.timeTillParsed
         content.nameLabel.text = lecture.name
         content.addressLabel.text = lecture.address
     }

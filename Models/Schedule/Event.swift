@@ -31,6 +31,7 @@ public struct Event: Codable {
         }
         
         dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.timeZone = TimeZone.current
         
         return dateFormatter.string(from: date)
     }

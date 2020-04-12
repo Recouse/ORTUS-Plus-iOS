@@ -27,6 +27,7 @@ class TodayViewController: UIViewController {
     
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "Europe/Riga")
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         return dateFormatter
@@ -131,6 +132,7 @@ class TodayViewController: UIViewController {
     private func sortSchedule(from response: ScheduleResponse) -> Schedule {
         let sortedResponse = response.result.sorted(by: {
             let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(identifier: "Europe/Riga")
             dateFormatter.dateFormat = "yyyy-MM-dd"
             
             guard let date0 = dateFormatter.date(from: $0.key),

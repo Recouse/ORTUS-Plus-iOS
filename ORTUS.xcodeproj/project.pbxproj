@@ -215,6 +215,7 @@
 		FAF77B272246A98500197641 /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B262246A98500197641 /* FormButton.swift */; };
 		FAF77B292246AC3C00197641 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B282246AC3C00197641 /* Header.swift */; };
 		FAF814452414524D00915FF8 /* libStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66428C24144C7A002A3315 /* libStorage.a */; };
+		FAFBBF8F2442FD82003DE7A9 /* LatviaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFBBF8E2442FD82003DE7A9 /* LatviaDateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -500,6 +501,7 @@
 		FAF77B232246A64200197641 /* OAuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthApi.swift; sourceTree = "<group>"; };
 		FAF77B262246A98500197641 /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 		FAF77B282246AC3C00197641 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		FAFBBF8E2442FD82003DE7A9 /* LatviaDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatviaDateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -829,6 +831,7 @@
 				FABF93A0238BB15E00F78FF1 /* EventLogger.swift */,
 				FAB74C5C23EC4D94004C7BC6 /* UserDefaults.swift */,
 				FA1DEF8E241761DC00704B6E /* Bundle.swift */,
+				FAFBBF8E2442FD82003DE7A9 /* LatviaDateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1580,6 +1583,7 @@
 				FAB74C2123E9F60D004C7BC6 /* SemesterModuleBuilder.swift in Sources */,
 				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
+				FAFBBF8F2442FD82003DE7A9 /* LatviaDateFormatter.swift in Sources */,
 				FAE3AB42239D141600120F96 /* Button.swift in Sources */,
 				FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */,
 				FAD18D5623B1746600C0D89B /* BrowserModuleBuilder.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import Carbon
 
 struct ArticleSectionHeader: Carbon.Component, Equatable {
-    let dateFormatter = DateFormatter()
+    let dateFormatter = LatviaDateFormatter()
     
     var date: Date
     

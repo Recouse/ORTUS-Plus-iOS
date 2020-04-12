@@ -30,7 +30,7 @@ enum ScheduleApi: API {
         case let .schedule(date):
             var p = parameters(for: .getUserSchedule)
             
-            let dateFormatter = DateFormatter()
+            let dateFormatter = LatviaDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             
             var params = p["params"] as? [String]

@@ -22,6 +22,7 @@ public extension DateFormatter {
         amSymbol = ""
         pmSymbol = ""
         locale = Locale(identifier: "en_LV")
+        timeZone = TimeZone(identifier: "Europe/Riga")
         
         switch format {
         case .date:

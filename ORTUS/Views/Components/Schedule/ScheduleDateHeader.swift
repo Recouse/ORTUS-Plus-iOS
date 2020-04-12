@@ -12,7 +12,7 @@ import Carbon
 struct ScheduleDateHeader: Carbon.Component, Equatable {
     var title: String
     
-    let dateFormatter = DateFormatter()
+    let dateFormatter = LatviaDateFormatter()
     
     func renderContent() -> ScheduleDateHeaderView {
         return ScheduleDateHeaderView()

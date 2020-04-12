@@ -34,6 +34,7 @@ struct EventComponent: IdentifiableComponent {
             time += ", "
             
             let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(identifier: "Europe/Riga")
             dateFormatter.dateFormat = "EEEE, d MMMM"
             
             time += dateFormatter.string(from: date)

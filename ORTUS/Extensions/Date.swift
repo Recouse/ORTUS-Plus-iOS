@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
     var dayMonth: Date {
-        let dateFormatter = DateFormatter()
+        let dateFormatter = LatviaDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let string = dateFormatter.string(from: self)
         
@@ -18,7 +18,7 @@ extension Date {
     }
     
     func formatted(_ dateFormat: String) -> String {
-        let dateFormatter = DateFormatter()
+        let dateFormatter = LatviaDateFormatter()
         dateFormatter.dateFormat = dateFormat
         
         return dateFormatter.string(from: self)

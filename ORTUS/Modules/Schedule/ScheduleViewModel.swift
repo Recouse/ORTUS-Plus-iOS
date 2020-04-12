@@ -86,7 +86,7 @@ class ScheduleViewModel: ViewModel {
     
     private func sortSchedule(from response: ScheduleResponse) -> Schedule {
         let sortedResponse = response.result.sorted(by: {
-            let dateFormatter = DateFormatter()
+            let dateFormatter = LatviaDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             
             guard let date0 = dateFormatter.date(from: $0.key),

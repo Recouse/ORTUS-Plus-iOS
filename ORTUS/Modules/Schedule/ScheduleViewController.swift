@@ -41,7 +41,7 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     )
     
     let dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
+        let dateFormatter = LatviaDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         return dateFormatter

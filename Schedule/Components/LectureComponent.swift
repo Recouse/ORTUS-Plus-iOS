@@ -22,10 +22,11 @@ struct LectureComponent: IdentifiableComponent {
     func render(in content: LectureComponentView) {
         content.nameLabel.text = lecture.name
         
-        var time = "\(lecture.timeFrom)-\(lecture.timeTill)"
+        var time = "\(lecture.timeFromParsed)-\(lecture.timeTillParsed)"
         
         if let date = date {
             let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(identifier: "Europe/Riga")
             dateFormatter.dateFormat = "EEEE, d MMMM"
             
             time += ", "
