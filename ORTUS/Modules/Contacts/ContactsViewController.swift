@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Models
 
 class ContactsViewController: TranslatableModule, ModuleViewModel {
     var viewModel: ContactsViewModel
@@ -75,6 +76,10 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
     @objc func refresh() {
         loadData()
     }
+    
+    func openContact(_ contact: Contact) {
+        viewModel.router.openContact(contact)
+    }
 }
 
 extension ContactsViewController {
@@ -86,6 +91,14 @@ extension ContactsViewController {
     
     func prepareData() {
         renderer.target = tableView
+        
+        adapter.didSelect = { [unowned self] context in
+            guard let contact = context.node.component(as: ContactComponent.self)?.contact else {
+                return
+            }
+            
+            self.openContact(contact)
+        }
     }
 }
 

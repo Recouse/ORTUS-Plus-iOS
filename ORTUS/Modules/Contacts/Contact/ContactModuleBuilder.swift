@@ -6,13 +6,15 @@
 //  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
+import Models
+
 class ContactModuleBuilder: ModuleBuilder {
     typealias M = ContactViewController
-    typealias P = Any?
+    typealias P = Contact
     
-    static func build(with parameter: Any? = nil, customTransition transition: Transition? = nil) -> ContactViewController {
+    static func build(with parameter: Contact, customTransition transition: Transition? = nil) -> ContactViewController {
         let router = ContactRouter()
-        let viewModel = ContactViewModel(router: router)
+        let viewModel = ContactViewModel(contact: parameter, router: router)
         let viewController = ContactViewController(viewModel: viewModel)
         router.viewController = viewController
         router.openTransition = transition

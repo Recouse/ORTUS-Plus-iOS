@@ -47,6 +47,13 @@
 		FA45907F243F6DF500BF7E0F /* ContactComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45907E243F6DF500BF7E0F /* ContactComponent.swift */; };
 		FA459081243F6E1200BF7E0F /* ContactComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459080243F6E1200BF7E0F /* ContactComponentView.swift */; };
 		FA459083243F753800BF7E0F /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459082243F753800BF7E0F /* CircleImageView.swift */; };
+		FA45908A244086CD00BF7E0F /* ContactModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459085244086CD00BF7E0F /* ContactModuleBuilder.swift */; };
+		FA45908B244086CD00BF7E0F /* ContactRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459086244086CD00BF7E0F /* ContactRouter.swift */; };
+		FA45908C244086CD00BF7E0F /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459087244086CD00BF7E0F /* ContactViewController.swift */; };
+		FA45908D244086CD00BF7E0F /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459088244086CD00BF7E0F /* ContactView.swift */; };
+		FA45908E244086CD00BF7E0F /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459089244086CD00BF7E0F /* ContactViewModel.swift */; };
+		FA4590902440914100BF7E0F /* ContactRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45908F2440914100BF7E0F /* ContactRoute.swift */; };
+		FA45909324409C0D00BF7E0F /* ScrollTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
 		FA6642702413B430002A3315 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66426F2413B430002A3315 /* NotificationCenter.framework */; };
 		FA6642732413B430002A3315 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6642722413B430002A3315 /* TodayViewController.swift */; };
@@ -348,6 +355,13 @@
 		FA45907E243F6DF500BF7E0F /* ContactComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactComponent.swift; sourceTree = "<group>"; };
 		FA459080243F6E1200BF7E0F /* ContactComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactComponentView.swift; sourceTree = "<group>"; };
 		FA459082243F753800BF7E0F /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		FA459085244086CD00BF7E0F /* ContactModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModuleBuilder.swift; sourceTree = "<group>"; };
+		FA459086244086CD00BF7E0F /* ContactRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRouter.swift; sourceTree = "<group>"; };
+		FA459087244086CD00BF7E0F /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		FA459088244086CD00BF7E0F /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		FA459089244086CD00BF7E0F /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		FA45908F2440914100BF7E0F /* ContactRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRoute.swift; sourceTree = "<group>"; };
+		FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTableViewAdapter.swift; sourceTree = "<group>"; };
 		FA6252192387F8D2009C3FF7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		FA66426424124929002A3315 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		FA66426624124943002A3315 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
@@ -677,6 +691,7 @@
 		FA459066243F307C00BF7E0F /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				FA459084244086B000BF7E0F /* Contact */,
 				FA459067243F30A100BF7E0F /* ContactsModuleBuilder.swift */,
 				FA45906A243F30A100BF7E0F /* ContactsView.swift */,
 				FA45906B243F30A100BF7E0F /* ContactsViewModel.swift */,
@@ -691,6 +706,7 @@
 			isa = PBXGroup;
 			children = (
 				FA459072243F314B00BF7E0F /* ContactsRoute.swift */,
+				FA45908F2440914100BF7E0F /* ContactRoute.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -711,6 +727,26 @@
 				FA459080243F6E1200BF7E0F /* ContactComponentView.swift */,
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		FA459084244086B000BF7E0F /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				FA459085244086CD00BF7E0F /* ContactModuleBuilder.swift */,
+				FA459088244086CD00BF7E0F /* ContactView.swift */,
+				FA459089244086CD00BF7E0F /* ContactViewModel.swift */,
+				FA459087244086CD00BF7E0F /* ContactViewController.swift */,
+				FA459086244086CD00BF7E0F /* ContactRouter.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		FA45909124409BFE00BF7E0F /* Carbon */ = {
+			isa = PBXGroup;
+			children = (
+				FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */,
+			);
+			path = Carbon;
 			sourceTree = "<group>";
 		};
 		FA6642712413B430002A3315 /* Schedule */ = {
@@ -889,6 +925,7 @@
 		FA90FD7C22437B10005148AC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FA45909124409BFE00BF7E0F /* Carbon */,
 				FA90FD8222437B6C005148AC /* Translatable */,
 				FA90FDB222437F69005148AC /* UIKit */,
 				FA90FDB322437F80005148AC /* Notification.swift */,
@@ -1613,6 +1650,7 @@
 				FAB74C4C23EC48B7004C7BC6 /* FormSwitch.swift in Sources */,
 				FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */,
 				FA90FDC2224380FE005148AC /* SettingsViewModel.swift in Sources */,
+				FA45908D244086CD00BF7E0F /* ContactView.swift in Sources */,
 				FA90FDB422437F80005148AC /* Notification.swift in Sources */,
 				FABBF40123512A4D00D4D593 /* LectureComponentView.swift in Sources */,
 				FAF77B272246A98500197641 /* FormButton.swift in Sources */,
@@ -1673,6 +1711,7 @@
 				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
 				FAE3AB42239D141600120F96 /* Button.swift in Sources */,
+				FA45908B244086CD00BF7E0F /* ContactRouter.swift in Sources */,
 				FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */,
 				FAD18D5623B1746600C0D89B /* BrowserModuleBuilder.swift in Sources */,
 				FA90FD9C22437D76005148AC /* Transition.swift in Sources */,
@@ -1691,6 +1730,7 @@
 				FA90FDC1224380FE005148AC /* SettingsView.swift in Sources */,
 				FAE3AB3F239D119200120F96 /* LoginStyle.swift in Sources */,
 				FA90FE052243CF3B005148AC /* ArticleRoute.swift in Sources */,
+				FA45908C244086CD00BF7E0F /* ContactViewController.swift in Sources */,
 				FA90FE022243CF0E005148AC /* ArticleViewModel.swift in Sources */,
 				FA39AEDC23E9ED3800C4A70C /* HomeViewController.swift in Sources */,
 				FA2062C723453DEB007ED9BA /* CourseComponent.swift in Sources */,
@@ -1699,6 +1739,7 @@
 				FA990A56239D1D0400BE9ACA /* LoginOnboardingViewController.swift in Sources */,
 				FABF6DC6239C4CAB00F57F8A /* LoginView.swift in Sources */,
 				FA8714CA23E40B9000DB728C /* FormTextField.swift in Sources */,
+				FA4590902440914100BF7E0F /* ContactRoute.swift in Sources */,
 				FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */,
 				FA8714D323E40DD100DB728C /* PinSettingsModuleBuilder.swift in Sources */,
 				FA90FDA222437D94005148AC /* PushTransition.swift in Sources */,
@@ -1713,6 +1754,7 @@
 				FAB74C1A23E9F478004C7BC6 /* TextComponentView.swift in Sources */,
 				FAB74C5923EC4A50004C7BC6 /* ScheduleSettingsViewModel.swift in Sources */,
 				FAB74C1323E9F391004C7BC6 /* GradesViewController.swift in Sources */,
+				FA45908E244086CD00BF7E0F /* ContactViewModel.swift in Sources */,
 				FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
 				FA2062DD234628A6007ED9BA /* NotificationsViewController.swift in Sources */,
@@ -1720,6 +1762,7 @@
 				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
 				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
 				FA1DEF8F241761DC00704B6E /* Bundle.swift in Sources */,
+				FA45909324409C0D00BF7E0F /* ScrollTableViewAdapter.swift in Sources */,
 				FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */,
 				FA90FDF52243C5B5005148AC /* ArticleComponent.swift in Sources */,
 				FA90FDB122437F25005148AC /* NewsViewModel.swift in Sources */,
@@ -1727,6 +1770,7 @@
 				FAB74C2423E9F60D004C7BC6 /* SemesterView.swift in Sources */,
 				FAB74C2523E9F60D004C7BC6 /* SemesterViewModel.swift in Sources */,
 				FA2062DE234628A6007ED9BA /* NotificationsView.swift in Sources */,
+				FA45908A244086CD00BF7E0F /* ContactModuleBuilder.swift in Sources */,
 				FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */,
 				FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */,
 				FA90FE002243CF0E005148AC /* ArticleViewController.swift in Sources */,

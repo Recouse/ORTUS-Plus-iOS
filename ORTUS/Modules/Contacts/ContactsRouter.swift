@@ -6,7 +6,11 @@
 //  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
-final class ContactsRouter: Router<ContactsViewController> {
-    typealias Routes = Closable
+final class ContactsRouter: Router<ContactsViewController>, ContactRoute {
+    typealias Routes = ContactRoute & Closable
+    
+    var transition: Transition {
+        return PushTransition()
+    }
 }
 

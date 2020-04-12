@@ -6,4 +6,18 @@
 //  Copyright © 2020 Firdavs. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Models
+
+protocol ContactRoute: Route {
+    func openContact(_ contact: Contact)
+}
+
+extension ContactRoute where Self: RouterProtocol {
+    func openContact(_ contact: Contact) {
+        let transition = self.transition
+        let module = ContactModuleBuilder.build(with: contact, customTransition: transition)
+        
+        open(module, transition: transition, completion: nil)
+    }
+}
