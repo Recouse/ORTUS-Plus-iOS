@@ -14,22 +14,11 @@ struct LectureComponent: IdentifiableComponent {
     var id: String
     var lecture: Lecture
     
-    let colors: [UIColor] = [
-        .systemBlue, .systemGreen, .systemOrange, .systemPink,
-        .systemPurple, .systemRed, .systemTeal, .systemYellow
-    ]
-    
     func renderContent() -> LectureComponentView {
         return LectureComponentView()
     }
     
     func render(in content: LectureComponentView) {
-//        if let color = colors.randomElement() {
-//        content.imageContainerView.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.2)
-//        content.imageView.tintColor = .systemBlue
-//        }
-        
-        print(lecture.date)
         content.startTimeLabel.text = lecture.timeFromParsed
         content.endTimeLabel.text = lecture.timeTillParsed
         content.nameLabel.text = lecture.name
@@ -37,7 +26,6 @@ struct LectureComponent: IdentifiableComponent {
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
-//        return CGSize(width: bounds.width, height: 70)
         return nil
     }
     
