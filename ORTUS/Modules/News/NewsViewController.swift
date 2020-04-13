@@ -77,9 +77,7 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
     }
     
     func loadData() {
-        viewModel.loadArticles().catch { error in
-            print(error)
-        }.always {
+        viewModel.loadArticles().always {
             self.render()
         }
     }

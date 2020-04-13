@@ -77,9 +77,7 @@ class CoursesViewController: TranslatableModule, ModuleViewModel {
     }
     
     func loadData() {
-        viewModel.loadCourses().catch { error in
-            print(error)
-        }.always {
+        viewModel.loadCourses().always {
             self.render()
         }
     }

@@ -259,9 +259,7 @@ extension BrowserViewController: WKScriptMessageHandler, WKNavigationDelegate, W
             decisionHandler(.allow)
             return
         }
-        
-        print(url)
-        
+                
         if url.scheme == "tel" || url.scheme == "mailto" {
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)

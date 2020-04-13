@@ -30,17 +30,17 @@ class ContactsTableViewAdapter: UITableViewAdapter {
         return index
     }
     
-    @available(iOS 13.0, *)
-    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
-            let open = UIAction(
-                title: "Send Email",
-                image: UIImage(systemName: "envelope")
-            ) { [unowned self] action in
-                print("Email")
-            }
-
-            return UIMenu(title: "", children: [open])
-        })
-    }
+//    @available(iOS 13.0, *)
+//    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+//        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
+//            let open = UIAction(
+//                title: "Send Email",
+//                image: UIImage(systemName: "envelope")
+//            ) { [unowned self] action in
+//                print("Email")
+//            }
+//
+//            return UIMenu(title: "", children: [open])
+//        })
+//    }
 }

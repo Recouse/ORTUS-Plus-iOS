@@ -225,6 +225,7 @@
 		FAE5284B2443744B009851C9 /* OpenMapDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284A2443744B009851C9 /* OpenMapDirections.swift */; };
 		FAE5284D244462A1009851C9 /* ContactInfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284C244462A1009851C9 /* ContactInfoComponent.swift */; };
 		FAE5284F244462AB009851C9 /* ContactInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284E244462AB009851C9 /* ContactInfoComponentView.swift */; };
+		FAE528512444EE0E009851C9 /* LatviaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */; };
 		FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */; };
 		FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B32249096800CA2492 /* CoursesRouter.swift */; };
 		FAF183B92249096800CA2492 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B42249096800CA2492 /* CoursesViewController.swift */; };
@@ -536,6 +537,7 @@
 		FAE5284A2443744B009851C9 /* OpenMapDirections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMapDirections.swift; sourceTree = "<group>"; };
 		FAE5284C244462A1009851C9 /* ContactInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoComponent.swift; sourceTree = "<group>"; };
 		FAE5284E244462AB009851C9 /* ContactInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoComponentView.swift; sourceTree = "<group>"; };
+		FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatviaDateFormatter.swift; sourceTree = "<group>"; };
 		FAF183AF2248E76400CA2492 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModuleBuilder.swift; sourceTree = "<group>"; };
 		FAF183B32249096800CA2492 /* CoursesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRouter.swift; sourceTree = "<group>"; };
@@ -948,6 +950,7 @@
 				FABF93A0238BB15E00F78FF1 /* EventLogger.swift */,
 				FAB74C5C23EC4D94004C7BC6 /* UserDefaults.swift */,
 				FA1DEF8E241761DC00704B6E /* Bundle.swift */,
+				FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */,
 				FAE5284A2443744B009851C9 /* OpenMapDirections.swift */,
 			);
 			path = Extensions;
@@ -1706,6 +1709,7 @@
 				FAB74C5B23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift in Sources */,
 				FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */,
 				FA39AEDA23E9ED3800C4A70C /* HomeModuleBuilder.swift in Sources */,
+				FAE528512444EE0E009851C9 /* LatviaDateFormatter.swift in Sources */,
 				FA39AEC023E8CB8F00C4A70C /* NotificationComponentView.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
 				FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */,

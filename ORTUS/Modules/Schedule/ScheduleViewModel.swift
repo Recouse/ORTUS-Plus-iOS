@@ -77,10 +77,7 @@ class ScheduleViewModel: ViewModel {
         
         do {
             try storage.save(response, for: Global.Key.scheduleCache)
-        } catch {
-            dump(error)
-            print(error.localizedDescription)
-        }
+        } catch {}
         
     }
     

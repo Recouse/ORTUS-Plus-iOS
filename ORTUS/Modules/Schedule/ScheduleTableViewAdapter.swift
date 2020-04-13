@@ -22,17 +22,17 @@ class ScheduleTableViewAdapter: UITableViewAdapter {
         super.init()
     }
     
-    @available(iOS 13.0, *)
-    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
-            let open = UIAction(
-                title: "Open Link",
-                image: UIImage(systemName: "link")
-            ) { [unowned self] action in
-                print("Link")
-            }
-
-            return UIMenu(title: "", children: [open])
-        })
-    }
+//    @available(iOS 13.0, *)
+//    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+//        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
+//            let open = UIAction(
+//                title: "Open Link",
+//                image: UIImage(systemName: "link")
+//            ) { [unowned self] action in
+//                print("Link")
+//            }
+//
+//            return UIMenu(title: "", children: [open])
+//        })
+//    }
 }

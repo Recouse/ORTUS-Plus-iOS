@@ -71,8 +71,6 @@ class NotificationsViewController: TranslatableModule, ModuleViewModel {
     func loadData() {
         viewModel.loadNotifications().then { response in
             self.render()
-        }.catch { error in
-            print(error)
         }.always {
             self.render()
         }

@@ -129,7 +129,6 @@ enum OpenMapDirections {
         availableApps.forEach { app in
             alert.addAction(
                 UIAlertAction(title: app.name, style: .default, handler: { _ in
-                    print(app.name)
                     app.openDirectionsOf(address: address)
                 })
             )

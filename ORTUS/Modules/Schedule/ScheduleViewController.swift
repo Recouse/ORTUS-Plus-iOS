@@ -105,8 +105,6 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     func loadData(forceUpdate: Bool = true) {
         viewModel.loadSchedule(forceUpdate: forceUpdate).always {
             self.render()
-        }.catch { error in
-            print(error)
         }.always {
             self.refreshControl.endRefreshing()
         }
