@@ -11,15 +11,24 @@ import Models
 import Storage
 import Promises
 
+enum ContactsFilter: String, CaseIterable {
+    case my = "contacts.my"
+    case all = "contacts.all"
+}
+
 class ContactsViewModel: ViewModel {
     typealias SortedContacts = [String: [Contact]]
     
     let router: ContactsRouter.Routes
     
+    var prioritizedSortedKeys: [String] = []
+    
     var sortedKeys: [String] = []
     
-    var contacts: SortedContacts = [:]
+    var prioritizedContacts: SortedContacts = [:]
     
+    var contacts: SortedContacts = [:]
+            
     let storage: CodableStorage = {
         let path = URL(fileURLWithPath: NSTemporaryDirectory())
         let disk = DiskStorage(path: path)
@@ -50,17 +59,27 @@ class ContactsViewModel: ViewModel {
                 
                 fulfill(self.contacts)
             }.catch {
-                dump($0)
                 reject($0)
             }
         }
     }
     
     private func sortContacts(from list: Contacts) {
+        let prioritizedSortedContacts = list.contacts
+            .filter { $0.priority == 1 }
+            .sorted(by: {
+                $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending
+            })
         let sortedContacts = list.contacts.sorted(by: {
             $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending
         })
+        
+        self.prioritizedContacts = Dictionary(grouping: prioritizedSortedContacts, by: { String($0.name.prefix(1)) })
         self.contacts = Dictionary(grouping: sortedContacts, by: { String($0.name.prefix(1)) })
+        
+        self.prioritizedSortedKeys = self.prioritizedContacts.keys.sorted(by: {
+            $0.localizedCaseInsensitiveCompare($1) == .orderedAscending
+        })
         self.sortedKeys = self.contacts.keys.sorted(by: {
             $0.localizedCaseInsensitiveCompare($1) == .orderedAscending
         })

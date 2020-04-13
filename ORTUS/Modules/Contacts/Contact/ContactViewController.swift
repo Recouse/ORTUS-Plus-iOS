@@ -8,6 +8,8 @@
 
 import UIKit
 import Carbon
+import MessageUI
+import MapKit
 
 class ContactViewController: TranslatableModule, ModuleViewModel {
     var viewModel: ContactViewModel
@@ -15,8 +17,12 @@ class ContactViewController: TranslatableModule, ModuleViewModel {
     weak var contactView: ContactView! { return view as? ContactView }
     weak var tableView: UITableView! { return contactView.tableView }
     weak var photoView: CircleImageView! { return contactView.photoView }
+    weak var nameLabel: UILabel! { return contactView.nameLabel }
+    weak var emailButton: UIButton! { return contactView.emailButton }
+    weak var callButton: UIButton! { return contactView.callButton }
+    weak var directionsButton: UIButton! { return contactView.directionsButton }
     
-    let headerViewMaxHeight: CGFloat = 220
+    let headerViewMaxHeight: CGFloat = Global.UI.isIphoneX ? 240 : 210
     
     let adapter = ScrollTableViewAdapter()
         
@@ -69,14 +75,119 @@ class ContactViewController: TranslatableModule, ModuleViewModel {
     }
     
     func render() {
-        renderer.render {
-            Group(of: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]) { id in
-                TextComponent(id: id, text: id, onSelect: nil)
+        var components: [CellNode] = []
+        var positions: [Section] = []
+        
+        if let email = viewModel.contact.email {
+            components.append(CellNode(ContactInfoComponent(id: "email", type: .email, description: email)))
+        }
+        
+        if let phone = viewModel.contact.phone {
+            components.append(CellNode(ContactInfoComponent(id: "phone", type: .phone, description: phone)))
+        }
+        
+        if let phone = viewModel.contact.cellPhone {
+            components.append(CellNode(ContactInfoComponent(id: "mobile", type: .phone, description: phone)))
+        }
+        
+        if let address = viewModel.contact.address {
+            components.append(CellNode(ContactInfoComponent(id: "address", type: .address, description: address)))
+        }
+        
+        if let contactPositions = viewModel.contact.positions {
+            contactPositions.forEach {
+                positions.append(
+                    Section(
+                        id: $0.department,
+                        cells: [
+                            CellNode(ContactInfoComponent(id: "department", description: $0.department)),
+                            CellNode(ContactInfoComponent(id: "position", description: $0.position)),
+                            $0.phone != nil ? CellNode(ContactInfoComponent(id: "phone", type: .phone, description: $0.phone!)) : nil
+                        ],
+                        footer: ViewNode(Footer(description: ""))
+                    )
+                )
             }
+        }
+        
+        var sections: [Section] = [
+            Section(id: "contact", cells: components, footer: ViewNode(Footer(description: "")))
+        ]
+        
+        sections.append(contentsOf: positions)
+        
+        renderer.render(sections)
+    }
+    
+    @objc func sendEmail() {
+        guard let email = viewModel.contact.email else {
+            return
+        }
+        
+        composeMail(to: email)
+    }
+    
+    @objc func makeCall() {
+        guard let phone = viewModel.contact.phone ?? viewModel.contact.cellPhone else {
+            return
+        }
+        
+        openPhoneURL(phone)
+    }
+    
+    @objc func openMap() {
+        guard let address = viewModel.contact.address else {
+            return
+        }
+        
+        openMaps(withAddress: address)
+    }
+    
+    func selected(_ component: ContactInfoComponent) {
+        switch component.type {
+        case .email:
+            composeMail(to: component.description)
+        case .phone:
+            openPhoneURL(component.description)
+        case .address:
+            openMaps(withAddress: component.description)
+        default:
+            break
         }
     }
     
-    var offset: CGFloat = 0
+    func openPhoneURL(_ phone: String) {
+        guard let phoneURL = URL(string: "tel://\(phone)") else {
+            return
+        }
+        
+        guard UIApplication.shared.canOpenURL(phoneURL) else {
+            return
+        }
+        
+        UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+    }
+    
+    func composeMail(to email: String) {
+        guard MFMailComposeViewController.canSendMail() else {
+            return
+        }
+        
+        let mailController = MFMailComposeViewController()
+        mailController.mailComposeDelegate = self
+        mailController.setToRecipients([email])
+
+        present(mailController, animated: true)
+    }
+    
+    func openMaps(withAddress address: String) {
+        let alert = OpenMapDirections.openMapAlertController(
+            address: address,
+            title: "Open In",
+            message: nil
+        )
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ContactViewController {
@@ -88,46 +199,50 @@ extension ContactViewController {
         renderer.target = tableView
         adapter.delegate = self
         
+        adapter.didSelect = { [unowned self] context in
+            guard let component = context.node.component(as: ContactInfoComponent.self) else {
+                return
+            }
+            
+            self.selected(component)
+        }
+        
         if let photo = viewModel.contact.photo {
             photoView.kf.setImage(with: URL(string: photo))
         }
+        
+        nameLabel.text = viewModel.contact.name
+        
+        emailButton.isEnabled = viewModel.contact.email != nil
+        emailButton.addTarget(self, action: #selector(sendEmail), for: .touchUpInside)
+        
+        callButton.isEnabled = viewModel.contact.phone ?? viewModel.contact.cellPhone != nil
+        callButton.addTarget(self, action: #selector(makeCall), for: .touchUpInside)
+        
+        directionsButton.isEnabled = viewModel.contact.address != nil
+        directionsButton.addTarget(self, action: #selector(openMap), for: .touchUpInside)
     }
 }
 
 extension ContactViewController: ScrollTableViewAdapterDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let y = scrollView.contentOffset.y
-//        let newHeight = contactView.headerHeight.constant - y
-//
-        let headerViewMinHeight = headerViewMaxHeight - view.safeAreaInsets.top
-//
-//        if newHeight > headerViewMaxHeight {
-//            contactView.headerHeight.constant = headerViewMaxHeight
-//            contactView.photoViewTop.constant = 0
-////            photoView.transform = .identity
-//        } else if newHeight < headerViewMinHeight {
-//            contactView.headerHeight.constant = headerViewMinHeight
-//            contactView.photoViewTop.constant = -44
-////            photoView.transform = CGAffineTransform(scaleX: 0.66, y: 0.66)
-//        } else {
-//            contactView.headerHeight.constant = newHeight
-//            contactView.photoViewTop.constant = -44 * 100 / newHeight
-//
-////            let photoScale: CGFloat = 0.66 * 100 / newHeight
-////            print(photoScale)
-////            photoView.transform = CGAffineTransform(scaleX: photoScale, y: photoScale)
-//
-//            scrollView.contentOffset.y = 0
-//        }
-        if scrollView.contentOffset.y <= headerViewMinHeight {
-            contactView.headerHeight.constant = headerViewMinHeight
-        } else if scrollView.contentOffset.y <= 0 {
+        let newHeight = contactView.headerHeight.constant - scrollView.contentOffset.y
+        
+        let headerViewMinHeight: CGFloat = headerViewMaxHeight - view.safeAreaInsets.top + (Global.UI.isIphoneX ? 25 : 5)
+
+        if newHeight > headerViewMaxHeight {
             contactView.headerHeight.constant = headerViewMaxHeight
+        } else if newHeight < headerViewMinHeight {
+            contactView.headerHeight.constant = headerViewMinHeight
         } else {
-            let offsetDiff = offset - scrollView.contentOffset.y
-            offset = scrollView.contentOffset.y
-            let newHeight = contactView.headerHeight.constant - offsetDiff
             contactView.headerHeight.constant = newHeight
+            scrollView.contentOffset.y = 0
         }
+    }
+}
+
+extension ContactViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }

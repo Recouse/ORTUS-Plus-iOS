@@ -60,6 +60,14 @@ struct Global {
         enum TabBar: Int {
             case home, schedule, notifications
         }
+        
+        static var isIphoneX: Bool {
+            return UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height >= 1792
+        }
+        
+        static var isIphone5: Bool {
+            return UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 1136
+        }
     }
     
     static let ortusURL = "https://ortus.rtu.lv/"

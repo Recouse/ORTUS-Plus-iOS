@@ -16,6 +16,21 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
     weak var contactsView: ContactsView! { return view as? ContactsView }
     weak var tableView: UITableView! { return contactsView.tableView }
     
+    let toolbarSegmentedControl = UISegmentedControl()
+    
+    lazy var toolbar: UIToolbar = {
+        let toolbar = UIToolbar()
+        toolbar.delegate = self
+
+        let barItem = UIBarButtonItem(customView: self.toolbarSegmentedControl)
+
+        toolbar.setItems([barItem], animated: false)
+
+        return toolbar
+    }()
+    
+    var selectedContactsFilter: Int = 0
+    
     var refreshControl: UIRefreshControl!
     
     lazy var adapter = ContactsTableViewAdapter(delegate: self)
@@ -44,21 +59,48 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
         
         EventLogger.log(.openedContacts)
         
+        prepareNavigationItem()
+        prepareToolbar()
         prepareRefreshControl()
         prepareData()
         
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.shadowImage = nil
+    }
+    
     override func prepareLocales() {
         navigationItem.title = "contacts.title".localized()
+        
+        toolbarSegmentedControl.removeAllSegments()
+        for (index, filter) in ContactsFilter.allCases.enumerated() {
+            toolbarSegmentedControl.insertSegment(
+                withTitle: filter.rawValue.localized(),
+                at: index,
+                animated: false)
+        }
+        toolbarSegmentedControl.selectedSegmentIndex = selectedContactsFilter
     }
     
     func render() {
         renderer.render {
-            Group(of: viewModel.sortedKeys) { key in
+            Group(
+                of: selectedContactsFilter ==  0 ? viewModel.prioritizedSortedKeys : viewModel.sortedKeys
+            ) { key in
                 Section(id: key, header: StickyHeader(title: key)) {
-                    Group(of: viewModel.contacts[key] ?? []) { contact in
+                    Group(
+                        of: (selectedContactsFilter ==  0 ? viewModel.prioritizedContacts[key] : viewModel.contacts[key]) ?? []
+                    ) { contact in
                         ContactComponent(id: contact.id, contact: contact)
                     }
                 }
@@ -73,6 +115,12 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
         }
     }
     
+    @objc func filterContacts() {
+        selectedContactsFilter = toolbarSegmentedControl.selectedSegmentIndex
+        
+        render()
+    }
+    
     @objc func refresh() {
         loadData()
     }
@@ -83,6 +131,21 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
 }
 
 extension ContactsViewController {
+    func prepareNavigationItem() {
+        navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    func prepareToolbar() {
+        view.addSubview(toolbar)
+        toolbar.translatesAutoresizingMaskIntoConstraints = false
+        toolbar.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.left.right.equalToSuperview()
+        }
+        
+        toolbarSegmentedControl.addTarget(self, action: #selector(filterContacts), for: .valueChanged)
+    }
+    
     func prepareRefreshControl() {
         refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
@@ -102,9 +165,15 @@ extension ContactsViewController {
     }
 }
 
+extension ContactsViewController: UIToolbarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .top
+    }
+}
+
 extension ContactsViewController: ContactsTableViewAdapterDelegate {
     func indexTitles() -> [String] {
-        return viewModel.sortedKeys
+        return selectedContactsFilter == 0 ? viewModel.prioritizedSortedKeys : viewModel.sortedKeys
     }
 }
 

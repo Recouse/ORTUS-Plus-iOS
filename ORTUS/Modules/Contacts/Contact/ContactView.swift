@@ -34,8 +34,55 @@ class ContactView: UIView {
         
         return imageView
     }()
+        
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.textAlignment = .center
+        
+        return label
+    }()
     
-    var photoViewTop: NSLayoutConstraint!
+    let emailButton: CircleButton = {
+        let button = CircleButton(style: ButtonsStyle.action)
+        button.setImage(UIImage(named: "envelopeFill")?.tint(with: .white), for: .normal)
+        button.setImage(UIImage(named: "envelopeFill")?.tint(with: .white), for: .highlighted)
+        button.isEnabled = false
+        
+        return button
+    }()
+    
+    let callButton: CircleButton = {
+        let button = CircleButton(style: ButtonsStyle.action)
+        button.setImage(UIImage(named: "phoneFill")?.tint(with: .white), for: .normal)
+        button.setImage(UIImage(named: "phoneFill")?.tint(with: .white), for: .highlighted)
+        button.isEnabled = false
+        
+        return button
+    }()
+    
+    let directionsButton: CircleButton = {
+        let button = CircleButton(style: ButtonsStyle.action)
+        button.setImage(UIImage(named: "mapFill")?.tint(with: .white), for: .normal)
+        button.setImage(UIImage(named: "mapFill")?.tint(with: .white), for: .highlighted)
+        button.isEnabled = false
+        
+        return button
+    }()
+    
+    lazy var actionsStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            self.emailButton, self.callButton, self.directionsButton
+        ])
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 20
+        
+        return stackView
+    }()
+    
+    var actionsHeight: NSLayoutConstraint!
     
     let headerViewSeparator: UIView = {
         let view = UIView()
@@ -69,7 +116,7 @@ class ContactView: UIView {
         }
         
         addSubview(headerView)
-        headerHeight = headerView.heightAnchor.constraint(equalToConstant: 220)
+        headerHeight = headerView.heightAnchor.constraint(equalToConstant: Global.UI.isIphoneX ? 240 : 210)
         headerHeight.isActive = true
         headerView.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -77,11 +124,34 @@ class ContactView: UIView {
         }
         
         headerView.addSubview(photoView)
-        photoViewTop = photoView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
-        photoViewTop.isActive = true
         photoView.snp.makeConstraints {
-            $0.size.equalTo(66)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(-39).priority(250)
+            $0.top.equalTo(safeAreaLayoutGuide).priority(750)
+            $0.height.equalToSuperview().multipliedBy(0.25)
+            $0.width.equalTo(photoView.snp.height)
             $0.centerX.equalToSuperview()
+        }
+        
+        headerView.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints {
+            $0.top.equalTo(photoView.snp.bottom).offset(10)
+            $0.left.right.equalToSuperview().offset(Global.UI.edgeInset).inset(Global.UI.edgeInset)
+        }
+        
+        actionsStackView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.addSubview(actionsStackView)
+        actionsHeight = actionsStackView.heightAnchor.constraint(equalToConstant: 40)
+        actionsHeight.isActive = true
+        actionsStackView.snp.makeConstraints {
+//            $0.height.equalTo(40)
+            $0.top.equalTo(nameLabel.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+//            $0.left.right.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(10)
+        }
+        
+        emailButton.snp.makeConstraints {
+            $0.size.equalTo(40)
         }
         
         headerView.addSubview(headerViewSeparator)

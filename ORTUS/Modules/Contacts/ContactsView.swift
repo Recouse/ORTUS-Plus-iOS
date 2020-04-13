@@ -15,9 +15,15 @@ class ContactsView: UIView {
         tableView.backgroundColor = .groupTableViewBackground
         tableView.sectionIndexColor = Asset.Colors.tintColor.color
         tableView.sectionIndexBackgroundColor = .clear
+        tableView.sectionIndexTrackingBackgroundColor = .clear
         tableView.separatorStyle = .singleLine
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.contentInset = UIEdgeInsets(
+            top: 44, // Toolbar height
+            left: 0,
+            bottom: 30,
+            right: 0)
         
         return tableView
     }()
@@ -34,7 +40,7 @@ class ContactsView: UIView {
         addSubview(tableView)
         tableView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview()
-            $0.left.right.equalTo(safeAreaLayoutGuide)
+            $0.left.right.equalToSuperview()
         }
     }
     
