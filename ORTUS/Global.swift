@@ -28,6 +28,7 @@ struct Global {
         
         // Cache
         static let scheduleCache = "scheduleCache"
+        static let contactsCache = "contactsCache"
     }
     
     struct Event {
@@ -58,6 +59,14 @@ struct Global {
         // TabBar
         enum TabBar: Int {
             case home, schedule, notifications
+        }
+        
+        static var isIphoneX: Bool {
+            return UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height >= 1792
+        }
+        
+        static var isIphone5: Bool {
+            return UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 1136
         }
     }
     

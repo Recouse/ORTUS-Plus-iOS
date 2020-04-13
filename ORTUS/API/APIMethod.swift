@@ -16,6 +16,7 @@ enum APIMethod: String {
     case getUserCourses
     case getUserNotifications
     case getUserMarks
+    case getPublicContacts
     
     var parameters: [String] {
         var values: [String] = []
@@ -23,7 +24,7 @@ enum APIMethod: String {
         let keychain = Keychain()
         
         switch self {
-        case .getPublicArticles:
+        case .getPublicArticles, .getPublicContacts:
             values.append(Global.clientID)
             values.append(Global.Locale.current)
         default:

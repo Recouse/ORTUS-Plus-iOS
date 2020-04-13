@@ -29,6 +29,11 @@
 // Grades
 "grades.title" = "Grades";
 
+// Contacts
+"contacts.title" = "Contacts";
+"contacts.my" = "My Contacts";
+"contacts.all" = "All Contacts";
+
 // Notifications
 "notifications.title" = "Notifications";
 

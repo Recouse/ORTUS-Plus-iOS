@@ -225,11 +225,6 @@ extension ScheduleViewController {
             options: .new,
             context: nil
         )
-//        UserDefaults.standard.addObserver(
-//            self,
-//            forKeyPath: UserDefaults.Key.showEvents.name,
-//            options: .new,
-//            context: nil)
     }
 }
 
