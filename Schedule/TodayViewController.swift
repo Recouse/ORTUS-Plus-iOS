@@ -77,7 +77,7 @@ class TodayViewController: UIViewController {
                         }
 
                         if let lecture = item.item(as: Lecture.self) {
-                            let time = lecture.timeTill.components(separatedBy: ":")
+                            let time = lecture.timeTillParsed.components(separatedBy: ":")
                                 .compactMap { Int($0) }
                             let date = dateFormatter.date(from: lecture.date)
 
@@ -150,7 +150,7 @@ class TodayViewController: UIViewController {
             if UserDefaults(suiteName: "group.me.recouse.ORTUS")?.bool(forKey: "show_events") == true {
                 pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.time)) }
             }
-            pair.value.lectures.forEach { items.append(ScheduleItem($0, time: $0.timeFrom)) }
+            pair.value.lectures.forEach { items.append(ScheduleItem($0, time: $0.timeFromParsed)) }
             
             items.sort(by: {
                 guard let firstDate = $0.timeDate, let secondDate = $1.timeDate else {
