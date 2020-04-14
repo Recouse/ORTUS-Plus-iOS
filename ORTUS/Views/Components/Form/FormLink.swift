@@ -12,7 +12,7 @@ import Carbon
 struct FormLink: IdentifiableComponent {
     var title: String
     var url: String
-    var onSelect: (() -> Void)?
+    var onSelect: ((_ url: String) -> Void)?
     
     var id: String {
         return title
@@ -39,7 +39,7 @@ struct FormLink: IdentifiableComponent {
 
 class FormLinkView: UIControl {
     var url: String = ""
-    var onSelect: (() -> Void)?
+    var onSelect: ((_ url: String) -> Void)?
     
     let titleLabel = UILabel()
     
@@ -87,14 +87,6 @@ class FormLinkView: UIControl {
     }
     
     @objc func selected() {
-        onSelect?()
-        
-        guard let url = URL(string: url) else {
-            return
-        }
-        
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        onSelect?(url)
     }
 }

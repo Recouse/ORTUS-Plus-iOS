@@ -12,7 +12,7 @@ import SafariServices
 
 class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresentable {
     enum ID {
-        case pinCode, reportBug, signOut, version
+        case pinCode, reportBug, privacyPolicy, signOut, version
     }
 
     var viewModel: SettingsViewModel
@@ -71,7 +71,15 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
                 id: ID.reportBug,
                 header: Header(title: ""),
                 cells: {
-                    FormLink(title: "Report a bug", url: Global.telegramChatURL)
+                    FormLink(title: "Report a bug", url: Global.githubIssuesURL, onSelect: openUrl)
+                }
+            )
+            
+            Section(
+                id: ID.privacyPolicy,
+                header: Header(title: ""),
+                cells: {
+                    FormLink(title: "Privacy Policy", url: Global.privacyPolicyURL, onSelect: openUrl)
                 }
             )
             
@@ -129,6 +137,21 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
             guard let self = self else { return }
             
             self.alert(message: "Error on processing. Please try again.")
+        }
+    }
+    
+    func openUrl(_ urlString: String) {
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [.universalLinksOnly: true]) { [unowned self] success in
+            guard !success else {
+                return
+            }
+            
+            let safariController = SFSafariViewController(url: url)
+            self.present(safariController, animated: true, completion: nil)
         }
     }
     
