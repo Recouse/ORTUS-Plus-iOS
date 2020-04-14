@@ -32,11 +32,7 @@ class CoursesView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .systemBackground
-        } else {
-            backgroundColor = .white
-        }
+        backgroundColor = ColorCompatibility.systemBackground
         
         addSubview(tableView)
         tableView.snp.makeConstraints {

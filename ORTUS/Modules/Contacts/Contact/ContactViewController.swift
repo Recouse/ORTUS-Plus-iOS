@@ -104,14 +104,14 @@ class ContactViewController: TranslatableModule, ModuleViewModel {
                             CellNode(ContactInfoComponent(id: "position", description: $0.position)),
                             $0.phone != nil ? CellNode(ContactInfoComponent(id: "phone", type: .phone, description: $0.phone!)) : nil
                         ],
-                        footer: ViewNode(Footer(description: ""))
+                        footer: ViewNode(Footer())
                     )
                 )
             }
         }
         
         var sections: [Section] = [
-            Section(id: "contact", cells: components, footer: ViewNode(Footer(description: "")))
+            Section(id: "contact", cells: components, footer: ViewNode(Footer()))
         ]
         
         sections.append(contentsOf: positions)

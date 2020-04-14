@@ -12,11 +12,7 @@ class LectureComponentView: UIView {
     let startTimeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
-        if #available(iOS 13.0, *) {
-            label.textColor = .label
-        } else {
-            label.textColor = .black
-        }
+        label.textColor = ColorCompatibility.label
         
         return label
     }()
@@ -24,11 +20,7 @@ class LectureComponentView: UIView {
     let endTimeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
-        if #available(iOS 13.0, *) {
-            label.textColor = .secondaryLabel
-        } else {
-            label.textColor = .lightGray
-        }
+        label.textColor = ColorCompatibility.secondaryLabel
         
         return label
     }()
@@ -45,11 +37,7 @@ class LectureComponentView: UIView {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
-        if #available(iOS 13.0, *) {
-            label.textColor = .label
-        } else {
-            label.textColor = .black
-        }
+        label.textColor = ColorCompatibility.label
         label.numberOfLines = 2
         
         return label
@@ -58,11 +46,7 @@ class LectureComponentView: UIView {
     let addressLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13)
-        if #available(iOS 13.0, *) {
-            label.textColor = .systemGray
-        } else {
-            label.textColor = .gray
-        }
+        label.textColor = .systemGray
         
         return label
     }()
@@ -70,11 +54,7 @@ class LectureComponentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .systemBackground
-        } else {
-            backgroundColor = .white
-        }
+        backgroundColor = ColorCompatibility.systemBackground
         
         prepareTimeLabels()
         prepareContentSeparator()

@@ -25,15 +25,10 @@ class ScheduleView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundView = nil
-        
-        if #available(iOS 13.0, *) {
-            tableView.backgroundColor = .secondarySystemBackground
-        } else {
-            tableView.backgroundColor = .groupTableViewBackground
-        }
-        
+        tableView.backgroundColor = .groupTableViewBackground
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.tableFooterView = UIView()
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = UIEdgeInsets(
             top: 0,
@@ -52,11 +47,7 @@ class ScheduleView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .systemBackground
-        } else {
-            backgroundColor = .white
-        }
+        backgroundColor = ColorCompatibility.systemBackground
 
         
         addSubview(tableView)

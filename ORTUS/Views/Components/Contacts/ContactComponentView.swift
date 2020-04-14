@@ -14,12 +14,7 @@ class ContactComponentView: UIView {
     let photoView: CircleImageView = {
         let imageView = CircleImageView()
         imageView.contentMode = .scaleAspectFill
-        
-        if #available(iOS 13.0, *) {
-            imageView.backgroundColor = .systemGray3
-        } else {
-            imageView.backgroundColor = .lightGray
-        }
+        imageView.backgroundColor = ColorCompatibility.systemGray3
         
         return imageView
     }()
@@ -27,11 +22,7 @@ class ContactComponentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .secondarySystemGroupedBackground
-        } else {
-            backgroundColor = .white
-        }
+        backgroundColor = ColorCompatibility.systemBackground
         
         addSubview(photoView)
         photoView.snp.makeConstraints {

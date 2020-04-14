@@ -10,7 +10,7 @@ import UIKit
 import Carbon
 
 struct Footer: Carbon.Component, Equatable {
-    var description: String
+    var description: String = ""
     
     func renderContent() -> FooterView {
         return FooterView()
@@ -28,11 +28,7 @@ struct Footer: Carbon.Component, Equatable {
 class FooterView: UIView {
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        if #available(iOS 13.0, *) {
-            label.textColor = .secondaryLabel
-        } else {
-            label.textColor = .darkGray
-        }
+        label.textColor = ColorCompatibility.secondaryLabel
         label.font = .systemFont(ofSize: 13)
         label.numberOfLines = 0
         

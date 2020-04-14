@@ -15,11 +15,7 @@ class VersionComponentView: UIControl {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .medium)
         label.textAlignment = .center
-        if #available(iOS 13.0, *) {
-            label.textColor = .secondaryLabel
-        } else {
-            label.textColor = .lightGray
-        }
+        label.textColor = ColorCompatibility.secondaryLabel
         
         return label
     }()

@@ -44,11 +44,7 @@ class FormSectionView: UIControl {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "chevronRight")
         imageView.contentMode = .scaleAspectFit
-        if #available(iOS 13.0, *) {
-            imageView.tintColor = .tertiaryLabel
-        } else {
-            imageView.tintColor = .gray
-        }
+        imageView.tintColor = ColorCompatibility.tertiaryLabel
         
         return imageView
     }()
@@ -56,11 +52,7 @@ class FormSectionView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .secondarySystemGroupedBackground
-        } else {
-            backgroundColor = .white
-        }
+        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
         
         addSubview(rightAccessoryView)
         rightAccessoryView.snp.makeConstraints {

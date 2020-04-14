@@ -15,11 +15,7 @@ class EventComponentView: UIView {
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.2
         label.textAlignment = .right
-        if #available(iOS 13.0, *) {
-            label.textColor = .label
-        } else {
-            label.textColor = .black
-        }
+        label.textColor = ColorCompatibility.label
         
         return label
     }()
@@ -39,11 +35,7 @@ class EventComponentView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
-        if #available(iOS 13.0, *) {
-            label.textColor = .label
-        } else {
-            label.textColor = .black
-        }
+        label.textColor = ColorCompatibility.label
         label.numberOfLines = 2
         
         return label
@@ -52,11 +44,7 @@ class EventComponentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .systemBackground
-        } else {
-            backgroundColor = .white
-        }
+        backgroundColor = ColorCompatibility.systemBackground
         
         prepareTimeLabel()
         prepareContentSeparator()

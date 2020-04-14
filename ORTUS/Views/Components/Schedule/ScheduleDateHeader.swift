@@ -38,11 +38,7 @@ struct ScheduleDateHeader: Carbon.Component, Equatable {
 class ScheduleDateHeaderView: UIView {
     let dayLabel: UILabel = {
         let label = UILabel()
-        if #available(iOS 13.0, *) {
-            label.textColor = .label
-        } else {
-            label.textColor = .black
-        }
+        label.textColor = ColorCompatibility.label
         label.font = .systemFont(ofSize: 15, weight: .semibold)
         
         return label
@@ -50,11 +46,7 @@ class ScheduleDateHeaderView: UIView {
     
     let dayMonthLabel: UILabel = {
         let label = UILabel()
-        if #available(iOS 13.0, *) {
-            label.textColor = .systemGray
-        } else {
-            label.textColor = .gray
-        }
+        label.textColor = .systemGray
         label.font = .systemFont(ofSize: 13)
         
         return label
@@ -63,11 +55,7 @@ class ScheduleDateHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .secondarySystemBackground
-        } else {
-            backgroundColor = .groupTableViewBackground
-        }
+        backgroundColor = ColorCompatibility.systemGray5
         
         addSubview(dayLabel)
         dayLabel.snp.makeConstraints {

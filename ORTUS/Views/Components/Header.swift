@@ -28,11 +28,7 @@ struct Header: Carbon.Component, Equatable {
 class HeaderView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
-        if #available(iOS 13.0, *) {
-            label.textColor = .secondaryLabel
-        } else {
-            label.textColor = .darkGray
-        }
+        label.textColor = ColorCompatibility.secondaryLabel
         label.font = .systemFont(ofSize: 13)
         
         return label

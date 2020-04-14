@@ -226,6 +226,7 @@
 		FAE5284D244462A1009851C9 /* ContactInfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284C244462A1009851C9 /* ContactInfoComponent.swift */; };
 		FAE5284F244462AB009851C9 /* ContactInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284E244462AB009851C9 /* ContactInfoComponentView.swift */; };
 		FAE528512444EE0E009851C9 /* LatviaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */; };
+		FAE528532445F838009851C9 /* ColorCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE528522445F838009851C9 /* ColorCompatibility.swift */; };
 		FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */; };
 		FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B32249096800CA2492 /* CoursesRouter.swift */; };
 		FAF183B92249096800CA2492 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B42249096800CA2492 /* CoursesViewController.swift */; };
@@ -538,6 +539,7 @@
 		FAE5284C244462A1009851C9 /* ContactInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoComponent.swift; sourceTree = "<group>"; };
 		FAE5284E244462AB009851C9 /* ContactInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoComponentView.swift; sourceTree = "<group>"; };
 		FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatviaDateFormatter.swift; sourceTree = "<group>"; };
+		FAE528522445F838009851C9 /* ColorCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCompatibility.swift; sourceTree = "<group>"; };
 		FAF183AF2248E76400CA2492 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModuleBuilder.swift; sourceTree = "<group>"; };
 		FAF183B32249096800CA2492 /* CoursesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRouter.swift; sourceTree = "<group>"; };
@@ -952,6 +954,7 @@
 				FA1DEF8E241761DC00704B6E /* Bundle.swift */,
 				FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */,
 				FAE5284A2443744B009851C9 /* OpenMapDirections.swift */,
+				FAE528522445F838009851C9 /* ColorCompatibility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1745,6 +1748,7 @@
 				FAB74C5823EC4A50004C7BC6 /* ScheduleSettingsView.swift in Sources */,
 				FA45907A243F44A700BF7E0F /* ContactsTableViewAdapter.swift in Sources */,
 				FA90FDA522437DC5005148AC /* Route.swift in Sources */,
+				FAE528532445F838009851C9 /* ColorCompatibility.swift in Sources */,
 				FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */,
 				FA459070243F30A100BF7E0F /* ContactsViewModel.swift in Sources */,
 				FAF183BA2249096800CA2492 /* CoursesView.swift in Sources */,

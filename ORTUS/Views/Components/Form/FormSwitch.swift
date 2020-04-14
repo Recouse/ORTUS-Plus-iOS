@@ -47,11 +47,7 @@ class FormSwitchView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .secondarySystemGroupedBackground
-        } else {
-            backgroundColor = .white
-        }
+        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
         
         addSubview(titleLabel)
         addSubview(switchControl)

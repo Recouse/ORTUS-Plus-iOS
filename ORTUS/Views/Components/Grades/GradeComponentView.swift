@@ -41,11 +41,7 @@ class GradeComponentView: UIView {
     let lecturerLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        if #available(iOS 13.0, *) {
-            label.textColor = .secondaryLabel
-        } else {
-            label.textColor = .gray
-        }
+        label.textColor = ColorCompatibility.secondaryLabel
         
         return label
     }()
@@ -53,11 +49,7 @@ class GradeComponentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .secondarySystemGroupedBackground
-        } else {
-            backgroundColor = .white
-        }
+        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
         
         prepareGradeLabel()
         prepareCourseLabel()

@@ -11,11 +11,7 @@ import UIKit
 class ContactView: UIView {
     let headerView: UIView = {
         let view = UIView()
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .secondarySystemGroupedBackground
-        } else {
-            view.backgroundColor = .white
-        }
+        view.backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
         
         return view
     }()
@@ -25,12 +21,7 @@ class ContactView: UIView {
     let photoView: CircleImageView = {
         let imageView = CircleImageView()
         imageView.contentMode = .scaleAspectFill
-        
-        if #available(iOS 13.0, *) {
-            imageView.backgroundColor = .systemGray3
-        } else {
-            imageView.backgroundColor = .lightGray
-        }
+        imageView.backgroundColor = ColorCompatibility.systemGray4
         
         return imageView
     }()
@@ -86,11 +77,7 @@ class ContactView: UIView {
     
     let headerViewSeparator: UIView = {
         let view = UIView()
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .separator
-        } else {
-            view.backgroundColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
-        }
+        view.backgroundColor = ColorCompatibility.separator
         
         return view
     }()
@@ -109,11 +96,7 @@ class ContactView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        if #available(iOS 13.0, *) {
-            backgroundColor = .systemBackground
-        } else {
-            backgroundColor = .white
-        }
+        backgroundColor = ColorCompatibility.systemBackground
         
         addSubview(headerView)
         headerHeight = headerView.heightAnchor.constraint(equalToConstant: Global.UI.isIphoneX ? 240 : 210)
