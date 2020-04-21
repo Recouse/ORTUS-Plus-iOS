@@ -17,6 +17,7 @@ class EventLogger {
         case openedEvent
         case openedGrades
         case openedContacts
+        case openedContact(id: String)
         case openedNotification
         case signedOut
         case openedOrtusShortcut
@@ -37,6 +38,8 @@ class EventLogger {
                 return "Opened Grades"
             case .openedContacts:
                 return "Opened Contacts"
+            case .openedContact:
+                return "Opened Contact"
             case .openedNotification:
                 return "Opened Notification"
             case .signedOut:
@@ -65,6 +68,10 @@ class EventLogger {
             case let .openedSemester(name):
                 return [
                     "name": name
+                ]
+            case let .openedContact(id):
+                return [
+                    "id": id
                 ]
             default:
                 return nil

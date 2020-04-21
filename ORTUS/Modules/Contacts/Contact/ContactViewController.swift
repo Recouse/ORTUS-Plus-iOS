@@ -48,7 +48,7 @@ class ContactViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        EventLogger.log(.openedContact)
+        EventLogger.log(.openedContact(id: viewModel.contact.id))
         
         prepareNavigationItem()
         prepareData()
