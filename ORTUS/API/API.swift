@@ -6,6 +6,7 @@
 //  Copyright © 2019 Firdavs. All rights reserved.
 //
 
+import Foundation
 import Alamofire
 import KeychainAccess
 import Localize_Swift
