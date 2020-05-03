@@ -1,0 +1,88 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire",
+        "state": {
+          "branch": null,
+          "revision": "fca036f7aeca07124067cb6e0c12b0ad6359e3d4",
+          "version": "5.1.0"
+        }
+      },
+      {
+        "package": "Carbon",
+        "repositoryURL": "https://github.com/ra1028/Carbon",
+        "state": {
+          "branch": null,
+          "revision": "57db8c9fa5d81d76c597930fcabc60b358125d18",
+          "version": "1.0.0-rc.6"
+        }
+      },
+      {
+        "package": "DifferenceKit",
+        "repositoryURL": "https://github.com/ra1028/DifferenceKit",
+        "state": {
+          "branch": null,
+          "revision": "4eb31f8e85e4cb13732f9664d6e01e507cd592a0",
+          "version": "1.1.3"
+        }
+      },
+      {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess",
+        "state": {
+          "branch": null,
+          "revision": "3d0ea2c0806791abcc5d7f0d9f62f1cfd4a7264d",
+          "version": "4.2.0"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher",
+        "state": {
+          "branch": null,
+          "revision": "349ed06467a6f8a4939bcb83db301542bc84eac9",
+          "version": "5.13.4"
+        }
+      },
+      {
+        "package": "Localize_Swift",
+        "repositoryURL": "https://github.com/marmelroy/Localize-Swift",
+        "state": {
+          "branch": null,
+          "revision": "f2d0c6d790b8af64ae54377ad93494e8d3e46b17",
+          "version": "3.1.0"
+        }
+      },
+      {
+        "package": "Pageboy",
+        "repositoryURL": "https://github.com/uias/Pageboy",
+        "state": {
+          "branch": null,
+          "revision": "af6e3d48cd60bd9ee6ca5cef8dd000727cce4ab8",
+          "version": "3.5.1"
+        }
+      },
+      {
+        "package": "Promises",
+        "repositoryURL": "https://github.com/google/promises",
+        "state": {
+          "branch": null,
+          "revision": "6b6f4fe3385ed37389fb231bc40be81de2f1230f",
+          "version": "1.2.8"
+        }
+      },
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit",
+        "state": {
+          "branch": null,
+          "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
+          "version": "5.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

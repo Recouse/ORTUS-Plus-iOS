@@ -23,7 +23,7 @@ class NotificationsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        ColorCompatibility.systemBackground
+        backgroundColor = ColorCompatibility.systemBackground
         
         addSubview(tableView)
         tableView.snp.makeConstraints {
