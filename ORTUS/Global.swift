@@ -29,6 +29,7 @@ struct Global {
         // Cache
         static let scheduleCache = "scheduleCache"
         static let contactsCache = "contactsCache"
+        static let coursesCache = "coursesCache"
     }
     
     struct Event {

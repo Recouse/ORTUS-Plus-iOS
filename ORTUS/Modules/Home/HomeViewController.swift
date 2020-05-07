@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Promises
 
 class HomeViewController: TranslatableModule, ModuleViewModel {
     enum ID: String {
@@ -110,7 +111,11 @@ class HomeViewController: TranslatableModule, ModuleViewModel {
     }
     
     func loadData() {
-        viewModel.loadCourses().always {
+        viewModel.loadCachedCourses().then { _ -> Promise<Bool> in
+            self.render()
+            
+            return self.viewModel.loadCourses()
+        }.always {
             self.render()
         }
     }

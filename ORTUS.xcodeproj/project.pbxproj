@@ -253,6 +253,7 @@
 		FAF77B272246A98500197641 /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B262246A98500197641 /* FormButton.swift */; };
 		FAF77B292246AC3C00197641 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B282246AC3C00197641 /* Header.swift */; };
 		FAF814452414524D00915FF8 /* libStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66428C24144C7A002A3315 /* libStorage.a */; };
+		FAFD013B246474D300DF9FEA /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD013A246474D300DF9FEA /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -580,6 +581,7 @@
 		FAF77B232246A64200197641 /* OAuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthApi.swift; sourceTree = "<group>"; };
 		FAF77B262246A98500197641 /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 		FAF77B282246AC3C00197641 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		FAFD013A246474D300DF9FEA /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -990,6 +992,7 @@
 				FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */,
 				FAE5284A2443744B009851C9 /* OpenMapDirections.swift */,
 				FAE528522445F838009851C9 /* ColorCompatibility.swift */,
+				FAFD013A246474D300DF9FEA /* Cache.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1740,6 +1743,7 @@
 				FA90FDB022437F25005148AC /* NewsView.swift in Sources */,
 				FA8714D523E40DD100DB728C /* PinSettingsViewController.swift in Sources */,
 				FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */,
+				FAFD013B246474D300DF9FEA /* Cache.swift in Sources */,
 				FA90FDAF22437F25005148AC /* NewsViewController.swift in Sources */,
 				FAF183BB2249096800CA2492 /* CoursesViewModel.swift in Sources */,
 				FA90FDE62243AE01005148AC /* NewsApi.swift in Sources */,
