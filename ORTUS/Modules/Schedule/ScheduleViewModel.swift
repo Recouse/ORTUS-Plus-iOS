@@ -26,6 +26,8 @@ class ScheduleViewModel: ViewModel {
     
     let sharedUserDefaults = UserDefaults(suiteName: Global.Key.appGroup)
     
+    let cache = Cache(path: FileManager.sharedContainerURL())
+    
     init(router: ScheduleRouter.Routes) {
         self.router = router
     }
@@ -38,7 +40,10 @@ class ScheduleViewModel: ViewModel {
             date = Calendar.current.date(byAdding: .day, value: 1, to: today) ?? today
         }
         
-        if !forceUpdate, let response = self.response {
+        if !forceUpdate, let response = try? cache.fetch(
+            ScheduleResponse.self,
+            forKey: Global.Key.scheduleCache
+        ) {
             self.schedule = self.sortSchedule(from: response)
             
             return Promise(true)
@@ -71,14 +76,7 @@ class ScheduleViewModel: ViewModel {
     }
     
     private func cacheResponse(_ response: ScheduleResponse) {
-        let path = FileManager.sharedContainerURL()
-        let disk = DiskStorage(path: path)
-        let storage = CodableStorage(storage: disk)
-        
-        do {
-            try storage.save(response, for: Global.Key.scheduleCache)
-        } catch {}
-        
+        cache.save(response, forKey: Global.Key.scheduleCache)
     }
     
     private func sortSchedule(from response: ScheduleResponse) -> Schedule {
