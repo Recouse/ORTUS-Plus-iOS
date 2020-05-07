@@ -98,11 +98,11 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == UserDefaults.Key.showEvents.name {
-            loadData(forceUpdate: false)
+            loadData()
         }
     }
     
-    func loadData(forceUpdate: Bool = true) {
+    func loadData(forceUpdate: Bool = false) {
         viewModel.loadSchedule(forceUpdate: forceUpdate).always {
             self.render()
         }.always {
@@ -161,7 +161,7 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     }
     
     @objc func refresh() {
-        loadData()
+        loadData(forceUpdate: true)
     }
     
     func open(event: Event) {

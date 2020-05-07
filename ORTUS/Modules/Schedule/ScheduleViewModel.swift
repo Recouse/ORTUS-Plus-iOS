@@ -40,7 +40,10 @@ class ScheduleViewModel: ViewModel {
             date = Calendar.current.date(byAdding: .day, value: 1, to: today) ?? today
         }
         
-        if !forceUpdate, let response = self.response {
+        if !forceUpdate, let response = try? cache.fetch(
+            ScheduleResponse.self,
+            forKey: Global.Key.scheduleCache
+        ) {
             self.schedule = self.sortSchedule(from: response)
             
             return Promise(true)
