@@ -165,6 +165,7 @@ extension HomeViewController {
     
     func prepareData() {
         renderer.target = tableView
+        renderer.updater.isAnimationEnabled = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(scrollToTop), name: .scrollToTop, object: nil)
     }
