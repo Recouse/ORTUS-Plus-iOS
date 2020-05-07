@@ -28,21 +28,13 @@ class ContactsViewModel: ViewModel {
     var prioritizedContacts: SortedContacts = [:]
     
     var contacts: SortedContacts = [:]
-            
-    let storage: CodableStorage = {
-        let path = URL(fileURLWithPath: NSTemporaryDirectory())
-        let disk = DiskStorage(path: path)
-        let storage = CodableStorage(storage: disk)
-        
-        return storage
-    }()
     
     init(router: ContactsRouter.Routes) {
         self.router = router
     }
     
     func loadContacts() -> Promise<SortedContacts> {
-        if let cached: Contacts = try? storage.fetch(for: Global.Key.contactsCache) {
+        if let cached = try? Cache.shared.fetch(Contacts.self, forKey: Global.Key.contactsCache) {
             sortContacts(from: cached)
             
             return Promise(self.contacts)
@@ -53,7 +45,7 @@ class ContactsViewModel: ViewModel {
                 ContactsResponse.self,
                 route: ContactsApi.publicContacts
             ).then { response in
-                try? self.storage.save(response.result, for: Global.Key.contactsCache)
+                Cache.shared.save(response.result, forKey: Global.Key.contactsCache)
                 
                 self.sortContacts(from: response.result)
                 
