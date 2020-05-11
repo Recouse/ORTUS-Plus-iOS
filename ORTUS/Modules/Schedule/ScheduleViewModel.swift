@@ -32,21 +32,29 @@ class ScheduleViewModel: ViewModel {
         self.router = router
     }
     
-    func loadSchedule(forceUpdate: Bool = true) -> Promise<Bool> {
+    func loadCachedSchedule() -> Promise<Bool> {
+        return Promise { fulfill, reject in
+            do {
+                let response = try self.cache.fetch(
+                    ScheduleResponse.self,
+                    forKey: Global.Key.scheduleCache
+                )
+                
+                self.schedule = self.sortSchedule(from: response)
+                
+                return fulfill(true)
+            } catch {
+                reject(error)
+            }
+        }
+    }
+    
+    func loadSchedule() -> Promise<Bool> {
         let today = Date()
         var date = today
         
         if Calendar.current.component(.weekday, from: today) == 1 {
             date = Calendar.current.date(byAdding: .day, value: 1, to: today) ?? today
-        }
-        
-        if !forceUpdate, let response = try? cache.fetch(
-            ScheduleResponse.self,
-            forKey: Global.Key.scheduleCache
-        ) {
-            self.schedule = self.sortSchedule(from: response)
-            
-            return Promise(true)
         }
         
         return Promise { fulfill, reject in

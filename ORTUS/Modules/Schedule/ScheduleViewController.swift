@@ -10,6 +10,7 @@ import UIKit
 import Carbon
 import SafariServices
 import Models
+import Promises
 
 class ScheduleViewController: TranslatableModule, ModuleViewModel {
     var viewModel: ScheduleViewModel
@@ -103,7 +104,17 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     }
     
     func loadData(forceUpdate: Bool = false) {
-        viewModel.loadSchedule(forceUpdate: forceUpdate).always {
+        if !forceUpdate {
+            viewModel.loadCachedSchedule().always {
+                self.render()
+            }
+        }
+        
+        viewModel.loadCachedSchedule().then { _ -> Promise<Bool> in
+            self.render()
+            
+            return self.viewModel.loadSchedule()
+        }.then { _ in
             self.render()
         }.always {
             self.refreshControl.endRefreshing()
