@@ -80,3 +80,25 @@ extension DiskStorage: ReadableStorage {
         }
     }
 }
+
+extension DiskStorage: RemovableStorage {
+    public func remove(for key: String) throws {
+        let url = path.appendingPathComponent(key)
+        guard fileManager.contents(atPath: url.path) != nil else {
+            throw StorageError.notFound
+        }
+        
+        try fileManager.removeItem(atPath: url.path)
+    }
+    
+    public func remove(for key: String, handler: @escaping Handler<Bool>) {
+        queue.async {
+            do {
+                try self.remove(for: key)
+                handler(.success(true))
+            } catch {
+                handler(.failure(error))
+            }
+        }
+    }
+}

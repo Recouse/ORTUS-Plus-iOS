@@ -18,15 +18,15 @@ extension UserDefaults {
     }
     
     func value<Value>(for key: Key<Value>) -> Value? {
-      return object(forKey: key.name) as? Value
+        return object(forKey: key.name) as? Value
     }
 
     func set<Value>(_ value: Value, for key: Key<Value>) {
-      set(value, forKey: key.name)
+        set(value, forKey: key.name)
     }
 
     func removeValue<Value>(for key: Key<Value>) {
-      removeObject(forKey: key.name)
+        removeObject(forKey: key.name)
     }
 }
 

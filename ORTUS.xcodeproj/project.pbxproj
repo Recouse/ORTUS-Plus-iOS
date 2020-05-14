@@ -215,6 +215,7 @@
 		FAD3D542245F209300905DD4 /* YandexMobileMetricaCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3D540245F209200905DD4 /* YandexMobileMetricaCrashes.framework */; };
 		FAD3D543245F209400905DD4 /* YandexMobileMetrica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3D541245F209300905DD4 /* YandexMobileMetrica.framework */; };
 		FAD43273243927A0001DA513 /* ContactsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD43272243927A0001DA513 /* ContactsApi.swift */; };
+		FADDFE35246D982600701348 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADDFE34246D982600701348 /* CacheTests.swift */; };
 		FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB35239D0D1700120F96 /* LinearGradient.swift */; };
 		FAE3AB3A239D0ED300120F96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE3AB39239D0ED300120F96 /* Colors.xcassets */; };
 		FAE3AB3D239D100500120F96 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB3C239D100400120F96 /* Assets.swift */; };
@@ -284,6 +285,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FA900C3B2414D9D000D8F935;
 			remoteInfo = Models;
+		};
+		FADDFE2D246D7C1200701348 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA90FD5C224377A1005148AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA90FD63224377A1005148AC;
+			remoteInfo = ORTUS;
 		};
 		FAF814462414524D00915FF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -554,6 +562,9 @@
 		FAD3D540245F209200905DD4 /* YandexMobileMetricaCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YandexMobileMetricaCrashes.framework; sourceTree = "<group>"; };
 		FAD3D541245F209300905DD4 /* YandexMobileMetrica.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YandexMobileMetrica.framework; sourceTree = "<group>"; };
 		FAD43272243927A0001DA513 /* ContactsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsApi.swift; sourceTree = "<group>"; };
+		FADDFE28246D7C1200701348 /* ORTUSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORTUSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FADDFE2C246D7C1200701348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADDFE34246D982600701348 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		FAE3AB35239D0D1700120F96 /* LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
 		FAE3AB39239D0ED300120F96 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FAE3AB3C239D100400120F96 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -640,6 +651,13 @@
 				FAE3D5BE245ED8ED00CE6654 /* Localize_Swift in Frameworks */,
 				FA900C4F2414DA5600D8F935 /* libModels.a in Frameworks */,
 				FAE3D5AF245ED67F00CE6654 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FADDFE25246D7C1200701348 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,6 +909,7 @@
 				FA6642712413B430002A3315 /* Schedule */,
 				FA66428D24144C7A002A3315 /* Storage */,
 				FA900C3D2414D9D000D8F935 /* Models */,
+				FADDFE29246D7C1200701348 /* ORTUSTests */,
 				FA90FD65224377A1005148AC /* Products */,
 				FA90FDC522438B41005148AC /* Frameworks */,
 			);
@@ -903,6 +922,7 @@
 				FA66426E2413B430002A3315 /* Schedule.appex */,
 				FA66428C24144C7A002A3315 /* libStorage.a */,
 				FA900C3C2414D9D000D8F935 /* libModels.a */,
+				FADDFE28246D7C1200701348 /* ORTUSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1379,6 +1399,15 @@
 			path = Contacts;
 			sourceTree = "<group>";
 		};
+		FADDFE29246D7C1200701348 /* ORTUSTests */ = {
+			isa = PBXGroup;
+			children = (
+				FADDFE34246D982600701348 /* CacheTests.swift */,
+				FADDFE2C246D7C1200701348 /* Info.plist */,
+			);
+			path = ORTUSTests;
+			sourceTree = "<group>";
+		};
 		FAE3AB37239D0E8800120F96 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1551,13 +1580,31 @@
 			productReference = FA90FD64224377A1005148AC /* ORTUS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FADDFE27246D7C1200701348 /* ORTUSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FADDFE31246D7C1200701348 /* Build configuration list for PBXNativeTarget "ORTUSTests" */;
+			buildPhases = (
+				FADDFE24246D7C1200701348 /* Sources */,
+				FADDFE25246D7C1200701348 /* Frameworks */,
+				FADDFE26246D7C1200701348 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FADDFE2E246D7C1200701348 /* PBXTargetDependency */,
+			);
+			name = ORTUSTests;
+			productName = ORTUSTests;
+			productReference = FADDFE28246D7C1200701348 /* ORTUSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		FA90FD5C224377A1005148AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Firdavs;
 				TargetAttributes = {
@@ -1580,6 +1627,10 @@
 								enabled = 0;
 							};
 						};
+					};
+					FADDFE27246D7C1200701348 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = FA90FD63224377A1005148AC;
 					};
 				};
 			};
@@ -1612,6 +1663,7 @@
 				FA66426D2413B430002A3315 /* Schedule */,
 				FA66428B24144C7A002A3315 /* Storage */,
 				FA900C3B2414D9D000D8F935 /* Models */,
+				FADDFE27246D7C1200701348 /* ORTUSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1633,6 +1685,13 @@
 				FAE3AB3A239D0ED300120F96 /* Colors.xcassets in Resources */,
 				FA90FDDB22438D33005148AC /* Localizable.strings in Resources */,
 				FA90FD6F224377A4005148AC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FADDFE26246D7C1200701348 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1878,6 +1937,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FADDFE24246D7C1200701348 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FADDFE35246D982600701348 /* CacheTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1900,6 +1967,11 @@
 			isa = PBXTargetDependency;
 			target = FA900C3B2414D9D000D8F935 /* Models */;
 			targetProxy = FA900C552414DAB300D8F935 /* PBXContainerItemProxy */;
+		};
+		FADDFE2E246D7C1200701348 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA90FD63224377A1005148AC /* ORTUS */;
+			targetProxy = FADDFE2D246D7C1200701348 /* PBXContainerItemProxy */;
 		};
 		FAF814472414524D00915FF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2217,6 +2289,48 @@
 			};
 			name = Release;
 		};
+		FADDFE2F246D7C1200701348 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RL7M4Z58CJ;
+				INFOPLIST_FILE = ORTUSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ORTUS.app/ORTUS";
+			};
+			name = Debug;
+		};
+		FADDFE30246D7C1200701348 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RL7M4Z58CJ;
+				INFOPLIST_FILE = ORTUSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ORTUS.app/ORTUS";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2261,6 +2375,15 @@
 			buildConfigurations = (
 				FA90FD77224377A4005148AC /* Debug */,
 				FA90FD78224377A4005148AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FADDFE31246D7C1200701348 /* Build configuration list for PBXNativeTarget "ORTUSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FADDFE2F246D7C1200701348 /* Debug */,
+				FADDFE30246D7C1200701348 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

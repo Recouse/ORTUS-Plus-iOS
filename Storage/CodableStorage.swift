@@ -32,4 +32,8 @@ public class CodableStorage {
         let data = try encoder.encode(value)
         try storage.save(value: data, for: key)
     }
+    
+    public func remove(for key: String) throws {
+        try storage.remove(for: key)
+    }
 }

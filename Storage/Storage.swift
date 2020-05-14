@@ -20,4 +20,9 @@ public protocol WritableStorage {
     func save(value: Data, for key: String, handler: @escaping Handler<Data>)
 }
 
-public typealias Storage = ReadableStorage & WritableStorage
+public protocol RemovableStorage {
+    func remove(for key: String) throws
+    func remove(for key: String, handler: @escaping Handler<Bool>)
+}
+
+public typealias Storage = ReadableStorage & WritableStorage & RemovableStorage

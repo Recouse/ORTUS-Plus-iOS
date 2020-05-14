@@ -48,4 +48,8 @@ class Cache {
             throw error
         }
     }
+    
+    func remove(forKey key: String) throws{
+        try storage.remove(for: key)
+    }
 }
