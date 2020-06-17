@@ -10,20 +10,12 @@ import UIKit
 import Carbon
 import SafariServices
 
-class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresentable {
+class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPresentable {
     enum ID {
-        case pinCode, reportBug, privacyPolicy, signOut, version
+        case main, pinCode, schedule, reportBug, privacyPolicy, signOut, version
     }
 
     var viewModel: SettingsViewModel
-    
-    weak var settingsView: SettingsView! { return view as? SettingsView }
-    weak var tableView: UITableView! { return settingsView.tableView }
-    
-    let renderer = Renderer(
-        adapter: UITableViewAdapter(),
-        updater: UITableViewUpdater()
-    )
     
     init(viewModel: SettingsViewModel) {
         self.viewModel = viewModel
@@ -35,14 +27,8 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
-        view = SettingsView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        prepareData()
         
         render()
     }
@@ -51,19 +37,60 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
         title = "settings.title".localized()
     }
     
+    override func prepareData() {
+        super.prepareData()
+        
+        tableView.refreshControl = nil
+        
+        renderer.adapter.didSelect = { [unowned self] context in
+            guard let id = context.node.id as? ID else {
+                return
+            }
+            
+            switch id {
+            case .pinCode:
+                self.viewModel.router.openPinSettings()
+            case .schedule:
+                self.viewModel.router.openScheduleSettings()
+            case .reportBug:
+                self.openUrl(Global.githubIssuesURL)
+            case .privacyPolicy:
+                self.openUrl(Global.privacyPolicyURL)
+            case .signOut:
+                self.signOut()
+            default:
+                break
+            }
+        }
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(authComplete),
+            name: .authComplete,
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(authFailed),
+            name: .authFailed,
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(signedOut),
+            name: .userSignedOut,
+            object: nil)
+    }
+    
     func render() {
         renderer.render {
             Section(
-                id: ID.pinCode,
+                id: ID.main,
                 header: Header(title: ""),
                 cells: {
-                    FormSection(title: "PIN Code", onSelect: { [unowned self] in
-                        self.viewModel.router.openPinSettings()
-                    })
+                    FormSection(title: "PIN Code").identified(by: ID.pinCode)
                     
-                    FormSection(title: "Schedule", onSelect: { [unowned self] in
-                        self.viewModel.router.openScheduleSettings()
-                    })
+                    FormSection(title: "Schedule").identified(by: ID.schedule)
                 }
             )
             
@@ -71,7 +98,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
                 id: ID.reportBug,
                 header: Header(title: ""),
                 cells: {
-                    FormLink(title: "Report a bug", url: Global.githubIssuesURL, onSelect: openUrl)
+                    FormLink(title: "Report a bug").identified(by: ID.reportBug)
                 }
             )
             
@@ -79,7 +106,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
                 id: ID.privacyPolicy,
                 header: Header(title: ""),
                 cells: {
-                    FormLink(title: "Privacy Policy", url: Global.privacyPolicyURL, onSelect: openUrl)
+                    FormLink(title: "Privacy Policy").identified(by: ID.privacyPolicy)
                 }
             )
             
@@ -89,11 +116,8 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
                 cells: {
                     FormButton(
                         title: "Sign Out",
-                        color: .systemRed,
-                        onSelect: { [unowned self] in
-                            self.signOut()
-                        }
-                    )
+                        color: .systemRed
+                    ).identified(by: ID.signOut)
                 }
             )
             
@@ -147,6 +171,7 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
         
         UIApplication.shared.open(url, options: [.universalLinksOnly: true]) { [unowned self] success in
             guard !success else {
+                self.deselectSelectedRow()
                 return
             }
             
@@ -156,6 +181,8 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
     }
     
     func signOut() {
+        deselectSelectedRow()
+        
         let alert = UIAlertController(title: "Are you sure?", message: "You will be signed out from your account. Do you want to sign out?", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { _ in
             UserViewModel.signOut()
@@ -170,29 +197,13 @@ class SettingsViewController: TranslatableModule, ModuleViewModel, AlertPresenta
         
         viewModel.router.openLogin()
     }
-}
-
-extension SettingsViewController {
-    func prepareData() {
-        renderer.target = tableView
+    
+    func deselectSelectedRow() {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(authComplete),
-            name: .authComplete,
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(authFailed),
-            name: .authFailed,
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(signedOut),
-            name: .userSignedOut,
-            object: nil)
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
     }
 }
 

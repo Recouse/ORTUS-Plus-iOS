@@ -9,9 +9,8 @@
 import UIKit
 import Carbon
 
-struct FormSection: IdentifiableComponent {
+struct FormSection: Component {
     var title: String
-    var onSelect: () -> Void
     
     var id: String {
         return title
@@ -23,7 +22,6 @@ struct FormSection: IdentifiableComponent {
     
     func render(in content: FormSectionView) {
         content.titleLabel.text = title
-        content.onSelect = onSelect
     }
     
     func shouldContentUpdate(with next: FormSection) -> Bool {
@@ -35,9 +33,7 @@ struct FormSection: IdentifiableComponent {
     }
 }
 
-class FormSectionView: UIControl {
-    var onSelect: (() -> Void)?
-    
+class FormSectionView: UIView {
     let titleLabel = UILabel()
     
     let rightAccessoryView: UIImageView = {
@@ -51,9 +47,7 @@ class FormSectionView: UIControl {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
-        
+                
         addSubview(rightAccessoryView)
         rightAccessoryView.snp.makeConstraints {
             $0.size.equalTo(18)
@@ -66,16 +60,10 @@ class FormSectionView: UIControl {
             $0.centerY.equalToSuperview()
             $0.left.equalToSuperview().offset(Global.UI.edgeInset)
             $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
-        }
-        
-        addTarget(self, action: #selector(selected), for: .touchUpInside)
+        }        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func selected() {
-        onSelect?()
     }
 }

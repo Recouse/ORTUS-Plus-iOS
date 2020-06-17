@@ -9,20 +9,16 @@
 import UIKit
 import Carbon
 
-struct IconTextComponent: IdentifiableComponent {
-    var id: String
+struct IconTextComponent: Component {
     var title: String
     let icon: UIImage?
     let color: UIColor
-    var onSelect: (() -> Void)?
     
     func renderContent() -> IconTextComponentView {
         return IconTextComponentView()
     }
     
-    func render(in content: IconTextComponentView) {
-        content.onSelect = onSelect
-        
+    func render(in content: IconTextComponentView) {        
         content.imageContainerView.backgroundColor = color
         content.imageView.image = icon
         content.titleLabel.text = title
@@ -30,9 +26,5 @@ struct IconTextComponent: IdentifiableComponent {
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
         return CGSize(width: bounds.width, height: 60)
-    }
-    
-    func shouldContentUpdate(with next: IconTextComponent) -> Bool {
-        return id != next.id
     }
 }

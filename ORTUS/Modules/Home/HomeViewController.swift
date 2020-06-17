@@ -9,23 +9,14 @@
 import UIKit
 import Carbon
 import Promises
+import Models
 
-class HomeViewController: TranslatableModule, ModuleViewModel {
-    enum ID: String {
+class HomeViewController: ORTUSTableViewController, ModuleViewModel {
+    enum ID {
         case news, grades, contacts, ortus
     }
     
     var viewModel: HomeViewModel
-    
-    weak var homeView: HomeView! { return view as? HomeView }
-    weak var tableView: UITableView! { return homeView.tableView }
-    
-    var refreshControl: UIRefreshControl!
-    
-    lazy var renderer = Renderer(
-        adapter: UITableViewAdapter(),
-        updater: UITableViewUpdater()
-    )
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -37,16 +28,10 @@ class HomeViewController: TranslatableModule, ModuleViewModel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
-        view = HomeView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         prepareNavigationItem()
-        prepareRefreshControl()
-        prepareData()
         
         loadData()
     }
@@ -55,56 +40,71 @@ class HomeViewController: TranslatableModule, ModuleViewModel {
         navigationItem.title = "home.title".localized()
     }
     
+    override func prepareData() {
+        super.prepareData()
+        
+        renderer.updater.animatableChangeCount = 0
+        
+        renderer.adapter.didSelect = { [unowned self] context in
+            if let id = context.node.id as? ID {
+                switch id {
+                case .news:
+                    self.viewModel.router.openNews()
+                case .grades:
+                    self.viewModel.router.openGrades()
+                case .contacts:
+                    self.viewModel.router.openContacts()
+                case .ortus:
+                    self.viewModel.router.openBrowser(Global.ortusURL)
+                }
+            } else if let index = context.node.id as? Int {
+                self.viewModel.router.openSemester(self.viewModel.semesters[index])
+            }
+        }
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(scrollToTop),
+            name: .scrollToTop,
+            object: nil
+        )
+    }
+    
     func render() {
         refreshControl.endRefreshing()
         
         renderer.render {
             Section(id: "overview", header: Header(title: "Overview".uppercased()), cells: {
                 IconTextComponent(
-                    id: ID.news.rawValue,
                     title: "News",
                     icon: Asset.Images.news.image,
                     color: .systemPurple
-                ) { [unowned self] in
-                    self.viewModel.router.openNews()
-                }
+                ).identified(by: ID.news)
                 
                 IconTextComponent(
-                    id: ID.grades.rawValue,
                     title: "Grades",
                     icon: Asset.Images.ten.image,
                     color: .systemBlue
-                ) { [unowned self] in
-                    self.viewModel.router.openGrades()
-                }
+                ).identified(by: ID.grades)
                 
                 IconTextComponent(
-                    id: ID.contacts.rawValue,
                     title: "Contacts",
                     icon: UIImage(named: "personCircle"),
                     color: .systemOrange
-                ) { [unowned self] in
-                    self.viewModel.router.openContacts()
-                }
+                ).identified(by: ID.contacts)
                 
                 IconTextComponent(
-                    id: ID.ortus.rawValue,
                     title: "ORTUS Website",
                     icon: Asset.Images.ortusLogo.image,
                     color: .systemGreen
-                ) { [unowned self] in
-                    self.viewModel.router.openBrowser(Global.ortusURL)
-                }
+                ).identified(by: ID.ortus)
             })
             
             Section(id: "courses", header: Header(title: "Courses".uppercased()), cells: {
-                Group(of: viewModel.semesters) { semester in
+                Group(of: viewModel.semesters.enumerated()) { (index, semester) in
                     TextComponent(
-                        id: semester.name ?? "other",
                         text: semester.name ?? "Other"
-                    ) { [unowned self] in
-                        self.viewModel.router.openSemester(semester)
-                    }
+                    ).identified(by: index)
                 }
             })
         }
@@ -120,7 +120,7 @@ class HomeViewController: TranslatableModule, ModuleViewModel {
         }
     }
     
-    @objc func refresh() {
+    override func refresh() {
         loadData()
     }
     
@@ -155,18 +155,5 @@ extension HomeViewController {
             target: self,
             action: #selector(openSettings))
         navigationItem.rightBarButtonItem = settingsItem
-    }
-    
-    func prepareRefreshControl() {
-        refreshControl = UIRefreshControl()
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    }
-    
-    func prepareData() {
-        renderer.target = tableView
-        renderer.updater.isAnimationEnabled = false
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(scrollToTop), name: .scrollToTop, object: nil)
     }
 }

@@ -1,14 +1,14 @@
 //
-//  CoursesView.swift
+//  ORTUSTableView.swift
 //  ORTUS
 //
-//  Created by Firdavs Khaydarov on 25/03/19.
-//  Copyright (c) 2019 Firdavs. All rights reserved.
+//  Created by Firdavs Khaydarov on 6/17/20.
+//  Copyright © 2020 Firdavs. All rights reserved.
 //
 
 import UIKit
 
-class CoursesView: UIView {
+class ORTUSTableView: UIView {
     let tableView: UITableView = {
         var style: UITableView.Style = .grouped
         
@@ -20,11 +20,10 @@ class CoursesView: UIView {
         tableView.backgroundView = nil
         tableView.backgroundColor = .groupTableViewBackground
         tableView.separatorStyle = .singleLine
-        tableView.separatorInset = UIEdgeInsets(
-            top: 0,
-            left: Global.UI.edgeInset + 40 + 15,
-            bottom: 0,
-            right: 0)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.sectionFooterHeight = UITableView.automaticDimension
+        tableView.estimatedSectionFooterHeight = UITableView.automaticDimension
         
         return tableView
     }()
@@ -45,3 +44,4 @@ class CoursesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

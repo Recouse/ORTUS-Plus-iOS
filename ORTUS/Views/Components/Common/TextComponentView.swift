@@ -8,9 +8,7 @@
 
 import UIKit
 
-class TextComponentView: UIControl {
-    var onSelect: (() -> Void)?
-    
+class TextComponentView: UIView {
     let textLabel = UILabel()
     
     let rightAccessoryView: UIImageView = {
@@ -24,9 +22,7 @@ class TextComponentView: UIControl {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
-        
+                
         addSubview(rightAccessoryView)
         rightAccessoryView.snp.makeConstraints {
             $0.size.equalTo(18)
@@ -40,15 +36,9 @@ class TextComponentView: UIControl {
             $0.left.equalToSuperview().offset(Global.UI.edgeInset)
             $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
         }
-        
-        addTarget(self, action: #selector(selected), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func selected() {
-        onSelect?()
     }
 }

@@ -10,18 +10,14 @@ import UIKit
 import Carbon
 import Models
 
-struct CourseComponent: IdentifiableComponent {
-    var id: String
+struct CourseComponent: Component {
     var course: Course
-    var onSelect: (() -> Void)?
     
     func renderContent() -> CourseComponentView {
         return CourseComponentView()
     }
     
     func render(in content: CourseComponentView) {
-        content.onSelect = onSelect
-        
         content.imageContainerView.backgroundColor = Asset.Colors.tintColor.color.withAlphaComponent(0.2)
         content.imageView.tintColor = Asset.Colors.tintColor.color
         
@@ -31,9 +27,5 @@ struct CourseComponent: IdentifiableComponent {
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
         return CGSize(width: bounds.width, height: 60)
-    }
-    
-    func shouldContentUpdate(with next: CourseComponent) -> Bool {
-        return course.id != next.course.id
     }
 }
