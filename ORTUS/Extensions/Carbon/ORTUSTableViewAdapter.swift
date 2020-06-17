@@ -9,7 +9,7 @@
 import UIKit
 import Carbon
 
-final class ORTUSTableViewAdapter: UITableViewAdapter {
+class ORTUSTableViewAdapter: UITableViewAdapter {
     override func cellRegistration(tableView: UITableView, indexPath: IndexPath, node: CellNode) -> CellRegistration {
         CellRegistration(class: ORTUSTableViewCell.self)
     }
