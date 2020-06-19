@@ -14,7 +14,7 @@ public struct Mark: Codable {
     public let courseFullName: String
     public let creditPoints: String
     public let lecturerFullName: String
-    public let mark: String
+    public let mark: String?
     public let markType: String
     public let date: String
 }

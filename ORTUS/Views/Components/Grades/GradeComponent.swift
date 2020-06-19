@@ -22,7 +22,7 @@ struct GradeComponent: IdentifiableComponent {
         content.courseLabel.text = mark.courseFullName
         content.creditPointsLabel.text = "\(mark.creditPoints) CP"
         content.lecturerLabel.text = mark.lecturerFullName
-        content.gradeLabel.text = mark.mark
+        content.gradeLabel.text = mark.mark ?? "0"
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {

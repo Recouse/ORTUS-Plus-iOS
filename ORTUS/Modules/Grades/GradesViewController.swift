@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Promises
 
 class GradesViewController: TranslatableModule, ModuleViewModel {
     var viewModel: GradesViewModel
@@ -52,31 +53,50 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
     }
     
     func render() {
-        guard let semester = viewModel.studyPrograms.first?.semesters.first else {
+        guard let semesters = viewModel.studyPrograms.first?.semesters else {
             return
         }
                         
         renderer.render {
-            Section(
-                id: "grades",
-                header: Header(title: semester.fullName.uppercased())
-            ) {
-                Group(of: semester.marks) { mark in
-                    GradeComponent(id: mark.id, mark: mark)
+            Group(of: semesters) { semester in
+                Section(
+                    id: "grades",
+                    header: Header(title: semester.fullName.uppercased())
+                ) {
+                    Group(of: semester.marks) { mark in
+                        GradeComponent(id: mark.id, mark: mark)
+                    }
                 }
             }
         }
     }
     
-    func loadData() {
-        viewModel.loadMarks().always {
+    func loadData(forceUpdate: Bool = false) {
+        if forceUpdate {
+            viewModel.loadMarks().always {
+                self.refreshControl.endRefreshing()
+                self.render()
+            }
+            
+            return
+        }
+        
+        viewModel.loadCachedMarks().recover { _ in
+            self.viewModel.loadMarks()
+        }.then { _ in
+            self.render()
+            
+            if self.viewModel.loadedFromCache {
+                self.viewModel.loadMarks()
+            }
+        }.always {
             self.refreshControl.endRefreshing()
             self.render()
         }
     }
     
     @objc func refresh() {
-        loadData()
+        loadData(forceUpdate: true)
     }
 }
 
