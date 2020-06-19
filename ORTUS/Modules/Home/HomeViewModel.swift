@@ -14,10 +14,13 @@ class HomeViewModel: ViewModel {
     
     var semesters: Semesters = []
     
+    var loadedFromCache: Bool = false
+    
     init(router: HomeRouter.Routes) {
         self.router = router
     }
     
+    @discardableResult
     func loadCourses() -> Promise<Bool> {
         return Promise { fulfill, reject in
             APIClient.performRequest(
@@ -42,6 +45,7 @@ class HomeViewModel: ViewModel {
                 )
                 
                 self.semesters = response.result
+                self.loadedFromCache = true
                 
                 fulfill(true)
             } catch {

@@ -110,12 +110,26 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
         }
     }
     
-    func loadData() {
-        viewModel.loadCachedCourses().then { _ -> Promise<Bool> in
+    func loadData(forceUpdate: Bool = false) {
+        if forceUpdate {
+            viewModel.loadCourses().always {
+                self.refreshControl.endRefreshing()
+                self.render()
+            }
+            
+            return
+        }
+        
+        viewModel.loadCachedCourses().recover { _ in
+            self.viewModel.loadCourses()
+        }.then { _ in
             self.render()
             
-            return self.viewModel.loadCourses()
+            if self.viewModel.loadedFromCache {
+                self.viewModel.loadCourses()
+            }
         }.always {
+            self.refreshControl.endRefreshing()
             self.render()
         }
     }
