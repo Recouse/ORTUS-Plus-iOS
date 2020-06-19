@@ -53,6 +53,8 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
     }
     
     func render() {
+        refreshControl.endRefreshing()
+        
         guard let semesters = viewModel.studyPrograms.first?.semesters else {
             return
         }
@@ -74,7 +76,6 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
     func loadData(forceUpdate: Bool = false) {
         if forceUpdate {
             viewModel.loadMarks().always {
-                self.refreshControl.endRefreshing()
                 self.render()
             }
             
@@ -90,7 +91,6 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
                 self.viewModel.loadMarks()
             }
         }.always {
-            self.refreshControl.endRefreshing()
             self.render()
         }
     }

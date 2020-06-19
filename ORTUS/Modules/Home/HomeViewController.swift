@@ -113,7 +113,6 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
     func loadData(forceUpdate: Bool = false) {
         if forceUpdate {
             viewModel.loadCourses().always {
-                self.refreshControl.endRefreshing()
                 self.render()
             }
             
@@ -129,7 +128,6 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
                 self.viewModel.loadCourses()
             }
         }.always {
-            self.refreshControl.endRefreshing()
             self.render()
         }
     }
