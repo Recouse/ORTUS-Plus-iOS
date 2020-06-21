@@ -9,6 +9,7 @@
 import Foundation
 import Promises
 import Models
+import Storage
 
 class NewsViewModel: ViewModel {
     typealias SortedArticles = [Date: [Article]]
@@ -16,9 +17,7 @@ class NewsViewModel: ViewModel {
     let router: NewsRouter.Routes
     
     var articles: SortedArticles = [:]
-    
-    var loadedFromCache: Bool = false
-    
+        
     init(router: NewsRouter.Routes) {
         self.router = router
     }
@@ -52,8 +51,9 @@ class NewsViewModel: ViewModel {
                 )
                 
                 self.articles = self.groupArticles(response.result.articles)
-                self.loadedFromCache = true
                 
+                fulfill(true)
+            } catch StorageError.notFound {
                 fulfill(true)
             } catch {
                 reject(error)

@@ -119,15 +119,11 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
             return
         }
         
-        viewModel.loadCachedCourses().recover { _ in
-            self.viewModel.loadCourses()
-        }.then { _ in
+        viewModel.loadCachedCourses().then { _ -> Promise<Bool> in
             self.render()
             
-            if self.viewModel.loadedFromCache {
-                self.viewModel.loadCourses()
-            }
-        }.always {
+            return self.viewModel.loadCourses()
+        }.then { _ in
             self.render()
         }
     }

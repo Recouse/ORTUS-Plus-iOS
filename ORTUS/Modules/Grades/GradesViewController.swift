@@ -82,15 +82,11 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
             return
         }
         
-        viewModel.loadCachedMarks().recover { _ in
-            self.viewModel.loadMarks()
-        }.then { _ in
+        viewModel.loadCachedMarks().then { _ -> Promise<Bool> in
             self.render()
             
-            if self.viewModel.loadedFromCache {
-                self.viewModel.loadMarks()
-            }
-        }.always {
+            return self.viewModel.loadMarks()
+        }.then { _ in
             self.render()
         }
     }

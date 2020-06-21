@@ -104,10 +104,12 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     }
     
     func loadData(forceUpdate: Bool = false) {
-        if !forceUpdate {
-            viewModel.loadCachedSchedule().always {
+        if forceUpdate {
+            viewModel.loadSchedule().always {
                 self.render()
             }
+            
+            return
         }
         
         viewModel.loadCachedSchedule().then { _ -> Promise<Bool> in
@@ -116,12 +118,12 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
             return self.viewModel.loadSchedule()
         }.then { _ in
             self.render()
-        }.always {
-            self.refreshControl.endRefreshing()
         }
     }
     
     func render() {
+        self.refreshControl.endRefreshing()
+        
         var data: [Section] = []
         let today = Date()
         guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today) else {

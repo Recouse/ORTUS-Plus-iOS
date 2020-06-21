@@ -75,6 +75,8 @@ class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {
             viewModel.loadNotifications().always {
                 self.render()
             }
+            
+            return
         }
         
         viewModel.loadCachedNotifications().then { _ -> Promise<Bool> in
@@ -83,8 +85,6 @@ class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {
             return self.viewModel.loadNotifications()
         }.then { _ in
             self.render()
-        }.catch {
-            dump($0)
         }
     }
     

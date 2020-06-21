@@ -42,7 +42,9 @@ class ScheduleViewModel: ViewModel {
                 
                 self.schedule = self.sortSchedule(from: response)
                 
-                return fulfill(true)
+                fulfill(true)
+            } catch StorageError.notFound {
+                fulfill(true)
             } catch {
                 reject(error)
             }

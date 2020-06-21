@@ -8,14 +8,13 @@
 
 import Promises
 import Models
+import Storage
 
 class HomeViewModel: ViewModel {
     let router: HomeRouter.Routes
     
     var semesters: Semesters = []
-    
-    var loadedFromCache: Bool = false
-    
+        
     init(router: HomeRouter.Routes) {
         self.router = router
     }
@@ -45,8 +44,9 @@ class HomeViewModel: ViewModel {
                 )
                 
                 self.semesters = response.result
-                self.loadedFromCache = true
                 
+                fulfill(true)
+            } catch StorageError.notFound {
                 fulfill(true)
             } catch {
                 reject(error)

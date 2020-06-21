@@ -86,15 +86,11 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
             return
         }
         
-        viewModel.loadCachedArticles().recover { _ in
-            self.viewModel.loadArticles()
-        }.then { _ in
+        viewModel.loadCachedArticles().recover { _ -> Promise<Bool> in
             self.render()
             
-            if self.viewModel.loadedFromCache {
-                self.viewModel.loadArticles()
-            }
-        }.always {
+            return self.viewModel.loadArticles()
+        }.then { _ in
             self.render()
         }
     }
