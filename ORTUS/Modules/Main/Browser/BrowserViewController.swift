@@ -201,11 +201,9 @@ extension BrowserViewController {
             top: 0,
             left: 0,
             bottom: view.safeAreaInsets.bottom,
-            right: 0)
+            right: 0
+        )
         webView.scrollView.contentInset = edgeInsets
-        webView.setValue(edgeInsets, forKey: "_obscuredInsets")
-        webView.setValue(true, forKey: "_haveSetObscuredInsets")
-        
         
         view.addSubview(webView)
         webView.snp.makeConstraints {
