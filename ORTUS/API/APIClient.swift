@@ -78,7 +78,6 @@ class APIClient {
     ) -> Promise<T> {
         return Promise { fulfill, reject in
             AF.request(route).responseDecodable (decoder: decoder) { (response: DataResponse<T, AFError>) in
-                print(String(bytes: response.data ?? Data(), encoding: .utf8))
                 switch response.result {
                 case .success(let responseObject):
                     fulfill(responseObject)

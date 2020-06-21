@@ -62,8 +62,6 @@ class NewsViewModel: ViewModel {
     }
     
     private func groupArticles(_ articles: [Article]) -> SortedArticles {
-        Dictionary(grouping: articles, by: {
-            $0.date.dayMonth
-        })
+        Dictionary(grouping: articles, by: \.date.dayMonth)
     }
 }
