@@ -19,7 +19,9 @@ struct EmptyComponent: IdentifiableComponent {
     
     func render(in content: EmptyComponentView) {
         content.onSelect = onSelect
-        content.textLabel.text = "No upcoming lessons 🎉"
+        
+        let emojis = ["🎉", "🎊", "🤖", "👽", "👾", "🤷‍♂️"]
+        content.textLabel.text = "No upcoming lessons \(emojis.randomElement() ?? "")"
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
