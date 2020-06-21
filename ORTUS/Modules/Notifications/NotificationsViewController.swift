@@ -9,6 +9,7 @@
 import UIKit
 import Carbon
 import Models
+import Promises
 
 class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {
     var viewModel: NotificationsViewModel
@@ -69,16 +70,26 @@ class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {
         }
     }
     
-    func loadData() {
-        viewModel.loadNotifications().then { response in
+    func loadData(forceUpdate: Bool = false) {
+        if forceUpdate {
+            viewModel.loadNotifications().always {
+                self.render()
+            }
+        }
+        
+        viewModel.loadCachedNotifications().then { _ -> Promise<Bool> in
             self.render()
-        }.always {
+            
+            return self.viewModel.loadNotifications()
+        }.then { _ in
             self.render()
+        }.catch {
+            dump($0)
         }
     }
     
     override func refresh() {
-        loadData()
+        loadData(forceUpdate: true)
     }
     
     @objc func scrollToTop() {
