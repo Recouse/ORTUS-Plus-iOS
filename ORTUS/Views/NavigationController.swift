@@ -33,6 +33,14 @@ class NavigationController: UINavigationController {
     func prepareToolbar() {
         toolbar.tintColor = Asset.Colors.tintColor.color
     }
+    
+    
+}
+
+extension NavigationController: UINavigationBarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        .top
+    }
 }
 
 extension NavigationController: UIGestureRecognizerDelegate {

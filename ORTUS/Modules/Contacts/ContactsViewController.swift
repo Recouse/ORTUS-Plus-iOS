@@ -21,6 +21,7 @@ class ContactsViewController: ORTUSTableViewController, ModuleViewModel {
     lazy var toolbar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.delegate = self
+        toolbar.isTranslucent = false
 
         let barItem = UIBarButtonItem(customView: self.toolbarSegmentedControl)
 
@@ -55,6 +56,8 @@ class ContactsViewController: ORTUSTableViewController, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        extendedLayoutIncludesOpaqueBars = true
+        
         EventLogger.log(.openedContacts)
         
         prepareNavigationItem()
@@ -66,12 +69,14 @@ class ContactsViewController: ORTUSTableViewController, ModuleViewModel {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.shadowImage = nil
     }
     
