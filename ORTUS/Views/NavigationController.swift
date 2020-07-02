@@ -18,6 +18,8 @@ class NavigationController: UINavigationController {
         
         interactivePopGestureRecognizer?.delegate = self
         
+        view.backgroundColor = ColorCompatibility.systemBackground
+        
         prepareNavigationBar()
         prepareToolbar()
     }
