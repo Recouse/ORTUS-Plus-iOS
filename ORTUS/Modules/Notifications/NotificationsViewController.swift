@@ -61,13 +61,26 @@ class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {
     func render() {
         refreshControl.endRefreshing()
         
-        renderer.render {
-            Section(id: "notifications") {
-                Group(of: viewModel.notifications) { notification in
-                    NotificationComponent(notification: notification).identified(by: notification.id)
-                }
+        var section: Section
+        
+        section = Section(id: "notifications") {
+            Group(of: viewModel.notifications) { notification in
+                NotificationComponent(notification: notification).identified(by: notification.id)
             }
         }
+        
+        if viewModel.notifications.isEmpty {
+            section = Section(id: "empty", header: ViewNode(
+                StateComponent(
+                    image: Asset.Images.emptyInboxFlatline.image,
+                    primaryText: "No new notifications",
+                    secondaryText: "Check later or pull to refresh.",
+                    height: view.safeAreaLayoutGuide.layoutFrame.height - 44 - 25
+                )
+            ))
+        }
+        
+        renderer.render(section)
     }
     
     func loadData(forceUpdate: Bool = false) {

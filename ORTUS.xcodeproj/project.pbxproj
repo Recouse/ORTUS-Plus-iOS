@@ -73,6 +73,7 @@
 		FA8714D623E40DD100DB728C /* PinSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D123E40DD100DB728C /* PinSettingsView.swift */; };
 		FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D223E40DD100DB728C /* PinSettingsViewModel.swift */; };
 		FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */; };
+		FA89749324BB05670077C64C /* StateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89749224BB05670077C64C /* StateComponent.swift */; };
 		FA900C432414D9E600D8F935 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEC2243B9FD005148AC /* Article.swift */; };
 		FA900C442414D9E600D8F935 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEE2243BA2D005148AC /* Response.swift */; };
 		FA900C452414D9E600D8F935 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623923434EE5007ED9BA /* EmptyResponse.swift */; };
@@ -399,6 +400,7 @@
 		FA8714D123E40DD100DB728C /* PinSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsView.swift; sourceTree = "<group>"; };
 		FA8714D223E40DD100DB728C /* PinSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsViewModel.swift; sourceTree = "<group>"; };
 		FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsRoute.swift; sourceTree = "<group>"; };
+		FA89749224BB05670077C64C /* StateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateComponent.swift; sourceTree = "<group>"; };
 		FA900C3C2414D9D000D8F935 /* libModels.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libModels.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA90FD64224377A1005148AC /* ORTUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORTUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA90FD67224377A1005148AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -1239,6 +1241,7 @@
 				FAB74C2B23E9F996004C7BC6 /* IconTextComponentView.swift */,
 				FA1DEF8A2417603100704B6E /* VersionComponent.swift */,
 				FA1DEF8C2417605400704B6E /* VersionComponentView.swift */,
+				FA89749224BB05670077C64C /* StateComponent.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1769,6 +1772,7 @@
 				FA39AEC023E8CB8F00C4A70C /* NotificationComponentView.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
 				FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */,
+				FA89749324BB05670077C64C /* StateComponent.swift in Sources */,
 				FAB74C4A23EBE4E4004C7BC6 /* FormLink.swift in Sources */,
 				FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */,
 				FA45906D243F30A100BF7E0F /* ContactsRouter.swift in Sources */,
