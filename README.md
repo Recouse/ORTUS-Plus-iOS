@@ -18,13 +18,11 @@ And also:
 
 > Join the [TestFlight beta](https://testflight.apple.com/join/kocXDWmm)
 
-## Building
+## Requirements
+* Xcode 12+
+* Swift 5.2+
 
-### Build dependencies
-Install [Carthage](https://github.com/Carthage/Carthage) and in the project directory run:
-```
-carthage build --platform iOS
-```
+## Building
 
 ### Add keys and IDs
 Create an extension of `Global` struct, and add:
