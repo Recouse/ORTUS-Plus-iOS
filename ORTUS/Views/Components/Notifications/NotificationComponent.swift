@@ -10,18 +10,14 @@ import UIKit
 import Carbon
 import Models
 
-struct NotificationComponent: IdentifiableComponent {
-    var id: String
+struct NotificationComponent: Component {
     var notification: NotificationModel
-    var onSelect: (() -> Void)?
     
     func renderContent() -> NotificationComponentView {
         return NotificationComponentView()
     }
     
-    func render(in content: NotificationComponentView) {
-        content.onSelect = onSelect
-        
+    func render(in content: NotificationComponentView) {        
         content.titleLabel.text = notification.title
         content.dateLabel.text = Date(
             timeIntervalSince1970: TimeInterval(notification.date) / 1000
@@ -30,9 +26,5 @@ struct NotificationComponent: IdentifiableComponent {
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
         return nil
-    }
-    
-    func shouldContentUpdate(with next: NotificationComponent) -> Bool {
-        return notification.id != next.notification.id
     }
 }

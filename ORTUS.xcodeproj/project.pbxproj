@@ -32,7 +32,6 @@
 		FA39AEDA23E9ED3800C4A70C /* HomeModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED523E9ED3800C4A70C /* HomeModuleBuilder.swift */; };
 		FA39AEDB23E9ED3800C4A70C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED623E9ED3800C4A70C /* HomeRouter.swift */; };
 		FA39AEDC23E9ED3800C4A70C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED723E9ED3800C4A70C /* HomeViewController.swift */; };
-		FA39AEDD23E9ED3800C4A70C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED823E9ED3800C4A70C /* HomeView.swift */; };
 		FA39AEDE23E9ED3800C4A70C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED923E9ED3800C4A70C /* HomeViewModel.swift */; };
 		FA3B7C33241450EE00AFCF4E /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B7C32241450EE00AFCF4E /* FileManager.swift */; };
 		FA45906C243F30A100BF7E0F /* ContactsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459067243F30A100BF7E0F /* ContactsModuleBuilder.swift */; };
@@ -74,6 +73,7 @@
 		FA8714D623E40DD100DB728C /* PinSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D123E40DD100DB728C /* PinSettingsView.swift */; };
 		FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D223E40DD100DB728C /* PinSettingsViewModel.swift */; };
 		FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */; };
+		FA89749324BB05670077C64C /* StateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89749224BB05670077C64C /* StateComponent.swift */; };
 		FA900C432414D9E600D8F935 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEC2243B9FD005148AC /* Article.swift */; };
 		FA900C442414D9E600D8F935 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEE2243BA2D005148AC /* Response.swift */; };
 		FA900C452414D9E600D8F935 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623923434EE5007ED9BA /* EmptyResponse.swift */; };
@@ -117,7 +117,6 @@
 		FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */; };
 		FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDBA224380FE005148AC /* SettingsRouter.swift */; };
 		FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDBB224380FE005148AC /* SettingsViewController.swift */; };
-		FA90FDC1224380FE005148AC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDBC224380FE005148AC /* SettingsView.swift */; };
 		FA90FDC2224380FE005148AC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDBD224380FE005148AC /* SettingsViewModel.swift */; };
 		FA90FDDB22438D33005148AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA90FDDD22438D33005148AC /* Localizable.strings */; };
 		FA90FDE12243966B005148AC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDE02243966B005148AC /* API.swift */; };
@@ -190,6 +189,10 @@
 		FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */; };
 		FABF939C2389CB6100F78FF1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF939B2389CB6100F78FF1 /* String.swift */; };
 		FABF93A1238BB15E00F78FF1 /* EventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF93A0238BB15E00F78FF1 /* EventLogger.swift */; };
+		FACACC9A249A8F6E0075604F /* ORTUSTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACACC99249A8F6E0075604F /* ORTUSTableViewAdapter.swift */; };
+		FACACC9C249A8FD10075604F /* ORTUSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACACC9B249A8FD10075604F /* ORTUSTableViewCell.swift */; };
+		FACACC9F249A96130075604F /* ORTUSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACACC9E249A96130075604F /* ORTUSTableView.swift */; };
+		FACACCA1249A96210075604F /* ORTUSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACACCA0249A96210075604F /* ORTUSTableViewController.swift */; };
 		FAD18D5623B1746600C0D89B /* BrowserModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD18D5123B1746600C0D89B /* BrowserModuleBuilder.swift */; };
 		FAD18D5723B1746600C0D89B /* BrowserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD18D5223B1746600C0D89B /* BrowserRouter.swift */; };
 		FAD18D5823B1746600C0D89B /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD18D5323B1746600C0D89B /* BrowserViewController.swift */; };
@@ -237,11 +240,6 @@
 		FAE5284F244462AB009851C9 /* ContactInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284E244462AB009851C9 /* ContactInfoComponentView.swift */; };
 		FAE528512444EE0E009851C9 /* LatviaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */; };
 		FAE528532445F838009851C9 /* ColorCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE528522445F838009851C9 /* ColorCompatibility.swift */; };
-		FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */; };
-		FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B32249096800CA2492 /* CoursesRouter.swift */; };
-		FAF183B92249096800CA2492 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B42249096800CA2492 /* CoursesViewController.swift */; };
-		FAF183BA2249096800CA2492 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B52249096800CA2492 /* CoursesView.swift */; };
-		FAF183BB2249096800CA2492 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183B62249096800CA2492 /* CoursesViewModel.swift */; };
 		FAF183BE22490AD800CA2492 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183BD22490AD800CA2492 /* UserViewModel.swift */; };
 		FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C022490FC600CA2492 /* ScheduleModuleBuilder.swift */; };
 		FAF183C622490FC600CA2492 /* ScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C122490FC600CA2492 /* ScheduleRouter.swift */; };
@@ -355,7 +353,6 @@
 		FA39AED523E9ED3800C4A70C /* HomeModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleBuilder.swift; sourceTree = "<group>"; };
 		FA39AED623E9ED3800C4A70C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		FA39AED723E9ED3800C4A70C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FA39AED823E9ED3800C4A70C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FA39AED923E9ED3800C4A70C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FA3B7C32241450EE00AFCF4E /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		FA4111F0234FC15A002BA33D /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -403,6 +400,7 @@
 		FA8714D123E40DD100DB728C /* PinSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsView.swift; sourceTree = "<group>"; };
 		FA8714D223E40DD100DB728C /* PinSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsViewModel.swift; sourceTree = "<group>"; };
 		FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsRoute.swift; sourceTree = "<group>"; };
+		FA89749224BB05670077C64C /* StateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateComponent.swift; sourceTree = "<group>"; };
 		FA900C3C2414D9D000D8F935 /* libModels.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libModels.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA90FD64224377A1005148AC /* ORTUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORTUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA90FD67224377A1005148AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -435,7 +433,6 @@
 		FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleBuilder.swift; sourceTree = "<group>"; };
 		FA90FDBA224380FE005148AC /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		FA90FDBB224380FE005148AC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		FA90FDBC224380FE005148AC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FA90FDBD224380FE005148AC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		FA90FDC622438B41005148AC /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		FA90FDC722438B41005148AC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
@@ -529,6 +526,10 @@
 		FABF93992389C7E200F78FF1 /* ScheduleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewAdapter.swift; sourceTree = "<group>"; };
 		FABF939B2389CB6100F78FF1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FABF93A0238BB15E00F78FF1 /* EventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLogger.swift; sourceTree = "<group>"; };
+		FACACC99249A8F6E0075604F /* ORTUSTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTUSTableViewAdapter.swift; sourceTree = "<group>"; };
+		FACACC9B249A8FD10075604F /* ORTUSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTUSTableViewCell.swift; sourceTree = "<group>"; };
+		FACACC9E249A96130075604F /* ORTUSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTUSTableView.swift; sourceTree = "<group>"; };
+		FACACCA0249A96210075604F /* ORTUSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTUSTableViewController.swift; sourceTree = "<group>"; };
 		FAD18D5123B1746600C0D89B /* BrowserModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserModuleBuilder.swift; sourceTree = "<group>"; };
 		FAD18D5223B1746600C0D89B /* BrowserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserRouter.swift; sourceTree = "<group>"; };
 		FAD18D5323B1746600C0D89B /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
@@ -566,11 +567,6 @@
 		FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatviaDateFormatter.swift; sourceTree = "<group>"; };
 		FAE528522445F838009851C9 /* ColorCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCompatibility.swift; sourceTree = "<group>"; };
 		FAF183AF2248E76400CA2492 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
-		FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModuleBuilder.swift; sourceTree = "<group>"; };
-		FAF183B32249096800CA2492 /* CoursesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRouter.swift; sourceTree = "<group>"; };
-		FAF183B42249096800CA2492 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
-		FAF183B52249096800CA2492 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
-		FAF183B62249096800CA2492 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
 		FAF183BD22490AD800CA2492 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		FAF183C022490FC600CA2492 /* ScheduleModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModuleBuilder.swift; sourceTree = "<group>"; };
 		FAF183C122490FC600CA2492 /* ScheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRouter.swift; sourceTree = "<group>"; };
@@ -720,7 +716,6 @@
 			isa = PBXGroup;
 			children = (
 				FA39AED523E9ED3800C4A70C /* HomeModuleBuilder.swift */,
-				FA39AED823E9ED3800C4A70C /* HomeView.swift */,
 				FA39AED923E9ED3800C4A70C /* HomeViewModel.swift */,
 				FA39AED723E9ED3800C4A70C /* HomeViewController.swift */,
 				FA39AED623E9ED3800C4A70C /* HomeRouter.swift */,
@@ -797,6 +792,8 @@
 			isa = PBXGroup;
 			children = (
 				FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */,
+				FACACC99249A8F6E0075604F /* ORTUSTableViewAdapter.swift */,
+				FACACC9B249A8FD10075604F /* ORTUSTableViewCell.swift */,
 			);
 			path = Carbon;
 			sourceTree = "<group>";
@@ -946,7 +943,6 @@
 				FA459066243F307C00BF7E0F /* Contacts */,
 				FA90FDA722437F15005148AC /* News */,
 				FAF183BF22490FB500CA2492 /* Schedule */,
-				FAF183B12249095000CA2492 /* Courses */,
 				FAB74C1B23E9F5F8004C7BC6 /* Semester */,
 				FA2062D52346288C007ED9BA /* Notifications */,
 				FA90FDA622437F0E005148AC /* Settings */,
@@ -1003,6 +999,7 @@
 				FAE3AB40239D140B00120F96 /* Buttons */,
 				FA90FDF32243C5AA005148AC /* Components */,
 				FA90FD9022437C93005148AC /* Styles */,
+				FACACC9D249A95F40075604F /* View Controllers */,
 				FA90FD9322437CC2005148AC /* NavigationController.swift */,
 				FA90FE0B2243E397005148AC /* TabBarController.swift */,
 				FAE3AB35239D0D1700120F96 /* LinearGradient.swift */,
@@ -1086,7 +1083,6 @@
 				FA8714CD23E40DBB00DB728C /* PinSettings */,
 				FAB74C4D23EC4A1D004C7BC6 /* ScheduleSettings */,
 				FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */,
-				FA90FDBC224380FE005148AC /* SettingsView.swift */,
 				FA90FDBD224380FE005148AC /* SettingsViewModel.swift */,
 				FA90FDBB224380FE005148AC /* SettingsViewController.swift */,
 				FA90FDBA224380FE005148AC /* SettingsRouter.swift */,
@@ -1245,6 +1241,7 @@
 				FAB74C2B23E9F996004C7BC6 /* IconTextComponentView.swift */,
 				FA1DEF8A2417603100704B6E /* VersionComponent.swift */,
 				FA1DEF8C2417605400704B6E /* VersionComponentView.swift */,
+				FA89749224BB05670077C64C /* StateComponent.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1341,6 +1338,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		FACACC9D249A95F40075604F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FACACC9E249A96130075604F /* ORTUSTableView.swift */,
+				FACACCA0249A96210075604F /* ORTUSTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		FAD18D5023B1744600C0D89B /* Browser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1410,18 +1416,6 @@
 				FAF183AF2248E76400CA2492 /* TokenResponse.swift */,
 			);
 			path = OAuth;
-			sourceTree = "<group>";
-		};
-		FAF183B12249095000CA2492 /* Courses */ = {
-			isa = PBXGroup;
-			children = (
-				FAF183B22249096800CA2492 /* CoursesModuleBuilder.swift */,
-				FAF183B52249096800CA2492 /* CoursesView.swift */,
-				FAF183B62249096800CA2492 /* CoursesViewModel.swift */,
-				FAF183B42249096800CA2492 /* CoursesViewController.swift */,
-				FAF183B32249096800CA2492 /* CoursesRouter.swift */,
-			);
-			path = Courses;
 			sourceTree = "<group>";
 		};
 		FAF183BF22490FB500CA2492 /* Schedule */ = {
@@ -1720,7 +1714,6 @@
 				FAB74C1523E9F391004C7BC6 /* GradesViewModel.swift in Sources */,
 				FAB74C4823EBE43D004C7BC6 /* FormSection.swift in Sources */,
 				FA8714D423E40DD100DB728C /* PinSettingsRouter.swift in Sources */,
-				FAF183B92249096800CA2492 /* CoursesViewController.swift in Sources */,
 				FABF939C2389CB6100F78FF1 /* String.swift in Sources */,
 				FA45907C243F4BA200BF7E0F /* StickyHeader.swift in Sources */,
 				FAE5284D244462A1009851C9 /* ContactInfoComponent.swift in Sources */,
@@ -1745,7 +1738,6 @@
 				FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */,
 				FAFD013B246474D300DF9FEA /* Cache.swift in Sources */,
 				FA90FDAF22437F25005148AC /* NewsViewController.swift in Sources */,
-				FAF183BB2249096800CA2492 /* CoursesViewModel.swift in Sources */,
 				FA90FDE62243AE01005148AC /* NewsApi.swift in Sources */,
 				FA90FE0E2243E3C4005148AC /* UIColor.swift in Sources */,
 				FA90FDA022437D8B005148AC /* ModalTransition.swift in Sources */,
@@ -1772,6 +1764,7 @@
 				FAD18D5923B1746600C0D89B /* BrowserView.swift in Sources */,
 				FAB74C2A23E9F976004C7BC6 /* IconTextComponent.swift in Sources */,
 				FAB74C2C23E9F996004C7BC6 /* IconTextComponentView.swift in Sources */,
+				FACACC9F249A96130075604F /* ORTUSTableView.swift in Sources */,
 				FAB74C5B23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift in Sources */,
 				FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */,
 				FA39AEDA23E9ED3800C4A70C /* HomeModuleBuilder.swift in Sources */,
@@ -1779,6 +1772,7 @@
 				FA39AEC023E8CB8F00C4A70C /* NotificationComponentView.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
 				FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */,
+				FA89749324BB05670077C64C /* StateComponent.swift in Sources */,
 				FAB74C4A23EBE4E4004C7BC6 /* FormLink.swift in Sources */,
 				FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */,
 				FA45906D243F30A100BF7E0F /* ContactsRouter.swift in Sources */,
@@ -1787,6 +1781,7 @@
 				FAA425AC23912206008F5897 /* Footer.swift in Sources */,
 				FAB74C1123E9F391004C7BC6 /* GradesModuleBuilder.swift in Sources */,
 				FA90FD8822437BB2005148AC /* TranslatableModule.swift in Sources */,
+				FACACCA1249A96210075604F /* ORTUSTableViewController.swift in Sources */,
 				FAB74C1823E9F46D004C7BC6 /* TextComponent.swift in Sources */,
 				FA45906C243F30A100BF7E0F /* ContactsModuleBuilder.swift in Sources */,
 				FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */,
@@ -1798,6 +1793,7 @@
 				FAB74C2123E9F60D004C7BC6 /* SemesterModuleBuilder.swift in Sources */,
 				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
+				FACACC9A249A8F6E0075604F /* ORTUSTableViewAdapter.swift in Sources */,
 				FAE3AB42239D141600120F96 /* Button.swift in Sources */,
 				FA45908B244086CD00BF7E0F /* ContactRouter.swift in Sources */,
 				FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */,
@@ -1812,11 +1808,8 @@
 				FA45907A243F44A700BF7E0F /* ContactsTableViewAdapter.swift in Sources */,
 				FA90FDA522437DC5005148AC /* Route.swift in Sources */,
 				FAE528532445F838009851C9 /* ColorCompatibility.swift in Sources */,
-				FAF183B72249096800CA2492 /* CoursesModuleBuilder.swift in Sources */,
 				FA459070243F30A100BF7E0F /* ContactsViewModel.swift in Sources */,
-				FAF183BA2249096800CA2492 /* CoursesView.swift in Sources */,
 				FAB74C2E23E9FAB8004C7BC6 /* NewsRoute.swift in Sources */,
-				FA90FDC1224380FE005148AC /* SettingsView.swift in Sources */,
 				FAE3AB3F239D119200120F96 /* LoginStyle.swift in Sources */,
 				FA90FE052243CF3B005148AC /* ArticleRoute.swift in Sources */,
 				FA45908C244086CD00BF7E0F /* ContactViewController.swift in Sources */,
@@ -1827,6 +1820,7 @@
 				FA90FD8622437B9A005148AC /* Translatable.swift in Sources */,
 				FA990A56239D1D0400BE9ACA /* LoginOnboardingViewController.swift in Sources */,
 				FABF6DC6239C4CAB00F57F8A /* LoginView.swift in Sources */,
+				FACACC9C249A8FD10075604F /* ORTUSTableViewCell.swift in Sources */,
 				FA8714CA23E40B9000DB728C /* FormTextField.swift in Sources */,
 				FA4590902440914100BF7E0F /* ContactRoute.swift in Sources */,
 				FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */,
@@ -1849,7 +1843,6 @@
 				FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
 				FA2062DD234628A6007ED9BA /* NotificationsViewController.swift in Sources */,
-				FA39AEDD23E9ED3800C4A70C /* HomeView.swift in Sources */,
 				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
 				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
 				FA1DEF8F241761DC00704B6E /* Bundle.swift in Sources */,
@@ -1874,7 +1867,6 @@
 				FA90FD8B22437BD0005148AC /* Module.swift in Sources */,
 				FAB74C2823E9F636004C7BC6 /* SemesterRoute.swift in Sources */,
 				FA90FE082243D1E5005148AC /* ArticleSectionHeader.swift in Sources */,
-				FAF183B82249096800CA2492 /* CoursesRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

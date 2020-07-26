@@ -10,16 +10,14 @@ import UIKit
 import Carbon
 import Models
 
-class SemesterViewController: TranslatableModule, ModuleViewModel {
+class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
     var viewModel: SemesterViewModel
     
     weak var semesterView: SemesterView! { return view as? SemesterView }
-    weak var tableView: UITableView! { return semesterView.tableView }
     
-    lazy var renderer = Renderer(
-        adapter: UITableViewAdapter(),
-        updater: UITableViewUpdater()
-    )
+    override var tableView: UITableView! {
+        return semesterView.tableView
+    }
     
     init(viewModel: SemesterViewModel) {
         self.viewModel = viewModel
@@ -39,9 +37,7 @@ class SemesterViewController: TranslatableModule, ModuleViewModel {
         super.viewDidLoad()
         
         EventLogger.log(.openedSemester(name: viewModel.semester.name ?? "Other"))
-        
-        prepareData()
-        
+                
         render()
     }
     
@@ -49,17 +45,25 @@ class SemesterViewController: TranslatableModule, ModuleViewModel {
         navigationItem.title = viewModel.semester.name ?? "Other"
     }
     
+    override func prepareData() {
+        super.prepareData()
+        
+        tableView.refreshControl = nil
+        
+        renderer.adapter.didSelect = { [unowned self] context in
+            guard let course = context.node.id as? Course else {
+                return
+            }
+            
+            self.open(course: course)
+        }
+    }
+    
     func render() {
         renderer.render {
             Section(id: "courses") {
                 Group(of: viewModel.semester.courses) { course in
-                    CourseComponent(
-                        id: course.id,
-                        course: course,
-                        onSelect: { [unowned self] in
-                            self.open(course: course)
-                        }
-                    ).identified(by: \.course.id)
+                    CourseComponent(course: course).identified(by: \.course)
                 }
             }
         }
@@ -69,11 +73,5 @@ class SemesterViewController: TranslatableModule, ModuleViewModel {
         EventLogger.log(.openedCourse(id: course.id, name: course.name))
         
         viewModel.router.openBrowser(course.link)
-    }
-}
-
-extension SemesterViewController {
-    func prepareData() {
-        renderer.target = tableView
     }
 }

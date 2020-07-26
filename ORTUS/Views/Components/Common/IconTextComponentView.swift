@@ -8,9 +8,7 @@
 
 import UIKit
 
-class IconTextComponentView: UIControl {
-    var onSelect: (() -> Void)?
-    
+class IconTextComponentView: UIView {
     let imageContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray
@@ -41,9 +39,7 @@ class IconTextComponentView: UIControl {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
-        
+                
         addSubview(imageContainerView)
         imageContainerView.snp.makeConstraints {
             $0.size.equalTo(40)
@@ -70,15 +66,9 @@ class IconTextComponentView: UIControl {
             $0.left.equalTo(imageContainerView.snp.right).offset(15)
             $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
         }
-        
-        addTarget(self, action: #selector(selected), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func selected() {
-        onSelect?()
     }
 }

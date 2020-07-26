@@ -105,11 +105,14 @@ class MainTabBarController: TranslatableTabBarController {
         
         delegate = self
         
+        updateNotificationsItem()
+        
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(updateNotificationsItem(_:)),
+            selector: #selector(updateNotificationsItem),
             name: .updatedNotificationsCount,
-            object: nil)
+            object: nil
+        )
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -132,20 +135,17 @@ class MainTabBarController: TranslatableTabBarController {
         ]
     }
     
-    @objc func updateNotificationsItem(_ notification: Notification) {
-        guard let userInfo = notification.userInfo as? [String: Int] else {
-            return
-        }
-        
-        if let notificationsCount = userInfo["count"], notificationsCount > 0 {
-            notificationsItem.badgeValue = "\(notificationsCount)"
-            UIApplication.shared.applicationIconBadgeNumber = notificationsCount
+    @objc func updateNotificationsItem() {
+        guard let notificationsCount = UserDefaults.standard.value(for: .notificationsCount),
+            notificationsCount > 0 else {
+            notificationsItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
             
             return
         }
         
-        notificationsItem.badgeValue = nil
-        UIApplication.shared.applicationIconBadgeNumber = 0
+        notificationsItem.badgeValue = "\(notificationsCount)"
+        UIApplication.shared.applicationIconBadgeNumber = notificationsCount
     }
 }
 

@@ -13,7 +13,7 @@ protocol ContactsTableViewAdapterDelegate: AnyObject {
     func indexTitles() -> [String]
 }
 
-class ContactsTableViewAdapter: UITableViewAdapter {
+class ContactsTableViewAdapter: ORTUSTableViewAdapter {
     weak var delegate: ContactsTableViewAdapterDelegate?
     
     init(delegate: ContactsTableViewAdapterDelegate?) {

@@ -8,16 +8,18 @@
 
 import Promises
 import Models
+import Storage
 
 class HomeViewModel: ViewModel {
     let router: HomeRouter.Routes
     
     var semesters: Semesters = []
-    
+        
     init(router: HomeRouter.Routes) {
         self.router = router
     }
     
+    @discardableResult
     func loadCourses() -> Promise<Bool> {
         return Promise { fulfill, reject in
             APIClient.performRequest(
@@ -43,6 +45,8 @@ class HomeViewModel: ViewModel {
                 
                 self.semesters = response.result
                 
+                fulfill(true)
+            } catch StorageError.notFound {
                 fulfill(true)
             } catch {
                 reject(error)

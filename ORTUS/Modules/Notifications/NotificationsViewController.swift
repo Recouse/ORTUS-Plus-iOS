@@ -9,19 +9,13 @@
 import UIKit
 import Carbon
 import Models
+import Promises
 
-class NotificationsViewController: TranslatableModule, ModuleViewModel {
+class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {
     var viewModel: NotificationsViewModel
     
     weak var notificationsView: NotificationsView! { return view as? NotificationsView }
-    weak var tableView: UITableView! { return notificationsView.tableView }
-    
-    var refreshControl: UIRefreshControl!
-    
-    lazy var renderer = Renderer(
-        adapter: UITableViewAdapter(),
-        updater: UITableViewUpdater()
-    )
+    override var tableView: UITableView! { return notificationsView.tableView }
     
     init(viewModel: NotificationsViewModel) {
         self.viewModel = viewModel
@@ -40,10 +34,24 @@ class NotificationsViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prepareRefreshControl()
-        prepareData()
-        
         loadData()
+    }
+    
+    override func prepareData() {
+        super.prepareData()
+        
+        renderer.adapter.didSelect = { [unowned self] context in
+            let notification = self.viewModel.notifications[context.indexPath.row]
+            
+            self.open(notification)
+        }
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(scrollToTop),
+            name: .scrollToTop,
+            object: nil
+        )
     }
     
     override func prepareLocales() {
@@ -53,31 +61,48 @@ class NotificationsViewController: TranslatableModule, ModuleViewModel {
     func render() {
         refreshControl.endRefreshing()
         
-        renderer.render {
-            Section(id: "notifications") {
-                Group(of: viewModel.notifications) { notification in
-                    NotificationComponent(
-                        id: notification.id,
-                        notification: notification,
-                        onSelect: { [unowned self] in
-                            self.open(notification)
-                        }
-                    )
-                }
+        var section: Section
+        
+        section = Section(id: "notifications") {
+            Group(of: viewModel.notifications) { notification in
+                NotificationComponent(notification: notification).identified(by: notification.id)
             }
         }
+        
+        if viewModel.notifications.isEmpty {
+            section = Section(id: "empty", header: ViewNode(
+                StateComponent(
+                    image: Asset.Images.emptyInboxFlatline.image,
+                    primaryText: "No new notifications",
+                    secondaryText: "Check later or pull to refresh.",
+                    height: view.safeAreaLayoutGuide.layoutFrame.height - 44 - 25
+                )
+            ))
+        }
+        
+        renderer.render(section)
     }
     
-    func loadData() {
-        viewModel.loadNotifications().then { response in
+    func loadData(forceUpdate: Bool = false) {
+        if forceUpdate {
+            viewModel.loadNotifications().always {
+                self.render()
+            }
+            
+            return
+        }
+        
+        viewModel.loadCachedNotifications().then { _ -> Promise<Bool> in
             self.render()
-        }.always {
+            
+            return self.viewModel.loadNotifications()
+        }.then { _ in
             self.render()
         }
     }
     
-    @objc func refresh() {
-        loadData()
+    override func refresh() {
+        loadData(forceUpdate: true)
     }
     
     @objc func scrollToTop() {
@@ -94,20 +119,6 @@ class NotificationsViewController: TranslatableModule, ModuleViewModel {
         EventLogger.log(.openedNotification)
         
         viewModel.router.openBrowser(notification.link)
-    }
-}
-
-extension NotificationsViewController {
-    func prepareRefreshControl() {
-        refreshControl = UIRefreshControl()
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    }
-    
-    func prepareData() {
-        renderer.target = tableView
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(scrollToTop), name: .scrollToTop, object: nil)
     }
 }
 

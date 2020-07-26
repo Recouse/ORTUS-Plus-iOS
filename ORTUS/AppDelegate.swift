@@ -110,6 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = tabBarController
+        window?.tintColor = Asset.Colors.tintColor.color
         window?.makeKeyAndVisible()
         
         preselectIndex(for: item, on: tabBarController)

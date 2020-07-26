@@ -9,14 +9,9 @@
 import UIKit
 import Carbon
 
-struct FormButton: IdentifiableComponent {
+struct FormButton: Component {
     var title: String
     var color: UIColor = Asset.Colors.tintColor.color
-    var onSelect: () -> Void
-    
-    var id: String {
-        return title
-    }
     
     func renderContent() -> FormLabelView {
         return FormLabelView()
@@ -25,11 +20,6 @@ struct FormButton: IdentifiableComponent {
     func render(in content: FormLabelView) {
         content.label.textColor = color
         content.label.text = title
-        content.onSelect = onSelect
-    }
-    
-    func shouldContentUpdate(with next: FormButton) -> Bool {
-        return title != next.title
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
@@ -37,35 +27,25 @@ struct FormButton: IdentifiableComponent {
     }
 }
 
-class FormLabelView: UIControl {
+class FormLabelView: UIView {
     lazy var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         
         return label
     }()
-    
-    var onSelect: (() -> Void)?
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
-        
+                
         addSubview(label)
         label.snp.makeConstraints {
             $0.left.equalToSuperview().offset(Global.UI.edgeInset)
             $0.center.equalToSuperview()
         }
-        
-        addTarget(self, action: #selector(selected), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func selected() {
-        onSelect?()
     }
 }

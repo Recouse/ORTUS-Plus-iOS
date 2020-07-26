@@ -21,9 +21,7 @@ class ContactComponentView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = ColorCompatibility.systemBackground
-        
+                
         addSubview(photoView)
         photoView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().offset(5).inset(5)

@@ -9,27 +9,15 @@
 import UIKit
 import Carbon
 
-struct FormLink: IdentifiableComponent {
+struct FormLink: Component {
     var title: String
-    var url: String
-    var onSelect: ((_ url: String) -> Void)?
-    
-    var id: String {
-        return title
-    }
-    
+
     func renderContent() -> FormLinkView {
         return FormLinkView()
     }
     
     func render(in content: FormLinkView) {
-        content.url = url
         content.titleLabel.text = title
-        content.onSelect = onSelect
-    }
-    
-    func shouldContentUpdate(with next: FormLink) -> Bool {
-        return title != next.title
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
@@ -37,10 +25,7 @@ struct FormLink: IdentifiableComponent {
     }
 }
 
-class FormLinkView: UIControl {
-    var url: String = ""
-    var onSelect: ((_ url: String) -> Void)?
-    
+class FormLinkView: UIView {
     let titleLabel = UILabel()
     
     let rightAccessoryView: UIImageView = {
@@ -54,9 +39,7 @@ class FormLinkView: UIControl {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
-        
+                
         addSubview(rightAccessoryView)
         rightAccessoryView.snp.makeConstraints {
             $0.size.equalTo(16)
@@ -70,15 +53,9 @@ class FormLinkView: UIControl {
             $0.left.equalToSuperview().offset(Global.UI.edgeInset)
             $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
         }
-        
-        addTarget(self, action: #selector(selected), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func selected() {
-        onSelect?(url)
     }
 }

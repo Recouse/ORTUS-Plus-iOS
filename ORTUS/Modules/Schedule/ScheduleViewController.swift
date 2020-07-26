@@ -104,10 +104,12 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
     }
     
     func loadData(forceUpdate: Bool = false) {
-        if !forceUpdate {
-            viewModel.loadCachedSchedule().always {
+        if forceUpdate {
+            viewModel.loadSchedule().always {
                 self.render()
             }
+            
+            return
         }
         
         viewModel.loadCachedSchedule().then { _ -> Promise<Bool> in
@@ -116,25 +118,25 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
             return self.viewModel.loadSchedule()
         }.then { _ in
             self.render()
-        }.always {
-            self.refreshControl.endRefreshing()
         }
     }
     
     func render() {
+        self.refreshControl.endRefreshing()
+        
         var data: [Section] = []
         let today = Date()
         guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today) else {
             return
         }
-                
+
         for (key, schedule) in viewModel.schedule {
             if selectedScheduleGrouping != 2 {
                 guard key == dateFormatter.string(from: selectedScheduleGrouping == 0 ? today : tomorrow) else {
                     continue
                 }
             }
-            
+
             data.append(
                 Section(
                     id: key,
@@ -143,21 +145,34 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
                         if let event = $0.item(as: Event.self) {
                             return CellNode(EventComponent(id: event.title, event: event))
                         }
-                        
+
                         if let lecture = $0.item(as: Lecture.self) {
                             return CellNode(LectureComponent(id: lecture.id, lecture: lecture))
                         }
-                        
+
                         return nil
                     }
                 )
             )
-            
+
             if selectedScheduleGrouping != 2 {
                 break
             }
         }
         
+        if data.isEmpty {
+            data.append(
+                Section(id: "empty", header: ViewNode(
+                    StateComponent(
+                        image: Asset.Images.calendarFlatline.image,
+                        primaryText: "No upcoming lessons",
+                        secondaryText: "Check the schedule for a week or pull to refresh.",
+                        height: view.safeAreaLayoutGuide.layoutFrame.height - 44 - 25
+                    )
+                ))
+            )
+        }
+
         renderer.render {
             Group(of: data) { section in
                 section

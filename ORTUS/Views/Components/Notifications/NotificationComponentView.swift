@@ -8,9 +8,7 @@
 
 import UIKit
 
-class NotificationComponentView: UIControl {
-    var onSelect: (() -> Void)?
-    
+class NotificationComponentView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .medium)
@@ -38,9 +36,7 @@ class NotificationComponentView: UIControl {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
-        
+                
         addSubview(rightAccessoryView)
         rightAccessoryView.snp.makeConstraints {
             $0.size.equalTo(18)
@@ -52,25 +48,19 @@ class NotificationComponentView: UIControl {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
             $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-            $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
+            $0.right.equalTo(rightAccessoryView.snp.left).offset(-10)
         }
         
         addSubview(dateLabel)
         dateLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
             $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-            $0.right.equalTo(rightAccessoryView.snp.left).offset(10)
+            $0.right.equalTo(rightAccessoryView.snp.left).offset(-10)
             $0.bottom.equalToSuperview().inset(10).priority(250)
         }
-        
-        addTarget(self, action: #selector(selected), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func selected() {
-        onSelect?()
     }
 }

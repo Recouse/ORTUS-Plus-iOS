@@ -9,8 +9,7 @@
 import UIKit
 import Carbon
 
-struct TextComponent: IdentifiableComponent {
-    var id: String
+struct TextComponent: Component {
     var text: String
     var onSelect: (() -> Void)?
     
@@ -18,17 +17,11 @@ struct TextComponent: IdentifiableComponent {
         return TextComponentView()
     }
     
-    func render(in content: TextComponentView) {
-        content.onSelect = onSelect
-        
+    func render(in content: TextComponentView) {        
         content.textLabel.text = text
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
         return CGSize(width: bounds.width, height: 60)
-    }
-    
-    func shouldContentUpdate(with next: TextComponent) -> Bool {
-        return id != next.id
     }
 }

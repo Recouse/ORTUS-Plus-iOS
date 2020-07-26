@@ -18,6 +18,8 @@ class NavigationController: UINavigationController {
         
         interactivePopGestureRecognizer?.delegate = self
         
+        view.backgroundColor = ColorCompatibility.systemBackground
+        
         prepareNavigationBar()
         prepareToolbar()
     }
@@ -32,6 +34,14 @@ class NavigationController: UINavigationController {
     
     func prepareToolbar() {
         toolbar.tintColor = Asset.Colors.tintColor.color
+    }
+    
+    
+}
+
+extension NavigationController: UINavigationBarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        .top
     }
 }
 

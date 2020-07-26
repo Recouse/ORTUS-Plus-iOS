@@ -16,7 +16,7 @@ public struct Semester: Codable {
     public let courses: [Course]
 }
 
-public struct Course: Codable {
+public struct Course: Codable, Hashable {
     public let id: String
     public let name: String
     public let link: String

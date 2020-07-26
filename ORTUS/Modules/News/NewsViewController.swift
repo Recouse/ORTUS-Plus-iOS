@@ -8,6 +8,7 @@
 
 import UIKit
 import Carbon
+import Promises
 
 class NewsViewController: TranslatableModule, ModuleViewModel {
     var viewModel: NewsViewModel
@@ -75,15 +76,27 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
             }
         }
     }
-    
-    func loadData() {
-        viewModel.loadArticles().always {
+
+    func loadData(forceUpdate: Bool = false) {
+        if forceUpdate {
+            viewModel.loadArticles().always {
+                self.render()
+            }
+            
+            return
+        }
+        
+        viewModel.loadCachedArticles().then { _ -> Promise<Bool> in
+            self.render()
+            
+            return self.viewModel.loadArticles()
+        }.then { _ in
             self.render()
         }
     }
     
     @objc func refresh() {
-        loadData()
+        loadData(forceUpdate: true)
     }
 }
 

@@ -32,7 +32,7 @@ class BrowserView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .white
+        backgroundColor = ColorCompatibility.systemBackground
         
         addSubview(loadingOverview)
         loadingOverview.snp.makeConstraints {

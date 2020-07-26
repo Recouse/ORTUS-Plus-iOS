@@ -10,17 +10,18 @@ import UIKit
 import Carbon
 import Models
 
-class ContactsViewController: TranslatableModule, ModuleViewModel {
+class ContactsViewController: ORTUSTableViewController, ModuleViewModel {
     var viewModel: ContactsViewModel
     
     weak var contactsView: ContactsView! { return view as? ContactsView }
-    weak var tableView: UITableView! { return contactsView.tableView }
+    override var tableView: UITableView! { return contactsView.tableView }
     
     let toolbarSegmentedControl = UISegmentedControl()
     
     lazy var toolbar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.delegate = self
+        toolbar.isTranslucent = false
 
         let barItem = UIBarButtonItem(customView: self.toolbarSegmentedControl)
 
@@ -30,12 +31,10 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
     }()
     
     var selectedContactsFilter: Int = 0
-    
-    var refreshControl: UIRefreshControl!
-    
+        
     lazy var adapter = ContactsTableViewAdapter(delegate: self)
     
-    lazy var renderer = Renderer(
+    lazy var contactsRenderer = Renderer(
         adapter: self.adapter,
         updater: UITableViewUpdater()
     )
@@ -57,12 +56,12 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        extendedLayoutIncludesOpaqueBars = true
+        
         EventLogger.log(.openedContacts)
         
         prepareNavigationItem()
         prepareToolbar()
-        prepareRefreshControl()
-        prepareData()
         
         loadData()
     }
@@ -70,12 +69,14 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.shadowImage = nil
     }
     
@@ -92,8 +93,21 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
         toolbarSegmentedControl.selectedSegmentIndex = selectedContactsFilter
     }
     
+    override func prepareData() {
+        contactsRenderer.target = tableView
+        contactsRenderer.updater.animatableChangeCount = 0
+        
+        adapter.didSelect = { [unowned self] context in
+            guard let contact = context.node.component(as: ContactComponent.self)?.contact else {
+                return
+            }
+            
+            self.openContact(contact)
+        }
+    }
+    
     func render() {
-        renderer.render {
+        contactsRenderer.render {
             Group(
                 of: selectedContactsFilter ==  0 ? viewModel.prioritizedSortedKeys : viewModel.sortedKeys
             ) { key in
@@ -121,7 +135,7 @@ class ContactsViewController: TranslatableModule, ModuleViewModel {
         render()
     }
     
-    @objc func refresh() {
+    override func refresh() {
         loadData()
     }
     
@@ -144,24 +158,6 @@ extension ContactsViewController {
         }
         
         toolbarSegmentedControl.addTarget(self, action: #selector(filterContacts), for: .valueChanged)
-    }
-    
-    func prepareRefreshControl() {
-        refreshControl = UIRefreshControl()
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    }
-    
-    func prepareData() {
-        renderer.target = tableView
-        
-        adapter.didSelect = { [unowned self] context in
-            guard let contact = context.node.component(as: ContactComponent.self)?.contact else {
-                return
-            }
-            
-            self.openContact(contact)
-        }
     }
 }
 
