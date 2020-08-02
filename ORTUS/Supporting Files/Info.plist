@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>me.recouse.ORTUS.ActivityType.news</string>
+		<string>me.recouse.ORTUS.ActivityType.grades</string>
+		<string>me.recouse.ORTUS.ActivityType.contacts</string>
+		<string>me.recouse.ORTUS.ActivityType.ortusWebsite</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

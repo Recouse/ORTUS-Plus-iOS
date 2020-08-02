@@ -40,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return shortcutItem == nil
     }
     
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        return processActivity(userActivity)
+    }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         OAuth.resolve(url)
         
@@ -64,6 +68,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults(suiteName: Global.Key.appGroup)?.set(true, for: .showEvents)
             UserDefaults.standard.set(false, for: .firstInstall)
         }
+    }
+    
+    private func processActivity(_ userActivity: NSUserActivity) -> Bool {
+        guard let mainTabBarController = window?.rootViewController as? MainTabBarController else {
+            return false
+        }
+        
+        guard let selectedNavigationController = mainTabBarController.viewControllers?[mainTabBarController.selectedIndex] as? NavigationController else {
+            return false
+        }
+        
+        guard let type = userActivity.activityType.split(separator: ".").last else {
+            return false
+        }
+        
+        guard let activity = ActivityItem(rawValue: String(type)) else {
+            return false
+        }
+        
+        var module: Module
+        
+        switch activity {
+        case .news:
+            module = NewsModuleBuilder.build()
+        case .grades:
+            module = GradesModuleBuilder.build()
+        case .contacts:
+            module = ContactsModuleBuilder.build()
+        case .ortusWebsite:
+            module = BrowserModuleBuilder.build(with: Global.ortusURL)
+            module.hidesBottomBarWhenPushed = true
+        }
+        
+        // Don't push if user is already on that controller
+        if object_getClassName(module) == object_getClassName(selectedNavigationController.topViewController) {
+            return false
+        }
+        
+        selectedNavigationController.pushViewController(module, animated: true)
+        
+        return true
     }
     
     private func processShortcut(_ item: UIApplicationShortcutItem, controller: UIViewController?) {

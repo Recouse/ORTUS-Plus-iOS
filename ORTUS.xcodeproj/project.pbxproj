@@ -246,6 +246,7 @@
 		FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C222490FC600CA2492 /* ScheduleViewController.swift */; };
 		FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C322490FC600CA2492 /* ScheduleView.swift */; };
 		FAF183C922490FC600CA2492 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C422490FC600CA2492 /* ScheduleViewModel.swift */; };
+		FAF28BD024D73FCB00627CA3 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF28BCF24D73FCB00627CA3 /* Shortcut.swift */; };
 		FAF77B222246A51800197641 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B212246A51800197641 /* OAuth.swift */; };
 		FAF77B242246A64200197641 /* OAuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B232246A64200197641 /* OAuthApi.swift */; };
 		FAF77B272246A98500197641 /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B262246A98500197641 /* FormButton.swift */; };
@@ -573,6 +574,7 @@
 		FAF183C222490FC600CA2492 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		FAF183C322490FC600CA2492 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		FAF183C422490FC600CA2492 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		FAF28BCF24D73FCB00627CA3 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		FAF77B212246A51800197641 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		FAF77B232246A64200197641 /* OAuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthApi.swift; sourceTree = "<group>"; };
 		FAF77B262246A98500197641 /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
@@ -989,6 +991,7 @@
 				FAE5284A2443744B009851C9 /* OpenMapDirections.swift */,
 				FAE528522445F838009851C9 /* ColorCompatibility.swift */,
 				FAFD013A246474D300DF9FEA /* Cache.swift */,
+				FAF28BCF24D73FCB00627CA3 /* Shortcut.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1801,6 +1804,7 @@
 				FA90FD9C22437D76005148AC /* Transition.swift in Sources */,
 				FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */,
 				FA90FDAE22437F25005148AC /* NewsRouter.swift in Sources */,
+				FAF28BD024D73FCB00627CA3 /* Shortcut.swift in Sources */,
 				FA2062C923453E00007ED9BA /* CourseComponentView.swift in Sources */,
 				FA2062DB234628A6007ED9BA /* NotificationsModuleBuilder.swift in Sources */,
 				FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */,
