@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
+		FA0A75A124D856C30086E878 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A75A024D856C30086E878 /* Overlay.swift */; };
 		FA0BEFDB2443293E00A10A0B /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BEFDA2443293E00A10A0B /* ButtonsStyle.swift */; };
 		FA1DEF872416DAF300704B6E /* LectureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF862416DAF300704B6E /* LectureComponent.swift */; };
 		FA1DEF892416DAFE00704B6E /* LectureComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */; };
@@ -328,6 +329,7 @@
 /* Begin PBXFileReference section */
 		FA0927D02347D1E400D32827 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		FA0927D32347E3B000D32827 /* NotificationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsApi.swift; sourceTree = "<group>"; };
+		FA0A75A024D856C30086E878 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		FA0BEFDA2443293E00A10A0B /* ButtonsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyle.swift; sourceTree = "<group>"; };
 		FA1DEF862416DAF300704B6E /* LectureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponent.swift; sourceTree = "<group>"; };
 		FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponentView.swift; sourceTree = "<group>"; };
@@ -992,6 +994,7 @@
 				FAE528522445F838009851C9 /* ColorCompatibility.swift */,
 				FAFD013A246474D300DF9FEA /* Cache.swift */,
 				FAF28BCF24D73FCB00627CA3 /* Shortcut.swift */,
+				FA0A75A024D856C30086E878 /* Overlay.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1834,6 +1837,7 @@
 				FAB74C2323E9F60D004C7BC6 /* SemesterViewController.swift in Sources */,
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */,
+				FA0A75A124D856C30086E878 /* Overlay.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
 				FAB74C5523EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift in Sources */,
 				FAB74C3823EAA6B6004C7BC6 /* MarksApi.swift in Sources */,

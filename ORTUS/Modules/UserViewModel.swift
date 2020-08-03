@@ -25,6 +25,8 @@ class UserViewModel {
         
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalNever)
         
-        NotificationCenter.default.post(name: .userSignedOut, object: nil)
+        Shortcut.deleteShortcuts {
+            NotificationCenter.default.post(name: .userSignedOut, object: nil)
+        }
     }
 }

@@ -184,7 +184,8 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         deselectSelectedRow()
         
         let alert = UIAlertController(title: "Are you sure?", message: "You will be signed out from your account. Do you want to sign out?", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { [unowned self] _ in
+            Overlay.showLoading(on: self)
             UserViewModel.signOut()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

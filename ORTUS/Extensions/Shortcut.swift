@@ -75,6 +75,7 @@ class Shortcut {
         self.activity.title = activity.title
         
         let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
+        attributes.domainIdentifier = identifier.value
         attributes.contentDescription = activity.description
         
         self.activity.contentAttributeSet = attributes
@@ -82,11 +83,39 @@ class Shortcut {
         if #available(iOS 12.0, *) {
             self.activity.isEligibleForPrediction = true
             self.activity.suggestedInvocationPhrase = activity.invocationPhrase
-            self.activity.persistentIdentifier = NSUserActivityPersistentIdentifier(identifier.rawValue)
+            self.activity.persistentIdentifier = NSUserActivityPersistentIdentifier(identifier.value)
         }
     }
     
     func donate() {
         activity.becomeCurrent()
+    }
+    
+    static func deleteShortcuts(completion: @escaping () -> Void) {
+        let group = DispatchGroup()
+        
+        let searchableIndex = CSSearchableIndex()
+        
+        group.enter()
+        searchableIndex.deleteSearchableItems(
+            withDomainIdentifiers: [ActivityIdentifier.student.value]
+        ) { _ in
+            group.leave()
+        }
+        
+        if #available(iOS 12.0, *) {
+            group.enter()
+            NSUserActivity.deleteSavedUserActivities(
+                withPersistentIdentifiers: [
+                    NSUserActivityPersistentIdentifier(ActivityIdentifier.student.value)
+                ]
+            ) {
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            completion()
+        }
     }
 }
