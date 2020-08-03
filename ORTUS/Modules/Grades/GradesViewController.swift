@@ -40,6 +40,8 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userActivity = Shortcut(activity: .grades).activity
+        
         EventLogger.log(.openedGrades)
         
         prepareRefreshControl()

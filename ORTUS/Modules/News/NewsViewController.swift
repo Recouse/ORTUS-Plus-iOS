@@ -40,6 +40,8 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userActivity = Shortcut(activity: .news).activity
+        
         prepareNavigationItem()
         prepareRefreshControl()
         prepareData()

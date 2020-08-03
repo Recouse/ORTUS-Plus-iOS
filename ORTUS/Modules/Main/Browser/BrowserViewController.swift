@@ -43,6 +43,10 @@ class BrowserViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if viewModel.url == Global.ortusURL {
+            userActivity = Shortcut(activity: .ortusWebsite).activity
+        }
+        
         prepareNavigationItem()
         prepareToolbarItems()
         prepareWebView()

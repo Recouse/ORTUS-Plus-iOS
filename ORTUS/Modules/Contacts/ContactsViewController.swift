@@ -58,6 +58,8 @@ class ContactsViewController: ORTUSTableViewController, ModuleViewModel {
         
         extendedLayoutIncludesOpaqueBars = true
         
+        userActivity = Shortcut(activity: .contacts).activity
+        
         EventLogger.log(.openedContacts)
         
         prepareNavigationItem()

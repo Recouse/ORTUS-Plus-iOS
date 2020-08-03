@@ -45,29 +45,16 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
         
         renderer.updater.animatableChangeCount = 0
         
-        let newsShortcut = Shortcut(activity: .news)
-        let gradesShortcut = Shortcut(activity: .grades)
-        let contactsShortcut = Shortcut(activity: .news)
-        let ortusShortcut = Shortcut(activity: .news)
-        
         renderer.adapter.didSelect = { [unowned self] context in
             if let id = context.node.id as? ID {
                 switch id {
                 case .news:
-                    newsShortcut.donate()
-                    
                     self.viewModel.router.openNews()
                 case .grades:
-                    gradesShortcut.donate()
-                    
                     self.viewModel.router.openGrades()
                 case .contacts:
-                    contactsShortcut.donate()
-                    
                     self.viewModel.router.openContacts()
-                case .ortus:
-                    ortusShortcut.donate()
-                    
+                case .ortus:                    
                     self.viewModel.router.openBrowser(Global.ortusURL)
                 }
             } else if let index = context.node.id as? Int {
