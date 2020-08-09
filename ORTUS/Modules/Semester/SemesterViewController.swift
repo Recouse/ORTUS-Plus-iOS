@@ -15,6 +15,8 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
     
     weak var semesterView: SemesterView! { return view as? SemesterView }
     
+    var courseShortcut: Shortcut?
+    
     override var tableView: UITableView! {
         return semesterView.tableView
     }
@@ -54,6 +56,14 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
             guard let course = context.node.id as? Course else {
                 return
             }
+            
+            self.courseShortcut = Shortcut(
+                activity: .course,
+                identifier: .student,
+                title: course.name,
+                userInfo: ["url": course.link]
+            )
+            self.courseShortcut?.donate()
             
             self.open(course: course)
         }

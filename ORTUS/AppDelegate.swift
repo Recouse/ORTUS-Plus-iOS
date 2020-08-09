@@ -99,6 +99,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .ortusWebsite:
             module = BrowserModuleBuilder.build(with: Global.ortusURL)
             module.hidesBottomBarWhenPushed = true
+        case .course:
+            guard let courseURL = userActivity.userInfo?["url"] as? String else {
+                return false
+            }
+            
+            module = BrowserModuleBuilder.build(with: courseURL)
+            module.hidesBottomBarWhenPushed = true
         }
         
         // Don't push if user is already on that controller

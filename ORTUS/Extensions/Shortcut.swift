@@ -13,12 +13,13 @@ import Intents
 
 enum ActivityItem: String, CaseIterable {
     case news, grades, contacts, ortusWebsite
+    case course
     
     var type: String {
         "me.recouse.ORTUS.ActivityType.\(rawValue)"
     }
     
-    var title: String {
+    var title: String? {
         switch self {
         case .news:
             return "RTU news"
@@ -28,6 +29,8 @@ enum ActivityItem: String, CaseIterable {
             return "Contacts"
         case .ortusWebsite:
             return "ORTUS website"
+        default:
+            return nil
         }
     }
     
@@ -54,6 +57,8 @@ enum ActivityItem: String, CaseIterable {
             return "Find a contact"
         case .ortusWebsite:
             return "ORTUS website"
+        default:
+            return nil
         }
     }
 }
@@ -69,14 +74,21 @@ enum ActivityIdentifier: String {
 class Shortcut {
     let activity: NSUserActivity
     
-    init(activity: ActivityItem, identifier: ActivityIdentifier = .app) {
+    init(
+        activity: ActivityItem,
+        identifier: ActivityIdentifier = .app,
+        title: String? = nil,
+        description: String? = nil,
+        userInfo: [AnyHashable: Any]? = nil
+    ) {
         self.activity = NSUserActivity(activityType: activity.type)
         self.activity.isEligibleForSearch = true
-        self.activity.title = activity.title
+        self.activity.title = title ?? activity.title
+        self.activity.userInfo = userInfo
         
         let attributes = CSSearchableItemAttributeSet(itemContentType: kUTTypeItem as String)
         attributes.domainIdentifier = identifier.value
-        attributes.contentDescription = activity.description
+        attributes.contentDescription = description ?? activity.description
         
         self.activity.contentAttributeSet = attributes
         
