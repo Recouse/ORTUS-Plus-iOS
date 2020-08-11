@@ -22,6 +22,7 @@ class UserViewModel {
         keychain[Global.Key.accessToken] = nil
         keychain[Global.Key.refreshToken] = nil
         keychain[Global.Key.tokenExpiresOn] = nil
+        keychain[Global.Key.accessTokenEncrypted] = nil
         keychain[Global.Key.ortusPinCode] = nil
         
         // App cache
