@@ -53,7 +53,9 @@ class BrowserViewController: TranslatableModule, ModuleViewModel {
         prepareProgressView()
         prepareData()
         
-        showLoadingOverview(animated: false)
+        if viewModel.keychain[Global.Key.ortusPinCode] != nil {
+            showLoadingOverview(animated: false)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
