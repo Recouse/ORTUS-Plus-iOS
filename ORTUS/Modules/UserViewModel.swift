@@ -8,6 +8,7 @@
 
 import UIKit
 import KeychainAccess
+import Storage
 
 class UserViewModel {
     static var isLoggedIn: Bool {
@@ -22,6 +23,13 @@ class UserViewModel {
         keychain[Global.Key.refreshToken] = nil
         keychain[Global.Key.tokenExpiresOn] = nil
         keychain[Global.Key.ortusPinCode] = nil
+        
+        // App cache
+        Cache.shared.clear()
+        
+        // App group cache
+        let sharedCache = Cache(path: FileManager.sharedContainerURL())
+        sharedCache.clear()
         
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalNever)
         
