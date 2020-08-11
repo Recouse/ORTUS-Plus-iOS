@@ -8,6 +8,7 @@
 		<string>me.recouse.ORTUS.ActivityType.grades</string>
 		<string>me.recouse.ORTUS.ActivityType.contacts</string>
 		<string>me.recouse.ORTUS.ActivityType.ortusWebsite</string>
+        <string>me.recouse.ORTUS.ActivityType.course</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

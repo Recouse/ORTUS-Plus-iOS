@@ -95,7 +95,6 @@ class Shortcut {
         if #available(iOS 12.0, *) {
             self.activity.isEligibleForPrediction = true
             self.activity.suggestedInvocationPhrase = activity.invocationPhrase
-            self.activity.persistentIdentifier = NSUserActivityPersistentIdentifier(identifier.value)
         }
     }
     
@@ -106,7 +105,7 @@ class Shortcut {
     static func deleteShortcuts(completion: @escaping () -> Void) {
         let group = DispatchGroup()
         
-        let searchableIndex = CSSearchableIndex()
+        let searchableIndex = CSSearchableIndex.default()
         
         group.enter()
         searchableIndex.deleteSearchableItems(
@@ -117,11 +116,7 @@ class Shortcut {
         
         if #available(iOS 12.0, *) {
             group.enter()
-            NSUserActivity.deleteSavedUserActivities(
-                withPersistentIdentifiers: [
-                    NSUserActivityPersistentIdentifier(ActivityIdentifier.student.value)
-                ]
-            ) {
+            NSUserActivity.deleteAllSavedUserActivities {
                 group.leave()
             }
         }
