@@ -10,7 +10,7 @@ import UIKit
 import Carbon
 import Promises
 
-class GradesViewController: TranslatableModule, ModuleViewModel {
+class GradesViewController: Module, ModuleViewModel {
     var viewModel: GradesViewModel
     
     weak var gradesView: GradesView! { return view as? GradesView }
@@ -48,10 +48,6 @@ class GradesViewController: TranslatableModule, ModuleViewModel {
         prepareData()
         
         loadData()
-    }
-    
-    override func prepareLocales() {
-        navigationItem.title = "grades.title".localized()
     }
     
     func render() {
@@ -107,5 +103,7 @@ extension GradesViewController {
     
     func prepareData() {
         renderer.target = tableView
+        
+        navigationItem.title = L10n.Grades.title
     }
 }

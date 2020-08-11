@@ -9,7 +9,7 @@
 import UIKit
 import Carbon
 
-class ScheduleSettingsViewController: TranslatableModule, ModuleViewModel {
+class ScheduleSettingsViewController: Module, ModuleViewModel {
     var viewModel: ScheduleSettingsViewModel
     
     weak var scheduleSettingsView: ScheduleSettingsView! { return view as? ScheduleSettingsView }
@@ -43,10 +43,6 @@ class ScheduleSettingsViewController: TranslatableModule, ModuleViewModel {
         render()
     }
     
-    override func prepareLocales() {
-        navigationItem.title = "Schedule"
-    }
-    
     func render() {
         renderer.render {
             Section(
@@ -70,6 +66,7 @@ class ScheduleSettingsViewController: TranslatableModule, ModuleViewModel {
 extension ScheduleSettingsViewController {
     func prepareNavigationItem() {
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.title = "Schedule"
     }
     
     func prepareData() {

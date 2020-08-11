@@ -43,12 +43,10 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
         render()
     }
     
-    override func prepareLocales() {
-        navigationItem.title = viewModel.semester.name ?? "Other"
-    }
-    
     override func prepareData() {
         super.prepareData()
+        
+        navigationItem.title = viewModel.semester.name ?? "Other"
         
         tableView.refreshControl = nil
         

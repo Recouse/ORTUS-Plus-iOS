@@ -9,7 +9,7 @@
 import UIKit
 import Carbon
 
-class PinSettingsViewController: TranslatableModule, ModuleViewModel, AlertPresentable {
+class PinSettingsViewController: Module, ModuleViewModel, AlertPresentable {
     enum ID {
         case pinCode
     }
@@ -47,10 +47,6 @@ class PinSettingsViewController: TranslatableModule, ModuleViewModel, AlertPrese
         prepareData()
         
         render()
-    }
-    
-    override func prepareLocales() {
-        navigationItem.title = "PIN Code"
     }
     
     func render() {
@@ -97,6 +93,8 @@ extension PinSettingsViewController {
         
         let saveItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(save))
         navigationItem.rightBarButtonItem = saveItem
+        
+        navigationItem.title = "PIN Code"
     }
     
     func prepareData() {

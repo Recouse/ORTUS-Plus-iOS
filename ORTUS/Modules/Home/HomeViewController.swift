@@ -36,10 +36,6 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
         loadData()
     }
     
-    override func prepareLocales() {
-        navigationItem.title = "home.title".localized()
-    }
-    
     override func prepareData() {
         super.prepareData()
         
@@ -163,5 +159,7 @@ extension HomeViewController {
             target: self,
             action: #selector(openSettings))
         navigationItem.rightBarButtonItem = settingsItem
+        
+        navigationItem.title = L10n.Home.title
     }
 }

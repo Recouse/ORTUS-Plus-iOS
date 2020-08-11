@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class LoginViewController: TranslatableModule, ModuleViewModel, AlertPresentable {
+class LoginViewController: Module, ModuleViewModel, AlertPresentable {
     var viewModel: LoginViewModel
     
     weak var loginView: LoginView! { return view as? LoginView }
@@ -40,10 +40,6 @@ class LoginViewController: TranslatableModule, ModuleViewModel, AlertPresentable
         
         prepareOnboardingViewController()
         prepareData()
-    }
-    
-    override func prepareLocales() {
-        signInButton.setTitle("Sign in with ORTUS", for: .normal)
     }
     
     @objc func signIn() {
@@ -98,5 +94,7 @@ extension LoginViewController {
             selector: #selector(authFailed),
             name: .authFailed,
             object: nil)
+        
+        signInButton.setTitle("Sign in with ORTUS", for: .normal)
     }
 }

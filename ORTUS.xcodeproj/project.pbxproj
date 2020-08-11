@@ -55,6 +55,7 @@
 		FA45908E244086CD00BF7E0F /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459089244086CD00BF7E0F /* ContactViewModel.swift */; };
 		FA4590902440914100BF7E0F /* ContactRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45908F2440914100BF7E0F /* ContactRoute.swift */; };
 		FA45909324409C0D00BF7E0F /* ScrollTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */; };
+		FA55170824E31B860043DC98 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170724E31B860043DC98 /* Strings.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
 		FA6642702413B430002A3315 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66426F2413B430002A3315 /* NotificationCenter.framework */; };
 		FA6642732413B430002A3315 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6642722413B430002A3315 /* TodayViewController.swift */; };
@@ -93,9 +94,6 @@
 		FA90FD6F224377A4005148AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD6E224377A4005148AC /* Images.xcassets */; };
 		FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD70224377A4005148AC /* LaunchScreen.storyboard */; };
 		FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8022437B51005148AC /* MainTabBarController.swift */; };
-		FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */; };
-		FA90FD8622437B9A005148AC /* Translatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8522437B9A005148AC /* Translatable.swift */; };
-		FA90FD8822437BB2005148AC /* TranslatableModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8722437BB2005148AC /* TranslatableModule.swift */; };
 		FA90FD8B22437BD0005148AC /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8A22437BD0005148AC /* Module.swift */; };
 		FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8C22437BD8005148AC /* ModuleBuilder.swift */; };
 		FA90FD9222437C9D005148AC /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD9122437C9D005148AC /* Styling.swift */; };
@@ -231,7 +229,6 @@
 		FAE3D5B5245ED77400CE6654 /* Carbon in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B4245ED77400CE6654 /* Carbon */; };
 		FAE3D5B8245ED7E100CE6654 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B7245ED7E100CE6654 /* Promises */; };
 		FAE3D5BB245ED89600CE6654 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5BA245ED89600CE6654 /* KeychainAccess */; };
-		FAE3D5BE245ED8ED00CE6654 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5BD245ED8ED00CE6654 /* Localize_Swift */; };
 		FAE3D5C9245EDB5400CE6654 /* DifferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5C8245EDB5400CE6654 /* DifferenceKit */; };
 		FAE3D5D1245EDC9F00CE6654 /* Carbon in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5D0245EDC9F00CE6654 /* Carbon */; };
 		FAE3D5D3245EDCAC00CE6654 /* DifferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5D2245EDCAC00CE6654 /* DifferenceKit */; };
@@ -381,6 +378,7 @@
 		FA459089244086CD00BF7E0F /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		FA45908F2440914100BF7E0F /* ContactRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRoute.swift; sourceTree = "<group>"; };
 		FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTableViewAdapter.swift; sourceTree = "<group>"; };
+		FA55170724E31B860043DC98 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FA6252192387F8D2009C3FF7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		FA66426424124929002A3315 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		FA66426624124943002A3315 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
@@ -411,9 +409,6 @@
 		FA90FD71224377A4005148AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA90FD73224377A4005148AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA90FD8022437B51005148AC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatableTabBarController.swift; sourceTree = "<group>"; };
-		FA90FD8522437B9A005148AC /* Translatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translatable.swift; sourceTree = "<group>"; };
-		FA90FD8722437BB2005148AC /* TranslatableModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatableModule.swift; sourceTree = "<group>"; };
 		FA90FD8A22437BD0005148AC /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		FA90FD8C22437BD8005148AC /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		FA90FD9122437C9D005148AC /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
@@ -637,7 +632,6 @@
 				FAD3D53A245F074700905DD4 /* libc++.tbd in Frameworks */,
 				FAD3D538245F073900905DD4 /* Foundation.framework in Frameworks */,
 				FAE3D5B5245ED77400CE6654 /* Carbon in Frameworks */,
-				FAE3D5BE245ED8ED00CE6654 /* Localize_Swift in Frameworks */,
 				FA900C4F2414DA5600D8F935 /* libModels.a in Frameworks */,
 				FAE3D5AF245ED67F00CE6654 /* SnapKit in Frameworks */,
 			);
@@ -979,7 +973,6 @@
 			isa = PBXGroup;
 			children = (
 				FA45909124409BFE00BF7E0F /* Carbon */,
-				FA90FD8222437B6C005148AC /* Translatable */,
 				FA90FDB222437F69005148AC /* UIKit */,
 				FA90FDB322437F80005148AC /* Notification.swift */,
 				FA90FE092243D413005148AC /* Date.swift */,
@@ -1014,16 +1007,6 @@
 				FAE5284824432E69009851C9 /* CircleButton.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		FA90FD8222437B6C005148AC /* Translatable */ = {
-			isa = PBXGroup;
-			children = (
-				FA90FD8522437B9A005148AC /* Translatable.swift */,
-				FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */,
-				FA90FD8722437BB2005148AC /* TranslatableModule.swift */,
-			);
-			path = Translatable;
 			sourceTree = "<group>";
 		};
 		FA90FD8922437BC0005148AC /* Main */ = {
@@ -1404,6 +1387,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE3AB3C239D100400120F96 /* Assets.swift */,
+				FA55170724E31B860043DC98 /* Strings.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -1544,7 +1528,6 @@
 				FAE3D5B4245ED77400CE6654 /* Carbon */,
 				FAE3D5B7245ED7E100CE6654 /* Promises */,
 				FAE3D5BA245ED89600CE6654 /* KeychainAccess */,
-				FAE3D5BD245ED8ED00CE6654 /* Localize_Swift */,
 				FAE3D5C8245EDB5400CE6654 /* DifferenceKit */,
 			);
 			productName = ORTUS;
@@ -1601,7 +1584,6 @@
 				FAE3D5B3245ED77400CE6654 /* XCRemoteSwiftPackageReference "Carbon" */,
 				FAE3D5B6245ED7E100CE6654 /* XCRemoteSwiftPackageReference "promises" */,
 				FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				FAE3D5BC245ED8ED00CE6654 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
 				FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */,
 			);
 			productRefGroup = FA90FD65224377A1005148AC /* Products */;
@@ -1711,6 +1693,7 @@
 				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
 				FAD43273243927A0001DA513 /* ContactsApi.swift in Sources */,
 				FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */,
+				FA55170824E31B860043DC98 /* Strings.swift in Sources */,
 				FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */,
 				FA39AEDE23E9ED3800C4A70C /* HomeViewModel.swift in Sources */,
 				FAB74C4223EAB1C5004C7BC6 /* GradeComponent.swift in Sources */,
@@ -1786,11 +1769,9 @@
 				FA2062DC234628A6007ED9BA /* NotificationsRouter.swift in Sources */,
 				FAA425AC23912206008F5897 /* Footer.swift in Sources */,
 				FAB74C1123E9F391004C7BC6 /* GradesModuleBuilder.swift in Sources */,
-				FA90FD8822437BB2005148AC /* TranslatableModule.swift in Sources */,
 				FACACCA1249A96210075604F /* ORTUSTableViewController.swift in Sources */,
 				FAB74C1823E9F46D004C7BC6 /* TextComponent.swift in Sources */,
 				FA45906C243F30A100BF7E0F /* ContactsModuleBuilder.swift in Sources */,
-				FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */,
 				FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */,
 				FA39AEDB23E9ED3800C4A70C /* HomeRouter.swift in Sources */,
 				FABF6DC7239C4CAB00F57F8A /* LoginViewModel.swift in Sources */,
@@ -1824,7 +1805,6 @@
 				FA39AEDC23E9ED3800C4A70C /* HomeViewController.swift in Sources */,
 				FA2062C723453DEB007ED9BA /* CourseComponent.swift in Sources */,
 				FABF6DC5239C4CAB00F57F8A /* LoginViewController.swift in Sources */,
-				FA90FD8622437B9A005148AC /* Translatable.swift in Sources */,
 				FA990A56239D1D0400BE9ACA /* LoginOnboardingViewController.swift in Sources */,
 				FABF6DC6239C4CAB00F57F8A /* LoginView.swift in Sources */,
 				FACACC9C249A8FD10075604F /* ORTUSTableViewCell.swift in Sources */,
@@ -2324,14 +2304,6 @@
 				minimumVersion = 4.2.0;
 			};
 		};
-		FAE3D5BC245ED8ED00CE6654 /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marmelroy/Localize-Swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.0;
-			};
-		};
 		FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ra1028/DifferenceKit";
@@ -2382,11 +2354,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
-		};
-		FAE3D5BD245ED8ED00CE6654 /* Localize_Swift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAE3D5BC245ED8ED00CE6654 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
-			productName = Localize_Swift;
 		};
 		FAE3D5C8245EDB5400CE6654 /* DifferenceKit */ = {
 			isa = XCSwiftPackageProductDependency;

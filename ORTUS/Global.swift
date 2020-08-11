@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Localize_Swift
 
 struct Global {    
     struct Key {
@@ -46,7 +45,7 @@ struct Global {
     
     struct Locale {
         static var current: String {
-            return Localize.currentLanguage()
+            return Bundle.main.preferredLocalizations.first ?? "en"
         }
     }
     

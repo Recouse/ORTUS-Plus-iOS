@@ -33,12 +33,10 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         render()
     }
     
-    override func prepareLocales() {
-        title = "settings.title".localized()
-    }
-    
     override func prepareData() {
         super.prepareData()
+        
+        title = L10n.Settings.title
         
         tableView.refreshControl = nil
         

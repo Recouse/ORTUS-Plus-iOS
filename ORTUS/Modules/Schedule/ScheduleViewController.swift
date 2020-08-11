@@ -12,7 +12,7 @@ import SafariServices
 import Models
 import Promises
 
-class ScheduleViewController: TranslatableModule, ModuleViewModel {
+class ScheduleViewController: Module, ModuleViewModel {
     var viewModel: ScheduleViewModel
     
     weak var scheduleView: ScheduleView! { return view as? ScheduleView }
@@ -83,18 +83,6 @@ class ScheduleViewController: TranslatableModule, ModuleViewModel {
         super.viewWillDisappear(animated)
         
         navigationController?.showBorderLine()
-    }
-    
-    override func prepareLocales() {
-        title = "schedule.title".localized()
-        toolbarSegmentedControl.removeAllSegments()
-        for (index, grouping) in ScheduleGrouping.allCases.enumerated() {
-            toolbarSegmentedControl.insertSegment(
-                withTitle: grouping.rawValue.capitalized,
-                at: index,
-                animated: false)
-        }
-        toolbarSegmentedControl.selectedSegmentIndex = selectedScheduleGrouping
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -232,6 +220,14 @@ extension ScheduleViewController {
         }
         
         toolbarSegmentedControl.addTarget(self, action: #selector(selectScheduleGrouping), for: .valueChanged)
+        
+        for (index, grouping) in ScheduleGrouping.allCases.enumerated() {
+            toolbarSegmentedControl.insertSegment(
+                withTitle: grouping.rawValue.capitalized,
+                at: index,
+                animated: false)
+        }
+        toolbarSegmentedControl.selectedSegmentIndex = selectedScheduleGrouping
     }
     
     func prepareRefreshControl() {
@@ -249,6 +245,8 @@ extension ScheduleViewController {
             options: .new,
             context: nil
         )
+        
+        title = L10n.Schedule.title
     }
 }
 

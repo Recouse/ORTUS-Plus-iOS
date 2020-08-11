@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import Promises
-import Localize_Swift
 import KeychainAccess
 import Models
 

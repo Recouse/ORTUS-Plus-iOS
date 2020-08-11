@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import KeychainAccess
-import Localize_Swift
 
 protocol API: URLRequestConvertible {
     var method: HTTPMethod { get }

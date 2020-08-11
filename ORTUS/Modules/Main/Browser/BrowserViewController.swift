@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class BrowserViewController: TranslatableModule, ModuleViewModel {
+class BrowserViewController: Module, ModuleViewModel {
     var viewModel: BrowserViewModel
     
     weak var browserView: BrowserView! { return view as? BrowserView }
