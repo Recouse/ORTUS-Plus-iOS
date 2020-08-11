@@ -9,7 +9,7 @@
 import UIKit
 import Carbon
 
-class PinSettingsViewController: TranslatableModule, ModuleViewModel {
+class PinSettingsViewController: TranslatableModule, ModuleViewModel, AlertPresentable {
     enum ID {
         case pinCode
     }
@@ -23,6 +23,8 @@ class PinSettingsViewController: TranslatableModule, ModuleViewModel {
         adapter: UITableViewAdapter(),
         updater: UITableViewUpdater()
     )
+    
+    var pinCode: String?
     
     init(viewModel: PinSettingsViewModel) {
         self.viewModel = viewModel
@@ -64,9 +66,7 @@ class PinSettingsViewController: TranslatableModule, ModuleViewModel {
                         isSecureTextEntry: true,
                         keyboardType: .numberPad,
                         onInput: { [unowned self] text in
-                            guard let text = text else { return }
-                            
-                            self.viewModel.save(text)
+                            self.pinCode = text
                         }
                     )
                 }
@@ -75,7 +75,18 @@ class PinSettingsViewController: TranslatableModule, ModuleViewModel {
     }
     
     @objc func save() {
+        guard let pinCode = pinCode else {
+            return
+        }
+        
+        guard pinCode.count == 4 else {
+            self.alert(message: "PIN code must be a 4-digit")
+            return
+        }
+        
         view.endEditing(true)
+        
+        viewModel.save(pinCode)
         viewModel.router.close()
     }
 }
