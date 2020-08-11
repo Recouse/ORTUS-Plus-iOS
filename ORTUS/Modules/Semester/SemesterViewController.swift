@@ -57,14 +57,6 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
                 return
             }
             
-            self.courseShortcut = Shortcut(
-                activity: .course,
-                identifier: .student,
-                title: course.name,
-                userInfo: ["url": course.link]
-            )
-            self.courseShortcut?.donate()
-            
             self.open(course: course)
         }
     }
@@ -81,6 +73,14 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
     
     func open(course: Course) {
         EventLogger.log(.openedCourse(id: course.id, name: course.name))
+        
+        courseShortcut = Shortcut(
+            activity: .course,
+            identifier: .student,
+            title: course.name,
+            userInfo: ["url": course.link]
+        )
+        courseShortcut?.donate()
         
         viewModel.router.openBrowser(course.link)
     }
