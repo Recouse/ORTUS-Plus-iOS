@@ -50,6 +50,10 @@ struct Global {
         }
     }
     
+    enum Module: String {
+        case home, schedule, notifications
+    }
+    
     struct QuickAction {
         static let ortusAction = "OrtusAction"
         static let schedule = "ScheduleAction"

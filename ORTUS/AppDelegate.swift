@@ -45,6 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.host == "open" {
+            return processOpenURL(url)
+        }
+        
         OAuth.resolve(url)
         
         return true
@@ -136,6 +140,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             browserModule.hidesBottomBarWhenPushed = true
             selectedNavigationController.pushViewController(browserModule, animated: true)
         }
+    }
+    
+    private func processOpenURL(_ url: URL) -> Bool {
+        guard let mainTabBarController = window?.rootViewController as? MainTabBarController else {
+            return false
+        }
+        
+        guard let urlComponents = URLComponents(string: url.absoluteString) else {
+            return false
+        }
+        
+        guard let module = urlComponents.queryItems?.first(where: {
+            $0.name == "module"
+        })?.value else {
+            return false
+        }
+        
+        switch Global.Module(rawValue: module) {
+        case .schedule:
+            mainTabBarController.selectedIndex = Global.UI.TabBar.schedule.rawValue
+        default:
+            return false
+        }
+        
+        return true
     }
     
     private func preselectIndex(for item: UIApplicationShortcutItem?, on tabBarController: MainTabBarController) {
