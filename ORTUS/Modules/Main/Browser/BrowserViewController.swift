@@ -19,7 +19,7 @@ class BrowserViewController: Module, ModuleViewModel {
     
     var initialPinNavigation: WKNavigation?
     
-    var progressView: UIProgressView!
+//    var progressView: UIProgressView!
     
     var previousPageItem: UIBarButtonItem!
     var nextPageItem: UIBarButtonItem!
@@ -68,6 +68,9 @@ class BrowserViewController: Module, ModuleViewModel {
         super.viewWillDisappear(animated)
         
         navigationController?.setToolbarHidden(true, animated: animated)
+        
+        navigationController?.progressView?.setProgress(0, animated: false)
+        navigationController?.progressView?.isHidden = true
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -79,7 +82,10 @@ class BrowserViewController: Module, ModuleViewModel {
         case #keyPath(WKWebView.canGoForward):
             nextPageItem.isEnabled = webView.canGoForward
         case #keyPath(WKWebView.estimatedProgress):
-            progressView.setProgress(Float(webView.estimatedProgress), animated: true)
+            navigationController?.progressView?.setProgress(
+                Float(webView.estimatedProgress),
+                animated: true
+            )
         default:
             break
         }
@@ -218,16 +224,12 @@ extension BrowserViewController {
     }
     
     func prepareProgressView() {
-        progressView = UIProgressView(progressViewStyle: .bar)
-        progressView.tintColor = Asset.Colors.tintColor.color
-        
-        view.addSubview(progressView)
-        progressView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.left.right.equalToSuperview()
-        }
-        
-        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        webView.addObserver(
+            self,
+            forKeyPath: #keyPath(WKWebView.estimatedProgress),
+            options: .new,
+            context: nil
+        )
     }
     
     func prepareData() {
@@ -244,6 +246,7 @@ extension BrowserViewController: WKScriptMessageHandler, WKNavigationDelegate, W
         if event == Global.Event.loggedIn {
             // A small hack to hide activity indicator after page loading
             DispatchQueue.main.async {
+                self.navigationController?.progressView?.isHidden = false
                 self.hideLoadingOverview()
             }
         }
@@ -276,6 +279,6 @@ extension BrowserViewController: WKScriptMessageHandler, WKNavigationDelegate, W
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        progressView.setProgress(0, animated: false)
+        navigationController?.progressView?.setProgress(0, animated: false)
     }
 }
