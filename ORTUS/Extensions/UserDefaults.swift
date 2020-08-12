@@ -38,3 +38,7 @@ extension UserDefaults.Key where Value == Bool {
 extension UserDefaults.Key where Value == Int {
     static let notificationsCount = Self("notifications_count")
 }
+
+extension UserDefaults.Key where Value == String {
+    static let appearance = Self("appearance")
+}

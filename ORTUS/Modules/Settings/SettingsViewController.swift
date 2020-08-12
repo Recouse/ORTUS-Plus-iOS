@@ -13,7 +13,8 @@ import MessageUI
 
 class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPresentable {
     enum ID {
-        case main, pinCode, schedule, shareFeedback, privacyPolicy, signOut, version
+        case main, appearance, pinCode, schedule
+        case shareFeedback, privacyPolicy, signOut, version
     }
 
     var viewModel: SettingsViewModel
@@ -47,6 +48,8 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
             }
             
             switch id {
+            case .appearance:
+                self.viewModel.router.openAppearanceSettings()
             case .pinCode:
                 self.viewModel.router.openPinSettings()
             case .schedule:
@@ -82,17 +85,25 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
     }
     
     func render() {
+        var mainCells = [
+            CellNode(FormSection(title: "PIN Code").identified(by: ID.pinCode)),
+            CellNode(FormSection(title: "Schedule").identified(by: ID.schedule))
+        ]
+        
+        if  #available(iOS 13.0, *) {
+            mainCells.insert(
+                CellNode(FormSection(title: "Appearance").identified(by: ID.appearance)),
+                at: 0
+            )
+        }
+        
         renderer.render {
             Section(
                 id: ID.main,
-                header: Header(title: ""),
-                cells: {
-                    FormSection(title: "PIN Code").identified(by: ID.pinCode)
-                    
-                    FormSection(title: "Schedule").identified(by: ID.schedule)
-                }
+                header: ViewNode(Header(title: "")),
+                cells: mainCells
             )
-            
+                        
             Section(
                 id: ID.shareFeedback,
                 header: Header(title: ""),

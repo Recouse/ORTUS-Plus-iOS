@@ -20,6 +20,7 @@ struct Global {
         static let courseJSHandler = "courseHandler"
         
         // Settings keys
+        static let appearance = "appearance"
         static let showEvents = "show_events"
         
         // App group

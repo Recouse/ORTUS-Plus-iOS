@@ -56,6 +56,13 @@
 		FA4590902440914100BF7E0F /* ContactRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45908F2440914100BF7E0F /* ContactRoute.swift */; };
 		FA45909324409C0D00BF7E0F /* ScrollTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */; };
 		FA55170824E31B860043DC98 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170724E31B860043DC98 /* Strings.swift */; };
+		FA55170F24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170A24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift */; };
+		FA55171024E45F880043DC98 /* AppearanceSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170B24E45F880043DC98 /* AppearanceSettingsRouter.swift */; };
+		FA55171124E45F880043DC98 /* AppearanceSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170C24E45F880043DC98 /* AppearanceSettingsViewController.swift */; };
+		FA55171224E45F880043DC98 /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170D24E45F880043DC98 /* AppearanceSettingsView.swift */; };
+		FA55171324E45F880043DC98 /* AppearanceSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170E24E45F880043DC98 /* AppearanceSettingsViewModel.swift */; };
+		FA55171524E4605C0043DC98 /* AppearanceSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55171424E4605C0043DC98 /* AppearanceSettingsRoute.swift */; };
+		FA55171724E462240043DC98 /* FormSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55171624E462240043DC98 /* FormSelect.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
 		FA6642702413B430002A3315 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66426F2413B430002A3315 /* NotificationCenter.framework */; };
 		FA6642732413B430002A3315 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6642722413B430002A3315 /* TodayViewController.swift */; };
@@ -379,6 +386,13 @@
 		FA45908F2440914100BF7E0F /* ContactRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRoute.swift; sourceTree = "<group>"; };
 		FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTableViewAdapter.swift; sourceTree = "<group>"; };
 		FA55170724E31B860043DC98 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		FA55170A24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsModuleBuilder.swift; sourceTree = "<group>"; };
+		FA55170B24E45F880043DC98 /* AppearanceSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsRouter.swift; sourceTree = "<group>"; };
+		FA55170C24E45F880043DC98 /* AppearanceSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsViewController.swift; sourceTree = "<group>"; };
+		FA55170D24E45F880043DC98 /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
+		FA55170E24E45F880043DC98 /* AppearanceSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsViewModel.swift; sourceTree = "<group>"; };
+		FA55171424E4605C0043DC98 /* AppearanceSettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsRoute.swift; sourceTree = "<group>"; };
+		FA55171624E462240043DC98 /* FormSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSelect.swift; sourceTree = "<group>"; };
 		FA6252192387F8D2009C3FF7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		FA66426424124929002A3315 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		FA66426624124943002A3315 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
@@ -796,6 +810,18 @@
 			path = Carbon;
 			sourceTree = "<group>";
 		};
+		FA55170924E45F670043DC98 /* AppearanceSettings */ = {
+			isa = PBXGroup;
+			children = (
+				FA55170A24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift */,
+				FA55170D24E45F880043DC98 /* AppearanceSettingsView.swift */,
+				FA55170E24E45F880043DC98 /* AppearanceSettingsViewModel.swift */,
+				FA55170C24E45F880043DC98 /* AppearanceSettingsViewController.swift */,
+				FA55170B24E45F880043DC98 /* AppearanceSettingsRouter.swift */,
+			);
+			path = AppearanceSettings;
+			sourceTree = "<group>";
+		};
 		FA6642712413B430002A3315 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -856,6 +882,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB74C0923E9F00A004C7BC6 /* SettingsRoute.swift */,
+				FA55171424E4605C0043DC98 /* AppearanceSettingsRoute.swift */,
 				FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */,
 				FAB74C5A23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift */,
 			);
@@ -1069,6 +1096,7 @@
 		FA90FDA622437F0E005148AC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FA55170924E45F670043DC98 /* AppearanceSettings */,
 				FA8714CD23E40DBB00DB728C /* PinSettings */,
 				FAB74C4D23EC4A1D004C7BC6 /* ScheduleSettings */,
 				FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */,
@@ -1438,6 +1466,7 @@
 				FAB74C4723EBE43D004C7BC6 /* FormSection.swift */,
 				FAB74C4923EBE4E4004C7BC6 /* FormLink.swift */,
 				FAB74C4B23EC48B7004C7BC6 /* FormSwitch.swift */,
+				FA55171624E462240043DC98 /* FormSelect.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -1697,6 +1726,7 @@
 				FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */,
 				FA39AEDE23E9ED3800C4A70C /* HomeViewModel.swift in Sources */,
 				FAB74C4223EAB1C5004C7BC6 /* GradeComponent.swift in Sources */,
+				FA55171724E462240043DC98 /* FormSelect.swift in Sources */,
 				FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */,
 				FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */,
 				FAD18D5723B1746600C0D89B /* BrowserRouter.swift in Sources */,
@@ -1709,6 +1739,7 @@
 				FA459083243F753800BF7E0F /* CircleImageView.swift in Sources */,
 				FAF77B242246A64200197641 /* OAuthApi.swift in Sources */,
 				FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */,
+				FA55171124E45F880043DC98 /* AppearanceSettingsViewController.swift in Sources */,
 				FA90FDE322439676005148AC /* APIClient.swift in Sources */,
 				FAB74C0A23E9F00A004C7BC6 /* SettingsRoute.swift in Sources */,
 				FA90FD9E22437D81005148AC /* DefaultTransition.swift in Sources */,
@@ -1725,6 +1756,7 @@
 				FA90FDB022437F25005148AC /* NewsView.swift in Sources */,
 				FA8714D523E40DD100DB728C /* PinSettingsViewController.swift in Sources */,
 				FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */,
+				FA55171224E45F880043DC98 /* AppearanceSettingsView.swift in Sources */,
 				FAFD013B246474D300DF9FEA /* Cache.swift in Sources */,
 				FA90FDAF22437F25005148AC /* NewsViewController.swift in Sources */,
 				FA90FDE62243AE01005148AC /* NewsApi.swift in Sources */,
@@ -1737,6 +1769,7 @@
 				FAD18D5A23B1746600C0D89B /* BrowserViewModel.swift in Sources */,
 				FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */,
 				FAB74C5623EC4A50004C7BC6 /* ScheduleSettingsRouter.swift in Sources */,
+				FA55170F24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift in Sources */,
 				FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */,
 				FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */,
 				FAB74C4423EAB1D1004C7BC6 /* GradeComponentView.swift in Sources */,
@@ -1770,6 +1803,7 @@
 				FAA425AC23912206008F5897 /* Footer.swift in Sources */,
 				FAB74C1123E9F391004C7BC6 /* GradesModuleBuilder.swift in Sources */,
 				FACACCA1249A96210075604F /* ORTUSTableViewController.swift in Sources */,
+				FA55171524E4605C0043DC98 /* AppearanceSettingsRoute.swift in Sources */,
 				FAB74C1823E9F46D004C7BC6 /* TextComponent.swift in Sources */,
 				FA45906C243F30A100BF7E0F /* ContactsModuleBuilder.swift in Sources */,
 				FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */,
@@ -1818,7 +1852,9 @@
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */,
 				FA0A75A124D856C30086E878 /* Overlay.swift in Sources */,
+				FA55171324E45F880043DC98 /* AppearanceSettingsViewModel.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
+				FA55171024E45F880043DC98 /* AppearanceSettingsRouter.swift in Sources */,
 				FAB74C5523EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift in Sources */,
 				FAB74C3823EAA6B6004C7BC6 /* MarksApi.swift in Sources */,
 				FAB74C1223E9F391004C7BC6 /* GradesRouter.swift in Sources */,

@@ -36,6 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set minimum background fetch interval to 1 hour
         UIApplication.shared.setMinimumBackgroundFetchInterval(60 * 60)
         
+        // Appearance
+        overrideAppearance()
+        
         // Return false if app was launched from shortcut
         return shortcutItem == nil
     }
@@ -184,6 +187,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Yandex App Metrica
         let configuration = YMMYandexMetricaConfiguration(apiKey: Global.yandexAppMetricaKey)
         YMMYandexMetrica.activate(with: configuration!)
+    }
+    
+    fileprivate func overrideAppearance() {
+        guard #available(iOS 13.0, *) else {
+            return
+        }
+        
+        let appearance = UserDefaults.standard.value(for: .appearance)
+        
+        switch appearance {
+        case "system":
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .unspecified
+        case "light":
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .light
+        case "dark":
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .dark
+        default:
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .unspecified
+        }
     }
     
     fileprivate func prepareMainTabBarController(with item: UIApplicationShortcutItem?) {
