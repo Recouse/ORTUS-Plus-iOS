@@ -9,10 +9,11 @@
 import UIKit
 import Carbon
 import SafariServices
+import MessageUI
 
 class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPresentable {
     enum ID {
-        case main, pinCode, schedule, reportBug, privacyPolicy, signOut, version
+        case main, pinCode, schedule, shareFeedback, privacyPolicy, signOut, version
     }
 
     var viewModel: SettingsViewModel
@@ -50,8 +51,8 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
                 self.viewModel.router.openPinSettings()
             case .schedule:
                 self.viewModel.router.openScheduleSettings()
-            case .reportBug:
-                self.openUrl(Global.githubIssuesURL)
+            case .shareFeedback:
+                self.shareFeedback()
             case .privacyPolicy:
                 self.openUrl(Global.privacyPolicyURL)
             case .signOut:
@@ -93,10 +94,10 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
             )
             
             Section(
-                id: ID.reportBug,
+                id: ID.shareFeedback,
                 header: Header(title: ""),
                 cells: {
-                    FormLink(title: "Report a bug").identified(by: ID.reportBug)
+                    FormLink(title: "Share Feedback").identified(by: ID.shareFeedback)
                 }
             )
             
@@ -162,6 +163,27 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         }
     }
     
+    func shareFeedback() {
+        deselectSelectedRow()
+        
+        guard MFMailComposeViewController.canSendMail() else {
+            return
+        }
+        
+        let mailController = MFMailComposeViewController()
+        mailController.mailComposeDelegate = self
+        mailController.setToRecipients([Global.feedbackEmail])
+        
+        let body = """
+        ORTUS+ for iOS
+        Version \(Bundle.main.versionNumber ?? "") (\(Bundle.main.buildNumber ?? "")), \(UIDevice.current.systemName) \(UIDevice.current.systemVersion)
+        """
+        
+        mailController.setMessageBody(body, isHTML: false)
+
+        present(mailController, animated: true)
+    }
+    
     func openUrl(_ urlString: String) {
         guard let url = URL(string: urlString) else {
             return
@@ -203,6 +225,12 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         }
         
         tableView.deselectRow(at: selectedIndexPath, animated: true)
+    }
+}
+
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 
