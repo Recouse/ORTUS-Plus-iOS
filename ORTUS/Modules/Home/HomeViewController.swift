@@ -36,6 +36,12 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
         loadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        suggestPinCodeSetting()
+    }
+    
     override func prepareData() {
         super.prepareData()
         
@@ -140,6 +146,28 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
     
     @objc func openSettings() {
         viewModel.router.openSettings()
+    }
+    
+    func suggestPinCodeSetting() {
+        let pinCodeSuggestion: Bool? = UserDefaults.standard.value(for: .pinCodeSuggestion)
+        
+        guard pinCodeSuggestion != true else {
+            return
+        }
+        
+        let alert = UIAlertController(
+            title: "PIN Code",
+            message: "For a better experience, you can enter the ORTUS PIN code in the Settings. Then you can access ORTUS and e-courses without typing it.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Later", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { [unowned self] _ in
+            self.viewModel.router.openSettings()
+        }))
+        
+        present(alert, animated: true, completion: {
+            UserDefaults.standard.set(true, for: .pinCodeSuggestion)
+        })
     }
 }
 

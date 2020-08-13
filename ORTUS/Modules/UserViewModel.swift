@@ -32,6 +32,9 @@ class UserViewModel {
         let sharedCache = Cache(path: FileManager.sharedContainerURL())
         sharedCache.clear()
         
+        // Reset pin code suggestion
+        UserDefaults.standard.set(false, for: .pinCodeSuggestion)
+        
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalNever)
         
         Shortcut.deleteShortcuts {
