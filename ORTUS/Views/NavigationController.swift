@@ -8,7 +8,15 @@
 
 import UIKit
 
+extension UINavigationController {
+    var progressView: UIProgressView? {
+        (self as? NavigationController)?._progressView
+    }
+}
+
 class NavigationController: UINavigationController {
+    var _progressView: UIProgressView!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return topViewController?.preferredStatusBarStyle ?? .default
     }
@@ -22,6 +30,7 @@ class NavigationController: UINavigationController {
         
         prepareNavigationBar()
         prepareToolbar()
+        prepareProgressView()
     }
     
     func prepareNavigationBar() {
@@ -36,7 +45,17 @@ class NavigationController: UINavigationController {
         toolbar.tintColor = Asset.Colors.tintColor.color
     }
     
-    
+    func prepareProgressView() {
+        _progressView = UIProgressView(progressViewStyle: .bar)
+        _progressView.tintColor = Asset.Colors.tintColor.color
+        _progressView.isHidden = true
+        
+        view.addSubview(_progressView)
+        _progressView.snp.makeConstraints {
+            $0.bottom.equalTo(navigationBar.snp.bottom)
+            $0.left.right.equalToSuperview()
+        }
+    }
 }
 
 extension NavigationController: UINavigationBarDelegate {

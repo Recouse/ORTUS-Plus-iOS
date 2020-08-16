@@ -15,6 +15,8 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
     
     weak var semesterView: SemesterView! { return view as? SemesterView }
     
+    var courseShortcut: Shortcut?
+    
     override var tableView: UITableView! {
         return semesterView.tableView
     }
@@ -41,12 +43,10 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
         render()
     }
     
-    override func prepareLocales() {
-        navigationItem.title = viewModel.semester.name ?? "Other"
-    }
-    
     override func prepareData() {
         super.prepareData()
+        
+        navigationItem.title = viewModel.semester.name ?? "Other"
         
         tableView.refreshControl = nil
         
@@ -71,6 +71,14 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
     
     func open(course: Course) {
         EventLogger.log(.openedCourse(id: course.id, name: course.name))
+        
+        courseShortcut = Shortcut(
+            activity: .course,
+            identifier: .student,
+            title: course.name,
+            userInfo: ["url": course.link]
+        )
+        courseShortcut?.donate()
         
         viewModel.router.openBrowser(course.link)
     }

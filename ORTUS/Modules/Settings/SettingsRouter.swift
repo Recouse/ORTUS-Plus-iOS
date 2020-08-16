@@ -6,8 +6,8 @@
 //  Copyright (c) 2019 Firdavs. All rights reserved.
 //
 
-final class SettingsRouter: Router<SettingsViewController>, LoginRoute, PinSettingsRoute, ScheduleSettingsRoute {
-    typealias Routes = LoginRoute & PinSettingsRoute & ScheduleSettingsRoute & Closable
+final class SettingsRouter: Router<SettingsViewController>, LoginRoute, AppearanceSettingsRoute, PinSettingsRoute, ScheduleSettingsRoute {
+    typealias Routes = LoginRoute & AppearanceSettingsRoute & PinSettingsRoute & ScheduleSettingsRoute & Closable
     
     var transition: Transition {
         return PushTransition()

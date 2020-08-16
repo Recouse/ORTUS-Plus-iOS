@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import Promises
-import Localize_Swift
 import KeychainAccess
 import Models
 
@@ -51,13 +50,13 @@ final class OAuth {
     static func refreshToken(forced: Bool = false) -> Promise<String> {
         let keychain = Keychain()
         let currentDate = Date()
-        if !forced, let expiresOn = keychain[Global.Key.tokenExpiresOn],
-            let expiresOnDate = TimeInterval(expiresOn) {
-            if currentDate.timeIntervalSince1970 < expiresOnDate {
-                return Promise { fulfill, reject in
-                    fulfill(keychain[Global.Key.accessTokenEncrypted] ?? "")
-                }
-            }
+        
+        if !forced,
+            let accessTokenEncrypted = keychain[Global.Key.accessTokenEncrypted],
+            let expiresOn = keychain[Global.Key.tokenExpiresOn],
+            let expiresOnDate = TimeInterval(expiresOn),
+            currentDate.timeIntervalSince1970 < expiresOnDate  {
+            return Promise(accessTokenEncrypted)
         }
         
         return Promise { fulfill, reject in

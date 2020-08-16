@@ -48,4 +48,13 @@ class Cache {
             throw error
         }
     }
+    
+    func clear() {
+        let temporaryDirectory = try? FileManager.default.contentsOfDirectory(atPath: path.path)
+        
+        temporaryDirectory?.forEach { file in
+            let fileUrl = Self.temporaryDirectory.appendingPathComponent(file)
+            try? FileManager.default.removeItem(at: fileUrl)
+        }
+    }
 }

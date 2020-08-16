@@ -36,11 +36,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set minimum background fetch interval to 1 hour
         UIApplication.shared.setMinimumBackgroundFetchInterval(60 * 60)
         
+        // Appearance
+        overrideAppearance()
+        
         // Return false if app was launched from shortcut
         return shortcutItem == nil
     }
     
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        return processActivity(userActivity)
+    }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.host == "open" {
+            return processOpenURL(url)
+        }
+        
         OAuth.resolve(url)
         
         return true
@@ -66,6 +77,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    private func processActivity(_ userActivity: NSUserActivity) -> Bool {
+        guard let mainTabBarController = window?.rootViewController as? MainTabBarController else {
+            return false
+        }
+        
+        guard let selectedNavigationController = mainTabBarController.viewControllers?[mainTabBarController.selectedIndex] as? NavigationController else {
+            return false
+        }
+        
+        guard let type = userActivity.activityType.split(separator: ".").last else {
+            return false
+        }
+        
+        guard let activity = ActivityItem(rawValue: String(type)) else {
+            return false
+        }
+        
+        var module: Module
+        
+        switch activity {
+        case .news:
+            module = NewsModuleBuilder.build()
+        case .grades:
+            module = GradesModuleBuilder.build()
+        case .contacts:
+            module = ContactsModuleBuilder.build()
+        case .ortusWebsite:
+            module = BrowserModuleBuilder.build(with: Global.ortusURL)
+            module.hidesBottomBarWhenPushed = true
+        case .course:
+            guard let courseURL = userActivity.userInfo?["url"] as? String else {
+                return false
+            }
+            
+            module = BrowserModuleBuilder.build(with: courseURL)
+            module.hidesBottomBarWhenPushed = true
+        }
+        
+        // Don't push if user is already on that controller
+        if object_getClassName(module) == object_getClassName(selectedNavigationController.topViewController) {
+            return false
+        }
+        
+        selectedNavigationController.pushViewController(module, animated: true)
+        
+        return true
+    }
+    
     private func processShortcut(_ item: UIApplicationShortcutItem, controller: UIViewController?) {
         guard let mainTabBarController = controller as? MainTabBarController else {
             return
@@ -86,6 +145,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    private func processOpenURL(_ url: URL) -> Bool {
+        guard let mainTabBarController = window?.rootViewController as? MainTabBarController else {
+            return false
+        }
+        
+        guard let urlComponents = URLComponents(string: url.absoluteString) else {
+            return false
+        }
+        
+        guard let module = urlComponents.queryItems?.first(where: {
+            $0.name == "module"
+        })?.value else {
+            return false
+        }
+        
+        switch Global.Module(rawValue: module) {
+        case .schedule:
+            mainTabBarController.selectedIndex = Global.UI.TabBar.schedule.rawValue
+        default:
+            return false
+        }
+        
+        return true
+    }
+    
     private func preselectIndex(for item: UIApplicationShortcutItem?, on tabBarController: MainTabBarController) {
         switch item?.type {
         case Global.QuickAction.schedule:
@@ -103,6 +187,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Yandex App Metrica
         let configuration = YMMYandexMetricaConfiguration(apiKey: Global.yandexAppMetricaKey)
         YMMYandexMetrica.activate(with: configuration!)
+    }
+    
+    fileprivate func overrideAppearance() {
+        guard #available(iOS 13.0, *) else {
+            return
+        }
+        
+        let appearance = UserDefaults.standard.value(for: .appearance)
+        
+        switch appearance {
+        case "system":
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .unspecified
+        case "light":
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .light
+        case "dark":
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .dark
+        default:
+            UIApplication.shared.keyWindow?.overrideUserInterfaceStyle = .unspecified
+        }
     }
     
     fileprivate func prepareMainTabBarController(with item: UIApplicationShortcutItem?) {

@@ -10,7 +10,7 @@ import UIKit
 import Carbon
 import SafariServices
 
-class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentable {
+class ArticleViewController: Module, ModuleViewModel, AlertPresentable {
     var viewModel: ArticleViewModel
     
     var translateBarButtonItem: UIBarButtonItem!
@@ -90,10 +90,6 @@ class ArticleViewController: TranslatableModule, ModuleViewModel, AlertPresentab
         
         navigationController?.navigationBar.alpha = 1
         UIApplication.shared.statusBarView?.backgroundColor = .clear
-    }
-    
-    override func prepareLocales() {
-        
     }
     
     func render() {

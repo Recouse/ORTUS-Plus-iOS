@@ -14,7 +14,7 @@ struct LoginOnboardingContent {
     let description: String
 }
 
-class LoginOnboardingContentViewController: TranslatableModule {
+class LoginOnboardingContentViewController: Module {
     let content: LoginOnboardingContent
     
     weak var loginOnboardingContentView: LoginOnboardingContentView! { return view as? LoginOnboardingContentView }
@@ -40,9 +40,6 @@ class LoginOnboardingContentViewController: TranslatableModule {
         super.viewDidLoad()
         
         imageView.image = content.image
-    }
-    
-    override func prepareLocales() {
         titleLabel.text = content.title
         descriptionLabel.text = content.description
     }

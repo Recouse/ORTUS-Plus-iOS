@@ -16,6 +16,7 @@ extension SettingsRoute where Self: RouterProtocol {
     func openSettings() {
         let transition = self.transition
         let module = SettingsModuleBuilder.build(with: nil, customTransition: transition)
+        module.hidesBottomBarWhenPushed = true
         
         open(module, transition: transition, completion: nil)
     }

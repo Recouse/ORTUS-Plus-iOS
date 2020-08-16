@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTabBarController: TranslatableTabBarController {
+class MainTabBarController: TabBarController {
     var isFirstAppear: Bool = true
     
     // Home
@@ -106,13 +106,7 @@ class MainTabBarController: TranslatableTabBarController {
         delegate = self
         
         updateNotificationsItem()
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateNotificationsItem),
-            name: .updatedNotificationsCount,
-            object: nil
-        )
+        prepareData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,10 +115,17 @@ class MainTabBarController: TranslatableTabBarController {
         prepareViewControllers()
     }
     
-    override func prepareLocales() {
-        homeItem.title = "home.title".localized()
-        scheduleItem.title = "schedule.title".localized()
-        notificationsItem.title = "notifications.title".localized()
+    func prepareData() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(updateNotificationsItem),
+            name: .updatedNotificationsCount,
+            object: nil
+        )
+        
+        homeItem.title = L10n.Home.title
+        scheduleItem.title = L10n.Schedule.title
+        notificationsItem.title = L10n.Notifications.title
     }
     
     func prepareViewControllers() {

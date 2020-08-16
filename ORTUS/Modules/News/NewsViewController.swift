@@ -10,7 +10,7 @@ import UIKit
 import Carbon
 import Promises
 
-class NewsViewController: TranslatableModule, ModuleViewModel {
+class NewsViewController: Module, ModuleViewModel {
     var viewModel: NewsViewModel
     
     weak var newsView: NewsView! { return view as? NewsView }
@@ -40,15 +40,13 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userActivity = Shortcut(activity: .news).activity
+        
         prepareNavigationItem()
         prepareRefreshControl()
         prepareData()
         
         loadData()
-    }
-    
-    override func prepareLocales() {
-        navigationItem.title = "news.title".localized()
     }
     
     func render() {
@@ -103,10 +101,12 @@ class NewsViewController: TranslatableModule, ModuleViewModel {
 extension NewsViewController {
     func prepareNavigationItem() {        
         navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "back".localized(),
+            title: L10n.back,
             style: .plain,
             target: nil,
             action: nil)
+        
+        navigationItem.title = L10n.News.title
     }
     
     func prepareRefreshControl() {

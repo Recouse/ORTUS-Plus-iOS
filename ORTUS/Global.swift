@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Localize_Swift
 
 struct Global {    
     struct Key {
@@ -21,6 +20,7 @@ struct Global {
         static let courseJSHandler = "courseHandler"
         
         // Settings keys
+        static let appearance = "appearance"
         static let showEvents = "show_events"
         
         // App group
@@ -33,6 +33,8 @@ struct Global {
         static let gradesCache = "gradesCache"
         static let newsCache = "newsCache"
         static let notificationsCache = "notificationsCache"
+        
+        static let pinCodeSuggestion = "pin_code_suggestion"
     }
     
     struct Event {
@@ -46,8 +48,12 @@ struct Global {
     
     struct Locale {
         static var current: String {
-            return Localize.currentLanguage()
+            return Bundle.main.preferredLocalizations.first ?? "en"
         }
+    }
+    
+    enum Module: String {
+        case home, schedule, notifications
     }
     
     struct QuickAction {
@@ -76,11 +82,9 @@ struct Global {
     
     static let ortusURL = "https://ortus.rtu.lv/"
     
-    static let githubIssuesURL = "https://github.com/ORTUS-Plus/ORTUS-Plus-iOS/issues"
     static let privacyPolicyURL = "https://ortus.plus/privacypolicy/"
-    static let telegramChatUsername = "ortusplus"
-    static let telegramChatURL = "https://t.me/\(Self.telegramChatUsername)"
-    static let telegramChatDeepURL = "tg://resolve?domain=\(Self.telegramChatUsername)"
+    
+    static let feedbackEmail = "feedback@ortus.plus"
 }
 
 enum HTTPHeaderField: String {

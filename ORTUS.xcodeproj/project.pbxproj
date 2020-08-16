@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
+		FA0A75A124D856C30086E878 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A75A024D856C30086E878 /* Overlay.swift */; };
 		FA0BEFDB2443293E00A10A0B /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BEFDA2443293E00A10A0B /* ButtonsStyle.swift */; };
 		FA1DEF872416DAF300704B6E /* LectureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF862416DAF300704B6E /* LectureComponent.swift */; };
 		FA1DEF892416DAFE00704B6E /* LectureComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */; };
@@ -54,6 +55,14 @@
 		FA45908E244086CD00BF7E0F /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459089244086CD00BF7E0F /* ContactViewModel.swift */; };
 		FA4590902440914100BF7E0F /* ContactRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45908F2440914100BF7E0F /* ContactRoute.swift */; };
 		FA45909324409C0D00BF7E0F /* ScrollTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */; };
+		FA55170824E31B860043DC98 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170724E31B860043DC98 /* Strings.swift */; };
+		FA55170F24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170A24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift */; };
+		FA55171024E45F880043DC98 /* AppearanceSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170B24E45F880043DC98 /* AppearanceSettingsRouter.swift */; };
+		FA55171124E45F880043DC98 /* AppearanceSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170C24E45F880043DC98 /* AppearanceSettingsViewController.swift */; };
+		FA55171224E45F880043DC98 /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170D24E45F880043DC98 /* AppearanceSettingsView.swift */; };
+		FA55171324E45F880043DC98 /* AppearanceSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170E24E45F880043DC98 /* AppearanceSettingsViewModel.swift */; };
+		FA55171524E4605C0043DC98 /* AppearanceSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55171424E4605C0043DC98 /* AppearanceSettingsRoute.swift */; };
+		FA55171724E462240043DC98 /* FormSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55171624E462240043DC98 /* FormSelect.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
 		FA6642702413B430002A3315 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66426F2413B430002A3315 /* NotificationCenter.framework */; };
 		FA6642732413B430002A3315 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6642722413B430002A3315 /* TodayViewController.swift */; };
@@ -92,9 +101,6 @@
 		FA90FD6F224377A4005148AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD6E224377A4005148AC /* Images.xcassets */; };
 		FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD70224377A4005148AC /* LaunchScreen.storyboard */; };
 		FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8022437B51005148AC /* MainTabBarController.swift */; };
-		FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */; };
-		FA90FD8622437B9A005148AC /* Translatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8522437B9A005148AC /* Translatable.swift */; };
-		FA90FD8822437BB2005148AC /* TranslatableModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8722437BB2005148AC /* TranslatableModule.swift */; };
 		FA90FD8B22437BD0005148AC /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8A22437BD0005148AC /* Module.swift */; };
 		FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD8C22437BD8005148AC /* ModuleBuilder.swift */; };
 		FA90FD9222437C9D005148AC /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD9122437C9D005148AC /* Styling.swift */; };
@@ -230,7 +236,6 @@
 		FAE3D5B5245ED77400CE6654 /* Carbon in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B4245ED77400CE6654 /* Carbon */; };
 		FAE3D5B8245ED7E100CE6654 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B7245ED7E100CE6654 /* Promises */; };
 		FAE3D5BB245ED89600CE6654 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5BA245ED89600CE6654 /* KeychainAccess */; };
-		FAE3D5BE245ED8ED00CE6654 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5BD245ED8ED00CE6654 /* Localize_Swift */; };
 		FAE3D5C9245EDB5400CE6654 /* DifferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5C8245EDB5400CE6654 /* DifferenceKit */; };
 		FAE3D5D1245EDC9F00CE6654 /* Carbon in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5D0245EDC9F00CE6654 /* Carbon */; };
 		FAE3D5D3245EDCAC00CE6654 /* DifferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5D2245EDCAC00CE6654 /* DifferenceKit */; };
@@ -246,6 +251,7 @@
 		FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C222490FC600CA2492 /* ScheduleViewController.swift */; };
 		FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C322490FC600CA2492 /* ScheduleView.swift */; };
 		FAF183C922490FC600CA2492 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C422490FC600CA2492 /* ScheduleViewModel.swift */; };
+		FAF28BD024D73FCB00627CA3 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF28BCF24D73FCB00627CA3 /* Shortcut.swift */; };
 		FAF77B222246A51800197641 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B212246A51800197641 /* OAuth.swift */; };
 		FAF77B242246A64200197641 /* OAuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B232246A64200197641 /* OAuthApi.swift */; };
 		FAF77B272246A98500197641 /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B262246A98500197641 /* FormButton.swift */; };
@@ -327,6 +333,7 @@
 /* Begin PBXFileReference section */
 		FA0927D02347D1E400D32827 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		FA0927D32347E3B000D32827 /* NotificationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsApi.swift; sourceTree = "<group>"; };
+		FA0A75A024D856C30086E878 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		FA0BEFDA2443293E00A10A0B /* ButtonsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyle.swift; sourceTree = "<group>"; };
 		FA1DEF862416DAF300704B6E /* LectureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponent.swift; sourceTree = "<group>"; };
 		FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponentView.swift; sourceTree = "<group>"; };
@@ -378,6 +385,14 @@
 		FA459089244086CD00BF7E0F /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		FA45908F2440914100BF7E0F /* ContactRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRoute.swift; sourceTree = "<group>"; };
 		FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTableViewAdapter.swift; sourceTree = "<group>"; };
+		FA55170724E31B860043DC98 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		FA55170A24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsModuleBuilder.swift; sourceTree = "<group>"; };
+		FA55170B24E45F880043DC98 /* AppearanceSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsRouter.swift; sourceTree = "<group>"; };
+		FA55170C24E45F880043DC98 /* AppearanceSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsViewController.swift; sourceTree = "<group>"; };
+		FA55170D24E45F880043DC98 /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
+		FA55170E24E45F880043DC98 /* AppearanceSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsViewModel.swift; sourceTree = "<group>"; };
+		FA55171424E4605C0043DC98 /* AppearanceSettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsRoute.swift; sourceTree = "<group>"; };
+		FA55171624E462240043DC98 /* FormSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSelect.swift; sourceTree = "<group>"; };
 		FA6252192387F8D2009C3FF7 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		FA66426424124929002A3315 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		FA66426624124943002A3315 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
@@ -408,9 +423,6 @@
 		FA90FD71224377A4005148AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA90FD73224377A4005148AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA90FD8022437B51005148AC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatableTabBarController.swift; sourceTree = "<group>"; };
-		FA90FD8522437B9A005148AC /* Translatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translatable.swift; sourceTree = "<group>"; };
-		FA90FD8722437BB2005148AC /* TranslatableModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatableModule.swift; sourceTree = "<group>"; };
 		FA90FD8A22437BD0005148AC /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		FA90FD8C22437BD8005148AC /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		FA90FD9122437C9D005148AC /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
@@ -573,6 +585,7 @@
 		FAF183C222490FC600CA2492 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		FAF183C322490FC600CA2492 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		FAF183C422490FC600CA2492 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		FAF28BCF24D73FCB00627CA3 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		FAF77B212246A51800197641 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		FAF77B232246A64200197641 /* OAuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthApi.swift; sourceTree = "<group>"; };
 		FAF77B262246A98500197641 /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
@@ -633,7 +646,6 @@
 				FAD3D53A245F074700905DD4 /* libc++.tbd in Frameworks */,
 				FAD3D538245F073900905DD4 /* Foundation.framework in Frameworks */,
 				FAE3D5B5245ED77400CE6654 /* Carbon in Frameworks */,
-				FAE3D5BE245ED8ED00CE6654 /* Localize_Swift in Frameworks */,
 				FA900C4F2414DA5600D8F935 /* libModels.a in Frameworks */,
 				FAE3D5AF245ED67F00CE6654 /* SnapKit in Frameworks */,
 			);
@@ -798,6 +810,18 @@
 			path = Carbon;
 			sourceTree = "<group>";
 		};
+		FA55170924E45F670043DC98 /* AppearanceSettings */ = {
+			isa = PBXGroup;
+			children = (
+				FA55170A24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift */,
+				FA55170D24E45F880043DC98 /* AppearanceSettingsView.swift */,
+				FA55170E24E45F880043DC98 /* AppearanceSettingsViewModel.swift */,
+				FA55170C24E45F880043DC98 /* AppearanceSettingsViewController.swift */,
+				FA55170B24E45F880043DC98 /* AppearanceSettingsRouter.swift */,
+			);
+			path = AppearanceSettings;
+			sourceTree = "<group>";
+		};
 		FA6642712413B430002A3315 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -858,6 +882,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB74C0923E9F00A004C7BC6 /* SettingsRoute.swift */,
+				FA55171424E4605C0043DC98 /* AppearanceSettingsRoute.swift */,
 				FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */,
 				FAB74C5A23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift */,
 			);
@@ -975,7 +1000,6 @@
 			isa = PBXGroup;
 			children = (
 				FA45909124409BFE00BF7E0F /* Carbon */,
-				FA90FD8222437B6C005148AC /* Translatable */,
 				FA90FDB222437F69005148AC /* UIKit */,
 				FA90FDB322437F80005148AC /* Notification.swift */,
 				FA90FE092243D413005148AC /* Date.swift */,
@@ -989,6 +1013,8 @@
 				FAE5284A2443744B009851C9 /* OpenMapDirections.swift */,
 				FAE528522445F838009851C9 /* ColorCompatibility.swift */,
 				FAFD013A246474D300DF9FEA /* Cache.swift */,
+				FAF28BCF24D73FCB00627CA3 /* Shortcut.swift */,
+				FA0A75A024D856C30086E878 /* Overlay.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1008,16 +1034,6 @@
 				FAE5284824432E69009851C9 /* CircleButton.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		FA90FD8222437B6C005148AC /* Translatable */ = {
-			isa = PBXGroup;
-			children = (
-				FA90FD8522437B9A005148AC /* Translatable.swift */,
-				FA90FD8322437B83005148AC /* TranslatableTabBarController.swift */,
-				FA90FD8722437BB2005148AC /* TranslatableModule.swift */,
-			);
-			path = Translatable;
 			sourceTree = "<group>";
 		};
 		FA90FD8922437BC0005148AC /* Main */ = {
@@ -1080,6 +1096,7 @@
 		FA90FDA622437F0E005148AC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FA55170924E45F670043DC98 /* AppearanceSettings */,
 				FA8714CD23E40DBB00DB728C /* PinSettings */,
 				FAB74C4D23EC4A1D004C7BC6 /* ScheduleSettings */,
 				FA90FDB9224380FE005148AC /* SettingsModuleBuilder.swift */,
@@ -1398,6 +1415,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE3AB3C239D100400120F96 /* Assets.swift */,
+				FA55170724E31B860043DC98 /* Strings.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -1448,6 +1466,7 @@
 				FAB74C4723EBE43D004C7BC6 /* FormSection.swift */,
 				FAB74C4923EBE4E4004C7BC6 /* FormLink.swift */,
 				FAB74C4B23EC48B7004C7BC6 /* FormSwitch.swift */,
+				FA55171624E462240043DC98 /* FormSelect.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -1538,7 +1557,6 @@
 				FAE3D5B4245ED77400CE6654 /* Carbon */,
 				FAE3D5B7245ED7E100CE6654 /* Promises */,
 				FAE3D5BA245ED89600CE6654 /* KeychainAccess */,
-				FAE3D5BD245ED8ED00CE6654 /* Localize_Swift */,
 				FAE3D5C8245EDB5400CE6654 /* DifferenceKit */,
 			);
 			productName = ORTUS;
@@ -1595,7 +1613,6 @@
 				FAE3D5B3245ED77400CE6654 /* XCRemoteSwiftPackageReference "Carbon" */,
 				FAE3D5B6245ED7E100CE6654 /* XCRemoteSwiftPackageReference "promises" */,
 				FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
-				FAE3D5BC245ED8ED00CE6654 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
 				FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */,
 			);
 			productRefGroup = FA90FD65224377A1005148AC /* Products */;
@@ -1705,9 +1722,11 @@
 				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
 				FAD43273243927A0001DA513 /* ContactsApi.swift in Sources */,
 				FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */,
+				FA55170824E31B860043DC98 /* Strings.swift in Sources */,
 				FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */,
 				FA39AEDE23E9ED3800C4A70C /* HomeViewModel.swift in Sources */,
 				FAB74C4223EAB1C5004C7BC6 /* GradeComponent.swift in Sources */,
+				FA55171724E462240043DC98 /* FormSelect.swift in Sources */,
 				FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */,
 				FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */,
 				FAD18D5723B1746600C0D89B /* BrowserRouter.swift in Sources */,
@@ -1720,6 +1739,7 @@
 				FA459083243F753800BF7E0F /* CircleImageView.swift in Sources */,
 				FAF77B242246A64200197641 /* OAuthApi.swift in Sources */,
 				FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */,
+				FA55171124E45F880043DC98 /* AppearanceSettingsViewController.swift in Sources */,
 				FA90FDE322439676005148AC /* APIClient.swift in Sources */,
 				FAB74C0A23E9F00A004C7BC6 /* SettingsRoute.swift in Sources */,
 				FA90FD9E22437D81005148AC /* DefaultTransition.swift in Sources */,
@@ -1736,6 +1756,7 @@
 				FA90FDB022437F25005148AC /* NewsView.swift in Sources */,
 				FA8714D523E40DD100DB728C /* PinSettingsViewController.swift in Sources */,
 				FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */,
+				FA55171224E45F880043DC98 /* AppearanceSettingsView.swift in Sources */,
 				FAFD013B246474D300DF9FEA /* Cache.swift in Sources */,
 				FA90FDAF22437F25005148AC /* NewsViewController.swift in Sources */,
 				FA90FDE62243AE01005148AC /* NewsApi.swift in Sources */,
@@ -1748,6 +1769,7 @@
 				FAD18D5A23B1746600C0D89B /* BrowserViewModel.swift in Sources */,
 				FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */,
 				FAB74C5623EC4A50004C7BC6 /* ScheduleSettingsRouter.swift in Sources */,
+				FA55170F24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift in Sources */,
 				FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */,
 				FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */,
 				FAB74C4423EAB1D1004C7BC6 /* GradeComponentView.swift in Sources */,
@@ -1780,11 +1802,10 @@
 				FA2062DC234628A6007ED9BA /* NotificationsRouter.swift in Sources */,
 				FAA425AC23912206008F5897 /* Footer.swift in Sources */,
 				FAB74C1123E9F391004C7BC6 /* GradesModuleBuilder.swift in Sources */,
-				FA90FD8822437BB2005148AC /* TranslatableModule.swift in Sources */,
 				FACACCA1249A96210075604F /* ORTUSTableViewController.swift in Sources */,
+				FA55171524E4605C0043DC98 /* AppearanceSettingsRoute.swift in Sources */,
 				FAB74C1823E9F46D004C7BC6 /* TextComponent.swift in Sources */,
 				FA45906C243F30A100BF7E0F /* ContactsModuleBuilder.swift in Sources */,
-				FA90FD8422437B83005148AC /* TranslatableTabBarController.swift in Sources */,
 				FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */,
 				FA39AEDB23E9ED3800C4A70C /* HomeRouter.swift in Sources */,
 				FABF6DC7239C4CAB00F57F8A /* LoginViewModel.swift in Sources */,
@@ -1801,6 +1822,7 @@
 				FA90FD9C22437D76005148AC /* Transition.swift in Sources */,
 				FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */,
 				FA90FDAE22437F25005148AC /* NewsRouter.swift in Sources */,
+				FAF28BD024D73FCB00627CA3 /* Shortcut.swift in Sources */,
 				FA2062C923453E00007ED9BA /* CourseComponentView.swift in Sources */,
 				FA2062DB234628A6007ED9BA /* NotificationsModuleBuilder.swift in Sources */,
 				FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */,
@@ -1817,7 +1839,6 @@
 				FA39AEDC23E9ED3800C4A70C /* HomeViewController.swift in Sources */,
 				FA2062C723453DEB007ED9BA /* CourseComponent.swift in Sources */,
 				FABF6DC5239C4CAB00F57F8A /* LoginViewController.swift in Sources */,
-				FA90FD8622437B9A005148AC /* Translatable.swift in Sources */,
 				FA990A56239D1D0400BE9ACA /* LoginOnboardingViewController.swift in Sources */,
 				FABF6DC6239C4CAB00F57F8A /* LoginView.swift in Sources */,
 				FACACC9C249A8FD10075604F /* ORTUSTableViewCell.swift in Sources */,
@@ -1830,7 +1851,10 @@
 				FAB74C2323E9F60D004C7BC6 /* SemesterViewController.swift in Sources */,
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */,
+				FA0A75A124D856C30086E878 /* Overlay.swift in Sources */,
+				FA55171324E45F880043DC98 /* AppearanceSettingsViewModel.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
+				FA55171024E45F880043DC98 /* AppearanceSettingsRouter.swift in Sources */,
 				FAB74C5523EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift in Sources */,
 				FAB74C3823EAA6B6004C7BC6 /* MarksApi.swift in Sources */,
 				FAB74C1223E9F391004C7BC6 /* GradesRouter.swift in Sources */,
@@ -2316,14 +2340,6 @@
 				minimumVersion = 4.2.0;
 			};
 		};
-		FAE3D5BC245ED8ED00CE6654 /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marmelroy/Localize-Swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.0;
-			};
-		};
 		FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ra1028/DifferenceKit";
@@ -2374,11 +2390,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
-		};
-		FAE3D5BD245ED8ED00CE6654 /* Localize_Swift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAE3D5BC245ED8ED00CE6654 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
-			productName = Localize_Swift;
 		};
 		FAE3D5C8245EDB5400CE6654 /* DifferenceKit */ = {
 			isa = XCSwiftPackageProductDependency;

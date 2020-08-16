@@ -36,8 +36,10 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
         loadData()
     }
     
-    override func prepareLocales() {
-        navigationItem.title = "home.title".localized()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        suggestPinCodeSetting()
     }
     
     override func prepareData() {
@@ -54,7 +56,7 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
                     self.viewModel.router.openGrades()
                 case .contacts:
                     self.viewModel.router.openContacts()
-                case .ortus:
+                case .ortus:                    
                     self.viewModel.router.openBrowser(Global.ortusURL)
                 }
             } else if let index = context.node.id as? Int {
@@ -145,6 +147,28 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
     @objc func openSettings() {
         viewModel.router.openSettings()
     }
+    
+    func suggestPinCodeSetting() {
+        let pinCodeSuggestion: Bool? = UserDefaults.standard.value(for: .pinCodeSuggestion)
+        
+        guard pinCodeSuggestion != true else {
+            return
+        }
+        
+        let alert = UIAlertController(
+            title: "PIN Code",
+            message: "For a better experience, you can enter the ORTUS PIN code in the Settings. Then you can access ORTUS and e-courses without typing it.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Later", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: { [unowned self] _ in
+            self.viewModel.router.openSettings()
+        }))
+        
+        present(alert, animated: true, completion: {
+            UserDefaults.standard.set(true, for: .pinCodeSuggestion)
+        })
+    }
 }
 
 extension HomeViewController {
@@ -163,5 +187,7 @@ extension HomeViewController {
             target: self,
             action: #selector(openSettings))
         navigationItem.rightBarButtonItem = settingsItem
+        
+        navigationItem.title = L10n.Home.title
     }
 }

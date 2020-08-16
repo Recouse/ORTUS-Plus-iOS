@@ -58,6 +58,8 @@ class ContactsViewController: ORTUSTableViewController, ModuleViewModel {
         
         extendedLayoutIncludesOpaqueBars = true
         
+        userActivity = Shortcut(activity: .contacts).activity
+        
         EventLogger.log(.openedContacts)
         
         prepareNavigationItem()
@@ -78,19 +80,6 @@ class ContactsViewController: ORTUSTableViewController, ModuleViewModel {
         
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.shadowImage = nil
-    }
-    
-    override func prepareLocales() {
-        navigationItem.title = "contacts.title".localized()
-        
-        toolbarSegmentedControl.removeAllSegments()
-        for (index, filter) in ContactsFilter.allCases.enumerated() {
-            toolbarSegmentedControl.insertSegment(
-                withTitle: filter.rawValue.localized(),
-                at: index,
-                animated: false)
-        }
-        toolbarSegmentedControl.selectedSegmentIndex = selectedContactsFilter
     }
     
     override func prepareData() {
@@ -147,6 +136,7 @@ class ContactsViewController: ORTUSTableViewController, ModuleViewModel {
 extension ContactsViewController {
     func prepareNavigationItem() {
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.title = L10n.Contacts.title
     }
     
     func prepareToolbar() {
@@ -158,6 +148,22 @@ extension ContactsViewController {
         }
         
         toolbarSegmentedControl.addTarget(self, action: #selector(filterContacts), for: .valueChanged)
+        
+        for (index, filter) in ContactsFilter.allCases.enumerated() {
+            var filterString: String
+            switch filter {
+            case .all:
+                filterString = L10n.Contacts.all
+            case .my:
+                filterString = L10n.Contacts.my
+            }
+            
+            toolbarSegmentedControl.insertSegment(
+                withTitle: filterString,
+                at: index,
+                animated: false)
+        }
+        toolbarSegmentedControl.selectedSegmentIndex = selectedContactsFilter
     }
 }
 

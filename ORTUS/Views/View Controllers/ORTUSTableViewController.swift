@@ -10,7 +10,7 @@ import UIKit
 import Carbon
 import Promises
 
-class ORTUSTableViewController: TranslatableModule {
+class ORTUSTableViewController: Module {
     weak var baseView: ORTUSTableView! { return view as? ORTUSTableView }
     weak var tableView: UITableView! { return baseView.tableView }
     

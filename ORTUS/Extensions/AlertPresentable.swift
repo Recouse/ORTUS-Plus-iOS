@@ -25,8 +25,20 @@ protocol AlertPresentable: class {
 
 extension AlertPresentable where Self: UIViewController {
     func alert(type: AlertType = .error, message: String?, onOk: ((UIAlertAction) -> Void)? = nil) {
-        let alert = UIAlertController(title: type.rawValue.localized(), message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "ok".localized(), style: .default, handler: onOk))
+        var typeString: String
+        switch type {
+        case .info:
+            typeString = L10n.info
+        case .success:
+            typeString = L10n.success
+        case .error:
+            typeString = L10n.error
+        case .warning:
+            typeString = L10n.warning
+        }
+        
+        let alert = UIAlertController(title: typeString, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: L10n.ok, style: .default, handler: onOk))
         
         present(alert, animated: true, completion: nil)
     }
@@ -34,8 +46,8 @@ extension AlertPresentable where Self: UIViewController {
     func prompt(title: String?, message: String?, onOk: ((UIAlertAction) -> Void)? = nil,
                 onCancel: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "cancel".localized(), style: .cancel, handler: onCancel))
-        alert.addAction(UIAlertAction(title: "ok".localized(), style: .default, handler: onOk))
+        alert.addAction(UIAlertAction(title: L10n.cancel, style: .cancel, handler: onCancel))
+        alert.addAction(UIAlertAction(title: L10n.ok, style: .default, handler: onOk))
         
         present(alert, animated: true, completion: nil)
         
@@ -44,7 +56,7 @@ extension AlertPresentable where Self: UIViewController {
     func confirm(title: String?, message: String?, okTitle: String,
                  onOk: ((UIAlertAction) -> Void)? = nil, onCancel: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "cancel".localized(), style: .cancel, handler: onCancel))
+        alert.addAction(UIAlertAction(title: L10n.ok, style: .cancel, handler: onCancel))
         alert.addAction(UIAlertAction(title: okTitle, style: .default, handler: onOk))
         
         present(alert, animated: true, completion: nil)

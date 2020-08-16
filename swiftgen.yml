@@ -5,3 +5,8 @@ xcassets:
   outputs:
     templateName: swift5
     output: ORTUS/Generated/Assets.swift
+strings:
+  inputs: ORTUS/Supporting Files/en.lproj
+  outputs:
+    templateName: structured-swift5
+    output: ORTUS/Generated/Strings.swift

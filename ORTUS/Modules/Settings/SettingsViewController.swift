@@ -9,10 +9,12 @@
 import UIKit
 import Carbon
 import SafariServices
+import MessageUI
 
 class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPresentable {
     enum ID {
-        case main, pinCode, schedule, reportBug, privacyPolicy, signOut, version
+        case main, appearance, pinCode, schedule
+        case shareFeedback, privacyPolicy, signOut, version
     }
 
     var viewModel: SettingsViewModel
@@ -33,12 +35,10 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         render()
     }
     
-    override func prepareLocales() {
-        title = "settings.title".localized()
-    }
-    
     override func prepareData() {
         super.prepareData()
+        
+        title = L10n.Settings.title
         
         tableView.refreshControl = nil
         
@@ -48,12 +48,14 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
             }
             
             switch id {
+            case .appearance:
+                self.viewModel.router.openAppearanceSettings()
             case .pinCode:
                 self.viewModel.router.openPinSettings()
             case .schedule:
                 self.viewModel.router.openScheduleSettings()
-            case .reportBug:
-                self.openUrl(Global.githubIssuesURL)
+            case .shareFeedback:
+                self.shareFeedback()
             case .privacyPolicy:
                 self.openUrl(Global.privacyPolicyURL)
             case .signOut:
@@ -83,22 +85,30 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
     }
     
     func render() {
+        var mainCells = [
+            CellNode(FormSection(title: "PIN Code").identified(by: ID.pinCode)),
+            CellNode(FormSection(title: "Schedule").identified(by: ID.schedule))
+        ]
+        
+        if  #available(iOS 13.0, *) {
+            mainCells.insert(
+                CellNode(FormSection(title: "Appearance").identified(by: ID.appearance)),
+                at: 0
+            )
+        }
+        
         renderer.render {
             Section(
                 id: ID.main,
-                header: Header(title: ""),
-                cells: {
-                    FormSection(title: "PIN Code").identified(by: ID.pinCode)
-                    
-                    FormSection(title: "Schedule").identified(by: ID.schedule)
-                }
+                header: ViewNode(Header(title: "")),
+                cells: mainCells
             )
-            
+                        
             Section(
-                id: ID.reportBug,
+                id: ID.shareFeedback,
                 header: Header(title: ""),
                 cells: {
-                    FormLink(title: "Report a bug").identified(by: ID.reportBug)
+                    FormLink(title: "Share Feedback").identified(by: ID.shareFeedback)
                 }
             )
             
@@ -164,6 +174,27 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         }
     }
     
+    func shareFeedback() {
+        deselectSelectedRow()
+        
+        guard MFMailComposeViewController.canSendMail() else {
+            return
+        }
+        
+        let mailController = MFMailComposeViewController()
+        mailController.mailComposeDelegate = self
+        mailController.setToRecipients([Global.feedbackEmail])
+        
+        let body = """
+        ORTUS+ for iOS
+        Version \(Bundle.main.versionNumber ?? "") (\(Bundle.main.buildNumber ?? "")), \(UIDevice.current.systemName) \(UIDevice.current.systemVersion)
+        """
+        
+        mailController.setMessageBody(body, isHTML: false)
+
+        present(mailController, animated: true)
+    }
+    
     func openUrl(_ urlString: String) {
         guard let url = URL(string: urlString) else {
             return
@@ -184,7 +215,8 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         deselectSelectedRow()
         
         let alert = UIAlertController(title: "Are you sure?", message: "You will be signed out from your account. Do you want to sign out?", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Sign out", style: .destructive, handler: { [unowned self] _ in
+            Overlay.showLoading(on: self)
             UserViewModel.signOut()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -204,6 +236,12 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         }
         
         tableView.deselectRow(at: selectedIndexPath, animated: true)
+    }
+}
+
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

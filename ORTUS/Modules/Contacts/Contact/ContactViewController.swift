@@ -11,7 +11,7 @@ import Carbon
 import MessageUI
 import MapKit
 
-class ContactViewController: TranslatableModule, ModuleViewModel {
+class ContactViewController: Module, ModuleViewModel {
     var viewModel: ContactViewModel
     
     weak var contactView: ContactView! { return view as? ContactView }
@@ -68,10 +68,6 @@ class ContactViewController: TranslatableModule, ModuleViewModel {
         
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
-    }
-    
-    override func prepareLocales() {
-        
     }
     
     func render() {

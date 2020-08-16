@@ -40,6 +40,8 @@ class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {
     override func prepareData() {
         super.prepareData()
         
+        navigationItem.title = L10n.Notifications.title
+        
         renderer.adapter.didSelect = { [unowned self] context in
             let notification = self.viewModel.notifications[context.indexPath.row]
             
@@ -52,10 +54,6 @@ class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {
             name: .scrollToTop,
             object: nil
         )
-    }
-    
-    override func prepareLocales() {
-        navigationItem.title = "notifications.title".localized()
     }
     
     func render() {
