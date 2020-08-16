@@ -1,7 +1,7 @@
 ![Artwork](images/artwork.jpg)
 
 # ORTUS+
-![Platform](https://img.shields.io/badge/platform-ios-lightgrey) ![Language](https://img.shields.io/github/languages/top/ORTUS-Plus/iOS?color=orange)
+![Platform](https://img.shields.io/badge/platform-ios-lightgrey) ![Version](https://img.shields.io/github/v/release/ORTUS-Plus/ORTUS-Plus-iOS) ![Language](https://img.shields.io/github/languages/top/ORTUS-Plus/iOS?color=orange)
 
 ORTUS+ is a mobile application for Riga Technical University to provide a better experience for students. Some features:
 * Schedule
