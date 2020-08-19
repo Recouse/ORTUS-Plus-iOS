@@ -10,8 +10,7 @@ import UIKit
 import Carbon
 import Models
 
-struct GradeComponent: IdentifiableComponent {
-    var id: Int
+struct GradeComponent: Component {
     var mark: Mark
     
     func renderContent() -> GradeComponentView {
@@ -20,16 +19,11 @@ struct GradeComponent: IdentifiableComponent {
     
     func render(in content: GradeComponentView) {
         content.courseLabel.text = mark.courseFullName
-        content.creditPointsLabel.text = "\(mark.creditPoints) CP"
         content.lecturerLabel.text = mark.lecturerFullName
         content.gradeLabel.text = mark.mark ?? "0"
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
-        return nil
-    }
-    
-    func shouldContentUpdate(with next: GradeComponent) -> Bool {
-        return id != next.id
+        return CGSize(width: bounds.width, height: 67)
     }
 }

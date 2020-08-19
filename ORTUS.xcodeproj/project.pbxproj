@@ -10,6 +10,17 @@
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
 		FA0A75A124D856C30086E878 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A75A024D856C30086E878 /* Overlay.swift */; };
 		FA0BEFDB2443293E00A10A0B /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BEFDA2443293E00A10A0B /* ButtonsStyle.swift */; };
+		FA1AC40424EDA3B7009C4E31 /* MarkModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC3FF24EDA3B7009C4E31 /* MarkModuleBuilder.swift */; };
+		FA1AC40524EDA3B7009C4E31 /* MarkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC40024EDA3B7009C4E31 /* MarkRouter.swift */; };
+		FA1AC40624EDA3B7009C4E31 /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC40124EDA3B7009C4E31 /* MarkViewController.swift */; };
+		FA1AC40724EDA3B7009C4E31 /* MarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC40224EDA3B7009C4E31 /* MarkView.swift */; };
+		FA1AC40824EDA3B7009C4E31 /* MarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC40324EDA3B7009C4E31 /* MarkViewModel.swift */; };
+		FA1AC40A24EDA3E0009C4E31 /* MarkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC40924EDA3E0009C4E31 /* MarkRoute.swift */; };
+		FA1AC40E24EDA904009C4E31 /* ORTUSSelectionNoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC40D24EDA904009C4E31 /* ORTUSSelectionNoneTableViewCell.swift */; };
+		FA1AC41024EDA985009C4E31 /* TextDescriptionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC40F24EDA985009C4E31 /* TextDescriptionComponent.swift */; };
+		FA1AC41224EDA991009C4E31 /* TextDescriptionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41124EDA991009C4E31 /* TextDescriptionComponentView.swift */; };
+		FA1AC41424EDAB59009C4E31 /* MarkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41324EDAB59009C4E31 /* MarkComponent.swift */; };
+		FA1AC41624EDAB65009C4E31 /* MarkComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41524EDAB65009C4E31 /* MarkComponentView.swift */; };
 		FA1DEF872416DAF300704B6E /* LectureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF862416DAF300704B6E /* LectureComponent.swift */; };
 		FA1DEF892416DAFE00704B6E /* LectureComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */; };
 		FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8A2417603100704B6E /* VersionComponent.swift */; };
@@ -153,7 +164,6 @@
 		FAB74C1123E9F391004C7BC6 /* GradesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C0C23E9F391004C7BC6 /* GradesModuleBuilder.swift */; };
 		FAB74C1223E9F391004C7BC6 /* GradesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C0D23E9F391004C7BC6 /* GradesRouter.swift */; };
 		FAB74C1323E9F391004C7BC6 /* GradesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C0E23E9F391004C7BC6 /* GradesViewController.swift */; };
-		FAB74C1423E9F391004C7BC6 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C0F23E9F391004C7BC6 /* GradesView.swift */; };
 		FAB74C1523E9F391004C7BC6 /* GradesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C1023E9F391004C7BC6 /* GradesViewModel.swift */; };
 		FAB74C1823E9F46D004C7BC6 /* TextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C1723E9F46D004C7BC6 /* TextComponent.swift */; };
 		FAB74C1A23E9F478004C7BC6 /* TextComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C1923E9F478004C7BC6 /* TextComponentView.swift */; };
@@ -335,6 +345,17 @@
 		FA0927D32347E3B000D32827 /* NotificationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsApi.swift; sourceTree = "<group>"; };
 		FA0A75A024D856C30086E878 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		FA0BEFDA2443293E00A10A0B /* ButtonsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyle.swift; sourceTree = "<group>"; };
+		FA1AC3FF24EDA3B7009C4E31 /* MarkModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkModuleBuilder.swift; sourceTree = "<group>"; };
+		FA1AC40024EDA3B7009C4E31 /* MarkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkRouter.swift; sourceTree = "<group>"; };
+		FA1AC40124EDA3B7009C4E31 /* MarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
+		FA1AC40224EDA3B7009C4E31 /* MarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkView.swift; sourceTree = "<group>"; };
+		FA1AC40324EDA3B7009C4E31 /* MarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkViewModel.swift; sourceTree = "<group>"; };
+		FA1AC40924EDA3E0009C4E31 /* MarkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkRoute.swift; sourceTree = "<group>"; };
+		FA1AC40D24EDA904009C4E31 /* ORTUSSelectionNoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORTUSSelectionNoneTableViewCell.swift; sourceTree = "<group>"; };
+		FA1AC40F24EDA985009C4E31 /* TextDescriptionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDescriptionComponent.swift; sourceTree = "<group>"; };
+		FA1AC41124EDA991009C4E31 /* TextDescriptionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDescriptionComponentView.swift; sourceTree = "<group>"; };
+		FA1AC41324EDAB59009C4E31 /* MarkComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkComponent.swift; sourceTree = "<group>"; };
+		FA1AC41524EDAB65009C4E31 /* MarkComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkComponentView.swift; sourceTree = "<group>"; };
 		FA1DEF862416DAF300704B6E /* LectureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponent.swift; sourceTree = "<group>"; };
 		FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponentView.swift; sourceTree = "<group>"; };
 		FA1DEF8A2417603100704B6E /* VersionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComponent.swift; sourceTree = "<group>"; };
@@ -491,7 +512,6 @@
 		FAB74C0C23E9F391004C7BC6 /* GradesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesModuleBuilder.swift; sourceTree = "<group>"; };
 		FAB74C0D23E9F391004C7BC6 /* GradesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesRouter.swift; sourceTree = "<group>"; };
 		FAB74C0E23E9F391004C7BC6 /* GradesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesViewController.swift; sourceTree = "<group>"; };
-		FAB74C0F23E9F391004C7BC6 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
 		FAB74C1023E9F391004C7BC6 /* GradesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesViewModel.swift; sourceTree = "<group>"; };
 		FAB74C1723E9F46D004C7BC6 /* TextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponent.swift; sourceTree = "<group>"; };
 		FAB74C1923E9F478004C7BC6 /* TextComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponentView.swift; sourceTree = "<group>"; };
@@ -670,6 +690,18 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		FA1AC3FE24EDA3A1009C4E31 /* Mark */ = {
+			isa = PBXGroup;
+			children = (
+				FA1AC3FF24EDA3B7009C4E31 /* MarkModuleBuilder.swift */,
+				FA1AC40224EDA3B7009C4E31 /* MarkView.swift */,
+				FA1AC40324EDA3B7009C4E31 /* MarkViewModel.swift */,
+				FA1AC40124EDA3B7009C4E31 /* MarkViewController.swift */,
+				FA1AC40024EDA3B7009C4E31 /* MarkRouter.swift */,
+			);
+			path = Mark;
+			sourceTree = "<group>";
+		};
 		FA20623323434DAA007ED9BA /* Courses */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +838,7 @@
 				FA45909224409C0D00BF7E0F /* ScrollTableViewAdapter.swift */,
 				FACACC99249A8F6E0075604F /* ORTUSTableViewAdapter.swift */,
 				FACACC9B249A8FD10075604F /* ORTUSTableViewCell.swift */,
+				FA1AC40D24EDA904009C4E31 /* ORTUSSelectionNoneTableViewCell.swift */,
 			);
 			path = Carbon;
 			sourceTree = "<group>";
@@ -1240,8 +1273,8 @@
 		FAB74C0B23E9F377004C7BC6 /* Grades */ = {
 			isa = PBXGroup;
 			children = (
+				FA1AC3FE24EDA3A1009C4E31 /* Mark */,
 				FAB74C0C23E9F391004C7BC6 /* GradesModuleBuilder.swift */,
-				FAB74C0F23E9F391004C7BC6 /* GradesView.swift */,
 				FAB74C1023E9F391004C7BC6 /* GradesViewModel.swift */,
 				FAB74C0E23E9F391004C7BC6 /* GradesViewController.swift */,
 				FAB74C0D23E9F391004C7BC6 /* GradesRouter.swift */,
@@ -1259,6 +1292,8 @@
 				FA1DEF8A2417603100704B6E /* VersionComponent.swift */,
 				FA1DEF8C2417605400704B6E /* VersionComponentView.swift */,
 				FA89749224BB05670077C64C /* StateComponent.swift */,
+				FA1AC40F24EDA985009C4E31 /* TextDescriptionComponent.swift */,
+				FA1AC41124EDA991009C4E31 /* TextDescriptionComponentView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1287,6 +1322,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB74C3023E9FAFD004C7BC6 /* GradesRoute.swift */,
+				FA1AC40924EDA3E0009C4E31 /* MarkRoute.swift */,
 			);
 			path = Grades;
 			sourceTree = "<group>";
@@ -1314,6 +1350,8 @@
 			children = (
 				FAB74C4123EAB1C5004C7BC6 /* GradeComponent.swift */,
 				FAB74C4323EAB1D1004C7BC6 /* GradeComponentView.swift */,
+				FA1AC41324EDAB59009C4E31 /* MarkComponent.swift */,
+				FA1AC41524EDAB65009C4E31 /* MarkComponentView.swift */,
 			);
 			path = Grades;
 			sourceTree = "<group>";
@@ -1704,7 +1742,6 @@
 			files = (
 				FAB74C3123E9FAFD004C7BC6 /* GradesRoute.swift in Sources */,
 				FA45906E243F30A100BF7E0F /* ContactsViewController.swift in Sources */,
-				FAB74C1423E9F391004C7BC6 /* GradesView.swift in Sources */,
 				FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */,
 				FABF93A1238BB15E00F78FF1 /* EventLogger.swift in Sources */,
 				FA2062DF234628A6007ED9BA /* NotificationsViewModel.swift in Sources */,
@@ -1719,6 +1756,7 @@
 				FA90FDB822438069005148AC /* UIImage.swift in Sources */,
 				FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */,
 				FA90FD9722437D50005148AC /* Router.swift in Sources */,
+				FA1AC40A24EDA3E0009C4E31 /* MarkRoute.swift in Sources */,
 				FA90FDF72243C5BF005148AC /* ArticleComponentView.swift in Sources */,
 				FAD43273243927A0001DA513 /* ContactsApi.swift in Sources */,
 				FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */,
@@ -1730,6 +1768,7 @@
 				FA20623523434DBB007ED9BA /* CoursesApi.swift in Sources */,
 				FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */,
 				FAD18D5723B1746600C0D89B /* BrowserRouter.swift in Sources */,
+				FA1AC40E24EDA904009C4E31 /* ORTUSSelectionNoneTableViewCell.swift in Sources */,
 				FAB74C1523E9F391004C7BC6 /* GradesViewModel.swift in Sources */,
 				FAB74C4823EBE43D004C7BC6 /* FormSection.swift in Sources */,
 				FA8714D423E40DD100DB728C /* PinSettingsRouter.swift in Sources */,
@@ -1750,6 +1789,8 @@
 				FA45908D244086CD00BF7E0F /* ContactView.swift in Sources */,
 				FA90FDB422437F80005148AC /* Notification.swift in Sources */,
 				FABBF40123512A4D00D4D593 /* LectureComponentView.swift in Sources */,
+				FA1AC41224EDA991009C4E31 /* TextDescriptionComponentView.swift in Sources */,
+				FA1AC40424EDA3B7009C4E31 /* MarkModuleBuilder.swift in Sources */,
 				FAF77B272246A98500197641 /* FormButton.swift in Sources */,
 				FAF77B222246A51800197641 /* OAuth.swift in Sources */,
 				FAB74C5723EC4A50004C7BC6 /* ScheduleSettingsViewController.swift in Sources */,
@@ -1776,6 +1817,7 @@
 				FAF77B292246AC3C00197641 /* Header.swift in Sources */,
 				FA8714D623E40DD100DB728C /* PinSettingsView.swift in Sources */,
 				FA990A63239D6F8600BE9ACA /* LoginOnboardingContentView.swift in Sources */,
+				FA1AC41624EDAB65009C4E31 /* MarkComponentView.swift in Sources */,
 				FA20623823434DF2007ED9BA /* ScheduleApi.swift in Sources */,
 				FAE5284F244462AB009851C9 /* ContactInfoComponentView.swift in Sources */,
 				FA45907F243F6DF500BF7E0F /* ContactComponent.swift in Sources */,
@@ -1786,8 +1828,10 @@
 				FAD18D5923B1746600C0D89B /* BrowserView.swift in Sources */,
 				FAB74C2A23E9F976004C7BC6 /* IconTextComponent.swift in Sources */,
 				FAB74C2C23E9F996004C7BC6 /* IconTextComponentView.swift in Sources */,
+				FA1AC40724EDA3B7009C4E31 /* MarkView.swift in Sources */,
 				FACACC9F249A96130075604F /* ORTUSTableView.swift in Sources */,
 				FAB74C5B23EC4B5F004C7BC6 /* ScheduleSettingsRoute.swift in Sources */,
+				FA1AC41024EDA985009C4E31 /* TextDescriptionComponent.swift in Sources */,
 				FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */,
 				FA39AEDA23E9ED3800C4A70C /* HomeModuleBuilder.swift in Sources */,
 				FAE528512444EE0E009851C9 /* LatviaDateFormatter.swift in Sources */,
@@ -1823,6 +1867,7 @@
 				FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */,
 				FA90FDAE22437F25005148AC /* NewsRouter.swift in Sources */,
 				FAF28BD024D73FCB00627CA3 /* Shortcut.swift in Sources */,
+				FA1AC40824EDA3B7009C4E31 /* MarkViewModel.swift in Sources */,
 				FA2062C923453E00007ED9BA /* CourseComponentView.swift in Sources */,
 				FA2062DB234628A6007ED9BA /* NotificationsModuleBuilder.swift in Sources */,
 				FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */,
@@ -1874,6 +1919,7 @@
 				FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */,
 				FA90FDF52243C5B5005148AC /* ArticleComponent.swift in Sources */,
 				FA90FDB122437F25005148AC /* NewsViewModel.swift in Sources */,
+				FA1AC41424EDAB59009C4E31 /* MarkComponent.swift in Sources */,
 				FA459081243F6E1200BF7E0F /* ContactComponentView.swift in Sources */,
 				FAB74C2423E9F60D004C7BC6 /* SemesterView.swift in Sources */,
 				FAB74C2523E9F60D004C7BC6 /* SemesterViewModel.swift in Sources */,
@@ -1881,6 +1927,7 @@
 				FA45908A244086CD00BF7E0F /* ContactModuleBuilder.swift in Sources */,
 				FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */,
 				FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */,
+				FA1AC40524EDA3B7009C4E31 /* MarkRouter.swift in Sources */,
 				FA90FE002243CF0E005148AC /* ArticleViewController.swift in Sources */,
 				FA990A65239D7EB900BE9ACA /* LoginRoute.swift in Sources */,
 				FAB74C4623EAB2EC004C7BC6 /* CircleView.swift in Sources */,
@@ -1889,6 +1936,7 @@
 				FA90FD9222437C9D005148AC /* Styling.swift in Sources */,
 				FA90FDE12243966B005148AC /* API.swift in Sources */,
 				FA90FD8B22437BD0005148AC /* Module.swift in Sources */,
+				FA1AC40624EDA3B7009C4E31 /* MarkViewController.swift in Sources */,
 				FAB74C2823E9F636004C7BC6 /* SemesterRoute.swift in Sources */,
 				FA90FE082243D1E5005148AC /* ArticleSectionHeader.swift in Sources */,
 			);
