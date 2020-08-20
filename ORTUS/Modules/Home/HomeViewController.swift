@@ -104,8 +104,8 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
             
             Section(id: "courses", header: Header(title: "Courses".uppercased()), cells: {
                 Group(of: viewModel.semesters.enumerated()) { (index, semester) in
-                    TextComponent(
-                        text: semester.name ?? "Other"
+                    SemesterComponent(
+                        semester: semester
                     ).identified(by: index)
                 }
             })

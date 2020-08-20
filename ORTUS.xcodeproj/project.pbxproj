@@ -21,6 +21,8 @@
 		FA1AC41224EDA991009C4E31 /* TextDescriptionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41124EDA991009C4E31 /* TextDescriptionComponentView.swift */; };
 		FA1AC41424EDAB59009C4E31 /* MarkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41324EDAB59009C4E31 /* MarkComponent.swift */; };
 		FA1AC41624EDAB65009C4E31 /* MarkComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41524EDAB65009C4E31 /* MarkComponentView.swift */; };
+		FA1AC41924EEE4D4009C4E31 /* SemesterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41824EEE4D4009C4E31 /* SemesterComponent.swift */; };
+		FA1AC41B24EEE4E3009C4E31 /* SemesterComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41A24EEE4E3009C4E31 /* SemesterComponentView.swift */; };
 		FA1DEF872416DAF300704B6E /* LectureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF862416DAF300704B6E /* LectureComponent.swift */; };
 		FA1DEF892416DAFE00704B6E /* LectureComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */; };
 		FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8A2417603100704B6E /* VersionComponent.swift */; };
@@ -356,6 +358,8 @@
 		FA1AC41124EDA991009C4E31 /* TextDescriptionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDescriptionComponentView.swift; sourceTree = "<group>"; };
 		FA1AC41324EDAB59009C4E31 /* MarkComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkComponent.swift; sourceTree = "<group>"; };
 		FA1AC41524EDAB65009C4E31 /* MarkComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkComponentView.swift; sourceTree = "<group>"; };
+		FA1AC41824EEE4D4009C4E31 /* SemesterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterComponent.swift; sourceTree = "<group>"; };
+		FA1AC41A24EEE4E3009C4E31 /* SemesterComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterComponentView.swift; sourceTree = "<group>"; };
 		FA1DEF862416DAF300704B6E /* LectureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponent.swift; sourceTree = "<group>"; };
 		FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponentView.swift; sourceTree = "<group>"; };
 		FA1DEF8A2417603100704B6E /* VersionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComponent.swift; sourceTree = "<group>"; };
@@ -731,6 +735,8 @@
 			children = (
 				FA2062C623453DEB007ED9BA /* CourseComponent.swift */,
 				FA2062C823453E00007ED9BA /* CourseComponentView.swift */,
+				FA1AC41824EEE4D4009C4E31 /* SemesterComponent.swift */,
+				FA1AC41A24EEE4E3009C4E31 /* SemesterComponentView.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -1785,6 +1791,7 @@
 				FAE3AB3D239D100500120F96 /* Assets.swift in Sources */,
 				FAB74C4C23EC48B7004C7BC6 /* FormSwitch.swift in Sources */,
 				FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */,
+				FA1AC41924EEE4D4009C4E31 /* SemesterComponent.swift in Sources */,
 				FA90FDC2224380FE005148AC /* SettingsViewModel.swift in Sources */,
 				FA45908D244086CD00BF7E0F /* ContactView.swift in Sources */,
 				FA90FDB422437F80005148AC /* Notification.swift in Sources */,
@@ -1838,6 +1845,7 @@
 				FA39AEC023E8CB8F00C4A70C /* NotificationComponentView.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
 				FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */,
+				FA1AC41B24EEE4E3009C4E31 /* SemesterComponentView.swift in Sources */,
 				FA89749324BB05670077C64C /* StateComponent.swift in Sources */,
 				FAB74C4A23EBE4E4004C7BC6 /* FormLink.swift in Sources */,
 				FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */,
@@ -1998,7 +2006,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Schedule/Schedule.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Schedule/Info.plist;
@@ -2024,7 +2032,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Schedule/Schedule.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Schedule/Info.plist;
@@ -2228,7 +2236,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ORTUS/ORTUS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2259,7 +2267,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ORTUS/ORTUS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
