@@ -43,6 +43,8 @@ class APIClient {
         _ responseType: T.Type,
         route: API
     ) -> Promise<T> {
+        Self.showActivityIndicator()
+        
         return Promise { fulfill, reject in
             AF.upload(multipartFormData: {
                 guard let parameters = route.parameters else { return }
@@ -61,6 +63,8 @@ class APIClient {
                     $0.append(parameterValue.data(using: .utf8) ?? Data(), withName: key)
                 }
             }, with: route).responseDecodable { (response: DataResponse<T, AFError>) in
+                Self.hideActivityIndicator()
+                
                 switch response.result {
                 case .success(let responseObject):
                     fulfill(responseObject)
@@ -76,8 +80,12 @@ class APIClient {
         route: API,
         decoder: JSONDecoder = JSONDecoder()
     ) -> Promise<T> {
+        Self.showActivityIndicator()
+        
         return Promise { fulfill, reject in
             AF.request(route).responseDecodable (decoder: decoder) { (response: DataResponse<T, AFError>) in
+                Self.hideActivityIndicator()
+                
                 switch response.result {
                 case .success(let responseObject):
                     fulfill(responseObject)
@@ -86,5 +94,13 @@ class APIClient {
                 }
             }
         }
+    }
+    
+    private static func showActivityIndicator() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    private static func hideActivityIndicator() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
