@@ -35,9 +35,10 @@ class ScheduleViewController: Module, ModuleViewModel {
         return bar
     }()
     
+    lazy var adapter = ScheduleTableViewAdapter(dataSource: self, delegate: self)
     
     lazy var renderer = Renderer(
-        adapter: ScheduleTableViewAdapter(),
+        adapter: self.adapter,
         updater: UITableViewUpdater()
     )
     
@@ -247,6 +248,26 @@ extension ScheduleViewController {
         )
         
         title = L10n.Schedule.title
+    }
+}
+
+extension ScheduleViewController: ScheduleTableViewAdapterDataSource, ScheduleTableViewAdapterDelegate {
+    func item(for indexPath: IndexPath) -> ScheduleItem? {
+        let cell = renderer.data[indexPath.section].cells[indexPath.row]
+        
+        if let event = cell.component(as: EventComponent.self)?.event {
+            return ScheduleItem(event, time: event.time)
+        }
+        
+        if let lecture = cell.component(as: LectureComponent.self)?.lecture {
+            return ScheduleItem(lecture, time: lecture.timeFrom)
+        }
+        
+        return nil
+    }
+    
+    func openLink(_ url: URL) {
+        viewModel.router.openBrowser(url.absoluteString)
     }
 }
 
