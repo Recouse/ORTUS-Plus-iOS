@@ -255,7 +255,7 @@ extension ScheduleViewController: ScheduleTableViewAdapterDataSource, ScheduleTa
     func item(for indexPath: IndexPath) -> ScheduleItem? {
         let cell = renderer.data[indexPath.section].cells[indexPath.row]
         
-        if let event = cell.component(as: EventComponent.self)?.event {
+        if let event = cell.component(as: EventComponent.self)?.event {            
             return ScheduleItem(event, time: event.time)
         }
         

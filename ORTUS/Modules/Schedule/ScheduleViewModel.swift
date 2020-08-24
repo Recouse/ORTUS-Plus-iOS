@@ -106,10 +106,10 @@ class ScheduleViewModel: ViewModel {
         for pair in sortedResponse {
             var items: [ScheduleItem] = []
             if sharedUserDefaults?.value(for: .showEvents) == true {
-                pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.time)) }
+                pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.timeParsed)) }
             }
             
-            pair.value.lectures.forEach { items.append(ScheduleItem($0, time: $0.timeFrom)) }
+            pair.value.lectures.forEach { items.append(ScheduleItem($0, time: $0.timeFromParsed)) }
             items.sort(by: {
                 guard let firstDate = $0.timeDate, let secondDate = $1.timeDate else {
                     return false

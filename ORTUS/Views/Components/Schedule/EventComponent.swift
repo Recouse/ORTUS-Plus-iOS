@@ -24,7 +24,7 @@ struct EventComponent: IdentifiableComponent {
         if event.allDayEvent {
             content.timeLabel.text = "all-day"
         } else {
-            content.timeLabel.text = event.time
+            content.timeLabel.text = event.timeParsed
         }
     }
     
