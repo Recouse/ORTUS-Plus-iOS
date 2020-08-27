@@ -43,6 +43,10 @@ class ScheduleTableViewAdapter: UITableViewAdapter {
         var actionProdivder: UIContextMenuActionProvider?
         
         if let event = scheduleItem.item(as: Event.self) {
+            previewProvider = {
+                return EventDescriptionViewController(event: event)
+            }
+            
             actionProdivder = { _ in
                 let open = UIAction(
                     title: "Open Link",

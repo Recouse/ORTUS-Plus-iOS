@@ -10,6 +10,8 @@
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
 		FA0A75A124D856C30086E878 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A75A024D856C30086E878 /* Overlay.swift */; };
 		FA0BEFDB2443293E00A10A0B /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BEFDA2443293E00A10A0B /* ButtonsStyle.swift */; };
+		FA181B2F24F822C500402667 /* EventDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181B2E24F822C500402667 /* EventDescriptionView.swift */; };
+		FA181B3124F822F300402667 /* EventDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA181B3024F822F300402667 /* EventDescriptionViewController.swift */; };
 		FA1AC40424EDA3B7009C4E31 /* MarkModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC3FF24EDA3B7009C4E31 /* MarkModuleBuilder.swift */; };
 		FA1AC40524EDA3B7009C4E31 /* MarkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC40024EDA3B7009C4E31 /* MarkRouter.swift */; };
 		FA1AC40624EDA3B7009C4E31 /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC40124EDA3B7009C4E31 /* MarkViewController.swift */; };
@@ -347,6 +349,8 @@
 		FA0927D32347E3B000D32827 /* NotificationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsApi.swift; sourceTree = "<group>"; };
 		FA0A75A024D856C30086E878 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		FA0BEFDA2443293E00A10A0B /* ButtonsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyle.swift; sourceTree = "<group>"; };
+		FA181B2E24F822C500402667 /* EventDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescriptionView.swift; sourceTree = "<group>"; };
+		FA181B3024F822F300402667 /* EventDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescriptionViewController.swift; sourceTree = "<group>"; };
 		FA1AC3FF24EDA3B7009C4E31 /* MarkModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkModuleBuilder.swift; sourceTree = "<group>"; };
 		FA1AC40024EDA3B7009C4E31 /* MarkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkRouter.swift; sourceTree = "<group>"; };
 		FA1AC40124EDA3B7009C4E31 /* MarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
@@ -692,6 +696,15 @@
 				FA0927D32347E3B000D32827 /* NotificationsApi.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		FA181B2D24F822A500402667 /* Schedule Description */ = {
+			isa = PBXGroup;
+			children = (
+				FA181B2E24F822C500402667 /* EventDescriptionView.swift */,
+				FA181B3024F822F300402667 /* EventDescriptionViewController.swift */,
+			);
+			path = "Schedule Description";
 			sourceTree = "<group>";
 		};
 		FA1AC3FE24EDA3A1009C4E31 /* Mark */ = {
@@ -1483,6 +1496,7 @@
 		FAF183BF22490FB500CA2492 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				FA181B2D24F822A500402667 /* Schedule Description */,
 				FAF183C022490FC600CA2492 /* ScheduleModuleBuilder.swift */,
 				FAF183C322490FC600CA2492 /* ScheduleView.swift */,
 				FAF183C422490FC600CA2492 /* ScheduleViewModel.swift */,
@@ -1833,6 +1847,7 @@
 				FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */,
 				FA45906F243F30A100BF7E0F /* ContactsView.swift in Sources */,
 				FAD18D5923B1746600C0D89B /* BrowserView.swift in Sources */,
+				FA181B3124F822F300402667 /* EventDescriptionViewController.swift in Sources */,
 				FAB74C2A23E9F976004C7BC6 /* IconTextComponent.swift in Sources */,
 				FAB74C2C23E9F996004C7BC6 /* IconTextComponentView.swift in Sources */,
 				FA1AC40724EDA3B7009C4E31 /* MarkView.swift in Sources */,
@@ -1842,6 +1857,7 @@
 				FAE3AB36239D0D1700120F96 /* LinearGradient.swift in Sources */,
 				FA39AEDA23E9ED3800C4A70C /* HomeModuleBuilder.swift in Sources */,
 				FAE528512444EE0E009851C9 /* LatviaDateFormatter.swift in Sources */,
+				FA181B2F24F822C500402667 /* EventDescriptionView.swift in Sources */,
 				FA39AEC023E8CB8F00C4A70C /* NotificationComponentView.swift in Sources */,
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
 				FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */,
@@ -2006,7 +2022,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Schedule/Schedule.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Schedule/Info.plist;
@@ -2032,7 +2048,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Schedule/Schedule.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Schedule/Info.plist;
@@ -2236,7 +2252,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ORTUS/ORTUS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2267,7 +2283,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ORTUS/ORTUS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
