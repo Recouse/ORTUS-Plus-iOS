@@ -18,6 +18,8 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
     
     var viewModel: HomeViewModel
     
+    var previewingSemesterIndex: Int?
+    
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         
@@ -104,8 +106,8 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
             
             Section(id: "courses", header: Header(title: "Courses".uppercased()), cells: {
                 Group(of: viewModel.semesters.enumerated()) { (index, semester) in
-                    TextComponent(
-                        text: semester.name ?? "Other"
+                    SemesterComponent(
+                        semester: semester
                     ).identified(by: index)
                 }
             })
@@ -132,6 +134,36 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
     
     override func refresh() {
         loadData()
+    }
+    
+    @available(iOS 13.0, *)
+    override func contextMenuConfiguration(forRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        guard indexPath.section == 1 else {
+            return nil
+        }
+        
+        previewingSemesterIndex = indexPath.row
+        
+        return UIContextMenuConfiguration(
+            identifier: nil,
+            previewProvider: { [unowned self] in
+                SemesterModuleBuilder.build(with: self.viewModel.semesters[indexPath.row])
+            },
+            actionProvider: nil
+        )
+    }
+    
+    @available(iOS 13.0, *)
+    override func willPerformPreviewActionForMenu(configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+        animator.addCompletion {
+            guard let previewingSemesterIndex = self.previewingSemesterIndex else {
+                return
+            }
+            
+            self.previewingSemesterIndex = nil
+            
+            self.viewModel.router.openSemester(self.viewModel.semesters[previewingSemesterIndex])
+        }
     }
     
     @objc func scrollToTop() {

@@ -229,14 +229,6 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         
         viewModel.router.openLogin()
     }
-    
-    func deselectSelectedRow() {
-        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
-            return
-        }
-        
-        tableView.deselectRow(at: selectedIndexPath, animated: true)
-    }
 }
 
 extension SettingsViewController: MFMailComposeViewControllerDelegate {

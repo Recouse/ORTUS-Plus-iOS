@@ -9,9 +9,11 @@
 import UIKit
 
 class GradeComponentView: UIView {
-    let gradeContainerView: CircleView = {
-        let view = CircleView()
+    let gradeContainerView: UIView = {
+        let view = UIView()
         view.backgroundColor = Asset.Colors.tintColor.color
+        view.layer.cornerRadius = 12
+        view.clipsToBounds = true
         
         return view
     }()
@@ -24,19 +26,7 @@ class GradeComponentView: UIView {
         return label
     }()
     
-    let courseLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 2
-        
-        return label
-    }()
-    
-    let creditPointsLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 15)
-        
-        return label
-    }()
+    let courseLabel = UILabel()
     
     let lecturerLabel: UILabel = {
         let label = UILabel()
@@ -46,14 +36,21 @@ class GradeComponentView: UIView {
         return label
     }()
     
+    let rightAccessoryView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "chevronRight")
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = ColorCompatibility.tertiaryLabel
+        
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
-        
+                
+        prepareRightAccessory()
         prepareGradeLabel()
         prepareCourseLabel()
-        prepareCreditPointsLabel()
         prepareLecturerLabel()
     }
     
@@ -63,12 +60,21 @@ class GradeComponentView: UIView {
 }
 
 extension GradeComponentView {
+    func prepareRightAccessory() {
+        addSubview(rightAccessoryView)
+        rightAccessoryView.snp.makeConstraints {
+            $0.size.equalTo(18)
+            $0.centerY.equalToSuperview()
+            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
+        }
+    }
+    
     func prepareGradeLabel() {
         addSubview(gradeContainerView)
         gradeContainerView.snp.makeConstraints {
-            $0.size.equalTo(50)
-            $0.top.equalToSuperview().offset(10)
-            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
+            $0.top.bottom.equalToSuperview().offset(10).inset(10)
+            $0.width.equalTo(gradeContainerView.snp.height)
+            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
         }
         
         gradeContainerView.addSubview(gradeLabel)
@@ -81,27 +87,17 @@ extension GradeComponentView {
         addSubview(courseLabel)
         courseLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-            $0.right.equalTo(gradeContainerView.snp.left).offset(-15)
-        }
-    }
-    
-    func prepareCreditPointsLabel() {
-        addSubview(creditPointsLabel)
-        creditPointsLabel.snp.makeConstraints {
-            $0.top.equalTo(courseLabel.snp.bottom).offset(5)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-            $0.right.equalTo(gradeContainerView.snp.left).offset(-15)
+            $0.left.equalTo(gradeContainerView.snp.right).offset(10)
+            $0.right.equalTo(rightAccessoryView.snp.left).offset(-10)
         }
     }
     
     func prepareLecturerLabel() {
         addSubview(lecturerLabel)
         lecturerLabel.snp.makeConstraints {
-            $0.top.equalTo(creditPointsLabel.snp.bottom).offset(10)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
-            $0.right.equalTo(gradeContainerView.snp.left).offset(-15)
-            $0.bottom.equalToSuperview().inset(10).priority(250)
+            $0.left.equalTo(gradeContainerView.snp.right).offset(10)
+            $0.right.equalTo(rightAccessoryView.snp.left).offset(-10)
+            $0.bottom.equalToSuperview().inset(10)
         }
     }
 }

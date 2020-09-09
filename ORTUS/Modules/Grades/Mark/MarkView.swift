@@ -1,14 +1,14 @@
 //
-//  GradesView.swift
+//  MarkView.swift
 //  ORTUS
 //
-//  Created by Firdavs Khaydarov on 04/02/20.
+//  Created by Firdavs Khaydarov on 8/19/20.
 //  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
 import UIKit
 
-class GradesView: UIView {
+class MarkView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundView = nil

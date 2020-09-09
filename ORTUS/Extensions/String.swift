@@ -9,6 +9,29 @@
 import Foundation
 
 extension String {
+    // Source https://stackoverflow.com/a/47230632/7844080
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else {
+            return nil
+        }
+        
+        do {
+            return try NSAttributedString(
+                data: data,
+                options: [
+                    .documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf8.rawValue
+                ],
+                documentAttributes: nil
+            )
+        } catch {
+            return nil
+        }
+    }
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
+    }
+    
     func generatePinAuthURL(withToken token: String) -> URL? {
         let string = "\(Global.Server.pinAuthURL)?module=PINAuth&locale=en&token=\(token)&goto=\(self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")"
         

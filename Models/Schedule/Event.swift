@@ -35,5 +35,26 @@ public struct Event: Codable {
         
         return dateFormatter.string(from: date)
     }
+    
+    public var timeParsed: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "Europe/Riga")
+        
+        if let timeFromDate = date {
+            dateFormatter.dateFormat = "HH:mm"
+            dateFormatter.timeZone = TimeZone.current
+            return dateFormatter.string(from: timeFromDate)
+        }
+        
+        return time
+    }
+    
+    public var date: Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "Europe/Riga")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        
+        return dateFormatter.date(from: datetime)
+    }
 }
 

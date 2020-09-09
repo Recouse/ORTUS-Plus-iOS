@@ -27,13 +27,14 @@ struct EventComponent: IdentifiableComponent {
         if event.allDayEvent {
             time += "all-day"
         } else {
-            time += event.time
+            time += event.timeParsed
         }
         
         if let date = date {
             time += ", "
             
             let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_LV")
             dateFormatter.timeZone = TimeZone(identifier: "Europe/Riga")
             dateFormatter.dateFormat = "EEEE, d MMMM"
             

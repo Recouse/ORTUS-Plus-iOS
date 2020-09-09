@@ -9,19 +9,10 @@
 import UIKit
 import Carbon
 import Promises
+import Models
 
-class GradesViewController: Module, ModuleViewModel {
+class GradesViewController: ORTUSTableViewController, ModuleViewModel {
     var viewModel: GradesViewModel
-    
-    weak var gradesView: GradesView! { return view as? GradesView }
-    weak var tableView: UITableView! { return gradesView.tableView }
-    
-    var refreshControl: UIRefreshControl!
-    
-    lazy var renderer = Renderer(
-        adapter: UITableViewAdapter(),
-        updater: UITableViewUpdater()
-    )
     
     init(viewModel: GradesViewModel) {
         self.viewModel = viewModel
@@ -33,10 +24,6 @@ class GradesViewController: Module, ModuleViewModel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
-        view = GradesView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,10 +31,25 @@ class GradesViewController: Module, ModuleViewModel {
         
         EventLogger.log(.openedGrades)
         
-        prepareRefreshControl()
-        prepareData()
-        
         loadData()
+    }
+    
+    override func prepareData() {
+        super.prepareData()
+        
+        renderer.updater.isAnimationEnabledWhileScrolling = false
+        
+        navigationItem.title = L10n.Grades.title
+        
+        renderer.adapter.didSelect = { [unowned self] context in
+            guard let semesters = self.viewModel.studyPrograms.first?.semesters else {
+                return
+            }
+            
+            let mark = semesters[context.indexPath.section].marks[context.indexPath.row]
+            
+            self.openMark(mark)
+        }
     }
     
     func render() {
@@ -64,7 +66,7 @@ class GradesViewController: Module, ModuleViewModel {
                     header: Header(title: semester.fullName.uppercased())
                 ) {
                     Group(of: semester.marks) { mark in
-                        GradeComponent(id: mark.id, mark: mark)
+                        GradeComponent(mark: mark).identified(by: mark.id)
                     }
                 }
             }
@@ -89,21 +91,11 @@ class GradesViewController: Module, ModuleViewModel {
         }
     }
     
-    @objc func refresh() {
+    override func refresh() {
         loadData(forceUpdate: true)
     }
-}
-
-extension GradesViewController {
-    func prepareRefreshControl() {
-        refreshControl = UIRefreshControl()
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    }
     
-    func prepareData() {
-        renderer.target = tableView
-        
-        navigationItem.title = L10n.Grades.title
+    func openMark(_ mark: Mark) {
+        viewModel.router.openMark(mark)
     }
 }

@@ -60,7 +60,7 @@ class TodayViewController: UIViewController {
                             let itemsDate = items.key.components(separatedBy: "-")
                                 .compactMap { Int($0) }
                             // Date from time of event or date from string
-                            var eventDate = item.timeDate ?? dateFormatter.date(from: items.key)
+                            var eventDate = event.date ?? item.timeDate ?? dateFormatter.date(from: items.key)
                             // Add year, month and day to only time date
 
                             if eventDate != nil, itemsDate.count == 3 {
@@ -132,6 +132,7 @@ class TodayViewController: UIViewController {
     private func sortSchedule(from response: ScheduleResponse) -> Schedule {
         let sortedResponse = response.result.sorted(by: {
             let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_LV")
             dateFormatter.timeZone = TimeZone(identifier: "Europe/Riga")
             dateFormatter.dateFormat = "yyyy-MM-dd"
             
@@ -148,7 +149,7 @@ class TodayViewController: UIViewController {
             var items: [ScheduleItem] = []
             
             if UserDefaults(suiteName: "group.me.recouse.ORTUS")?.bool(forKey: "show_events") == true {
-                pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.time)) }
+                pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.timeParsed)) }
             }
             pair.value.lectures.forEach { items.append(ScheduleItem($0, time: $0.timeFromParsed)) }
             
