@@ -40,7 +40,12 @@ struct FormSwitch: IdentifiableComponent {
 class FormSwitchView: UIControl {
     let titleLabel = UILabel()
     
-    let switchControl = UISwitch()
+    let switchControl: UISwitch = {
+        let control = UISwitch()
+        control.onTintColor = Asset.Colors.tintColor.color
+        
+        return control
+    }()
     
     var onSwitch: ((Bool) -> Void)?
     
