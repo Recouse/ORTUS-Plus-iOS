@@ -10,14 +10,14 @@ import UIKit
 import Carbon
 import Promises
 
-class ORTUSTableViewController: Module {
+class ORTUSTableViewController: Module, ORTUSTableViewAdapterDelegate {
     weak var baseView: ORTUSTableView! { return view as? ORTUSTableView }
     weak var tableView: UITableView! { return baseView.tableView }
     
     var refreshControl: UIRefreshControl!
     
     lazy var renderer = Renderer(
-        adapter: ORTUSTableViewAdapter(),
+        adapter: ORTUSTableViewAdapter(delegate: self),
         updater: UITableViewUpdater()
     )
     
@@ -71,5 +71,17 @@ class ORTUSTableViewController: Module {
         }
         
         tableView.deselectRow(at: selectedIndexPath, animated: true)
+    }
+    
+    // MARK: - ORTUSTableViewAdapterDelegate
+    
+    @available(iOS 13.0, *)
+    func contextMenuConfiguration(forRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return nil
+    }
+    
+    @available(iOS 13.0, *)
+    func willPerformPreviewActionForMenu(configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+        
     }
 }

@@ -14,16 +14,16 @@ protocol ContactsTableViewAdapterDelegate: AnyObject {
 }
 
 class ContactsTableViewAdapter: ORTUSTableViewAdapter {
-    weak var delegate: ContactsTableViewAdapterDelegate?
+    weak var contactsDelegate: ContactsTableViewAdapterDelegate?
     
     init(delegate: ContactsTableViewAdapterDelegate?) {
-        self.delegate = delegate
+        self.contactsDelegate = delegate
         
         super.init()
     }
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return delegate?.indexTitles()
+        return contactsDelegate?.indexTitles()
     }
     
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
