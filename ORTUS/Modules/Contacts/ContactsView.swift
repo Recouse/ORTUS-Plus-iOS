@@ -12,7 +12,7 @@ class ContactsView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundView = nil
-        tableView.backgroundColor = .groupTableViewBackground
+        tableView.backgroundColor = .systemGroupedBackground
         tableView.sectionIndexColor = Asset.Colors.tintColor.color
         tableView.sectionIndexBackgroundColor = .clear
         tableView.sectionIndexTrackingBackgroundColor = .clear

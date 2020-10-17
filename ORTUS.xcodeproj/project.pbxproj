@@ -789,7 +789,6 @@
 			isa = PBXGroup;
 			children = (
 				FA459074243F3E6600BF7E0F /* Contacts */,
-				FA78FE8E2414DB50004AD296 /* Extensions */,
 				FAB74C3923EAACF6004C7BC6 /* Marks */,
 				FA4111EF234FC14A002BA33D /* Schedule */,
 				FA0927CF2347D1CE00D32827 /* Notifications */,
@@ -811,14 +810,6 @@
 				FA664268241249B8002A3315 /* CodableStorage.swift */,
 			);
 			path = Storage;
-			sourceTree = "<group>";
-		};
-		FA78FE8E2414DB50004AD296 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FA8714CD23E40DBB00DB728C /* PinSettings */ = {
@@ -944,6 +935,7 @@
 				FABF93A0238BB15E00F78FF1 /* EventLogger.swift */,
 				FAB74C5C23EC4D94004C7BC6 /* UserDefaults.swift */,
 				FA1DEF8E241761DC00704B6E /* Bundle.swift */,
+				FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */,
 				FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */,
 				FAE5284A2443744B009851C9 /* OpenMapDirections.swift */,
 				FAFD013A246474D300DF9FEA /* Cache.swift */,
