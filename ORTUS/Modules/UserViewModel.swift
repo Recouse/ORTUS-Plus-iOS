@@ -8,7 +8,6 @@
 
 import UIKit
 import KeychainAccess
-import Storage
 
 class UserViewModel {
     static var isLoggedIn: Bool {

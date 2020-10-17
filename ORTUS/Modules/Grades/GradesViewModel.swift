@@ -7,7 +7,6 @@
 //
 
 import Promises
-import Storage
 
 class GradesViewModel: ViewModel {
     let router: GradesRouter.Routes

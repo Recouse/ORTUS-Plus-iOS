@@ -8,7 +8,6 @@
 
 import UIKit
 import Promises
-import Storage
 
 enum ScheduleGrouping: String, CaseIterable {
     case today, tomorrow, week

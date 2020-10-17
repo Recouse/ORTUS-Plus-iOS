@@ -45,7 +45,6 @@
 		FA39AEDB23E9ED3800C4A70C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED623E9ED3800C4A70C /* HomeRouter.swift */; };
 		FA39AEDC23E9ED3800C4A70C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED723E9ED3800C4A70C /* HomeViewController.swift */; };
 		FA39AEDE23E9ED3800C4A70C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED923E9ED3800C4A70C /* HomeViewModel.swift */; };
-		FA3B7C33241450EE00AFCF4E /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B7C32241450EE00AFCF4E /* FileManager.swift */; };
 		FA45906C243F30A100BF7E0F /* ContactsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459067243F30A100BF7E0F /* ContactsModuleBuilder.swift */; };
 		FA45906D243F30A100BF7E0F /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459068243F30A100BF7E0F /* ContactsRouter.swift */; };
 		FA45906E243F30A100BF7E0F /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459069243F30A100BF7E0F /* ContactsViewController.swift */; };
@@ -87,11 +86,11 @@
 		FA5B8E59253B8C080010DD38 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */; };
 		FA5B8E5D253B8C0E0010DD38 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459075243F3E7400BF7E0F /* Contact.swift */; };
 		FA5B8E5E253B8C0E0010DD38 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459077243F3F1900BF7E0F /* Position.swift */; };
+		FA5B8E6B253B8FB70010DD38 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B7C32241450EE00AFCF4E /* FileManager.swift */; };
+		FA5B8E6C253B8FB70010DD38 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA664268241249B8002A3315 /* CodableStorage.swift */; };
+		FA5B8E6D253B8FB70010DD38 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426424124929002A3315 /* Storage.swift */; };
+		FA5B8E6E253B8FB70010DD38 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426624124943002A3315 /* DiskStorage.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
-		FA66429C24144F40002A3315 /* libStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66428C24144C7A002A3315 /* libStorage.a */; };
-		FA66429F24144F58002A3315 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426424124929002A3315 /* Storage.swift */; };
-		FA6642A024144F58002A3315 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426624124943002A3315 /* DiskStorage.swift */; };
-		FA6642A124144F58002A3315 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA664268241249B8002A3315 /* CodableStorage.swift */; };
 		FA8714CA23E40B9000DB728C /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714C923E40B9000DB728C /* FormTextField.swift */; };
 		FA8714D323E40DD100DB728C /* PinSettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714CE23E40DD100DB728C /* PinSettingsModuleBuilder.swift */; };
 		FA8714D423E40DD100DB728C /* PinSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714CF23E40DD100DB728C /* PinSettingsRouter.swift */; };
@@ -256,26 +255,7 @@
 		FAFD013B246474D300DF9FEA /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD013A246474D300DF9FEA /* Cache.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FA66429D24144F40002A3315 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA90FD5C224377A1005148AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA66428B24144C7A002A3315;
-			remoteInfo = Storage;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		FA66428A24144C7A002A3315 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FAD3CA4122456A99009DA6AE /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,7 +348,6 @@
 		FA664268241249B8002A3315 /* CodableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
 		FA66426F2413B430002A3315 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		FA6642842413BE99002A3315 /* ORTUS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ORTUS.entitlements; sourceTree = "<group>"; };
-		FA66428C24144C7A002A3315 /* libStorage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStorage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		FA8714C923E40B9000DB728C /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		FA8714CE23E40DD100DB728C /* PinSettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsModuleBuilder.swift; sourceTree = "<group>"; };
@@ -551,13 +530,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FA66428924144C7A002A3315 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FA90FD61224377A1005148AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -572,7 +544,6 @@
 				FAE3D5BB245ED89600CE6654 /* KeychainAccess in Frameworks */,
 				FAE3D5B8245ED7E100CE6654 /* Promises in Frameworks */,
 				FAD3D536245F072F00905DD4 /* CoreTelephony.framework in Frameworks */,
-				FA66429C24144F40002A3315 /* libStorage.a in Frameworks */,
 				FAE3D5AC245ED62700CE6654 /* KingfisherStatic in Frameworks */,
 				FAD3D531245F071200905DD4 /* SystemConfiguration.framework in Frameworks */,
 				FAD3D53E245F075E00905DD4 /* SafariServices.framework in Frameworks */,
@@ -798,6 +769,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FA5B8E6A253B8F990010DD38 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA66428D24144C7A002A3315 /* Storage */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		FA66428D24144C7A002A3315 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,7 +815,6 @@
 			isa = PBXGroup;
 			children = (
 				FA90FD66224377A1005148AC /* ORTUS */,
-				FA66428D24144C7A002A3315 /* Storage */,
 				FA90FD65224377A1005148AC /* Products */,
 				FA90FDC522438B41005148AC /* Frameworks */,
 			);
@@ -846,7 +824,6 @@
 			isa = PBXGroup;
 			children = (
 				FA90FD64224377A1005148AC /* ORTUS.app */,
-				FA66428C24144C7A002A3315 /* libStorage.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -856,6 +833,7 @@
 			children = (
 				FA6642842413BE99002A3315 /* ORTUS.entitlements */,
 				FA90FD7C22437B10005148AC /* Extensions */,
+				FA5B8E6A253B8F990010DD38 /* Services */,
 				FA90FD7B22437B09005148AC /* API */,
 				FA5B8E2D253B8BC90010DD38 /* Models */,
 				FA90FD7E22437B1D005148AC /* Views */,
@@ -1402,23 +1380,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA66428B24144C7A002A3315 /* Storage */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA66429024144C7A002A3315 /* Build configuration list for PBXNativeTarget "Storage" */;
-			buildPhases = (
-				FA66428824144C7A002A3315 /* Sources */,
-				FA66428924144C7A002A3315 /* Frameworks */,
-				FA66428A24144C7A002A3315 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Storage;
-			productName = Storage;
-			productReference = FA66428C24144C7A002A3315 /* libStorage.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		FA90FD63224377A1005148AC /* ORTUS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA90FD76224377A4005148AC /* Build configuration list for PBXNativeTarget "ORTUS" */;
@@ -1431,7 +1392,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FA66429E24144F40002A3315 /* PBXTargetDependency */,
 			);
 			name = ORTUS;
 			packageProductDependencies = (
@@ -1458,9 +1418,6 @@
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Firdavs;
 				TargetAttributes = {
-					FA66428B24144C7A002A3315 = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
 					FA90FD63224377A1005148AC = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -1499,7 +1456,6 @@
 			projectRoot = "";
 			targets = (
 				FA90FD63224377A1005148AC /* ORTUS */,
-				FA66428B24144C7A002A3315 /* Storage */,
 			);
 		};
 /* End PBXProject section */
@@ -1519,17 +1475,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FA66428824144C7A002A3315 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA6642A024144F58002A3315 /* DiskStorage.swift in Sources */,
-				FA6642A124144F58002A3315 /* CodableStorage.swift in Sources */,
-				FA66429F24144F58002A3315 /* Storage.swift in Sources */,
-				FA3B7C33241450EE00AFCF4E /* FileManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FA90FD60224377A1005148AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1623,6 +1568,7 @@
 				FA5B8E38253B8BF20010DD38 /* TokenResponse.swift in Sources */,
 				FA0BEFDB2443293E00A10A0B /* ButtonsStyle.swift in Sources */,
 				FA5B8E54253B8C050010DD38 /* StudyProgram.swift in Sources */,
+				FA5B8E6D253B8FB70010DD38 /* Storage.swift in Sources */,
 				FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */,
 				FA45906F243F30A100BF7E0F /* ContactsView.swift in Sources */,
 				FAD18D5923B1746600C0D89B /* BrowserView.swift in Sources */,
@@ -1707,6 +1653,7 @@
 				FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */,
 				FA0A75A124D856C30086E878 /* Overlay.swift in Sources */,
 				FA55171324E45F880043DC98 /* AppearanceSettingsViewModel.swift in Sources */,
+				FA5B8E6E253B8FB70010DD38 /* DiskStorage.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
 				FA55171024E45F880043DC98 /* AppearanceSettingsRouter.swift in Sources */,
 				FAB74C5523EC4A50004C7BC6 /* ScheduleSettingsModuleBuilder.swift in Sources */,
@@ -1721,6 +1668,7 @@
 				FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
 				FA2062DD234628A6007ED9BA /* NotificationsViewController.swift in Sources */,
+				FA5B8E6B253B8FB70010DD38 /* FileManager.swift in Sources */,
 				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
 				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
 				FA1DEF8F241761DC00704B6E /* Bundle.swift in Sources */,
@@ -1729,6 +1677,7 @@
 				FA90FDF52243C5B5005148AC /* ArticleComponent.swift in Sources */,
 				FA90FDB122437F25005148AC /* NewsViewModel.swift in Sources */,
 				FA1AC41424EDAB59009C4E31 /* MarkComponent.swift in Sources */,
+				FA5B8E6C253B8FB70010DD38 /* CodableStorage.swift in Sources */,
 				FA459081243F6E1200BF7E0F /* ContactComponentView.swift in Sources */,
 				FAB74C2423E9F60D004C7BC6 /* SemesterView.swift in Sources */,
 				FAB74C2523E9F60D004C7BC6 /* SemesterViewModel.swift in Sources */,
@@ -1756,14 +1705,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		FA66429E24144F40002A3315 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA66428B24144C7A002A3315 /* Storage */;
-			targetProxy = FA66429D24144F40002A3315 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		FA90FDDD22438D33005148AC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -1776,34 +1717,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FA66429124144C7A002A3315 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FA66429224144C7A002A3315 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		FA90FD74224377A4005148AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1991,15 +1904,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA66429024144C7A002A3315 /* Build configuration list for PBXNativeTarget "Storage" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA66429124144C7A002A3315 /* Debug */,
-				FA66429224144C7A002A3315 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		FA90FD5F224377A1005148AC /* Build configuration list for PBXProject "ORTUS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

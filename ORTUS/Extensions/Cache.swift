@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Storage
 
 class Cache {
     static let temporaryDirectory = URL(fileURLWithPath: NSTemporaryDirectory())

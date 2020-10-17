@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Storage
 import Promises
 
 enum ContactsFilter: String, CaseIterable {
