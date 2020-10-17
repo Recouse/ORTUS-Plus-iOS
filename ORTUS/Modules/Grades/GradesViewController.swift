@@ -9,7 +9,6 @@
 import UIKit
 import Carbon
 import Promises
-import Models
 
 class GradesViewController: ORTUSTableViewController, ModuleViewModel {
     var viewModel: GradesViewModel

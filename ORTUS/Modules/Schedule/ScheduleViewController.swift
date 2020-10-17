@@ -9,7 +9,6 @@
 import UIKit
 import Carbon
 import SafariServices
-import Models
 import Promises
 
 class ScheduleViewController: Module, ModuleViewModel {

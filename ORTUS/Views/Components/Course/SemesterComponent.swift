@@ -8,7 +8,6 @@
 
 import UIKit
 import Carbon
-import Models
 
 struct SemesterComponent: Component {
     var semester: Semester

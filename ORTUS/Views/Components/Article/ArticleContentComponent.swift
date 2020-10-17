@@ -11,7 +11,6 @@ import SnapKit
 import Carbon
 import WebKit
 import SafariServices
-import Models
 
 class ArticleContentComponent: IdentifiableComponent, Equatable, ArticleContentViewDelegate {    
     var onContentChange: (() -> Void)?

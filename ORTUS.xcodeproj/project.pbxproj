@@ -52,8 +52,6 @@
 		FA45906F243F30A100BF7E0F /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45906A243F30A100BF7E0F /* ContactsView.swift */; };
 		FA459070243F30A100BF7E0F /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45906B243F30A100BF7E0F /* ContactsViewModel.swift */; };
 		FA459073243F314B00BF7E0F /* ContactsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459072243F314B00BF7E0F /* ContactsRoute.swift */; };
-		FA459076243F3E7400BF7E0F /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459075243F3E7400BF7E0F /* Contact.swift */; };
-		FA459078243F3F1900BF7E0F /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459077243F3F1900BF7E0F /* Position.swift */; };
 		FA45907A243F44A700BF7E0F /* ContactsTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459079243F44A700BF7E0F /* ContactsTableViewAdapter.swift */; };
 		FA45907C243F4BA200BF7E0F /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45907B243F4BA200BF7E0F /* StickyHeader.swift */; };
 		FA45907F243F6DF500BF7E0F /* ContactComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45907E243F6DF500BF7E0F /* ContactComponent.swift */; };
@@ -74,12 +72,26 @@
 		FA55171324E45F880043DC98 /* AppearanceSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55170E24E45F880043DC98 /* AppearanceSettingsViewModel.swift */; };
 		FA55171524E4605C0043DC98 /* AppearanceSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55171424E4605C0043DC98 /* AppearanceSettingsRoute.swift */; };
 		FA55171724E462240043DC98 /* FormSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55171624E462240043DC98 /* FormSelect.swift */; };
+		FA5B8E31253B8BEB0010DD38 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEC2243B9FD005148AC /* Article.swift */; };
+		FA5B8E32253B8BEB0010DD38 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEE2243BA2D005148AC /* Response.swift */; };
+		FA5B8E33253B8BEB0010DD38 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623923434EE5007ED9BA /* EmptyResponse.swift */; };
+		FA5B8E38253B8BF20010DD38 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183AF2248E76400CA2492 /* TokenResponse.swift */; };
+		FA5B8E3C253B8BF70010DD38 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20624D23452B65007ED9BA /* Course.swift */; };
+		FA5B8E40253B8BFB0010DD38 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D02347D1E400D32827 /* NotificationModel.swift */; };
+		FA5B8E4A253B8C000010DD38 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FC2351293E00D4D593 /* Lecture.swift */; };
+		FA5B8E4B253B8C000010DD38 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F2234FC17A002BA33D /* Event.swift */; };
+		FA5B8E4C253B8C000010DD38 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F0234FC15A002BA33D /* Schedule.swift */; };
+		FA5B8E53253B8C050010DD38 /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3E23EAAD5A004C7BC6 /* Mark.swift */; };
+		FA5B8E54253B8C050010DD38 /* StudyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3A23EAAD01004C7BC6 /* StudyProgram.swift */; };
+		FA5B8E55253B8C050010DD38 /* MarkSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3C23EAAD33004C7BC6 /* MarkSemester.swift */; };
+		FA5B8E59253B8C080010DD38 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */; };
+		FA5B8E5D253B8C0E0010DD38 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459075243F3E7400BF7E0F /* Contact.swift */; };
+		FA5B8E5E253B8C0E0010DD38 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459077243F3F1900BF7E0F /* Position.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
 		FA66429C24144F40002A3315 /* libStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66428C24144C7A002A3315 /* libStorage.a */; };
 		FA66429F24144F58002A3315 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426424124929002A3315 /* Storage.swift */; };
 		FA6642A024144F58002A3315 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426624124943002A3315 /* DiskStorage.swift */; };
 		FA6642A124144F58002A3315 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA664268241249B8002A3315 /* CodableStorage.swift */; };
-		FA78FE902414DB6B004AD296 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */; };
 		FA8714CA23E40B9000DB728C /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714C923E40B9000DB728C /* FormTextField.swift */; };
 		FA8714D323E40DD100DB728C /* PinSettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714CE23E40DD100DB728C /* PinSettingsModuleBuilder.swift */; };
 		FA8714D423E40DD100DB728C /* PinSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714CF23E40DD100DB728C /* PinSettingsRouter.swift */; };
@@ -88,19 +100,6 @@
 		FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D223E40DD100DB728C /* PinSettingsViewModel.swift */; };
 		FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */; };
 		FA89749324BB05670077C64C /* StateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89749224BB05670077C64C /* StateComponent.swift */; };
-		FA900C432414D9E600D8F935 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEC2243B9FD005148AC /* Article.swift */; };
-		FA900C442414D9E600D8F935 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEE2243BA2D005148AC /* Response.swift */; };
-		FA900C452414D9E600D8F935 /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20623923434EE5007ED9BA /* EmptyResponse.swift */; };
-		FA900C462414DA0400D8F935 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183AF2248E76400CA2492 /* TokenResponse.swift */; };
-		FA900C472414DA0F00D8F935 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20624D23452B65007ED9BA /* Course.swift */; };
-		FA900C482414DA1400D8F935 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D02347D1E400D32827 /* NotificationModel.swift */; };
-		FA900C492414DA2100D8F935 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FC2351293E00D4D593 /* Lecture.swift */; };
-		FA900C4A2414DA2800D8F935 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F2234FC17A002BA33D /* Event.swift */; };
-		FA900C4B2414DA3600D8F935 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F0234FC15A002BA33D /* Schedule.swift */; };
-		FA900C4C2414DA3F00D8F935 /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3E23EAAD5A004C7BC6 /* Mark.swift */; };
-		FA900C4D2414DA4300D8F935 /* StudyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3A23EAAD01004C7BC6 /* StudyProgram.swift */; };
-		FA900C4E2414DA4300D8F935 /* MarkSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3C23EAAD33004C7BC6 /* MarkSemester.swift */; };
-		FA900C4F2414DA5600D8F935 /* libModels.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA900C3C2414D9D000D8F935 /* libModels.a */; };
 		FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD67224377A1005148AC /* AppDelegate.swift */; };
 		FA90FD6F224377A4005148AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD6E224377A4005148AC /* Images.xcassets */; };
 		FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD70224377A4005148AC /* LaunchScreen.storyboard */; };
@@ -266,26 +265,10 @@
 			remoteGlobalIDString = FA66428B24144C7A002A3315;
 			remoteInfo = Storage;
 		};
-		FA900C502414DA5600D8F935 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA90FD5C224377A1005148AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA900C3B2414D9D000D8F935;
-			remoteInfo = Models;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FA66428A24144C7A002A3315 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA900C3A2414D9D000D8F935 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
@@ -396,7 +379,6 @@
 		FA8714D223E40DD100DB728C /* PinSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsViewModel.swift; sourceTree = "<group>"; };
 		FA8714D923E40E6F00DB728C /* PinSettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsRoute.swift; sourceTree = "<group>"; };
 		FA89749224BB05670077C64C /* StateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateComponent.swift; sourceTree = "<group>"; };
-		FA900C3C2414D9D000D8F935 /* libModels.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libModels.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA90FD64224377A1005148AC /* ORTUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORTUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA90FD67224377A1005148AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		FA90FD6E224377A4005148AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -579,13 +561,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA900C392414D9D000D8F935 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FA90FD61224377A1005148AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -611,7 +586,6 @@
 				FAD3D53A245F074700905DD4 /* libc++.tbd in Frameworks */,
 				FAD3D538245F073900905DD4 /* Foundation.framework in Frameworks */,
 				FAE3D5B5245ED77400CE6654 /* Carbon in Frameworks */,
-				FA900C4F2414DA5600D8F935 /* libModels.a in Frameworks */,
 				FAE3D5AF245ED67F00CE6654 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -811,6 +785,23 @@
 			path = AppearanceSettings;
 			sourceTree = "<group>";
 		};
+		FA5B8E2D253B8BC90010DD38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA459074243F3E6600BF7E0F /* Contacts */,
+				FA78FE8E2414DB50004AD296 /* Extensions */,
+				FAB74C3923EAACF6004C7BC6 /* Marks */,
+				FA4111EF234FC14A002BA33D /* Schedule */,
+				FA0927CF2347D1CE00D32827 /* Notifications */,
+				FA20624C23452B51007ED9BA /* Courses */,
+				FAF183AE2248E75700CA2492 /* OAuth */,
+				FA90FDEC2243B9FD005148AC /* Article.swift */,
+				FA90FDEE2243BA2D005148AC /* Response.swift */,
+				FA20623923434EE5007ED9BA /* EmptyResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FA66428D24144C7A002A3315 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -853,29 +844,11 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		FA900C3D2414D9D000D8F935 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				FA459074243F3E6600BF7E0F /* Contacts */,
-				FA78FE8E2414DB50004AD296 /* Extensions */,
-				FAB74C3923EAACF6004C7BC6 /* Marks */,
-				FA4111EF234FC14A002BA33D /* Schedule */,
-				FA0927CF2347D1CE00D32827 /* Notifications */,
-				FA20624C23452B51007ED9BA /* Courses */,
-				FAF183AE2248E75700CA2492 /* OAuth */,
-				FA90FDEC2243B9FD005148AC /* Article.swift */,
-				FA90FDEE2243BA2D005148AC /* Response.swift */,
-				FA20623923434EE5007ED9BA /* EmptyResponse.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		FA90FD5B224377A0005148AC = {
 			isa = PBXGroup;
 			children = (
 				FA90FD66224377A1005148AC /* ORTUS */,
 				FA66428D24144C7A002A3315 /* Storage */,
-				FA900C3D2414D9D000D8F935 /* Models */,
 				FA90FD65224377A1005148AC /* Products */,
 				FA90FDC522438B41005148AC /* Frameworks */,
 			);
@@ -886,7 +859,6 @@
 			children = (
 				FA90FD64224377A1005148AC /* ORTUS.app */,
 				FA66428C24144C7A002A3315 /* libStorage.a */,
-				FA900C3C2414D9D000D8F935 /* libModels.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -897,6 +869,7 @@
 				FA6642842413BE99002A3315 /* ORTUS.entitlements */,
 				FA90FD7C22437B10005148AC /* Extensions */,
 				FA90FD7B22437B09005148AC /* API */,
+				FA5B8E2D253B8BC90010DD38 /* Models */,
 				FA90FD7E22437B1D005148AC /* Views */,
 				FA90FD9522437D33005148AC /* Routing */,
 				FA90FD7A22437AFD005148AC /* Modules */,
@@ -1458,23 +1431,6 @@
 			productReference = FA66428C24144C7A002A3315 /* libStorage.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		FA900C3B2414D9D000D8F935 /* Models */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA900C422414D9D000D8F935 /* Build configuration list for PBXNativeTarget "Models" */;
-			buildPhases = (
-				FA900C382414D9D000D8F935 /* Sources */,
-				FA900C392414D9D000D8F935 /* Frameworks */,
-				FA900C3A2414D9D000D8F935 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Models;
-			productName = Models;
-			productReference = FA900C3C2414D9D000D8F935 /* libModels.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		FA90FD63224377A1005148AC /* ORTUS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA90FD76224377A4005148AC /* Build configuration list for PBXNativeTarget "ORTUS" */;
@@ -1488,7 +1444,6 @@
 			);
 			dependencies = (
 				FA66429E24144F40002A3315 /* PBXTargetDependency */,
-				FA900C512414DA5600D8F935 /* PBXTargetDependency */,
 			);
 			name = ORTUS;
 			packageProductDependencies = (
@@ -1516,9 +1471,6 @@
 				ORGANIZATIONNAME = Firdavs;
 				TargetAttributes = {
 					FA66428B24144C7A002A3315 = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
-					FA900C3B2414D9D000D8F935 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					FA90FD63224377A1005148AC = {
@@ -1560,7 +1512,6 @@
 			targets = (
 				FA90FD63224377A1005148AC /* ORTUS */,
 				FA66428B24144C7A002A3315 /* Storage */,
-				FA900C3B2414D9D000D8F935 /* Models */,
 			);
 		};
 /* End PBXProject section */
@@ -1592,28 +1543,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA900C382414D9D000D8F935 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA900C4E2414DA4300D8F935 /* MarkSemester.swift in Sources */,
-				FA900C4A2414DA2800D8F935 /* Event.swift in Sources */,
-				FA900C482414DA1400D8F935 /* NotificationModel.swift in Sources */,
-				FA900C452414D9E600D8F935 /* EmptyResponse.swift in Sources */,
-				FA900C4B2414DA3600D8F935 /* Schedule.swift in Sources */,
-				FA900C4C2414DA3F00D8F935 /* Mark.swift in Sources */,
-				FA459076243F3E7400BF7E0F /* Contact.swift in Sources */,
-				FA900C4D2414DA4300D8F935 /* StudyProgram.swift in Sources */,
-				FA459078243F3F1900BF7E0F /* Position.swift in Sources */,
-				FA900C442414D9E600D8F935 /* Response.swift in Sources */,
-				FA900C472414DA0F00D8F935 /* Course.swift in Sources */,
-				FA78FE902414DB6B004AD296 /* DateFormatter.swift in Sources */,
-				FA900C492414DA2100D8F935 /* Lecture.swift in Sources */,
-				FA900C462414DA0400D8F935 /* TokenResponse.swift in Sources */,
-				FA900C432414D9E600D8F935 /* Article.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FA90FD60224377A1005148AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1632,6 +1561,7 @@
 				FABBF3FF23512A4100D4D593 /* LectureComponent.swift in Sources */,
 				FAF183C922490FC600CA2492 /* ScheduleViewModel.swift in Sources */,
 				FA90FDB822438069005148AC /* UIImage.swift in Sources */,
+				FA5B8E31253B8BEB0010DD38 /* Article.swift in Sources */,
 				FABF939A2389C7E200F78FF1 /* ScheduleTableViewAdapter.swift in Sources */,
 				FA90FD9722437D50005148AC /* Router.swift in Sources */,
 				FA1AC40A24EDA3E0009C4E31 /* MarkRoute.swift in Sources */,
@@ -1662,6 +1592,7 @@
 				FA90FD9E22437D81005148AC /* DefaultTransition.swift in Sources */,
 				FAE3AB3D239D100500120F96 /* Assets.swift in Sources */,
 				FAB74C4C23EC48B7004C7BC6 /* FormSwitch.swift in Sources */,
+				FA5B8E3C253B8BF70010DD38 /* Course.swift in Sources */,
 				FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */,
 				FA1AC41924EEE4D4009C4E31 /* SemesterComponent.swift in Sources */,
 				FA90FDC2224380FE005148AC /* SettingsViewModel.swift in Sources */,
@@ -1690,6 +1621,7 @@
 				FAF183C722490FC600CA2492 /* ScheduleViewController.swift in Sources */,
 				FAB74C5623EC4A50004C7BC6 /* ScheduleSettingsRouter.swift in Sources */,
 				FA55170F24E45F880043DC98 /* AppearanceSettingsModuleBuilder.swift in Sources */,
+				FA5B8E40253B8BFB0010DD38 /* NotificationModel.swift in Sources */,
 				FABF9398238897C800F78FF1 /* ScheduleDateHeader.swift in Sources */,
 				FA90FDBE224380FE005148AC /* SettingsModuleBuilder.swift in Sources */,
 				FAB74C4423EAB1D1004C7BC6 /* GradeComponentView.swift in Sources */,
@@ -1701,10 +1633,13 @@
 				FAE5284F244462AB009851C9 /* ContactInfoComponentView.swift in Sources */,
 				FA45907F243F6DF500BF7E0F /* ContactComponent.swift in Sources */,
 				FAB74C5D23EC4D94004C7BC6 /* UserDefaults.swift in Sources */,
+				FA5B8E38253B8BF20010DD38 /* TokenResponse.swift in Sources */,
 				FA0BEFDB2443293E00A10A0B /* ButtonsStyle.swift in Sources */,
+				FA5B8E54253B8C050010DD38 /* StudyProgram.swift in Sources */,
 				FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */,
 				FA45906F243F30A100BF7E0F /* ContactsView.swift in Sources */,
 				FAD18D5923B1746600C0D89B /* BrowserView.swift in Sources */,
+				FA5B8E32253B8BEB0010DD38 /* Response.swift in Sources */,
 				FA181B3124F822F300402667 /* EventDescriptionViewController.swift in Sources */,
 				FAB74C2A23E9F976004C7BC6 /* IconTextComponent.swift in Sources */,
 				FAB74C2C23E9F996004C7BC6 /* IconTextComponentView.swift in Sources */,
@@ -1720,6 +1655,7 @@
 				FA90FE012243CF0E005148AC /* ArticleView.swift in Sources */,
 				FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */,
 				FA1AC41B24EEE4E3009C4E31 /* SemesterComponentView.swift in Sources */,
+				FA5B8E5D253B8C0E0010DD38 /* Contact.swift in Sources */,
 				FA89749324BB05670077C64C /* StateComponent.swift in Sources */,
 				FAB74C4A23EBE4E4004C7BC6 /* FormLink.swift in Sources */,
 				FA90FD8122437B51005148AC /* MainTabBarController.swift in Sources */,
@@ -1733,15 +1669,18 @@
 				FAB74C1823E9F46D004C7BC6 /* TextComponent.swift in Sources */,
 				FA45906C243F30A100BF7E0F /* ContactsModuleBuilder.swift in Sources */,
 				FABBF3FB23511BB300D4D593 /* EventComponentView.swift in Sources */,
+				FA5B8E53253B8C050010DD38 /* Mark.swift in Sources */,
 				FA39AEDB23E9ED3800C4A70C /* HomeRouter.swift in Sources */,
 				FABF6DC7239C4CAB00F57F8A /* LoginViewModel.swift in Sources */,
 				FAD18D5823B1746600C0D89B /* BrowserViewController.swift in Sources */,
 				FA990A5B239D1DAA00BE9ACA /* UIWindow.swift in Sources */,
+				FA5B8E4B253B8C000010DD38 /* Event.swift in Sources */,
 				FAB74C2123E9F60D004C7BC6 /* SemesterModuleBuilder.swift in Sources */,
 				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
 				FACACC9A249A8F6E0075604F /* ORTUSTableViewAdapter.swift in Sources */,
 				FAE3AB42239D141600120F96 /* Button.swift in Sources */,
+				FA5B8E4A253B8C000010DD38 /* Lecture.swift in Sources */,
 				FA45908B244086CD00BF7E0F /* ContactRouter.swift in Sources */,
 				FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */,
 				FAD18D5623B1746600C0D89B /* BrowserModuleBuilder.swift in Sources */,
@@ -1769,11 +1708,13 @@
 				FABF6DC6239C4CAB00F57F8A /* LoginView.swift in Sources */,
 				FACACC9C249A8FD10075604F /* ORTUSTableViewCell.swift in Sources */,
 				FA8714CA23E40B9000DB728C /* FormTextField.swift in Sources */,
+				FA5B8E5E253B8C0E0010DD38 /* Position.swift in Sources */,
 				FA4590902440914100BF7E0F /* ContactRoute.swift in Sources */,
 				FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */,
 				FA8714D323E40DD100DB728C /* PinSettingsModuleBuilder.swift in Sources */,
 				FA90FDA222437D94005148AC /* PushTransition.swift in Sources */,
 				FAE5284B2443744B009851C9 /* OpenMapDirections.swift in Sources */,
+				FA5B8E33253B8BEB0010DD38 /* EmptyResponse.swift in Sources */,
 				FAB74C2323E9F60D004C7BC6 /* SemesterViewController.swift in Sources */,
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */,
@@ -1808,13 +1749,16 @@
 				FA45908A244086CD00BF7E0F /* ContactModuleBuilder.swift in Sources */,
 				FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */,
 				FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */,
+				FA5B8E4C253B8C000010DD38 /* Schedule.swift in Sources */,
 				FA1AC40524EDA3B7009C4E31 /* MarkRouter.swift in Sources */,
+				FA5B8E55253B8C050010DD38 /* MarkSemester.swift in Sources */,
 				FA90FE002243CF0E005148AC /* ArticleViewController.swift in Sources */,
 				FA990A65239D7EB900BE9ACA /* LoginRoute.swift in Sources */,
 				FAB74C4623EAB2EC004C7BC6 /* CircleView.swift in Sources */,
 				FA459073243F314B00BF7E0F /* ContactsRoute.swift in Sources */,
 				FA90FD9422437CC2005148AC /* NavigationController.swift in Sources */,
 				FA90FD9222437C9D005148AC /* Styling.swift in Sources */,
+				FA5B8E59253B8C080010DD38 /* DateFormatter.swift in Sources */,
 				FA90FDE12243966B005148AC /* API.swift in Sources */,
 				FA90FD8B22437BD0005148AC /* Module.swift in Sources */,
 				FA1AC40624EDA3B7009C4E31 /* MarkViewController.swift in Sources */,
@@ -1830,11 +1774,6 @@
 			isa = PBXTargetDependency;
 			target = FA66428B24144C7A002A3315 /* Storage */;
 			targetProxy = FA66429D24144F40002A3315 /* PBXContainerItemProxy */;
-		};
-		FA900C512414DA5600D8F935 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA900C3B2414D9D000D8F935 /* Models */;
-			targetProxy = FA900C502414DA5600D8F935 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1874,34 +1813,6 @@
 			name = Debug;
 		};
 		FA66429224144C7A002A3315 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		FA900C402414D9D000D8F935 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FA900C412414D9D000D8F935 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -2107,15 +2018,6 @@
 			buildConfigurations = (
 				FA66429124144C7A002A3315 /* Debug */,
 				FA66429224144C7A002A3315 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FA900C422414D9D000D8F935 /* Build configuration list for PBXNativeTarget "Models" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA900C402414D9D000D8F935 /* Debug */,
-				FA900C412414D9D000D8F935 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

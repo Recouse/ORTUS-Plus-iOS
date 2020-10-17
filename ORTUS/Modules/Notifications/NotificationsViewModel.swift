@@ -8,7 +8,6 @@
 
 import Foundation
 import Promises
-import Models
 import Storage
 
 class NotificationsViewModel: ViewModel {

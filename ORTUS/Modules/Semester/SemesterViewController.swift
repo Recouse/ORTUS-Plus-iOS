@@ -8,7 +8,6 @@
 
 import UIKit
 import Carbon
-import Models
 
 class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
     var viewModel: SemesterViewModel

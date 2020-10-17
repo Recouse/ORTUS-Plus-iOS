@@ -8,7 +8,6 @@
 
 import UIKit
 import Carbon
-import Models
 
 class ContactsViewController: ORTUSTableViewController, ModuleViewModel {
     var viewModel: ContactsViewModel

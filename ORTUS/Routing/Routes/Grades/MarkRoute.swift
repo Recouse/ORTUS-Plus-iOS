@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Models
 
 protocol MarkRoute: Route {
     func openMark(_ mark: Mark)

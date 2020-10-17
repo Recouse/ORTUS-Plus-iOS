@@ -6,8 +6,6 @@
 //  Copyright (c) 2019 Firdavs. All rights reserved.
 //
 
-import Models
-
 class ArticleViewModel: ViewModel {
     let router: ArticleRouter.Routes
     

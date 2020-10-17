@@ -7,7 +7,6 @@
 //
 
 import Promises
-import Models
 import Storage
 
 class GradesViewModel: ViewModel {

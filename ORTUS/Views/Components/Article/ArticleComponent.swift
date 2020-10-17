@@ -9,7 +9,6 @@
 import UIKit
 import Carbon
 import Kingfisher
-import Models
 
 struct ArticleComponent: IdentifiableComponent {
     var id: String

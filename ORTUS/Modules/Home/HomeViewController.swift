@@ -9,7 +9,6 @@
 import UIKit
 import Carbon
 import Promises
-import Models
 
 class HomeViewController: ORTUSTableViewController, ModuleViewModel {
     enum ID {

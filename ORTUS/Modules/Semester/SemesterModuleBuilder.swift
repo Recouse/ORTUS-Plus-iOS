@@ -6,8 +6,6 @@
 //  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
-import Models
-
 class SemesterModuleBuilder: ModuleBuilder {
     typealias M = SemesterViewController
     typealias P = Semester
