@@ -86,16 +86,10 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
     
     func render() {
         var mainCells = [
+            CellNode(FormSection(title: "Appearance").identified(by: ID.appearance)),
             CellNode(FormSection(title: "PIN Code").identified(by: ID.pinCode)),
             CellNode(FormSection(title: "Schedule").identified(by: ID.schedule))
         ]
-        
-        if  #available(iOS 13.0, *) {
-            mainCells.insert(
-                CellNode(FormSection(title: "Appearance").identified(by: ID.appearance)),
-                at: 0
-            )
-        }
         
         renderer.render {
             Section(

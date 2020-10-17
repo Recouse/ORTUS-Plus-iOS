@@ -14,7 +14,7 @@ class ContactInfoComponentView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
-        label.textColor = ColorCompatibility.label
+        label.textColor = .label
         
         return label
     }()
@@ -30,7 +30,7 @@ class ContactInfoComponentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
+        backgroundColor = .secondarySystemGroupedBackground
         
         addLayoutGuide(contentLayoutGuide)
         contentLayoutGuide.snp.makeConstraints {

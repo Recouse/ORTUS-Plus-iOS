@@ -27,7 +27,7 @@ class NewsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         addSubview(tableView)
         tableView.snp.makeConstraints {

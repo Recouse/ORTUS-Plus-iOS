@@ -56,7 +56,7 @@ class FormTextFieldView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
+        backgroundColor = .secondarySystemGroupedBackground
         
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {

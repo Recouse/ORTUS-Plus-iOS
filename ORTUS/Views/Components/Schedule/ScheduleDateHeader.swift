@@ -38,7 +38,7 @@ struct ScheduleDateHeader: Carbon.Component, Equatable {
 class ScheduleDateHeaderView: UIView {
     let dayLabel: UILabel = {
         let label = UILabel()
-        label.textColor = ColorCompatibility.label
+        label.textColor = .label
         label.font = .systemFont(ofSize: 15, weight: .semibold)
         
         return label
@@ -55,7 +55,7 @@ class ScheduleDateHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemGray5
+        backgroundColor = .systemGray5
         
         addSubview(dayLabel)
         dayLabel.snp.makeConstraints {

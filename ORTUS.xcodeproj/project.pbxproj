@@ -25,8 +25,6 @@
 		FA1AC41624EDAB65009C4E31 /* MarkComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41524EDAB65009C4E31 /* MarkComponentView.swift */; };
 		FA1AC41924EEE4D4009C4E31 /* SemesterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41824EEE4D4009C4E31 /* SemesterComponent.swift */; };
 		FA1AC41B24EEE4E3009C4E31 /* SemesterComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC41A24EEE4E3009C4E31 /* SemesterComponentView.swift */; };
-		FA1DEF872416DAF300704B6E /* LectureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF862416DAF300704B6E /* LectureComponent.swift */; };
-		FA1DEF892416DAFE00704B6E /* LectureComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */; };
 		FA1DEF8B2417603100704B6E /* VersionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8A2417603100704B6E /* VersionComponent.swift */; };
 		FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8C2417605400704B6E /* VersionComponentView.swift */; };
 		FA1DEF8F241761DC00704B6E /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1DEF8E241761DC00704B6E /* Bundle.swift */; };
@@ -39,8 +37,6 @@
 		FA2062DD234628A6007ED9BA /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D8234628A6007ED9BA /* NotificationsViewController.swift */; };
 		FA2062DE234628A6007ED9BA /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062D9234628A6007ED9BA /* NotificationsView.swift */; };
 		FA2062DF234628A6007ED9BA /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2062DA234628A6007ED9BA /* NotificationsViewModel.swift */; };
-		FA2F31AD2419702A0067F99A /* EmptyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F31AC2419702A0067F99A /* EmptyComponent.swift */; };
-		FA2F31AF241970380067F99A /* EmptyComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F31AE241970380067F99A /* EmptyComponentView.swift */; };
 		FA327C1C2243FCE40061E604 /* ArticleHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */; };
 		FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */; };
 		FA39AEBE23E8CB8300C4A70C /* NotificationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AEBD23E8CB8300C4A70C /* NotificationComponent.swift */; };
@@ -79,17 +75,11 @@
 		FA55171524E4605C0043DC98 /* AppearanceSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55171424E4605C0043DC98 /* AppearanceSettingsRoute.swift */; };
 		FA55171724E462240043DC98 /* FormSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55171624E462240043DC98 /* FormSelect.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
-		FA6642702413B430002A3315 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66426F2413B430002A3315 /* NotificationCenter.framework */; };
-		FA6642732413B430002A3315 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6642722413B430002A3315 /* TodayViewController.swift */; };
-		FA66427A2413B430002A3315 /* Schedule.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA66426E2413B430002A3315 /* Schedule.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FA66427F2413B4FC002A3315 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66427E2413B4FC002A3315 /* TodayView.swift */; };
 		FA66429C24144F40002A3315 /* libStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66428C24144C7A002A3315 /* libStorage.a */; };
 		FA66429F24144F58002A3315 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426424124929002A3315 /* Storage.swift */; };
 		FA6642A024144F58002A3315 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426624124943002A3315 /* DiskStorage.swift */; };
 		FA6642A124144F58002A3315 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA664268241249B8002A3315 /* CodableStorage.swift */; };
 		FA78FE902414DB6B004AD296 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */; };
-		FA78FE9C2415AD82004AD296 /* EventComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78FE9B2415AD82004AD296 /* EventComponentView.swift */; };
-		FA78FE9E2415AD8F004AD296 /* EventComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78FE9D2415AD8F004AD296 /* EventComponent.swift */; };
 		FA8714CA23E40B9000DB728C /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714C923E40B9000DB728C /* FormTextField.swift */; };
 		FA8714D323E40DD100DB728C /* PinSettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714CE23E40DD100DB728C /* PinSettingsModuleBuilder.swift */; };
 		FA8714D423E40DD100DB728C /* PinSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714CF23E40DD100DB728C /* PinSettingsRouter.swift */; };
@@ -111,7 +101,6 @@
 		FA900C4D2414DA4300D8F935 /* StudyProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3A23EAAD01004C7BC6 /* StudyProgram.swift */; };
 		FA900C4E2414DA4300D8F935 /* MarkSemester.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C3C23EAAD33004C7BC6 /* MarkSemester.swift */; };
 		FA900C4F2414DA5600D8F935 /* libModels.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA900C3C2414D9D000D8F935 /* libModels.a */; };
-		FA900C542414DAB300D8F935 /* libModels.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA900C3C2414D9D000D8F935 /* libModels.a */; };
 		FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FD67224377A1005148AC /* AppDelegate.swift */; };
 		FA90FD6F224377A4005148AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD6E224377A4005148AC /* Images.xcassets */; };
 		FA90FD72224377A4005148AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90FD70224377A4005148AC /* LaunchScreen.storyboard */; };
@@ -223,7 +212,6 @@
 		FAD3CA2C22455E25009DA6AE /* ArticleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2B22455E25009DA6AE /* ArticleTableViewAdapter.swift */; };
 		FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA2D2245612C009DA6AE /* UIApplication.swift */; };
 		FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */; };
-		FAD3D527245F062700905DD4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAD3D526245F062700905DD4 /* SnapKit */; };
 		FAD3D531245F071200905DD4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3D530245F071200905DD4 /* SystemConfiguration.framework */; };
 		FAD3D532245F071900905DD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3D52B245F06F000905DD4 /* UIKit.framework */; };
 		FAD3D533245F071F00905DD4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3D528245F06F000905DD4 /* AdSupport.framework */; };
@@ -251,14 +239,11 @@
 		FAE3D5B8245ED7E100CE6654 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B7245ED7E100CE6654 /* Promises */; };
 		FAE3D5BB245ED89600CE6654 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5BA245ED89600CE6654 /* KeychainAccess */; };
 		FAE3D5C9245EDB5400CE6654 /* DifferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5C8245EDB5400CE6654 /* DifferenceKit */; };
-		FAE3D5D1245EDC9F00CE6654 /* Carbon in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5D0245EDC9F00CE6654 /* Carbon */; };
-		FAE3D5D3245EDCAC00CE6654 /* DifferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5D2245EDCAC00CE6654 /* DifferenceKit */; };
 		FAE5284924432E69009851C9 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284824432E69009851C9 /* CircleButton.swift */; };
 		FAE5284B2443744B009851C9 /* OpenMapDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284A2443744B009851C9 /* OpenMapDirections.swift */; };
 		FAE5284D244462A1009851C9 /* ContactInfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284C244462A1009851C9 /* ContactInfoComponent.swift */; };
 		FAE5284F244462AB009851C9 /* ContactInfoComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284E244462AB009851C9 /* ContactInfoComponentView.swift */; };
 		FAE528512444EE0E009851C9 /* LatviaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */; };
-		FAE528532445F838009851C9 /* ColorCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE528522445F838009851C9 /* ColorCompatibility.swift */; };
 		FAF183BE22490AD800CA2492 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183BD22490AD800CA2492 /* UserViewModel.swift */; };
 		FAF183C522490FC600CA2492 /* ScheduleModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C022490FC600CA2492 /* ScheduleModuleBuilder.swift */; };
 		FAF183C622490FC600CA2492 /* ScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF183C122490FC600CA2492 /* ScheduleRouter.swift */; };
@@ -270,18 +255,10 @@
 		FAF77B242246A64200197641 /* OAuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B232246A64200197641 /* OAuthApi.swift */; };
 		FAF77B272246A98500197641 /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B262246A98500197641 /* FormButton.swift */; };
 		FAF77B292246AC3C00197641 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF77B282246AC3C00197641 /* Header.swift */; };
-		FAF814452414524D00915FF8 /* libStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA66428C24144C7A002A3315 /* libStorage.a */; };
 		FAFD013B246474D300DF9FEA /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD013A246474D300DF9FEA /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FA6642782413B430002A3315 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA90FD5C224377A1005148AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA66426D2413B430002A3315;
-			remoteInfo = Schedule;
-		};
 		FA66429D24144F40002A3315 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA90FD5C224377A1005148AC /* Project object */;
@@ -295,20 +272,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = FA900C3B2414D9D000D8F935;
 			remoteInfo = Models;
-		};
-		FA900C552414DAB300D8F935 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA90FD5C224377A1005148AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA900C3B2414D9D000D8F935;
-			remoteInfo = Models;
-		};
-		FAF814462414524D00915FF8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA90FD5C224377A1005148AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA66428B24144C7A002A3315;
-			remoteInfo = Storage;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -337,7 +300,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FA66427A2413B430002A3315 /* Schedule.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,8 +326,6 @@
 		FA1AC41524EDAB65009C4E31 /* MarkComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkComponentView.swift; sourceTree = "<group>"; };
 		FA1AC41824EEE4D4009C4E31 /* SemesterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterComponent.swift; sourceTree = "<group>"; };
 		FA1AC41A24EEE4E3009C4E31 /* SemesterComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterComponentView.swift; sourceTree = "<group>"; };
-		FA1DEF862416DAF300704B6E /* LectureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponent.swift; sourceTree = "<group>"; };
-		FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureComponentView.swift; sourceTree = "<group>"; };
 		FA1DEF8A2417603100704B6E /* VersionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComponent.swift; sourceTree = "<group>"; };
 		FA1DEF8C2417605400704B6E /* VersionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComponentView.swift; sourceTree = "<group>"; };
 		FA1DEF8E241761DC00704B6E /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -380,8 +340,6 @@
 		FA2062D8234628A6007ED9BA /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		FA2062D9234628A6007ED9BA /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		FA2062DA234628A6007ED9BA /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
-		FA2F31AC2419702A0067F99A /* EmptyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyComponent.swift; sourceTree = "<group>"; };
-		FA2F31AE241970380067F99A /* EmptyComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyComponentView.swift; sourceTree = "<group>"; };
 		FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponent.swift; sourceTree = "<group>"; };
 		FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleHeaderComponentView.swift; sourceTree = "<group>"; };
 		FA39AEBD23E8CB8300C4A70C /* NotificationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationComponent.swift; sourceTree = "<group>"; };
@@ -426,17 +384,10 @@
 		FA66426424124929002A3315 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		FA66426624124943002A3315 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
 		FA664268241249B8002A3315 /* CodableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
-		FA66426E2413B430002A3315 /* Schedule.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Schedule.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA66426F2413B430002A3315 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		FA6642722413B430002A3315 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		FA6642772413B430002A3315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA66427E2413B4FC002A3315 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		FA6642842413BE99002A3315 /* ORTUS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ORTUS.entitlements; sourceTree = "<group>"; };
-		FA6642852413BF01002A3315 /* Schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Schedule.entitlements; sourceTree = "<group>"; };
 		FA66428C24144C7A002A3315 /* libStorage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStorage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
-		FA78FE9B2415AD82004AD296 /* EventComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComponentView.swift; sourceTree = "<group>"; };
-		FA78FE9D2415AD8F004AD296 /* EventComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventComponent.swift; sourceTree = "<group>"; };
 		FA8714C923E40B9000DB728C /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		FA8714CE23E40DD100DB728C /* PinSettingsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsModuleBuilder.swift; sourceTree = "<group>"; };
 		FA8714CF23E40DD100DB728C /* PinSettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSettingsRouter.swift; sourceTree = "<group>"; };
@@ -605,7 +556,6 @@
 		FAE5284C244462A1009851C9 /* ContactInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoComponent.swift; sourceTree = "<group>"; };
 		FAE5284E244462AB009851C9 /* ContactInfoComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoComponentView.swift; sourceTree = "<group>"; };
 		FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatviaDateFormatter.swift; sourceTree = "<group>"; };
-		FAE528522445F838009851C9 /* ColorCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCompatibility.swift; sourceTree = "<group>"; };
 		FAF183AF2248E76400CA2492 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		FAF183BD22490AD800CA2492 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		FAF183C022490FC600CA2492 /* ScheduleModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModuleBuilder.swift; sourceTree = "<group>"; };
@@ -622,19 +572,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FA66426B2413B430002A3315 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA6642702413B430002A3315 /* NotificationCenter.framework in Frameworks */,
-				FA900C542414DAB300D8F935 /* libModels.a in Frameworks */,
-				FAF814452414524D00915FF8 /* libStorage.a in Frameworks */,
-				FAD3D527245F062700905DD4 /* SnapKit in Frameworks */,
-				FAE3D5D3245EDCAC00CE6654 /* DifferenceKit in Frameworks */,
-				FAE3D5D1245EDC9F00CE6654 /* Carbon in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FA66428924144C7A002A3315 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -874,18 +811,6 @@
 			path = AppearanceSettings;
 			sourceTree = "<group>";
 		};
-		FA6642712413B430002A3315 /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-				FA78FE912415A96C004AD296 /* Components */,
-				FA6642852413BF01002A3315 /* Schedule.entitlements */,
-				FA66427E2413B4FC002A3315 /* TodayView.swift */,
-				FA6642722413B430002A3315 /* TodayViewController.swift */,
-				FA6642772413B430002A3315 /* Info.plist */,
-			);
-			path = Schedule;
-			sourceTree = "<group>";
-		};
 		FA66428D24144C7A002A3315 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -903,19 +828,6 @@
 				FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		FA78FE912415A96C004AD296 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				FA78FE9D2415AD8F004AD296 /* EventComponent.swift */,
-				FA78FE9B2415AD82004AD296 /* EventComponentView.swift */,
-				FA1DEF862416DAF300704B6E /* LectureComponent.swift */,
-				FA1DEF882416DAFE00704B6E /* LectureComponentView.swift */,
-				FA2F31AC2419702A0067F99A /* EmptyComponent.swift */,
-				FA2F31AE241970380067F99A /* EmptyComponentView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		FA8714CD23E40DBB00DB728C /* PinSettings */ = {
@@ -962,7 +874,6 @@
 			isa = PBXGroup;
 			children = (
 				FA90FD66224377A1005148AC /* ORTUS */,
-				FA6642712413B430002A3315 /* Schedule */,
 				FA66428D24144C7A002A3315 /* Storage */,
 				FA900C3D2414D9D000D8F935 /* Models */,
 				FA90FD65224377A1005148AC /* Products */,
@@ -974,7 +885,6 @@
 			isa = PBXGroup;
 			children = (
 				FA90FD64224377A1005148AC /* ORTUS.app */,
-				FA66426E2413B430002A3315 /* Schedule.appex */,
 				FA66428C24144C7A002A3315 /* libStorage.a */,
 				FA900C3C2414D9D000D8F935 /* libModels.a */,
 			);
@@ -1063,7 +973,6 @@
 				FA1DEF8E241761DC00704B6E /* Bundle.swift */,
 				FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */,
 				FAE5284A2443744B009851C9 /* OpenMapDirections.swift */,
-				FAE528522445F838009851C9 /* ColorCompatibility.swift */,
 				FAFD013A246474D300DF9FEA /* Cache.swift */,
 				FAF28BCF24D73FCB00627CA3 /* Shortcut.swift */,
 				FA0A75A024D856C30086E878 /* Overlay.swift */,
@@ -1532,30 +1441,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA66426D2413B430002A3315 /* Schedule */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA66427D2413B430002A3315 /* Build configuration list for PBXNativeTarget "Schedule" */;
-			buildPhases = (
-				FA66426A2413B430002A3315 /* Sources */,
-				FA66426B2413B430002A3315 /* Frameworks */,
-				FA66426C2413B430002A3315 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FAF814472414524D00915FF8 /* PBXTargetDependency */,
-				FA900C562414DAB300D8F935 /* PBXTargetDependency */,
-			);
-			name = Schedule;
-			packageProductDependencies = (
-				FAE3D5D0245EDC9F00CE6654 /* Carbon */,
-				FAE3D5D2245EDCAC00CE6654 /* DifferenceKit */,
-				FAD3D526245F062700905DD4 /* SnapKit */,
-			);
-			productName = Schedule;
-			productReference = FA66426E2413B430002A3315 /* Schedule.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		FA66428B24144C7A002A3315 /* Storage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA66429024144C7A002A3315 /* Build configuration list for PBXNativeTarget "Storage" */;
@@ -1602,7 +1487,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FA6642792413B430002A3315 /* PBXTargetDependency */,
 				FA66429E24144F40002A3315 /* PBXTargetDependency */,
 				FA900C512414DA5600D8F935 /* PBXTargetDependency */,
 			);
@@ -1628,12 +1512,9 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Firdavs;
 				TargetAttributes = {
-					FA66426D2413B430002A3315 = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
 					FA66428B24144C7A002A3315 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -1678,7 +1559,6 @@
 			projectRoot = "";
 			targets = (
 				FA90FD63224377A1005148AC /* ORTUS */,
-				FA66426D2413B430002A3315 /* Schedule */,
 				FA66428B24144C7A002A3315 /* Storage */,
 				FA900C3B2414D9D000D8F935 /* Models */,
 			);
@@ -1686,13 +1566,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FA66426C2413B430002A3315 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FA90FD62224377A1005148AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1708,21 +1581,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FA66426A2413B430002A3315 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA2F31AF241970380067F99A /* EmptyComponentView.swift in Sources */,
-				FA78FE9E2415AD8F004AD296 /* EventComponent.swift in Sources */,
-				FA1DEF872416DAF300704B6E /* LectureComponent.swift in Sources */,
-				FA66427F2413B4FC002A3315 /* TodayView.swift in Sources */,
-				FA1DEF892416DAFE00704B6E /* LectureComponentView.swift in Sources */,
-				FA6642732413B430002A3315 /* TodayViewController.swift in Sources */,
-				FA78FE9C2415AD82004AD296 /* EventComponentView.swift in Sources */,
-				FA2F31AD2419702A0067F99A /* EmptyComponent.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FA66428824144C7A002A3315 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1898,7 +1756,6 @@
 				FAB74C5823EC4A50004C7BC6 /* ScheduleSettingsView.swift in Sources */,
 				FA45907A243F44A700BF7E0F /* ContactsTableViewAdapter.swift in Sources */,
 				FA90FDA522437DC5005148AC /* Route.swift in Sources */,
-				FAE528532445F838009851C9 /* ColorCompatibility.swift in Sources */,
 				FA459070243F30A100BF7E0F /* ContactsViewModel.swift in Sources */,
 				FAB74C2E23E9FAB8004C7BC6 /* NewsRoute.swift in Sources */,
 				FAE3AB3F239D119200120F96 /* LoginStyle.swift in Sources */,
@@ -1969,11 +1826,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FA6642792413B430002A3315 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA66426D2413B430002A3315 /* Schedule */;
-			targetProxy = FA6642782413B430002A3315 /* PBXContainerItemProxy */;
-		};
 		FA66429E24144F40002A3315 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FA66428B24144C7A002A3315 /* Storage */;
@@ -1983,16 +1835,6 @@
 			isa = PBXTargetDependency;
 			target = FA900C3B2414D9D000D8F935 /* Models */;
 			targetProxy = FA900C502414DA5600D8F935 /* PBXContainerItemProxy */;
-		};
-		FA900C562414DAB300D8F935 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA900C3B2414D9D000D8F935 /* Models */;
-			targetProxy = FA900C552414DAB300D8F935 /* PBXContainerItemProxy */;
-		};
-		FAF814472414524D00915FF8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA66428B24144C7A002A3315 /* Storage */;
-			targetProxy = FAF814462414524D00915FF8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2017,64 +1859,12 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FA66427B2413B430002A3315 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Schedule/Schedule.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
-				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Schedule/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 0.3.0;
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUS.Schedule;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		FA66427C2413B430002A3315 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Schedule/Schedule.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
-				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Schedule/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 0.3.0;
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUS.Schedule;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		FA66429124144C7A002A3315 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2088,7 +1878,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2102,7 +1892,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2116,7 +1906,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2152,6 +1942,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2177,7 +1968,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2215,6 +2006,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2234,7 +2026,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2261,7 +2053,7 @@
 					"$(PROJECT_DIR)/ORTUS/Third\\ Party",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ORTUS/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2292,7 +2084,7 @@
 					"$(PROJECT_DIR)/ORTUS/Third\\ Party",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ORTUS/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2310,15 +2102,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA66427D2413B430002A3315 /* Build configuration list for PBXNativeTarget "Schedule" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA66427B2413B430002A3315 /* Debug */,
-				FA66427C2413B430002A3315 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		FA66429024144C7A002A3315 /* Build configuration list for PBXNativeTarget "Storage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2425,11 +2208,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FAD3D526245F062700905DD4 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAE3D5AD245ED67F00CE6654 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
 		FAE3D5A8245ED51100CE6654 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAE3D5A7245ED51100CE6654 /* XCRemoteSwiftPackageReference "Alamofire" */;
@@ -2466,16 +2244,6 @@
 			productName = KeychainAccess;
 		};
 		FAE3D5C8245EDB5400CE6654 /* DifferenceKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */;
-			productName = DifferenceKit;
-		};
-		FAE3D5D0245EDC9F00CE6654 /* Carbon */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAE3D5B3245ED77400CE6654 /* XCRemoteSwiftPackageReference "Carbon" */;
-			productName = Carbon;
-		};
-		FAE3D5D2245EDCAC00CE6654 /* DifferenceKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */;
 			productName = DifferenceKit;

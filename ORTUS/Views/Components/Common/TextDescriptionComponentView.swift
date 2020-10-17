@@ -13,7 +13,7 @@ class TextDescriptionComponentView: UIView {
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         
         return label
     }()

@@ -206,15 +206,9 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
 extension HomeViewController {
     func prepareNavigationItem() {
         var settingsImage: UIImage?
-        
-        if #available(iOS 13.0, *) {
-            settingsImage = UIImage(systemName: "gear")
-        } else {
-            settingsImage = Asset.Images.settings.image
-        }
-        
+                
         let settingsItem = UIBarButtonItem(
-            image: settingsImage,
+            image: UIImage(systemName: "gear"),
             style: .plain,
             target: self,
             action: #selector(openSettings))

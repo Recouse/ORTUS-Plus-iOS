@@ -19,7 +19,7 @@ class NotificationComponentView: UIView {
     
     let dateLabel: UILabel = {
         let label = UILabel()
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 16)
         
         return label
@@ -29,7 +29,7 @@ class NotificationComponentView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "chevronRight")
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = ColorCompatibility.tertiaryLabel
+        imageView.tintColor = .tertiaryLabel
         
         return imageView
     }()

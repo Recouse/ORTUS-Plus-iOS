@@ -12,7 +12,7 @@ class LectureComponentView: UIView {
     let startTimeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
-        label.textColor = ColorCompatibility.label
+        label.textColor = .label
         
         return label
     }()
@@ -20,7 +20,7 @@ class LectureComponentView: UIView {
     let endTimeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         
         return label
     }()
@@ -37,7 +37,7 @@ class LectureComponentView: UIView {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
-        label.textColor = ColorCompatibility.label
+        label.textColor = .label
         label.numberOfLines = 2
         
         return label
@@ -54,7 +54,7 @@ class LectureComponentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         prepareTimeLabels()
         prepareContentSeparator()

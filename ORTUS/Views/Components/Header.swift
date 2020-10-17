@@ -28,7 +28,7 @@ struct Header: Carbon.Component, Equatable {
 class HeaderView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 13)
         
         return label

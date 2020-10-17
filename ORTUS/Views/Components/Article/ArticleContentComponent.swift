@@ -103,7 +103,7 @@ class ArticleContentView: UIView, WKNavigationDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         addSubview(webView)
         webView.snp.makeConstraints {

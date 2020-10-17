@@ -190,10 +190,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     fileprivate func overrideAppearance() {
-        guard #available(iOS 13.0, *) else {
-            return
-        }
-        
         let appearance = UserDefaults.standard.value(for: .appearance)
         
         switch appearance {

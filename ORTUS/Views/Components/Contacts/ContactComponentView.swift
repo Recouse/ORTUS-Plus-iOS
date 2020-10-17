@@ -14,7 +14,7 @@ class ContactComponentView: UIView {
     let photoView: CircleImageView = {
         let imageView = CircleImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = ColorCompatibility.systemGray3
+        imageView.backgroundColor = .systemGray3
         
         return imageView
     }()

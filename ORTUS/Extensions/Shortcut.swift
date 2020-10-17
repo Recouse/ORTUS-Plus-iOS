@@ -92,10 +92,8 @@ class Shortcut {
         
         self.activity.contentAttributeSet = attributes
         
-        if #available(iOS 12.0, *) {
-            self.activity.isEligibleForPrediction = true
-            self.activity.suggestedInvocationPhrase = activity.invocationPhrase
-        }
+        self.activity.isEligibleForPrediction = true
+        self.activity.suggestedInvocationPhrase = activity.invocationPhrase
     }
     
     func donate() {
@@ -114,11 +112,9 @@ class Shortcut {
             group.leave()
         }
         
-        if #available(iOS 12.0, *) {
-            group.enter()
-            NSUserActivity.deleteAllSavedUserActivities {
-                group.leave()
-            }
+        group.enter()
+        NSUserActivity.deleteAllSavedUserActivities {
+            group.leave()
         }
         
         group.notify(queue: .main) {

@@ -12,7 +12,7 @@ class ArticleView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundView = nil
-        tableView.backgroundColor = ColorCompatibility.systemBackground
+        tableView.backgroundColor = .systemBackground
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension

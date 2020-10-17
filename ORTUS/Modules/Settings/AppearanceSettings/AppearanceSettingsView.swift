@@ -10,13 +10,7 @@ import UIKit
 
 class AppearanceSettingsView: UIView {
     let tableView: UITableView = {
-        var style: UITableView.Style = .grouped
-        
-        if #available(iOS 13.0, *) {
-            style = .insetGrouped
-        }
-        
-        let tableView = UITableView(frame: .zero, style: style)
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.backgroundView = nil
         tableView.backgroundColor = .groupTableViewBackground
         tableView.rowHeight = UITableView.automaticDimension
@@ -30,7 +24,7 @@ class AppearanceSettingsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         addSubview(tableView)
         tableView.snp.makeConstraints {

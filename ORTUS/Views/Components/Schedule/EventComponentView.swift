@@ -15,7 +15,7 @@ class EventComponentView: UIView {
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.2
         label.textAlignment = .right
-        label.textColor = ColorCompatibility.label
+        label.textColor = .label
         
         return label
     }()
@@ -35,7 +35,7 @@ class EventComponentView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
-        label.textColor = ColorCompatibility.label
+        label.textColor = .label
         label.numberOfLines = 2
         
         return label
@@ -44,7 +44,7 @@ class EventComponentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         prepareTimeLabel()
         prepareContentSeparator()
