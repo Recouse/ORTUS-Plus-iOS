@@ -23,7 +23,7 @@ class VersionComponentView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .groupTableViewBackground
+        backgroundColor = .systemGroupedBackground
         
         addSubview(textLabel)
         textLabel.snp.makeConstraints {

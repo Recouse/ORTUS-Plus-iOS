@@ -204,9 +204,7 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
 }
 
 extension HomeViewController {
-    func prepareNavigationItem() {
-        var settingsImage: UIImage?
-                
+    func prepareNavigationItem() {                
         let settingsItem = UIBarButtonItem(
             image: UIImage(systemName: "gear"),
             style: .plain,

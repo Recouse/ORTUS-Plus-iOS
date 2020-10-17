@@ -85,7 +85,7 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
     }
     
     func render() {
-        var mainCells = [
+        let mainCells = [
             CellNode(FormSection(title: "Appearance").identified(by: ID.appearance)),
             CellNode(FormSection(title: "PIN Code").identified(by: ID.pinCode)),
             CellNode(FormSection(title: "Schedule").identified(by: ID.schedule))

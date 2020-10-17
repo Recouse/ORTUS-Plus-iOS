@@ -24,7 +24,7 @@ class Overlay {
             $0.edges.equalToSuperview()
         }
         
-        let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        let activityIndicator = UIActivityIndicatorView(style: .large)
         
         overlayView.addSubview(activityIndicator)
         activityIndicator.snp.makeConstraints {
