@@ -21,15 +21,14 @@ struct Header: Carbon.Component, Equatable {
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
-        return CGSize(width: bounds.width, height: 44)
+        return CGSize(width: bounds.width, height: 45)
     }
 }
 
 class HeaderView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .secondaryLabel
-        label.font = .systemFont(ofSize: 13)
+        label.font = UIFont.preferredFont(forTextStyle: .title2).bold()
         
         return label
     }()
@@ -39,7 +38,7 @@ class HeaderView: UIView {
         
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
-            $0.left.right.equalToSuperview().offset(Global.UI.edgeInset).inset(Global.UI.edgeInset)
+            $0.left.right.equalToSuperview()
             $0.bottom.equalToSuperview().inset(5)
         }
     }

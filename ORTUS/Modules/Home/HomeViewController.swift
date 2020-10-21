@@ -77,33 +77,38 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
         refreshControl.endRefreshing()
         
         renderer.render {
-            Section(id: "overview", header: Header(title: "Overview".uppercased()), cells: {
-                IconTextComponent(
-                    title: "News",
-                    icon: Asset.Images.news.image,
-                    color: .systemPurple
-                ).identified(by: ID.news)
-                
-                IconTextComponent(
-                    title: "Grades",
-                    icon: Asset.Images.ten.image,
-                    color: .systemBlue
-                ).identified(by: ID.grades)
-                
-                IconTextComponent(
-                    title: "Contacts",
-                    icon: UIImage(named: "personCircle"),
-                    color: .systemOrange
-                ).identified(by: ID.contacts)
-                
-                IconTextComponent(
-                    title: "ORTUS Website",
-                    icon: Asset.Images.ortusLogo.image,
-                    color: .systemGreen
-                ).identified(by: ID.ortus)
-            })
+            Section(
+                id: "overview",
+                header: Header(title: "Overview"),
+                footer: Footer(),
+                cells: {
+                    IconTextComponent(
+                        title: "News",
+                        icon: Asset.Images.news.image,
+                        color: .systemPurple
+                    ).identified(by: ID.news)
+                    
+                    IconTextComponent(
+                        title: "Grades",
+                        icon: Asset.Images.ten.image,
+                        color: .systemBlue
+                    ).identified(by: ID.grades)
+                    
+                    IconTextComponent(
+                        title: "Contacts",
+                        icon: UIImage(named: "personCircle"),
+                        color: .systemOrange
+                    ).identified(by: ID.contacts)
+                    
+                    IconTextComponent(
+                        title: "ORTUS Website",
+                        icon: Asset.Images.ortusLogo.image,
+                        color: .systemGreen
+                    ).identified(by: ID.ortus)
+                }
+            )
             
-            Section(id: "courses", header: Header(title: "Courses".uppercased()), cells: {
+            Section(id: "courses", header: Header(title: "Courses"), cells: {
                 Group(of: viewModel.semesters.enumerated()) { (index, semester) in
                     SemesterComponent(
                         semester: semester
