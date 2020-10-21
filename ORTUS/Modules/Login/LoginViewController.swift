@@ -13,7 +13,7 @@ class LoginViewController: Module, ModuleViewModel, AlertPresentable {
     var viewModel: LoginViewModel
     
     weak var loginView: LoginView! { return view as? LoginView }
-    weak var signInButton: Button! { return loginView.signInButton }
+    weak var signInButton: OButton! { return loginView.signInButton }
     
     let onboardingViewController = LoginOnboardingViewController()
     

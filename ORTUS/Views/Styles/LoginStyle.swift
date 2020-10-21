@@ -9,7 +9,7 @@
 import UIKit
 
 enum LoginStyle {
-    static let signInButton = Styling<Button> {
+    static let signInButton = Styling<OButton> {
         $0.backgroundColor = .clear
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.white.withAlphaComponent(0.9).cgColor

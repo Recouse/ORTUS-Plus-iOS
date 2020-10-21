@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Button: UIButton {
+class OButton: UIButton {
     override var isHighlighted: Bool {
         didSet {
             let alpha: CGFloat = isHighlighted ? 0.65 : 1

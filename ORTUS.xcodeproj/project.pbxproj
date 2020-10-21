@@ -45,6 +45,7 @@
 		FA39AEDB23E9ED3800C4A70C /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED623E9ED3800C4A70C /* HomeRouter.swift */; };
 		FA39AEDC23E9ED3800C4A70C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED723E9ED3800C4A70C /* HomeViewController.swift */; };
 		FA39AEDE23E9ED3800C4A70C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39AED923E9ED3800C4A70C /* HomeViewModel.swift */; };
+		FA43C3312540CB63004B1918 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43C3302540CB63004B1918 /* UIFont.swift */; };
 		FA45906C243F30A100BF7E0F /* ContactsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459067243F30A100BF7E0F /* ContactsModuleBuilder.swift */; };
 		FA45906D243F30A100BF7E0F /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459068243F30A100BF7E0F /* ContactsRouter.swift */; };
 		FA45906E243F30A100BF7E0F /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459069243F30A100BF7E0F /* ContactsViewController.swift */; };
@@ -142,6 +143,8 @@
 		FA90FE0A2243D413005148AC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE092243D413005148AC /* Date.swift */; };
 		FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE0B2243E397005148AC /* TabBarController.swift */; };
 		FA90FE0E2243E3C4005148AC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE0D2243E3C4005148AC /* UIColor.swift */; };
+		FA92D7B2253D5B50007CBA64 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA92D7B1253D5B50007CBA64 /* Kingfisher */; };
+		FA92D7B4253D5B50007CBA64 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA92D7B3253D5B50007CBA64 /* KingfisherSwiftUI */; };
 		FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA941BE9224BA7E800D7B170 /* Keys.swift */; };
 		FA990A56239D1D0400BE9ACA /* LoginOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A55239D1D0400BE9ACA /* LoginOnboardingViewController.swift */; };
 		FA990A58239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A57239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift */; };
@@ -227,9 +230,8 @@
 		FAE3AB3A239D0ED300120F96 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE3AB39239D0ED300120F96 /* Colors.xcassets */; };
 		FAE3AB3D239D100500120F96 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB3C239D100400120F96 /* Assets.swift */; };
 		FAE3AB3F239D119200120F96 /* LoginStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB3E239D119200120F96 /* LoginStyle.swift */; };
-		FAE3AB42239D141600120F96 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB41239D141600120F96 /* Button.swift */; };
+		FAE3AB42239D141600120F96 /* OButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3AB41239D141600120F96 /* OButton.swift */; };
 		FAE3D5A9245ED51100CE6654 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5A8245ED51100CE6654 /* Alamofire */; };
-		FAE3D5AC245ED62700CE6654 /* KingfisherStatic in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5AB245ED62700CE6654 /* KingfisherStatic */; };
 		FAE3D5AF245ED67F00CE6654 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5AE245ED67F00CE6654 /* SnapKit */; };
 		FAE3D5B2245ED6BE00CE6654 /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B1245ED6BE00CE6654 /* Pageboy */; };
 		FAE3D5B5245ED77400CE6654 /* Carbon in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B4245ED77400CE6654 /* Carbon */; };
@@ -314,6 +316,7 @@
 		FA4111F0234FC15A002BA33D /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		FA4111F2234FC17A002BA33D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FA4111F6234FCDE2002BA33D /* CVCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CVCalendar.framework; path = Carthage/Build/iOS/CVCalendar.framework; sourceTree = "<group>"; };
+		FA43C3302540CB63004B1918 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		FA459067243F30A100BF7E0F /* ContactsModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModuleBuilder.swift; sourceTree = "<group>"; };
 		FA459068243F30A100BF7E0F /* ContactsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRouter.swift; sourceTree = "<group>"; };
 		FA459069243F30A100BF7E0F /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
@@ -508,7 +511,7 @@
 		FAE3AB39239D0ED300120F96 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FAE3AB3C239D100400120F96 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		FAE3AB3E239D119200120F96 /* LoginStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStyle.swift; sourceTree = "<group>"; };
-		FAE3AB41239D141600120F96 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		FAE3AB41239D141600120F96 /* OButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OButton.swift; sourceTree = "<group>"; };
 		FAE5284824432E69009851C9 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		FAE5284A2443744B009851C9 /* OpenMapDirections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMapDirections.swift; sourceTree = "<group>"; };
 		FAE5284C244462A1009851C9 /* ContactInfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoComponent.swift; sourceTree = "<group>"; };
@@ -542,9 +545,10 @@
 				FAD3D534245F072F00905DD4 /* CoreGraphics.framework in Frameworks */,
 				FAD3D532245F071900905DD4 /* UIKit.framework in Frameworks */,
 				FAE3D5BB245ED89600CE6654 /* KeychainAccess in Frameworks */,
+				FA92D7B4253D5B50007CBA64 /* KingfisherSwiftUI in Frameworks */,
 				FAE3D5B8245ED7E100CE6654 /* Promises in Frameworks */,
+				FA92D7B2253D5B50007CBA64 /* Kingfisher in Frameworks */,
 				FAD3D536245F072F00905DD4 /* CoreTelephony.framework in Frameworks */,
-				FAE3D5AC245ED62700CE6654 /* KingfisherStatic in Frameworks */,
 				FAD3D531245F071200905DD4 /* SystemConfiguration.framework in Frameworks */,
 				FAD3D53E245F075E00905DD4 /* SafariServices.framework in Frameworks */,
 				FAD3D535245F072F00905DD4 /* CoreLocation.framework in Frameworks */,
@@ -903,7 +907,6 @@
 				FA90FDB222437F69005148AC /* UIKit */,
 				FA90FDB322437F80005148AC /* Notification.swift */,
 				FA90FE092243D413005148AC /* Date.swift */,
-				FAD3CA2D2245612C009DA6AE /* UIApplication.swift */,
 				FAD3CA4322456FC0009DA6AE /* AlertPresentable.swift */,
 				FABF939B2389CB6100F78FF1 /* String.swift */,
 				FABF93A0238BB15E00F78FF1 /* EventLogger.swift */,
@@ -1023,10 +1026,12 @@
 		FA90FDB222437F69005148AC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				FAD3CA2D2245612C009DA6AE /* UIApplication.swift */,
 				FA990A5A239D1DAA00BE9ACA /* UIWindow.swift */,
 				FA90FDB722438069005148AC /* UIImage.swift */,
 				FA90FE0D2243E3C4005148AC /* UIColor.swift */,
 				FA6252192387F8D2009C3FF7 /* UINavigationController.swift */,
+				FA43C3302540CB63004B1918 /* UIFont.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1328,7 +1333,7 @@
 		FAE3AB40239D140B00120F96 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				FAE3AB41239D141600120F96 /* Button.swift */,
+				FAE3AB41239D141600120F96 /* OButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1396,13 +1401,14 @@
 			name = ORTUS;
 			packageProductDependencies = (
 				FAE3D5A8245ED51100CE6654 /* Alamofire */,
-				FAE3D5AB245ED62700CE6654 /* KingfisherStatic */,
 				FAE3D5AE245ED67F00CE6654 /* SnapKit */,
 				FAE3D5B1245ED6BE00CE6654 /* Pageboy */,
 				FAE3D5B4245ED77400CE6654 /* Carbon */,
 				FAE3D5B7245ED7E100CE6654 /* Promises */,
 				FAE3D5BA245ED89600CE6654 /* KeychainAccess */,
 				FAE3D5C8245EDB5400CE6654 /* DifferenceKit */,
+				FA92D7B1253D5B50007CBA64 /* Kingfisher */,
+				FA92D7B3253D5B50007CBA64 /* KingfisherSwiftUI */,
 			);
 			productName = ORTUS;
 			productReference = FA90FD64224377A1005148AC /* ORTUS.app */;
@@ -1443,13 +1449,13 @@
 			mainGroup = FA90FD5B224377A0005148AC;
 			packageReferences = (
 				FAE3D5A7245ED51100CE6654 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				FAE3D5AA245ED62700CE6654 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				FAE3D5AD245ED67F00CE6654 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FAE3D5B0245ED6BE00CE6654 /* XCRemoteSwiftPackageReference "Pageboy" */,
 				FAE3D5B3245ED77400CE6654 /* XCRemoteSwiftPackageReference "Carbon" */,
 				FAE3D5B6245ED7E100CE6654 /* XCRemoteSwiftPackageReference "promises" */,
 				FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */,
+				FA92D7B0253D5B50007CBA64 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = FA90FD65224377A1005148AC /* Products */;
 			projectDirPath = "";
@@ -1607,12 +1613,13 @@
 				FABF6DC7239C4CAB00F57F8A /* LoginViewModel.swift in Sources */,
 				FAD18D5823B1746600C0D89B /* BrowserViewController.swift in Sources */,
 				FA990A5B239D1DAA00BE9ACA /* UIWindow.swift in Sources */,
+				FA43C3312540CB63004B1918 /* UIFont.swift in Sources */,
 				FA5B8E4B253B8C000010DD38 /* Event.swift in Sources */,
 				FAB74C2123E9F60D004C7BC6 /* SemesterModuleBuilder.swift in Sources */,
 				FA327C1E2243FCF00061E604 /* ArticleHeaderComponentView.swift in Sources */,
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
 				FACACC9A249A8F6E0075604F /* ORTUSTableViewAdapter.swift in Sources */,
-				FAE3AB42239D141600120F96 /* Button.swift in Sources */,
+				FAE3AB42239D141600120F96 /* OButton.swift in Sources */,
 				FA5B8E4A253B8C000010DD38 /* Lecture.swift in Sources */,
 				FA45908B244086CD00BF7E0F /* ContactRouter.swift in Sources */,
 				FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */,
@@ -1925,20 +1932,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA92D7B0253D5B50007CBA64 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.6;
+			};
+		};
 		FAE3D5A7245ED51100CE6654 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.2.0;
-			};
-		};
-		FAE3D5AA245ED62700CE6654 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.15.0;
 			};
 		};
 		FAE3D5AD245ED67F00CE6654 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -1992,15 +1999,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA92D7B1253D5B50007CBA64 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA92D7B0253D5B50007CBA64 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		FA92D7B3253D5B50007CBA64 /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA92D7B0253D5B50007CBA64 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
 		FAE3D5A8245ED51100CE6654 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FAE3D5A7245ED51100CE6654 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		FAE3D5AB245ED62700CE6654 /* KingfisherStatic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAE3D5AA245ED62700CE6654 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = KingfisherStatic;
 		};
 		FAE3D5AE245ED67F00CE6654 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

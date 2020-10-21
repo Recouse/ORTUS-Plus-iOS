@@ -28,10 +28,15 @@ struct ArticleComponent: IdentifiableComponent {
         
         content.authorLabel.text = article.author
         content.titleLabel.text = article.title
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        
+        content.dateLabel.text = dateFormatter.string(from: article.date)
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
-        return CGSize(width: bounds.width, height: 80)
+        return nil
     }
     
     func shouldContentUpdate(with next: ArticleComponent) -> Bool {
