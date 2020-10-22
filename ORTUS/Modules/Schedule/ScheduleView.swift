@@ -9,19 +9,6 @@
 import UIKit
 
 class ScheduleView: UIView {
-    let toolbarSegmentedControl = UISegmentedControl()
-    
-    lazy var toolbar: UIToolbar = {
-        let toolbar = UIToolbar()
-        toolbar.delegate = self
-
-        let barItem = UIBarButtonItem(customView: self.toolbarSegmentedControl)
-
-        toolbar.setItems([barItem], animated: false)
-
-        return toolbar
-    }()
-    
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundView = nil
@@ -36,7 +23,7 @@ class ScheduleView: UIView {
             bottom: 0,
             right: 0)
         tableView.contentInset = UIEdgeInsets(
-            top: 44, // Toolbar height
+            top: 0,
             left: 0,
             bottom: 30,
             right: 0)
@@ -60,11 +47,5 @@ class ScheduleView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension ScheduleView: UIToolbarDelegate {
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .top
     }
 }

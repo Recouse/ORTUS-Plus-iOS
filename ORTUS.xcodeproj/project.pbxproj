@@ -152,6 +152,8 @@
 		FA990A5D239D1F5800BE9ACA /* MainTabBarControllerRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A5C239D1F5800BE9ACA /* MainTabBarControllerRoute.swift */; };
 		FA990A63239D6F8600BE9ACA /* LoginOnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A62239D6F8600BE9ACA /* LoginOnboardingContentView.swift */; };
 		FA990A65239D7EB900BE9ACA /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A64239D7EB900BE9ACA /* LoginRoute.swift */; };
+		FA9D0C622541A09F005865F0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D0C612541A09F005865F0 /* CalendarViewController.swift */; };
+		FA9D0C652541A0BF005865F0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D0C642541A0BF005865F0 /* CalendarView.swift */; };
 		FAA425AC23912206008F5897 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA425AB23912206008F5897 /* Footer.swift */; };
 		FAB74C0A23E9F00A004C7BC6 /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C0923E9F00A004C7BC6 /* SettingsRoute.swift */; };
 		FAB74C1123E9F391004C7BC6 /* GradesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C0C23E9F391004C7BC6 /* GradesModuleBuilder.swift */; };
@@ -427,6 +429,8 @@
 		FA990A5E239D20E800BE9ACA /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
 		FA990A62239D6F8600BE9ACA /* LoginOnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOnboardingContentView.swift; sourceTree = "<group>"; };
 		FA990A64239D7EB900BE9ACA /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
+		FA9D0C612541A09F005865F0 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		FA9D0C642541A0BF005865F0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		FAA425AB23912206008F5897 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		FAB74C0923E9F00A004C7BC6 /* SettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRoute.swift; sourceTree = "<group>"; };
 		FAB74C0C23E9F391004C7BC6 /* GradesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesModuleBuilder.swift; sourceTree = "<group>"; };
@@ -1270,6 +1274,8 @@
 			children = (
 				FACACC9E249A96130075604F /* ORTUSTableView.swift */,
 				FACACCA0249A96210075604F /* ORTUSTableViewController.swift */,
+				FA9D0C642541A0BF005865F0 /* CalendarView.swift */,
+				FA9D0C612541A09F005865F0 /* CalendarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -1490,6 +1496,7 @@
 				FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */,
 				FABF93A1238BB15E00F78FF1 /* EventLogger.swift in Sources */,
 				FA2062DF234628A6007ED9BA /* NotificationsViewModel.swift in Sources */,
+				FA9D0C652541A0BF005865F0 /* CalendarView.swift in Sources */,
 				FAF183BE22490AD800CA2492 /* UserViewModel.swift in Sources */,
 				FA90FD9922437D5E005148AC /* Animator.swift in Sources */,
 				FAD3CA4422456FC0009DA6AE /* AlertPresentable.swift in Sources */,
@@ -1692,6 +1699,7 @@
 				FA45908A244086CD00BF7E0F /* ContactModuleBuilder.swift in Sources */,
 				FA90FDC0224380FE005148AC /* SettingsViewController.swift in Sources */,
 				FA90FDAD22437F25005148AC /* NewsModuleBuilder.swift in Sources */,
+				FA9D0C622541A09F005865F0 /* CalendarViewController.swift in Sources */,
 				FA5B8E4C253B8C000010DD38 /* Schedule.swift in Sources */,
 				FA1AC40524EDA3B7009C4E31 /* MarkRouter.swift in Sources */,
 				FA5B8E55253B8C050010DD38 /* MarkSemester.swift in Sources */,

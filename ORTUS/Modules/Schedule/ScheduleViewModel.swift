@@ -49,14 +49,7 @@ class ScheduleViewModel: ViewModel {
         }
     }
     
-    func loadSchedule() -> Promise<Bool> {
-        let today = Date()
-        var date = today
-        
-        if Calendar.current.component(.weekday, from: today) == 1 {
-            date = Calendar.current.date(byAdding: .day, value: 1, to: today) ?? today
-        }
-        
+    func loadSchedule(date: Date = Date()) -> Promise<Bool> {
         return Promise { fulfill, reject in
             APIClient.performRequest(
                 ScheduleResponse.self,

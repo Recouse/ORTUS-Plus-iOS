@@ -39,15 +39,15 @@ class ScheduleDateHeaderView: UIView {
     let dayLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
-        label.font = .systemFont(ofSize: 15, weight: .semibold)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         
         return label
     }()
     
     let dayMonthLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 13)
+        label.textColor = .secondaryLabel
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
         
         return label
     }()
@@ -55,7 +55,7 @@ class ScheduleDateHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .systemGray5
+        backgroundColor = .tertiarySystemGroupedBackground
         
         addSubview(dayLabel)
         dayLabel.snp.makeConstraints {
