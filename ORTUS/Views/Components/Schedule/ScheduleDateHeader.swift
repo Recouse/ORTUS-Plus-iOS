@@ -28,6 +28,14 @@ struct ScheduleDateHeader: Carbon.Component, Equatable {
         content.dayLabel.text = dateFormatter.string(from: date)
         dateFormatter.dateFormat = "dd.MM"
         content.dayMonthLabel.text = dateFormatter.string(from: date)
+        
+        if Calendar.current.dateComponents([.year, .month, .day], from: Date()) == Calendar.current.dateComponents([.year, .month, .day], from: date) {
+            content.dayLabel.textColor = .systemRed
+            content.dayMonthLabel.textColor = .systemRed
+        } else {
+            content.dayLabel.textColor = .label
+            content.dayMonthLabel.textColor = .secondaryLabel
+        }
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
