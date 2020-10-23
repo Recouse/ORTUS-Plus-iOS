@@ -83,7 +83,7 @@ class ScheduleViewController: Module, ModuleViewModel {
     func loadData(forceUpdate: Bool = false) {
         if forceUpdate {
             viewModel.loadSchedule(date: selectedDate).always {
-                self.render()
+                self.render(animated: true)
             }
             
             return
@@ -98,7 +98,7 @@ class ScheduleViewController: Module, ModuleViewModel {
         }
     }
     
-    func render() {
+    func render(animated: Bool = false) {
         self.refreshControl.endRefreshing()
         
         var data: [Section] = []
@@ -142,7 +142,7 @@ class ScheduleViewController: Module, ModuleViewModel {
             }
         }
         
-        scrollToSelectedDay()
+        scrollToSelectedDay(animated: animated)
     }
     
     @objc func selectScheduleGrouping() {
@@ -181,7 +181,7 @@ class ScheduleViewController: Module, ModuleViewModel {
         calendarBarButtonItem.image = UIImage(systemName: "\(day).circle")
     }
     
-    func scrollToSelectedDay() {
+    func scrollToSelectedDay(animated: Bool = false) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
@@ -193,7 +193,7 @@ class ScheduleViewController: Module, ModuleViewModel {
             }
             
             if day == Calendar.current.component(.day, from: scheduleDate) {
-                tableView.scrollToRow(at: IndexPath(row: 0, section: index), at: .top, animated: false)
+                tableView.scrollToRow(at: IndexPath(row: 0, section: index), at: .top, animated: animated)
                 break
             }
         }
