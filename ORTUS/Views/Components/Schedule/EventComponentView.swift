@@ -11,7 +11,7 @@ import UIKit
 class EventComponentView: UIView {
     let timeLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = UIFont.preferredFont(forTextStyle: .callout)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.2
         label.textAlignment = .right
@@ -20,21 +20,21 @@ class EventComponentView: UIView {
         return label
     }()
     
-    let dateEstimatedWidth = ("00:00" as NSString)
-        .size(withAttributes: [.font: UIFont.systemFont(ofSize: 14)]).width
+    let dateEstimatedWidth = ("all-day" as NSString)
+        .size(withAttributes: [.font: UIFont.preferredFont(forTextStyle: .callout)]).width
     
-    let contentSeparator: UIView = {
+    let colorBarView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
         view.backgroundColor = .systemOrange
-        view.layer.cornerRadius = 2
+        view.layer.cornerRadius = 3
         
         return view
     }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
+        label.font = UIFont.preferredFont(for: .headline, weight: .medium)
         label.textColor = .label
         label.numberOfLines = 2
         
@@ -46,43 +46,32 @@ class EventComponentView: UIView {
         
         backgroundColor = .systemBackground
         
-        prepareTimeLabel()
-        prepareContentSeparator()
-        prepareTitleLabel()
+        addSubview(colorBarView)
+        addSubview(timeLabel)
+        addSubview(titleLabel)
+        
+        timeLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(10)
+            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
+            $0.width.equalTo(dateEstimatedWidth)
+        }
+        
+        colorBarView.snp.makeConstraints {
+            $0.width.equalTo(4)
+            $0.centerY.equalToSuperview()
+            $0.height.equalTo(titleLabel)
+            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(10)
+            $0.left.equalTo(colorBarView.snp.right).offset(6)
+            $0.right.equalTo(timeLabel.snp.left).offset(-5)
+            $0.bottom.equalToSuperview().inset(10)
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension EventComponentView {
-    func prepareTimeLabel() {
-        addSubview(timeLabel)
-        timeLabel.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset * 2)
-            $0.width.equalTo(dateEstimatedWidth)
-        }
-    }
-    
-    func prepareContentSeparator() {
-        addSubview(contentSeparator)
-        contentSeparator.snp.makeConstraints {
-            $0.width.equalTo(2)
-            $0.height.greaterThanOrEqualTo(30)
-            $0.top.bottom.equalToSuperview().offset(7).inset(7)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset * 2 + dateEstimatedWidth + 7)
-        }
-    }
-    
-    func prepareTitleLabel() {
-        addSubview(titleLabel)
-        titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(7)
-            $0.left.equalTo(contentSeparator.snp.right).offset(7)
-            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
-            $0.bottom.equalToSuperview().inset(7).priority(250)
-        }
     }
 }

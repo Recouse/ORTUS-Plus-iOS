@@ -11,7 +11,7 @@ import UIKit
 class LectureComponentView: UIView {
     let startTimeLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = UIFont.preferredFont(forTextStyle: .callout)
         label.textColor = .label
         
         return label
@@ -19,24 +19,27 @@ class LectureComponentView: UIView {
     
     let endTimeLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = UIFont.preferredFont(forTextStyle: .callout)
         label.textColor = .secondaryLabel
         
         return label
     }()
     
-    let contentSeparator: UIView = {
+    let dateEstimatedWidth = ("99:99" as NSString)
+        .size(withAttributes: [.font: UIFont.preferredFont(forTextStyle: .callout)]).width
+    
+    let colorBarView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
         view.backgroundColor = .systemGreen
-        view.layer.cornerRadius = 2
+        view.layer.cornerRadius = 3
         
         return view
     }()
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
+        label.font = UIFont.preferredFont(for: .headline, weight: .medium)
         label.textColor = .label
         label.numberOfLines = 2
         
@@ -45,8 +48,8 @@ class LectureComponentView: UIView {
     
     let addressLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 13)
-        label.textColor = .systemGray
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        label.textColor = .secondaryLabel
         
         return label
     }()
@@ -56,61 +59,47 @@ class LectureComponentView: UIView {
         
         backgroundColor = .systemBackground
         
-        prepareTimeLabels()
-        prepareContentSeparator()
-        prepareNameLabel()
-        prepareAddressLabel()
+        addSubview(colorBarView)
+        addSubview(nameLabel)
+        addSubview(addressLabel)
+        addSubview(startTimeLabel)
+        addSubview(endTimeLabel)
+        
+        colorBarView.snp.makeConstraints {
+            $0.width.equalTo(4)
+            $0.top.equalTo(nameLabel)
+            $0.bottom.equalTo(addressLabel)
+            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
+        }
+        
+        nameLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(10)
+            $0.left.equalTo(colorBarView.snp.right).offset(6)
+            $0.right.equalTo(startTimeLabel.snp.left).offset(-5)
+        }
+        
+        addressLabel.snp.makeConstraints {
+            $0.top.equalTo(nameLabel.snp.bottom).offset(5)
+            $0.left.equalTo(colorBarView.snp.right).offset(6)
+            $0.right.equalTo(startTimeLabel.snp.left).offset(-5)
+            $0.bottom.equalToSuperview().inset(10)
+        }
+        
+        startTimeLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(10)
+            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
+            $0.width.equalTo(dateEstimatedWidth)
+        }
+        
+        endTimeLabel.snp.makeConstraints {
+            $0.top.equalTo(startTimeLabel.snp.bottom).offset(5)
+            $0.bottom.equalTo(addressLabel).priority(250)
+            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
+            $0.width.equalTo(dateEstimatedWidth)
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension LectureComponentView {
-    func prepareTimeLabels() {
-        addSubview(startTimeLabel)
-        startTimeLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(7)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset * 2)
-        }
-        
-        addSubview(endTimeLabel)
-        endTimeLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(7)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset * 2)
-        }
-    }
-    
-    func prepareContentSeparator() {
-        let dateEstimatedWidth = ("00:00" as NSString)
-            .size(withAttributes: [.font: UIFont.systemFont(ofSize: 14)]).width
-        
-        addSubview(contentSeparator)
-        contentSeparator.snp.makeConstraints {
-            $0.width.equalTo(2)
-            $0.top.bottom.equalToSuperview().offset(7).inset(7)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset * 2 + dateEstimatedWidth + 7)
-        }
-    }
-    
-    func prepareNameLabel() {
-        addSubview(nameLabel)
-        nameLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(7)
-            $0.left.equalTo(contentSeparator.snp.right).offset(7)
-            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
-//            $0.bottom.equalToSuperview().inset(7).priority(250)
-        }
-    }
-    
-    func prepareAddressLabel() {
-        addSubview(addressLabel)
-        addressLabel.snp.makeConstraints {
-            $0.top.equalTo(nameLabel.snp.bottom).offset(5)
-            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
-            $0.left.equalTo(contentSeparator.snp.right).offset(7)
-            $0.bottom.equalToSuperview().inset(7).priority(250)
-        }
     }
 }
