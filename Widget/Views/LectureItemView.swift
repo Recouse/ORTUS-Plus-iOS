@@ -12,21 +12,23 @@ struct LectureItemView: View {
     let lecture: Lecture
     
     var body: some View {
-        HStack {
-            Color.green
-                .cornerRadius(3)
-                .frame(width: 4)
+        HStack(alignment: .top) {
+            RoundedRectangle(cornerRadius: 3)
+                .frame(maxWidth: 4, maxHeight: .greatestFiniteMagnitude, alignment: .center)
+                .foregroundColor(.green)
             
-            Spacer(minLength: 5)
-            
-            Text(lecture.name)
-                .font(.caption)
-                .lineLimit(1)
-            
-            Spacer(minLength: 5)
-            
-            Text(lecture.timeFromParsed)
-                .font(.caption)
-        }.frame(minWidth: .greatestFiniteMagnitude, maxWidth: .greatestFiniteMagnitude)
+            VStack(alignment: .leading) {
+                Text(lecture.name)
+                    .fontWeight(.semibold)
+                    .lineLimit(1)
+                    .font(.caption)
+                
+                (Text(lecture.timeFromParsed) + Text(" - ") + Text(lecture.timeTillParsed))
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+        }
+        .padding([.leading, .trailing])
+        .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
     }
 }

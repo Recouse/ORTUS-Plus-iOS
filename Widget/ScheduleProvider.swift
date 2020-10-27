@@ -9,12 +9,39 @@
 import WidgetKit
 
 struct ScheduleProvider: TimelineProvider {
+    let placeholderItems: [ScheduleItem] = [
+        ScheduleItem(
+            id: "1",
+            item: Lecture(
+                id: "math",
+                date: "2025-10-27",
+                timeFrom: "10:15",
+                timeTill: "11:50",
+                name: "Mathematics",
+                type: "", lecturers: [], address: ""
+            ),
+            time: "10:15"
+        ),
+        ScheduleItem(
+            id: "2",
+            item: Lecture(
+                id: "physics",
+                date: "2025-10-27",
+                timeFrom: "12:30",
+                timeTill: "14:05",
+                name: "Physics",
+                type: "", lecturers: [], address: ""
+            ),
+            time: "14:05"
+        )
+    ]
+    
     func placeholder(in context: Context) -> ScheduleEntry {
-        ScheduleEntry(date: Date(), items: [])
+        ScheduleEntry(date: Date(), items: placeholderItems)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (ScheduleEntry) -> ()) {
-        let entry = ScheduleEntry(date: Date(), items: [])
+        let entry = ScheduleEntry(date: Date(), items: placeholderItems)
         completion(entry)
     }
 
