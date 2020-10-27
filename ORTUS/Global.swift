@@ -25,16 +25,6 @@ struct Global {
         
         // App group
         static let appGroup = "group.me.recouse.ORTUS"
-        
-        // Cache
-        static let scheduleCache = "scheduleCache"
-        static let contactsCache = "contactsCache"
-        static let coursesCache = "coursesCache"
-        static let gradesCache = "gradesCache"
-        static let newsCache = "newsCache"
-        static let notificationsCache = "notificationsCache"
-        
-        static let pinCodeSuggestion = "pin_code_suggestion"
     }
     
     struct Event {

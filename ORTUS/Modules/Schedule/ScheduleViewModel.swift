@@ -14,17 +14,15 @@ enum ScheduleGrouping: String, CaseIterable {
 }
 
 class ScheduleViewModel: ViewModel {
-    typealias Schedule = [(key: String, value: [ScheduleItem])]
-    
     let router: ScheduleRouter.Routes
     
     var response: ScheduleResponse?
     
-    var schedule: Schedule = []
+    var schedule: SortedSchedule = []
     
     let sharedUserDefaults = UserDefaults(suiteName: Global.Key.appGroup)
     
-    let cache = Cache(path: FileManager.sharedContainerURL())
+    let cache = Cache(path: AppGroup.default.containerURL)
     
     init(router: ScheduleRouter.Routes) {
         self.router = router
@@ -35,10 +33,10 @@ class ScheduleViewModel: ViewModel {
             do {
                 let response = try self.cache.fetch(
                     ScheduleResponse.self,
-                    forKey: Global.Key.scheduleCache
+                    forKey: .schedule
                 )
                 
-                self.schedule = self.sortSchedule(from: response)
+                self.schedule = response.sorted()
                 
                 fulfill(true)
             } catch StorageError.notFound {
@@ -58,7 +56,7 @@ class ScheduleViewModel: ViewModel {
                 self.cacheResponse(response)
                 
                 self.response = response
-                self.schedule = self.sortSchedule(from: response)
+                self.schedule = response.sorted()
                 
                 fulfill(true)
             }.catch { reject($0) }
@@ -77,43 +75,6 @@ class ScheduleViewModel: ViewModel {
     }
     
     private func cacheResponse(_ response: ScheduleResponse) {
-        cache.save(response, forKey: Global.Key.scheduleCache)
-    }
-    
-    private func sortSchedule(from response: ScheduleResponse) -> Schedule {
-        let sortedResponse = response.result.sorted(by: {
-            let dateFormatter = LatviaDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            
-            guard let date0 = dateFormatter.date(from: $0.key),
-                let date1 = dateFormatter.date(from: $1.key) else {
-                return false
-            }
-            
-            return date0 < date1
-        })
-        
-        var schedule: [(key: String, value: [ScheduleItem])] = []
-        for pair in sortedResponse {
-            var items: [ScheduleItem] = []
-            if sharedUserDefaults?.value(for: .showEvents) == true {
-                pair.value.events.forEach { items.append(ScheduleItem($0, time: $0.timeParsed)) }
-            }
-            
-            pair.value.lectures.forEach { items.append(ScheduleItem($0, time: $0.timeFromParsed)) }
-            items.sort(by: {
-                guard let firstDate = $0.timeDate, let secondDate = $1.timeDate else {
-                    return false
-                }
-                
-                return firstDate < secondDate
-            })
-            
-            if !items.isEmpty {
-                schedule.append((key: pair.key, value: items))
-            }
-        }
-        
-        return schedule
+        cache.save(response, forKey: .schedule)
     }
 }

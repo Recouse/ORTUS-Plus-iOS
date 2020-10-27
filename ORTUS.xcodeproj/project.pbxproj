@@ -87,7 +87,6 @@
 		FA5B8E59253B8C080010DD38 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */; };
 		FA5B8E5D253B8C0E0010DD38 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459075243F3E7400BF7E0F /* Contact.swift */; };
 		FA5B8E5E253B8C0E0010DD38 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA459077243F3F1900BF7E0F /* Position.swift */; };
-		FA5B8E6B253B8FB70010DD38 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B7C32241450EE00AFCF4E /* FileManager.swift */; };
 		FA5B8E6C253B8FB70010DD38 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA664268241249B8002A3315 /* CodableStorage.swift */; };
 		FA5B8E6D253B8FB70010DD38 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426424124929002A3315 /* Storage.swift */; };
 		FA5B8E6E253B8FB70010DD38 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426624124943002A3315 /* DiskStorage.swift */; };
@@ -146,6 +145,26 @@
 		FA92D7B2253D5B50007CBA64 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA92D7B1253D5B50007CBA64 /* Kingfisher */; };
 		FA92D7B4253D5B50007CBA64 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA92D7B3253D5B50007CBA64 /* KingfisherSwiftUI */; };
 		FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA941BE9224BA7E800D7B170 /* Keys.swift */; };
+		FA94FE2C2545E1EA00DB3B67 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA94FE2B2545E1EA00DB3B67 /* WidgetKit.framework */; };
+		FA94FE2E2545E1EA00DB3B67 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA94FE2D2545E1EA00DB3B67 /* SwiftUI.framework */; };
+		FA94FE312545E1EA00DB3B67 /* ScheduleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94FE302545E1EA00DB3B67 /* ScheduleWidget.swift */; };
+		FA94FE332545E1ED00DB3B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA94FE322545E1ED00DB3B67 /* Assets.xcassets */; };
+		FA94FE372545E1ED00DB3B67 /* WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA94FE2A2545E1EA00DB3B67 /* WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA94FE3F2545E85C00DB3B67 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426624124943002A3315 /* DiskStorage.swift */; };
+		FA94FE402545E85C00DB3B67 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426424124929002A3315 /* Storage.swift */; };
+		FA94FE412545E85C00DB3B67 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA664268241249B8002A3315 /* CodableStorage.swift */; };
+		FA94FE472546A3C500DB3B67 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F0234FC15A002BA33D /* Schedule.swift */; };
+		FA94FE4A2546A3D200DB3B67 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FDEE2243BA2D005148AC /* Response.swift */; };
+		FA94FE4D2546A3F700DB3B67 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */; };
+		FA94FE502546A40A00DB3B67 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4111F2234FC17A002BA33D /* Event.swift */; };
+		FA94FE532546A41300DB3B67 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABBF3FC2351293E00D4D593 /* Lecture.swift */; };
+		FA94FE562546A46C00DB3B67 /* LatviaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */; };
+		FA94FE592546A4C200DB3B67 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C5C23EC4D94004C7BC6 /* UserDefaults.swift */; };
+		FA94FE5D2546A4D600DB3B67 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94FE5C2546A4D600DB3B67 /* AppGroup.swift */; };
+		FA94FE602546A52D00DB3B67 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94FE5C2546A4D600DB3B67 /* AppGroup.swift */; };
+		FA94FE652546A9C200DB3B67 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD013A246474D300DF9FEA /* Cache.swift */; };
+		FA94FE6B2546A9ED00DB3B67 /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94FE6A2546A9ED00DB3B67 /* CacheKey.swift */; };
+		FA94FE6E2546AA9900DB3B67 /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94FE6A2546A9ED00DB3B67 /* CacheKey.swift */; };
 		FA990A56239D1D0400BE9ACA /* LoginOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A55239D1D0400BE9ACA /* LoginOnboardingViewController.swift */; };
 		FA990A58239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A57239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift */; };
 		FA990A5B239D1DAA00BE9ACA /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A5A239D1DAA00BE9ACA /* UIWindow.swift */; };
@@ -154,6 +173,11 @@
 		FA990A65239D7EB900BE9ACA /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA990A64239D7EB900BE9ACA /* LoginRoute.swift */; };
 		FA9D0C622541A09F005865F0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D0C612541A09F005865F0 /* CalendarViewController.swift */; };
 		FA9D0C652541A0BF005865F0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D0C642541A0BF005865F0 /* CalendarView.swift */; };
+		FA9F94052546BECF00FB4907 /* LectureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F93FF2546BE6200FB4907 /* LectureItemView.swift */; };
+		FA9F940E2546BF5F00FB4907 /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F940A2546BF5A00FB4907 /* EventItemView.swift */; };
+		FA9F94122546C52B00FB4907 /* ScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F94112546C52B00FB4907 /* ScheduleProvider.swift */; };
+		FA9F94162546C55A00FB4907 /* ScheduleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F94152546C55A00FB4907 /* ScheduleEntry.swift */; };
+		FA9F941A2546C57400FB4907 /* ScheduleWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F94192546C57400FB4907 /* ScheduleWidgetEntryView.swift */; };
 		FAA425AC23912206008F5897 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA425AB23912206008F5897 /* Footer.swift */; };
 		FAB74C0A23E9F00A004C7BC6 /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C0923E9F00A004C7BC6 /* SettingsRoute.swift */; };
 		FAB74C1123E9F391004C7BC6 /* GradesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB74C0C23E9F391004C7BC6 /* GradesModuleBuilder.swift */; };
@@ -259,6 +283,16 @@
 		FAFD013B246474D300DF9FEA /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD013A246474D300DF9FEA /* Cache.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FA94FE352545E1ED00DB3B67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA90FD5C224377A1005148AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA94FE292545E1EA00DB3B67;
+			remoteInfo = WidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		FAD3CA4122456A99009DA6AE /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -266,6 +300,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				FA94FE372545E1ED00DB3B67 /* WidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +349,6 @@
 		FA39AED623E9ED3800C4A70C /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		FA39AED723E9ED3800C4A70C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA39AED923E9ED3800C4A70C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		FA3B7C32241450EE00AFCF4E /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		FA4111F0234FC15A002BA33D /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		FA4111F2234FC17A002BA33D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FA4111F6234FCDE2002BA33D /* CVCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CVCalendar.framework; path = Carthage/Build/iOS/CVCalendar.framework; sourceTree = "<group>"; };
@@ -422,6 +456,14 @@
 		FA941BE5224A9D1900D7B170 /* YandexMobileMetrica.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileMetrica.framework; path = Carthage/Build/iOS/YandexMobileMetrica.framework; sourceTree = "<group>"; };
 		FA941BE6224A9D1A00D7B170 /* YandexMobileMetricaCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileMetricaCrashes.framework; path = Carthage/Build/iOS/YandexMobileMetricaCrashes.framework; sourceTree = "<group>"; };
 		FA941BE9224BA7E800D7B170 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		FA94FE2A2545E1EA00DB3B67 /* WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA94FE2B2545E1EA00DB3B67 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FA94FE2D2545E1EA00DB3B67 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FA94FE302545E1EA00DB3B67 /* ScheduleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWidget.swift; sourceTree = "<group>"; };
+		FA94FE322545E1ED00DB3B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA94FE342545E1ED00DB3B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA94FE5C2546A4D600DB3B67 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		FA94FE6A2546A9ED00DB3B67 /* CacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheKey.swift; sourceTree = "<group>"; };
 		FA990A55239D1D0400BE9ACA /* LoginOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOnboardingViewController.swift; sourceTree = "<group>"; };
 		FA990A57239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOnboardingContentViewController.swift; sourceTree = "<group>"; };
 		FA990A5A239D1DAA00BE9ACA /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
@@ -431,6 +473,12 @@
 		FA990A64239D7EB900BE9ACA /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 		FA9D0C612541A09F005865F0 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		FA9D0C642541A0BF005865F0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		FA9F93FB2546B6D500FB4907 /* WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtension.entitlements; sourceTree = "<group>"; };
+		FA9F93FF2546BE6200FB4907 /* LectureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureItemView.swift; sourceTree = "<group>"; };
+		FA9F940A2546BF5A00FB4907 /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
+		FA9F94112546C52B00FB4907 /* ScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleProvider.swift; sourceTree = "<group>"; };
+		FA9F94152546C55A00FB4907 /* ScheduleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntry.swift; sourceTree = "<group>"; };
+		FA9F94192546C57400FB4907 /* ScheduleWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleWidgetEntryView.swift; sourceTree = "<group>"; };
 		FAA425AB23912206008F5897 /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		FAB74C0923E9F00A004C7BC6 /* SettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRoute.swift; sourceTree = "<group>"; };
 		FAB74C0C23E9F391004C7BC6 /* GradesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesModuleBuilder.swift; sourceTree = "<group>"; };
@@ -563,6 +611,15 @@
 				FAD3D538245F073900905DD4 /* Foundation.framework in Frameworks */,
 				FAE3D5B5245ED77400CE6654 /* Carbon in Frameworks */,
 				FAE3D5AF245ED67F00CE6654 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA94FE272545E1EA00DB3B67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA94FE2E2545E1EA00DB3B67 /* SwiftUI.framework in Frameworks */,
+				FA94FE2C2545E1EA00DB3B67 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,10 +845,11 @@
 		FA66428D24144C7A002A3315 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				FA3B7C32241450EE00AFCF4E /* FileManager.swift */,
 				FA66426424124929002A3315 /* Storage.swift */,
 				FA66426624124943002A3315 /* DiskStorage.swift */,
 				FA664268241249B8002A3315 /* CodableStorage.swift */,
+				FAFD013A246474D300DF9FEA /* Cache.swift */,
+				FA94FE6A2546A9ED00DB3B67 /* CacheKey.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -822,7 +880,9 @@
 		FA90FD5B224377A0005148AC = {
 			isa = PBXGroup;
 			children = (
+				FA9F93FB2546B6D500FB4907 /* WidgetExtension.entitlements */,
 				FA90FD66224377A1005148AC /* ORTUS */,
+				FA94FE2F2545E1EA00DB3B67 /* Widget */,
 				FA90FD65224377A1005148AC /* Products */,
 				FA90FDC522438B41005148AC /* Frameworks */,
 			);
@@ -832,6 +892,7 @@
 			isa = PBXGroup;
 			children = (
 				FA90FD64224377A1005148AC /* ORTUS.app */,
+				FA94FE2A2545E1EA00DB3B67 /* WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -853,6 +914,7 @@
 				FAD3D53F245F207600905DD4 /* Third Party */,
 				FA90FD67224377A1005148AC /* AppDelegate.swift */,
 				FA90FDB522438027005148AC /* Global.swift */,
+				FA94FE5C2546A4D600DB3B67 /* AppGroup.swift */,
 				FA941BE9224BA7E800D7B170 /* Keys.swift */,
 			);
 			path = ORTUS;
@@ -919,7 +981,6 @@
 				FA78FE8F2414DB6B004AD296 /* DateFormatter.swift */,
 				FAE528502444EE0E009851C9 /* LatviaDateFormatter.swift */,
 				FAE5284A2443744B009851C9 /* OpenMapDirections.swift */,
-				FAFD013A246474D300DF9FEA /* Cache.swift */,
 				FAF28BCF24D73FCB00627CA3 /* Shortcut.swift */,
 				FA0A75A024D856C30086E878 /* Overlay.swift */,
 			);
@@ -1071,6 +1132,8 @@
 				FA90FDCC22438B41005148AC /* Promises.framework */,
 				FA90FDC722438B41005148AC /* SnapKit.framework */,
 				FA66426F2413B430002A3315 /* NotificationCenter.framework */,
+				FA94FE2B2545E1EA00DB3B67 /* WidgetKit.framework */,
+				FA94FE2D2545E1EA00DB3B67 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1136,6 +1199,19 @@
 			path = Article;
 			sourceTree = "<group>";
 		};
+		FA94FE2F2545E1EA00DB3B67 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				FA9F93FE2546BE4100FB4907 /* Views */,
+				FA94FE302545E1EA00DB3B67 /* ScheduleWidget.swift */,
+				FA9F94112546C52B00FB4907 /* ScheduleProvider.swift */,
+				FA9F94152546C55A00FB4907 /* ScheduleEntry.swift */,
+				FA94FE322545E1ED00DB3B67 /* Assets.xcassets */,
+				FA94FE342545E1ED00DB3B67 /* Info.plist */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 		FA990A54239D1CF000BE9ACA /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -1144,6 +1220,16 @@
 				FA990A57239D1D1700BE9ACA /* LoginOnboardingContentViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FA9F93FE2546BE4100FB4907 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA9F94192546C57400FB4907 /* ScheduleWidgetEntryView.swift */,
+				FA9F940A2546BF5A00FB4907 /* EventItemView.swift */,
+				FA9F93FF2546BE6200FB4907 /* LectureItemView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FAB74C0B23E9F377004C7BC6 /* Grades */ = {
@@ -1403,6 +1489,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				FA94FE362545E1ED00DB3B67 /* PBXTargetDependency */,
 			);
 			name = ORTUS;
 			packageProductDependencies = (
@@ -1420,13 +1507,30 @@
 			productReference = FA90FD64224377A1005148AC /* ORTUS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FA94FE292545E1EA00DB3B67 /* WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA94FE3A2545E1ED00DB3B67 /* Build configuration list for PBXNativeTarget "WidgetExtension" */;
+			buildPhases = (
+				FA94FE262545E1EA00DB3B67 /* Sources */,
+				FA94FE272545E1EA00DB3B67 /* Frameworks */,
+				FA94FE282545E1EA00DB3B67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetExtension;
+			productName = WidgetExtension;
+			productReference = FA94FE2A2545E1EA00DB3B67 /* WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		FA90FD5C224377A1005148AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Firdavs;
 				TargetAttributes = {
@@ -1440,6 +1544,9 @@
 								enabled = 0;
 							};
 						};
+					};
+					FA94FE292545E1EA00DB3B67 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -1468,6 +1575,7 @@
 			projectRoot = "";
 			targets = (
 				FA90FD63224377A1005148AC /* ORTUS */,
+				FA94FE292545E1EA00DB3B67 /* WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1484,6 +1592,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA94FE282545E1EA00DB3B67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA94FE332545E1ED00DB3B67 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1496,6 +1612,7 @@
 				FAD3CA2E2245612C009DA6AE /* UIApplication.swift in Sources */,
 				FABF93A1238BB15E00F78FF1 /* EventLogger.swift in Sources */,
 				FA2062DF234628A6007ED9BA /* NotificationsViewModel.swift in Sources */,
+				FA94FE6B2546A9ED00DB3B67 /* CacheKey.swift in Sources */,
 				FA9D0C652541A0BF005865F0 /* CalendarView.swift in Sources */,
 				FAF183BE22490AD800CA2492 /* UserViewModel.swift in Sources */,
 				FA90FD9922437D5E005148AC /* Animator.swift in Sources */,
@@ -1531,6 +1648,7 @@
 				FA459083243F753800BF7E0F /* CircleImageView.swift in Sources */,
 				FAF77B242246A64200197641 /* OAuthApi.swift in Sources */,
 				FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */,
+				FA94FE5D2546A4D600DB3B67 /* AppGroup.swift in Sources */,
 				FA55171124E45F880043DC98 /* AppearanceSettingsViewController.swift in Sources */,
 				FA90FDE322439676005148AC /* APIClient.swift in Sources */,
 				FAB74C0A23E9F00A004C7BC6 /* SettingsRoute.swift in Sources */,
@@ -1682,7 +1800,6 @@
 				FA8714DA23E40E6F00DB728C /* PinSettingsRoute.swift in Sources */,
 				FA90FD8D22437BD8005148AC /* ModuleBuilder.swift in Sources */,
 				FA2062DD234628A6007ED9BA /* NotificationsViewController.swift in Sources */,
-				FA5B8E6B253B8FB70010DD38 /* FileManager.swift in Sources */,
 				FA90FDFE2243CF0E005148AC /* ArticleModuleBuilder.swift in Sources */,
 				FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */,
 				FA1DEF8F241761DC00704B6E /* Bundle.swift in Sources */,
@@ -1718,7 +1835,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA94FE262545E1EA00DB3B67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA9F94122546C52B00FB4907 /* ScheduleProvider.swift in Sources */,
+				FA9F94052546BECF00FB4907 /* LectureItemView.swift in Sources */,
+				FA94FE4D2546A3F700DB3B67 /* DateFormatter.swift in Sources */,
+				FA9F94162546C55A00FB4907 /* ScheduleEntry.swift in Sources */,
+				FA94FE502546A40A00DB3B67 /* Event.swift in Sources */,
+				FA94FE472546A3C500DB3B67 /* Schedule.swift in Sources */,
+				FA94FE562546A46C00DB3B67 /* LatviaDateFormatter.swift in Sources */,
+				FA94FE532546A41300DB3B67 /* Lecture.swift in Sources */,
+				FA94FE602546A52D00DB3B67 /* AppGroup.swift in Sources */,
+				FA94FE652546A9C200DB3B67 /* Cache.swift in Sources */,
+				FA94FE3F2545E85C00DB3B67 /* DiskStorage.swift in Sources */,
+				FA94FE312545E1EA00DB3B67 /* ScheduleWidget.swift in Sources */,
+				FA9F940E2546BF5F00FB4907 /* EventItemView.swift in Sources */,
+				FA94FE592546A4C200DB3B67 /* UserDefaults.swift in Sources */,
+				FA94FE6E2546AA9900DB3B67 /* CacheKey.swift in Sources */,
+				FA94FE412545E85C00DB3B67 /* CodableStorage.swift in Sources */,
+				FA9F941A2546C57400FB4907 /* ScheduleWidgetEntryView.swift in Sources */,
+				FA94FE402545E85C00DB3B67 /* Storage.swift in Sources */,
+				FA94FE4A2546A3D200DB3B67 /* Response.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA94FE362545E1ED00DB3B67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA94FE292545E1EA00DB3B67 /* WidgetExtension */;
+			targetProxy = FA94FE352545E1ED00DB3B67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FA90FDDD22438D33005148AC /* Localizable.strings */ = {
@@ -1861,7 +2012,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ORTUS/ORTUS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1892,7 +2043,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ORTUS/ORTUS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = RL7M4Z58CJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1916,6 +2067,54 @@
 			};
 			name = Release;
 		};
+		FA94FE382545E1ED00DB3B67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 40;
+				DEVELOPMENT_TEAM = RL7M4Z58CJ;
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUS.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA94FE392545E1ED00DB3B67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 40;
+				DEVELOPMENT_TEAM = RL7M4Z58CJ;
+				INFOPLIST_FILE = Widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.recouse.ORTUS.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1933,6 +2132,15 @@
 			buildConfigurations = (
 				FA90FD77224377A4005148AC /* Debug */,
 				FA90FD78224377A4005148AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA94FE3A2545E1ED00DB3B67 /* Build configuration list for PBXNativeTarget "WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA94FE382545E1ED00DB3B67 /* Debug */,
+				FA94FE392545E1ED00DB3B67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

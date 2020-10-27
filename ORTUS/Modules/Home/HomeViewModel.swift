@@ -26,7 +26,7 @@ class HomeViewModel: ViewModel {
             ).then { response in
                 self.semesters = response.result
                 
-                Cache.shared.save(response, forKey: Global.Key.coursesCache)
+                Cache.shared.save(response, forKey: .courses)
                 
                 fulfill(true)
             }.catch { reject($0) }
@@ -38,7 +38,7 @@ class HomeViewModel: ViewModel {
             do {
                 let response = try Cache.shared.fetch(
                     CoursesResponse.self,
-                    forKey: Global.Key.coursesCache
+                    forKey: .courses
                 )
                 
                 self.semesters = response.result

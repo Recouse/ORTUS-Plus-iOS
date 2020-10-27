@@ -31,7 +31,7 @@ class NewsViewModel: ViewModel {
             ).then { response in
                 self.articles = self.groupArticles(response.result.articles)
                 
-                Cache.shared.save(response, forKey: Global.Key.newsCache)
+                Cache.shared.save(response, forKey: .news)
                                 
                 fulfill(true)
             }.catch { error in
@@ -45,7 +45,7 @@ class NewsViewModel: ViewModel {
             do {
                 let response = try Cache.shared.fetch(
                     ArticlesResponse.self,
-                    forKey: Global.Key.newsCache
+                    forKey: .news
                 )
                 
                 self.articles = self.groupArticles(response.result.articles)

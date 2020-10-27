@@ -26,7 +26,7 @@ class NotificationsViewModel: ViewModel {
             ).then { response in
                 self.notifications = response.result
                 
-                Cache.shared.save(response.result, forKey: Global.Key.notificationsCache)
+                Cache.shared.save(response.result, forKey: .notifications)
                 
                 UserDefaults.standard.set(response.result.count, for: .notificationsCount)
                 
@@ -45,7 +45,7 @@ class NotificationsViewModel: ViewModel {
             do {
                 let notifications = try Cache.shared.fetch(
                     Notifications.self,
-                    forKey: Global.Key.notificationsCache
+                    forKey: .notifications
                 )
                 
                 self.notifications = notifications

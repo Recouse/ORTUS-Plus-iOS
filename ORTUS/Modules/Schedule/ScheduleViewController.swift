@@ -242,11 +242,11 @@ extension ScheduleViewController: ScheduleTableViewAdapterDataSource, ScheduleTa
         let cell = renderer.data[indexPath.section].cells[indexPath.row]
         
         if let event = cell.component(as: EventComponent.self)?.event {            
-            return ScheduleItem(event, time: event.time)
+            return ScheduleItem(id: event.title, item: event, time: event.time)
         }
         
         if let lecture = cell.component(as: LectureComponent.self)?.lecture {
-            return ScheduleItem(lecture, time: lecture.timeFrom)
+            return ScheduleItem(id: lecture.id, item: lecture, time: lecture.timeFrom)
         }
         
         return nil

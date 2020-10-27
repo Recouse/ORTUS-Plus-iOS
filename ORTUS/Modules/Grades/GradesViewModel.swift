@@ -23,7 +23,7 @@ class GradesViewModel: ViewModel {
             APIClient.performRequest(StudyProgramsResponse.self, route: MarksApi.marks).then { response in
                 self.studyPrograms = response.result
                 
-                Cache.shared.save(response, forKey: Global.Key.gradesCache)
+                Cache.shared.save(response, forKey: .grades)
                 
                 fulfill(true)
             }.catch { reject($0) }
@@ -35,7 +35,7 @@ class GradesViewModel: ViewModel {
             do {
                 let response = try Cache.shared.fetch(
                     StudyProgramsResponse.self,
-                    forKey: Global.Key.gradesCache
+                    forKey: .grades
                 )
                 
                 self.studyPrograms = response.result
