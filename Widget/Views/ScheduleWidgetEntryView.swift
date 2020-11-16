@@ -63,6 +63,6 @@ struct ScheduleWidgetEntryView : View {
 
             Spacer()
         })
-        .widgetURL(URL(string: "ortus://open?module=schedule"))
+        .widgetURL(URL(string: "ortus://open?module=schedule&from=widget"))
     }
 }
