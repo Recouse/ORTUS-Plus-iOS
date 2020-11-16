@@ -62,54 +62,54 @@ struct ScheduleProvider: TimelineProvider {
                 
         if let sorted = response?.sorted() {
             outerLoop: for day in 0...6 {
-                let date = Calendar.current.date(byAdding: .day, value: day, to: Date())!
+                let date = Calendar.current.date(byAdding: .day, value: day, to: currentDate)!
                 let dateString = dateFormatter.string(from: date)
 
                 for items in sorted {
-                    if items.key == dateString {
-                        for item in items.value {
-                            if let event = item.item(as: Event.self) {
-                                // Get year, month and day from string
-                                let itemsDate = items.key.components(separatedBy: "-")
-                                    .compactMap { Int($0) }
-                                // Date from time of event or date from string
-                                var eventDate = event.date ?? item.timeDate ?? dateFormatter.date(from: items.key)
-                                // Add year, month and day to only time date
-                                if eventDate != nil, itemsDate.count == 3 {
-                                    eventDate = Calendar.current.date(bySetting: .year, value: itemsDate[0], of: eventDate!)
-                                    eventDate = Calendar.current.date(bySetting: .month, value: itemsDate[1], of: eventDate!)
-                                    eventDate = Calendar.current.date(bySetting: .day, value: itemsDate[2], of: eventDate!)
+                    guard items.key == dateString else {
+                        continue
+                    }
+                    
+                    for item in items.value {
+                        if let event = item.item(as: Event.self) {
+                            // Get year, month and day from string
+                            let itemsDate = items.key.components(separatedBy: "-")
+                                .compactMap { Int($0) }
+                            // Date from time of event or date from string
+                            var eventDate = event.date ?? item.timeDate ?? dateFormatter.date(from: items.key)
+                            // Add year, month and day to only time date
+                            if eventDate != nil, itemsDate.count == 3 {
+                                eventDate = Calendar.current.date(bySetting: .year, value: itemsDate[0], of: eventDate!)
+                                eventDate = Calendar.current.date(bySetting: .month, value: itemsDate[1], of: eventDate!)
+                                eventDate = Calendar.current.date(bySetting: .day, value: itemsDate[2], of: eventDate!)
 
-                                    if eventDate! < Date() {
-                                        continue
-                                    }
+                                if eventDate! < Date() {
+                                    continue
                                 }
-
-                                entryItems.append(item)
                             }
 
-                            if let lecture = item.item(as: Lecture.self) {
-                                let time = lecture.timeTillParsed.components(separatedBy: ":")
-                                    .compactMap { Int($0) }
-                                let date = dateFormatter.date(from: lecture.date)
-
-                                if var lectureDate = date, time.count == 2 {
-                                    lectureDate = Calendar.current.date(bySetting: .hour, value: time[0], of: lectureDate)!
-                                    lectureDate = Calendar.current.date(bySetting: .minute, value: time[1], of: lectureDate)!
-
-                                    if lectureDate < Date() {
-                                        continue
-                                    }
-                                }
-
-                                entryItems.append(item)
-                            }
+                            entryItems.append(item)
                         }
 
-                        if !entryItems.isEmpty {
-                            break outerLoop
+                        if let lecture = item.item(as: Lecture.self) {
+                            let time = lecture.timeTillParsed.components(separatedBy: ":")
+                                .compactMap { Int($0) }
+                            let date = dateFormatter.date(from: lecture.date)
+
+                            if var lectureDate = date, time.count == 2 {
+                                lectureDate = Calendar.current.date(bySetting: .hour, value: time[0], of: lectureDate)!
+                                lectureDate = Calendar.current.date(bySetting: .minute, value: time[1], of: lectureDate)!
+
+                                if lectureDate < Date() {
+                                    continue
+                                }
+                            }
+
+                            entryItems.append(item)
                         }
                     }
+
+                    break outerLoop
                 }
             }
             

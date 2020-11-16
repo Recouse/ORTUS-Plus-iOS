@@ -42,17 +42,24 @@ struct ScheduleWidgetEntryView : View {
                     .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             }
             
-            LazyVGrid(columns: [GridItem()], content: {
-                ForEach(entry.items.prefix(2)) { item in
-                    if let event = item.item(as: Event.self) {
-                        EventItemView(event: event)
+            if entry.items.isEmpty {
+                Text("No upcoming lessons.")
+                    .foregroundColor(.secondary)
+                    .padding([.leading, .trailing])
+                    .frame(maxHeight: .greatestFiniteMagnitude)
+            } else {
+                LazyVGrid(columns: [GridItem()], content: {
+                    ForEach(entry.items.prefix(2)) { item in
+                        if let event = item.item(as: Event.self) {
+                            EventItemView(event: event)
+                        }
+                        
+                        if let lecture = item.item(as: Lecture.self) {
+                            LectureItemView(lecture: lecture)
+                        }
                     }
-                    
-                    if let lecture = item.item(as: Lecture.self) {
-                        LectureItemView(lecture: lecture)
-                    }
-                }
-            })
+                })
+            }
 
             Spacer()
         })
