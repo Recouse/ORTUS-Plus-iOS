@@ -55,7 +55,7 @@ struct ScheduleWidgetEntryView : View {
                         }
                         
                         if let lecture = item.item(as: Lecture.self) {
-                            LectureItemView(lecture: lecture)
+                            LectureItemView(date: entry.itemsDate, lecture: lecture)
                         }
                     }
                 })

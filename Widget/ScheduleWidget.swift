@@ -24,7 +24,7 @@ struct ScheduleWidget: Widget {
 
 struct Widget_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), items: []))
+        ScheduleWidgetEntryView(entry: ScheduleEntry(date: Date(), itemsDate: Date(), items: []))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

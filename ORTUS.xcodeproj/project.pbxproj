@@ -90,6 +90,7 @@
 		FA5B8E6C253B8FB70010DD38 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA664268241249B8002A3315 /* CodableStorage.swift */; };
 		FA5B8E6D253B8FB70010DD38 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426424124929002A3315 /* Storage.swift */; };
 		FA5B8E6E253B8FB70010DD38 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66426624124943002A3315 /* DiskStorage.swift */; };
+		FA5C244B2563292E00471017 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE092243D413005148AC /* Date.swift */; };
 		FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6252192387F8D2009C3FF7 /* UINavigationController.swift */; };
 		FA8714CA23E40B9000DB728C /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714C923E40B9000DB728C /* FormTextField.swift */; };
 		FA8714D323E40DD100DB728C /* PinSettingsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8714CE23E40DD100DB728C /* PinSettingsModuleBuilder.swift */; };
@@ -1850,6 +1851,7 @@
 				FA94FE602546A52D00DB3B67 /* AppGroup.swift in Sources */,
 				FA94FE652546A9C200DB3B67 /* Cache.swift in Sources */,
 				FA94FE3F2545E85C00DB3B67 /* DiskStorage.swift in Sources */,
+				FA5C244B2563292E00471017 /* Date.swift in Sources */,
 				FA94FE312545E1EA00DB3B67 /* ScheduleWidget.swift in Sources */,
 				FA9F940E2546BF5F00FB4907 /* EventItemView.swift in Sources */,
 				FA94FE592546A4C200DB3B67 /* UserDefaults.swift in Sources */,

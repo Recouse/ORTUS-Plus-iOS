@@ -10,5 +10,6 @@ import WidgetKit
 
 struct ScheduleEntry: TimelineEntry {
     let date: Date
+    let itemsDate: Date
     let items: [ScheduleItem]
 }

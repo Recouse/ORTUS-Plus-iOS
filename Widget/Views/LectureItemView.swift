@@ -9,7 +9,16 @@
 import SwiftUI
 
 struct LectureItemView: View {
+    let date: Date
     let lecture: Lecture
+    
+    let dateFormatter: DateFormatter = {
+        let dateFormatter = LatviaDateFormatter()
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateStyle = .medium
+        dateFormatter.doesRelativeDateFormatting = true
+        return dateFormatter
+    }()
     
     var body: some View {
         HStack(alignment: .top) {
@@ -23,9 +32,16 @@ struct LectureItemView: View {
                     .lineLimit(1)
                     .font(.caption)
                 
-                (Text(lecture.timeFromParsed) + Text(" - ") + Text(lecture.timeTillParsed))
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                if Date().day == date.day {
+                    (Text(lecture.timeFromParsed) + Text(" - ") + Text(lecture.timeTillParsed))
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                } else {
+                    (Text(date, formatter: dateFormatter) + Text(", ") + Text(lecture.timeFromParsed) + Text(" - ") + Text(lecture.timeTillParsed))
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
+                }
             }
         }
         .padding([.leading, .trailing])
