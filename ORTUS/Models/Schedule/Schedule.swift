@@ -25,16 +25,20 @@ extension ScheduleResponse {
             return date0 < date1
         })
         
-        let sharedUserDefaults = UserDefaults.standard
+        let sharedUserDefaults = UserDefaults(suiteName: AppGroup.default.rawValue)
         
         var schedule: [(key: String, value: [ScheduleItem])] = []
         for pair in sortedResponse {
             var items: [ScheduleItem] = []
-//            if sharedUserDefaults?.value(for: .showEvents) == true {
-                pair.value.events.forEach { items.append(ScheduleItem(id: $0.title, item: $0, time: $0.timeParsed)) }
-//            }
+            if sharedUserDefaults?.value(for: .showEvents) == true {
+                pair.value.events.forEach {
+                    items.append(ScheduleItem(id: $0.title, item: $0, time: $0.timeParsed))
+                }
+            }
             
-            pair.value.lectures.forEach { items.append(ScheduleItem(id: $0.id, item: $0, time: $0.timeFromParsed)) }
+            pair.value.lectures.forEach {
+                items.append(ScheduleItem(id: $0.id, item: $0, time: $0.timeFromParsed))
+            }
             items.sort(by: {
                 guard let firstDate = $0.timeDate, let secondDate = $1.timeDate else {
                     return false
