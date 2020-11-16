@@ -84,19 +84,19 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
                 cells: {
                     IconTextComponent(
                         title: "News",
-                        icon: Asset.Images.news.image,
+                        icon: UIImage(systemName: "newspaper"),
                         color: .systemPurple
                     ).identified(by: ID.news)
                     
                     IconTextComponent(
                         title: "Grades",
-                        icon: Asset.Images.ten.image,
+                        icon: UIImage(systemName: "a.book.closed"),
                         color: .systemBlue
                     ).identified(by: ID.grades)
                     
                     IconTextComponent(
                         title: "Contacts",
-                        icon: UIImage(named: "personCircle"),
+                        icon: UIImage(systemName: "person.2.circle"),
                         color: .systemOrange
                     ).identified(by: ID.contacts)
                     
@@ -167,6 +167,14 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
             self.previewingSemesterIndex = nil
             
             self.viewModel.router.openSemester(self.viewModel.semesters[previewingSemesterIndex])
+        }
+    }
+    
+    override func separatorInset(forRowAt indexPath: IndexPath) -> UIEdgeInsets {
+        if indexPath.section == 0 {
+            return UIEdgeInsets(top: 0, left: Global.UI.edgeInset + 35 + 15, bottom: 0, right: 0)
+        } else {
+            return UIEdgeInsets(top: 0, left: Global.UI.edgeInset, bottom: 0, right: 0)
         }
     }
     

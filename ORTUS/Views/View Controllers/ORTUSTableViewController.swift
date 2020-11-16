@@ -84,4 +84,8 @@ class ORTUSTableViewController: Module, ORTUSTableViewAdapterDelegate {
     func willPerformPreviewActionForMenu(configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
         
     }
+    
+    func separatorInset(forRowAt indexPath: IndexPath) -> UIEdgeInsets? {
+        nil
+    }
 }

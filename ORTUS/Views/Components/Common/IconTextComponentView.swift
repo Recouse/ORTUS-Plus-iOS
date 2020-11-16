@@ -12,7 +12,7 @@ class IconTextComponentView: UIView {
     let imageContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray
-        view.layer.cornerRadius = 8
+        view.layer.cornerRadius = 7
         view.clipsToBounds = true
         
         return view
@@ -26,7 +26,12 @@ class IconTextComponentView: UIView {
         return imageView
     }()
     
-    let titleLabel = UILabel()
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .body)
+        
+        return label
+    }()
     
     let rightAccessoryView: UIImageView = {
         let imageView = UIImageView()
@@ -42,14 +47,14 @@ class IconTextComponentView: UIView {
                 
         addSubview(imageContainerView)
         imageContainerView.snp.makeConstraints {
-            $0.size.equalTo(40)
+            $0.size.equalTo(35)
             $0.centerY.equalToSuperview()
             $0.left.equalToSuperview().offset(Global.UI.edgeInset)
         }
         
         addSubview(imageView)
         imageView.snp.makeConstraints {
-            $0.size.equalTo(imageContainerView).multipliedBy(0.5)
+            $0.size.equalTo(imageContainerView).multipliedBy(0.65)
             $0.center.equalTo(imageContainerView)
         }
         
