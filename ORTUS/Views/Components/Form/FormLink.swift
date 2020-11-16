@@ -32,7 +32,7 @@ class FormLinkView: UIView {
         let imageView = UIImageView()
         imageView.image = Asset.Images.external.image
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = ColorCompatibility.tertiaryLabel
+        imageView.tintColor = .tertiaryLabel
         
         return imageView
     }()

@@ -28,7 +28,7 @@ struct Footer: Carbon.Component, Equatable {
 class FooterView: UIView {
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 13)
         label.numberOfLines = 0
         

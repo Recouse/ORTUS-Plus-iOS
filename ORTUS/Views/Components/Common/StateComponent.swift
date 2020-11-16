@@ -55,7 +55,7 @@ class StateComponentView: UIView {
     let secondaryLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17)
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         label.textAlignment = .center
         label.numberOfLines = 0
         

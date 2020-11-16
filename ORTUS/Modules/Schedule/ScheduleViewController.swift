@@ -9,7 +9,6 @@
 import UIKit
 import Carbon
 import SafariServices
-import Models
 import Promises
 
 class ScheduleViewController: Module, ModuleViewModel {
@@ -20,19 +19,14 @@ class ScheduleViewController: Module, ModuleViewModel {
     
     var refreshControl: UIRefreshControl!
     
-    let toolbarSegmentedControl = UISegmentedControl(items: [])
+    var calendarBarButtonItem: UIBarButtonItem!
     
-    var selectedScheduleGrouping: Int = 0
-    
-    lazy var toolbar: UIToolbar = {
-        let bar = UIToolbar()
-        bar.delegate = self
-
-        let barItem = UIBarButtonItem(customView: self.toolbarSegmentedControl)
-
-        bar.setItems([barItem], animated: false)
-
-        return bar
+    lazy var calendarController: CalendarViewController = {
+        let controller = CalendarViewController()
+        controller.delegate = self
+        controller.modalPresentationStyle = .popover
+        
+        return controller
     }()
     
     lazy var adapter = ScheduleTableViewAdapter(dataSource: self, delegate: self)
@@ -48,6 +42,13 @@ class ScheduleViewController: Module, ModuleViewModel {
         
         return dateFormatter
     }()
+    
+    var selectedDate = Date() {
+        didSet {
+            updateCalendarBarButtonItem()
+            loadData(forceUpdate: true)
+        }
+    }
     
     init(viewModel: ScheduleViewModel) {
         self.viewModel = viewModel
@@ -67,23 +68,10 @@ class ScheduleViewController: Module, ModuleViewModel {
         super.viewDidLoad()
         
         prepareNavigationItem()
-        prepareToolbar()
         prepareRefreshControl()
         prepareData()
         
         loadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.hideBorderLine()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.showBorderLine()
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -94,8 +82,8 @@ class ScheduleViewController: Module, ModuleViewModel {
     
     func loadData(forceUpdate: Bool = false) {
         if forceUpdate {
-            viewModel.loadSchedule().always {
-                self.render()
+            viewModel.loadSchedule(date: selectedDate).always {
+                self.render(animated: true)
             }
             
             return
@@ -104,32 +92,22 @@ class ScheduleViewController: Module, ModuleViewModel {
         viewModel.loadCachedSchedule().then { _ -> Promise<Bool> in
             self.render()
             
-            return self.viewModel.loadSchedule()
+            return self.viewModel.loadSchedule(date: self.selectedDate)
         }.then { _ in
             self.render()
         }
     }
     
-    func render() {
+    func render(animated: Bool = false) {
         self.refreshControl.endRefreshing()
         
         var data: [Section] = []
-        let today = Date()
-        guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today) else {
-            return
-        }
 
         for (key, schedule) in viewModel.schedule {
-            if selectedScheduleGrouping != 2 {
-                guard key == dateFormatter.string(from: selectedScheduleGrouping == 0 ? today : tomorrow) else {
-                    continue
-                }
-            }
-
             data.append(
                 Section(
                     id: key,
-                    header: selectedScheduleGrouping == 2 ? ViewNode(ScheduleDateHeader(title: key)) : nil,
+                    header: ViewNode(ScheduleDateHeader(title: key)),
                     cells: schedule.compactMap {
                         if let event = $0.item(as: Event.self) {
                             return CellNode(EventComponent(id: event.title, event: event))
@@ -143,10 +121,6 @@ class ScheduleViewController: Module, ModuleViewModel {
                     }
                 )
             )
-
-            if selectedScheduleGrouping != 2 {
-                break
-            }
         }
         
         if data.isEmpty {
@@ -167,11 +141,11 @@ class ScheduleViewController: Module, ModuleViewModel {
                 section
             }
         }
+        
+        scrollToSelectedDay(animated: animated)
     }
     
     @objc func selectScheduleGrouping() {
-        selectedScheduleGrouping = toolbarSegmentedControl.selectedSegmentIndex
-        
         render()
     }
     
@@ -193,42 +167,52 @@ class ScheduleViewController: Module, ModuleViewModel {
             self.present(controller, animated: true, completion: nil)
         }
     }
+    
+    @objc func showCalendar() {
+        calendarController.popoverPresentationController?.barButtonItem = calendarBarButtonItem
+        calendarController.popoverPresentationController?.delegate = self
+        
+        present(calendarController, animated: true, completion: nil)
+    }
+    
+    func updateCalendarBarButtonItem() {
+        let day = Calendar.current.component(.day, from: selectedDate)
+        
+        calendarBarButtonItem.image = UIImage(systemName: "\(day).circle")
+    }
+    
+    func scrollToSelectedDay(animated: Bool = false) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let day = Calendar.current.component(.day, from: selectedDate)
+        
+        for (index, schedule) in viewModel.schedule.enumerated() {
+            guard let scheduleDate = dateFormatter.date(from: schedule.key) else {
+                continue
+            }
+            
+            if day == Calendar.current.component(.day, from: scheduleDate) {
+                tableView.scrollToRow(at: IndexPath(row: 0, section: index), at: .top, animated: animated)
+                break
+            }
+        }
+    }
 }
 
 extension ScheduleViewController {
     func prepareNavigationItem() {
         navigationItem.largeTitleDisplayMode = .never
         
-//        let leftButton = UIButton()
-//        leftButton.setImage(UIImage(named: "chevronLeft"), for: .normal)
-//        leftButton.imageView?.contentMode = .scaleAspectFit
-//        leftButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
-//        
-//        let rightButton = UIButton()
-//        rightButton.setImage(UIImage(named: "chevronRight"), for: .normal)
-//        rightButton.imageView?.contentMode = .scaleAspectFit
-//        rightButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
-    }
-    
-    func prepareToolbar() {
-        view.addSubview(toolbar)
-        toolbar.translatesAutoresizingMaskIntoConstraints = false
-        toolbar.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.left.right.equalToSuperview()
-        }
+        calendarBarButtonItem = UIBarButtonItem(
+            image: nil,
+            style: .plain,
+            target: self,
+            action: #selector(showCalendar)
+        )
+        updateCalendarBarButtonItem()
         
-        toolbarSegmentedControl.addTarget(self, action: #selector(selectScheduleGrouping), for: .valueChanged)
-        
-        for (index, grouping) in ScheduleGrouping.allCases.enumerated() {
-            toolbarSegmentedControl.insertSegment(
-                withTitle: grouping.rawValue.capitalized,
-                at: index,
-                animated: false)
-        }
-        toolbarSegmentedControl.selectedSegmentIndex = selectedScheduleGrouping
+        navigationItem.rightBarButtonItem = calendarBarButtonItem
     }
     
     func prepareRefreshControl() {
@@ -239,6 +223,8 @@ extension ScheduleViewController {
     
     func prepareData() {
         renderer.target = tableView
+        renderer.updater.isAnimationEnabled = false
+        renderer.updater.isAnimationEnabledWhileScrolling = false
         
         viewModel.sharedUserDefaults?.addObserver(
             self,
@@ -256,11 +242,11 @@ extension ScheduleViewController: ScheduleTableViewAdapterDataSource, ScheduleTa
         let cell = renderer.data[indexPath.section].cells[indexPath.row]
         
         if let event = cell.component(as: EventComponent.self)?.event {            
-            return ScheduleItem(event, time: event.time)
+            return ScheduleItem(id: event.title, item: event, time: event.time)
         }
         
         if let lecture = cell.component(as: LectureComponent.self)?.lecture {
-            return ScheduleItem(lecture, time: lecture.timeFrom)
+            return ScheduleItem(id: lecture.id, item: lecture, time: lecture.timeFrom)
         }
         
         return nil
@@ -271,9 +257,17 @@ extension ScheduleViewController: ScheduleTableViewAdapterDataSource, ScheduleTa
     }
 }
 
-extension ScheduleViewController: UIToolbarDelegate {
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .top
+extension ScheduleViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        .none
+    }
+}
+
+extension ScheduleViewController: CalendarViewControllerDelegate {
+    func selectedDate(on datePicker: UIDatePicker, controller: CalendarViewController) {
+        controller.dismiss(animated: true, completion: nil)
+        
+        selectedDate = datePicker.date
     }
 }
 

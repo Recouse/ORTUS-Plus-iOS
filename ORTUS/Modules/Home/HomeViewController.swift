@@ -9,7 +9,6 @@
 import UIKit
 import Carbon
 import Promises
-import Models
 
 class HomeViewController: ORTUSTableViewController, ModuleViewModel {
     enum ID {
@@ -78,33 +77,38 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
         refreshControl.endRefreshing()
         
         renderer.render {
-            Section(id: "overview", header: Header(title: "Overview".uppercased()), cells: {
-                IconTextComponent(
-                    title: "News",
-                    icon: Asset.Images.news.image,
-                    color: .systemPurple
-                ).identified(by: ID.news)
-                
-                IconTextComponent(
-                    title: "Grades",
-                    icon: Asset.Images.ten.image,
-                    color: .systemBlue
-                ).identified(by: ID.grades)
-                
-                IconTextComponent(
-                    title: "Contacts",
-                    icon: UIImage(named: "personCircle"),
-                    color: .systemOrange
-                ).identified(by: ID.contacts)
-                
-                IconTextComponent(
-                    title: "ORTUS Website",
-                    icon: Asset.Images.ortusLogo.image,
-                    color: .systemGreen
-                ).identified(by: ID.ortus)
-            })
+            Section(
+                id: "overview",
+                header: Header(title: "Overview"),
+                footer: Footer(),
+                cells: {
+                    IconTextComponent(
+                        title: "News",
+                        icon: UIImage(systemName: "newspaper"),
+                        color: .systemPurple
+                    ).identified(by: ID.news)
+                    
+                    IconTextComponent(
+                        title: "Grades",
+                        icon: UIImage(systemName: "a.book.closed"),
+                        color: .systemBlue
+                    ).identified(by: ID.grades)
+                    
+                    IconTextComponent(
+                        title: "Contacts",
+                        icon: UIImage(systemName: "person.2.circle"),
+                        color: .systemOrange
+                    ).identified(by: ID.contacts)
+                    
+                    IconTextComponent(
+                        title: "ORTUS Website",
+                        icon: Asset.Images.ortusLogo.image,
+                        color: .systemGreen
+                    ).identified(by: ID.ortus)
+                }
+            )
             
-            Section(id: "courses", header: Header(title: "Courses".uppercased()), cells: {
+            Section(id: "courses", header: Header(title: "Courses"), cells: {
                 Group(of: viewModel.semesters.enumerated()) { (index, semester) in
                     SemesterComponent(
                         semester: semester
@@ -166,6 +170,14 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
         }
     }
     
+    override func separatorInset(forRowAt indexPath: IndexPath) -> UIEdgeInsets {
+        if indexPath.section == 0 {
+            return UIEdgeInsets(top: 0, left: Global.UI.edgeInset + 35 + 15, bottom: 0, right: 0)
+        } else {
+            return UIEdgeInsets(top: 0, left: Global.UI.edgeInset, bottom: 0, right: 0)
+        }
+    }
+    
     @objc func scrollToTop() {
         guard let tabBarController = navigationController?.tabBarController,
             tabBarController.selectedIndex == Global.UI.TabBar.home.rawValue,
@@ -204,17 +216,9 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
 }
 
 extension HomeViewController {
-    func prepareNavigationItem() {
-        var settingsImage: UIImage?
-        
-        if #available(iOS 13.0, *) {
-            settingsImage = UIImage(systemName: "gear")
-        } else {
-            settingsImage = Asset.Images.settings.image
-        }
-        
+    func prepareNavigationItem() {                
         let settingsItem = UIBarButtonItem(
-            image: settingsImage,
+            image: UIImage(systemName: "gear"),
             style: .plain,
             target: self,
             action: #selector(openSettings))

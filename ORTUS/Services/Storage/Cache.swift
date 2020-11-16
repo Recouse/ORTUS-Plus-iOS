@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Storage
 
 class Cache {
     static let temporaryDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
@@ -32,16 +31,16 @@ class Cache {
         self.storage = storage ?? CodableStorage(storage: diskStorage)
     }
     
-    func save<Object: Any>(_ object: Object, forKey key: String) where Object: Codable {
-        try? storage.save(object, for: key)
+    func save<Object: Any>(_ object: Object, forKey key: CacheKey) where Object: Codable {
+        try? storage.save(object, for: key.rawValue)
     }
     
     func fetch<Object: Any>(
         _ type: Object.Type,
-        forKey key: String
+        forKey key: CacheKey
     ) throws -> Object where Object: Codable {
         do {
-            let object: Object = try storage.fetch(for: key)
+            let object: Object = try storage.fetch(for: key.rawValue)
             
             return object
         } catch {

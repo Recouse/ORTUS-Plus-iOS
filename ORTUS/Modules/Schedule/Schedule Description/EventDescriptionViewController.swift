@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Models
 
 class EventDescriptionViewController: UIViewController {
     let event: Event

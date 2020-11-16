@@ -9,16 +9,10 @@
 import UIKit
 
 class ORTUSTableView: UIView {
-    let tableView: UITableView = {
-        var style: UITableView.Style = .grouped
-        
-        if #available(iOS 13.0, *) {
-            style = .insetGrouped
-        }
-        
-        let tableView = UITableView(frame: .zero, style: style)
+    let tableView: UITableView = {        
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.backgroundView = nil
-        tableView.backgroundColor = .groupTableViewBackground
+        tableView.backgroundColor = .systemGroupedBackground
         tableView.separatorStyle = .singleLine
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -31,7 +25,7 @@ class ORTUSTableView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         addSubview(tableView)
         tableView.snp.makeConstraints {

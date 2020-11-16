@@ -11,9 +11,7 @@ import Foundation
 extension String {
     // Source https://stackoverflow.com/a/47230632/7844080
     var htmlToAttributedString: NSAttributedString? {
-        guard let data = data(using: .utf8) else {
-            return nil
-        }
+        let data = Data(self.utf8)
         
         do {
             return try NSAttributedString(

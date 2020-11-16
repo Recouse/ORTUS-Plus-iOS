@@ -23,6 +23,7 @@ class EventLogger {
         case openedOrtusShortcut
         case openedScheduleShortcut
         case openedNotificationsShortCut
+        case openedScheduleWidget
         
         var name: String {
             switch self {
@@ -50,6 +51,8 @@ class EventLogger {
                 return "Opened Schedule from shortcut"
             case .openedNotificationsShortCut:
                 return "Opened Notifications from shortcut"
+            case .openedScheduleWidget:
+                return "Opened Schedule from widget"
             }
         }
         

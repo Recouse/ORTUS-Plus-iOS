@@ -70,10 +70,6 @@ class AppearanceSettingsViewController: Module, ModuleViewModel {
     }
     
     func preselectAppearance() {
-        guard #available(iOS 13.0, *) else {
-            return
-        }
-        
         guard selectedIndexPath == nil else {
             return
         }
@@ -99,10 +95,6 @@ class AppearanceSettingsViewController: Module, ModuleViewModel {
     }
     
     func selectAppearance(id: AnyHashable) {
-        guard #available(iOS 13.0, *) else {
-            return
-        }
-        
         guard let appearance = id as? ID else {
             return
         }

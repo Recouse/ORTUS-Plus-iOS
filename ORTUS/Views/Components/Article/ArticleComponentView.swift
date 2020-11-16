@@ -11,6 +11,22 @@ import UIKit
 class ArticleComponentView: UIControl {
     var onSelect: (() -> Void)?
     
+    let authorLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .secondaryLabel
+        label.font = UIFont.preferredFont(forTextStyle: .caption1).bold()
+        
+        return label
+    }()
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.numberOfLines = 3
+        
+        return label
+    }()
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = Asset.Colors.lightGray.color
@@ -21,18 +37,10 @@ class ArticleComponentView: UIControl {
         return imageView
     }()
     
-    let authorLabel: UILabel = {
+    let dateLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Asset.Colors.darkGray.color
-        label.font = .systemFont(ofSize: 12, weight: .semibold)
-        
-        return label
-    }()
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
-        label.numberOfLines = 2
+        label.textColor = .secondaryLabel
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline)
         
         return label
     }()
@@ -40,11 +48,17 @@ class ArticleComponentView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
+        backgroundColor = .secondarySystemGroupedBackground
+        
+        addSubview(authorLabel)
+        addSubview(titleLabel)
+        addSubview(imageView)
+        addSubview(dateLabel)
         
         prepareImageView()
         prepareAuthorLabel()
         prepareTitleLabel()
+        prepareDateLabel()
         
         addTarget(self, action: #selector(selected), for: .touchUpInside)
     }
@@ -62,28 +76,36 @@ extension ArticleComponentView {
     func prepareImageView() {
         addSubview(imageView)
         imageView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().offset(15).inset(15)
-            $0.width.equalTo(imageView.snp.height)
-            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
+            $0.size.equalTo(80)
+            $0.top.equalToSuperview().offset(15)
+            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
         }
     }
     
     func prepareAuthorLabel() {
         addSubview(authorLabel)
         authorLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView)
-            $0.left.equalTo(imageView.snp.right).offset(10)
-            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
+            $0.top.equalToSuperview().offset(Global.UI.edgeInset)
+            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
+            $0.right.equalTo(imageView.snp.left).offset(-10)
         }
     }
     
     func prepareTitleLabel() {
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(authorLabel.snp.bottom).offset(5)
-            $0.left.equalTo(imageView.snp.right).offset(10)
-            $0.right.equalToSuperview().inset(Global.UI.edgeInset)
-            $0.bottom.equalTo(imageView).priority(250)
+            $0.top.equalTo(authorLabel.snp.bottom).offset(2)
+            $0.left.equalToSuperview().offset(Global.UI.edgeInset)
+            $0.right.equalTo(imageView.snp.left).offset(-10)
+        }
+    }
+    
+    func prepareDateLabel() {
+        addSubview(dateLabel)
+        dateLabel.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom).offset(20)
+            $0.left.right.equalToSuperview().offset(Global.UI.edgeInset).inset(Global.UI.edgeInset)
+            $0.bottom.equalToSuperview().inset(Global.UI.edgeInset)
         }
     }
 }

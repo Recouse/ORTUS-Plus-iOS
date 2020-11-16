@@ -13,13 +13,14 @@ class NewsView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundView = nil
-        tableView.backgroundColor = .groupTableViewBackground
+        tableView.backgroundColor = .clear
         tableView.separatorStyle = .singleLine
         tableView.separatorInset = UIEdgeInsets(
             top: 0,
-            left: Global.UI.edgeInset + 50 + 10,
+            left: Global.UI.edgeInset,
             bottom: 0,
-            right: 0)
+            right: 0
+        )
         
         return tableView
     }()
@@ -27,7 +28,7 @@ class NewsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         addSubview(tableView)
         tableView.snp.makeConstraints {

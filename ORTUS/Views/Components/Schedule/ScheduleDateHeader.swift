@@ -24,10 +24,14 @@ struct ScheduleDateHeader: Carbon.Component, Equatable {
             content.dayLabel.text = title
             return
         }
-        dateFormatter.dateFormat = "EEEE"
-        content.dayLabel.text = dateFormatter.string(from: date)
-        dateFormatter.dateFormat = "dd.MM"
-        content.dayMonthLabel.text = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "EEEE, dd.MM"
+        content.dayLabel.text = dateFormatter.string(from: date).uppercased()
+        
+        if Calendar.current.dateComponents([.year, .month, .day], from: Date()) == Calendar.current.dateComponents([.year, .month, .day], from: date) {
+            content.dayLabel.textColor = .systemRed
+        } else {
+            content.dayLabel.textColor = .label
+        }
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
@@ -38,36 +42,35 @@ struct ScheduleDateHeader: Carbon.Component, Equatable {
 class ScheduleDateHeaderView: UIView {
     let dayLabel: UILabel = {
         let label = UILabel()
-        label.textColor = ColorCompatibility.label
-        label.font = .systemFont(ofSize: 15, weight: .semibold)
+        label.textColor = .label
+        label.font = UIFont.preferredFont(for: .footnote, weight: .semibold)
         
         return label
     }()
     
-    let dayMonthLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 13)
+    let separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .separator
         
-        return label
+        return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemGray5
+        backgroundColor = .systemBackground
         
         addSubview(dayLabel)
         dayLabel.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(5)
-            $0.centerY.equalToSuperview()
+            $0.left.right.equalToSuperview().offset(Global.UI.edgeInset).inset(Global.UI.edgeInset)
+            $0.bottom.equalToSuperview().inset(5)
         }
         
-        addSubview(dayMonthLabel)
-        dayMonthLabel.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.left.equalTo(dayLabel.snp.right).offset(5)
-            $0.right.equalToSuperview().inset(5).priority(250)
+        addSubview(separatorView)
+        separatorView.snp.makeConstraints {
+            $0.height.equalTo(0.5)
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
     

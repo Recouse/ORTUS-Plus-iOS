@@ -12,7 +12,7 @@ class ArticleHeaderComponentView: UIView {
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = Asset.Colors.lightGray.color
+        imageView.backgroundColor = .systemGray
         imageView.clipsToBounds = true
         
         return imageView
@@ -21,6 +21,7 @@ class ArticleHeaderComponentView: UIView {
     let imageViewOverlay: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        view.isHidden = true
         
         return view
     }()
@@ -34,22 +35,11 @@ class ArticleHeaderComponentView: UIView {
         return label
     }()
     
-    let backButton: UIButton = {
-        let button = UIButton()
-        button.tintColor = .white
-        button.setImage(UIImage(named: "chevronLeft"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
-        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        
-        return button
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         prepareImageView()
         prepareTitleLabel()
-        prepareBackButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -79,15 +69,6 @@ extension ArticleHeaderComponentView {
 //            $0.top.equalTo(safeAreaLayoutGuide).priority(250)
             $0.left.right.equalToSuperview().offset(Global.UI.edgeInset).inset(Global.UI.edgeInset)
             $0.bottom.equalToSuperview().inset(10)
-        }
-    }
-    
-    func prepareBackButton() {
-        addSubview(backButton)
-        backButton.snp.makeConstraints {
-            $0.size.equalTo(36)
-            $0.top.equalToSuperview().offset(UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0)
-            $0.left.equalToSuperview().offset(5)
         }
     }
 }

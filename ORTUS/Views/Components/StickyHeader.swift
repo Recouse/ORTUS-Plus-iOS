@@ -36,7 +36,7 @@ class StickyHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemGray5
+        backgroundColor = .systemGray5
         
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {

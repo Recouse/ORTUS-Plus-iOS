@@ -15,20 +15,7 @@ class MainTabBarController: TabBarController {
     lazy var homeItem: UITabBarItem = {
         var item = UITabBarItem()
         item.tag = Global.UI.TabBar.home.rawValue
-        
-        if #available(iOS 13.0, *) {
-            item.image = UIImage(systemName: "house")
-        } else {
-            DispatchQueue.global(qos: .userInitiated).async {
-                let image = Asset.Images.home.image.forceLoad()
-                let selectedImage = Asset.Images.homeSelected.image.forceLoad()
-                
-                DispatchQueue.main.async {
-                    item.image = image
-                    item.selectedImage = selectedImage
-                }
-            }
-        }
+        item.image = UIImage(systemName: "house")
         
         return item
     }()
@@ -45,18 +32,7 @@ class MainTabBarController: TabBarController {
     let scheduleItem: UITabBarItem = {
         let item = UITabBarItem()
         item.tag = Global.UI.TabBar.schedule.rawValue
-        
-        if #available(iOS 13.0, *) {
-            item.image = UIImage(systemName: "calendar")
-        } else {
-            DispatchQueue.global(qos: .userInitiated).async {
-                let image = Asset.Images.schedule.image.forceLoad()
-                
-                DispatchQueue.main.async {
-                    item.image = image
-                }
-            }
-        }
+        item.image = UIImage(systemName: "calendar")
         
         return item
     }()
@@ -73,21 +49,8 @@ class MainTabBarController: TabBarController {
     let notificationsItem: UITabBarItem = {
         let item = UITabBarItem()
         item.tag = Global.UI.TabBar.notifications.rawValue
-
-        if #available(iOS 13.0, *) {
-            item.image = UIImage(systemName: "bell")
-            item.selectedImage = UIImage(systemName: "bell.fill")
-        } else {
-            DispatchQueue.global(qos: .userInitiated).async {
-                let image = Asset.Images.notifications.image.forceLoad()
-                let selectedImage = Asset.Images.notificationsSelected.image.forceLoad()
-                
-                DispatchQueue.main.async {
-                    item.image = image
-                    item.selectedImage = selectedImage
-                }
-            }
-        }
+        item.image = UIImage(systemName: "bell")
+        item.selectedImage = UIImage(systemName: "bell.fill")
 
         return item
     }()

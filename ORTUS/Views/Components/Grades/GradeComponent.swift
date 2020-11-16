@@ -8,7 +8,6 @@
 
 import UIKit
 import Carbon
-import Models
 
 struct GradeComponent: Component {
     var mark: Mark

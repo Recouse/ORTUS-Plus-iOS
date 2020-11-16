@@ -14,7 +14,7 @@ class EventDescriptionView: UIView {
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         label.numberOfLines = 0
         
         return label

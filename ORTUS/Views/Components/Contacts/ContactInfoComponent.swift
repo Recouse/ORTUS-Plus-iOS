@@ -8,7 +8,6 @@
 
 import UIKit
 import Carbon
-import Models
 
 enum ContactInfoType {
     case text, email, phone, address

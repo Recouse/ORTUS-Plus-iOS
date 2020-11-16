@@ -163,6 +163,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch Global.Module(rawValue: module) {
         case .schedule:
             mainTabBarController.selectedIndex = Global.UI.TabBar.schedule.rawValue
+            
+            if urlComponents.queryItems?.first(where: {
+                $0.name == "from"
+            })?.value == "widget" {
+                EventLogger.log(.openedScheduleWidget)
+            }
         default:
             return false
         }
@@ -190,10 +196,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     fileprivate func overrideAppearance() {
-        guard #available(iOS 13.0, *) else {
-            return
-        }
-        
         let appearance = UserDefaults.standard.value(for: .appearance)
         
         switch appearance {

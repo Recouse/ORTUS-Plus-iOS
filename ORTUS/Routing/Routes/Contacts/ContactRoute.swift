@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Models
 
 protocol ContactRoute: Route {
     func openContact(_ contact: Contact)

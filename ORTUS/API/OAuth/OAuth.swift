@@ -10,7 +10,6 @@ import Foundation
 import Alamofire
 import Promises
 import KeychainAccess
-import Models
 
 final class OAuth {
     static let redirectURI = "ortus://auth"

@@ -9,23 +9,10 @@
 import UIKit
 
 class ScheduleView: UIView {
-    let toolbarSegmentedControl = UISegmentedControl()
-    
-    lazy var toolbar: UIToolbar = {
-        let toolbar = UIToolbar()
-        toolbar.delegate = self
-
-        let barItem = UIBarButtonItem(customView: self.toolbarSegmentedControl)
-
-        toolbar.setItems([barItem], animated: false)
-
-        return toolbar
-    }()
-    
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundView = nil
-        tableView.backgroundColor = .groupTableViewBackground
+        tableView.backgroundColor = .systemBackground
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
@@ -36,7 +23,7 @@ class ScheduleView: UIView {
             bottom: 0,
             right: 0)
         tableView.contentInset = UIEdgeInsets(
-            top: 44, // Toolbar height
+            top: 0,
             left: 0,
             bottom: 30,
             right: 0)
@@ -47,7 +34,7 @@ class ScheduleView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
 
         
         addSubview(tableView)
@@ -60,11 +47,5 @@ class ScheduleView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension ScheduleView: UIToolbarDelegate {
-    func position(for bar: UIBarPositioning) -> UIBarPosition {
-        return .top
     }
 }

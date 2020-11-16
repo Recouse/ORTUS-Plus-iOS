@@ -8,7 +8,6 @@
 
 import UIKit
 import Carbon
-import Models
 
 class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
     var viewModel: SemesterViewModel
@@ -81,5 +80,9 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
         courseShortcut?.donate()
         
         viewModel.router.openBrowser(course.link)
+    }
+    
+    override func separatorInset(forRowAt indexPath: IndexPath) -> UIEdgeInsets? {
+        return UIEdgeInsets(top: 0, left: Global.UI.edgeInset + 40 + 15, bottom: 0, right: 0)
     }
 }

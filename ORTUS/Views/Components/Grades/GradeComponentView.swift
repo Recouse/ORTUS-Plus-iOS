@@ -31,7 +31,7 @@ class GradeComponentView: UIView {
     let lecturerLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         
         return label
     }()
@@ -40,7 +40,7 @@ class GradeComponentView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "chevronRight")
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = ColorCompatibility.tertiaryLabel
+        imageView.tintColor = .tertiaryLabel
         
         return imageView
     }()

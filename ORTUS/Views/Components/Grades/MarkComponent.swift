@@ -8,7 +8,6 @@
 
 import UIKit
 import Carbon
-import Models
 
 struct MarkComponent: Component {
     var mark: Mark

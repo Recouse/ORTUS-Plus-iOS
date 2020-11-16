@@ -11,7 +11,7 @@ import UIKit
 class ContactView: UIView {
     let headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
+        view.backgroundColor = .secondarySystemGroupedBackground
         
         return view
     }()
@@ -21,7 +21,7 @@ class ContactView: UIView {
     let photoView: CircleImageView = {
         let imageView = CircleImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = ColorCompatibility.systemGray4
+        imageView.backgroundColor = .systemGray4
         
         return imageView
     }()
@@ -77,7 +77,7 @@ class ContactView: UIView {
     
     let headerViewSeparator: UIView = {
         let view = UIView()
-        view.backgroundColor = ColorCompatibility.separator
+        view.backgroundColor = .separator
         
         return view
     }()
@@ -85,7 +85,7 @@ class ContactView: UIView {
     let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundView = nil
-        tableView.backgroundColor = .groupTableViewBackground
+        tableView.backgroundColor = .systemGroupedBackground
         tableView.separatorStyle = .singleLine
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
@@ -96,7 +96,7 @@ class ContactView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         addSubview(headerView)
         headerHeight = headerView.heightAnchor.constraint(equalToConstant: Global.UI.isIphoneX ? 240 : 210)

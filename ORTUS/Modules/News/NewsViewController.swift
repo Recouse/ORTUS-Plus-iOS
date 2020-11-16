@@ -53,25 +53,23 @@ class NewsViewController: Module, ModuleViewModel {
         refreshControl.endRefreshing()
         
         let dates = viewModel.articles.keys.sorted(by: { $0.compare($1) == .orderedDescending })
+        let articles = dates.compactMap { viewModel.articles[$0] }.flatMap { $0 }
         
         renderer.render {
-            Group(of: dates) { date in
-                Section(
-                    id: date.hashValue,
-                    header: ArticleSectionHeader(date: date),
-                    cells: {
-                        Group(of: self.viewModel.articles[date] ?? []) { article in
-                            ArticleComponent(
-                                id: article.title,
-                                article: article,
-                                onSelect: { [unowned self] in
-                                    self.viewModel.router.openArticle(article)
-                                }
-                            ).identified(by: \.article.title)
-                        }
+            Section(
+                id: "articles",
+                cells: {
+                    Group(of: articles) { article in
+                        ArticleComponent(
+                            id: article.title,
+                            article: article,
+                            onSelect: { [unowned self] in
+                                self.viewModel.router.openArticle(article)
+                            }
+                        ).identified(by: \.article.title)
                     }
-                )
-            }
+                }
+            )
         }
     }
 

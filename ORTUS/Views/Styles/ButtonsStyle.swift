@@ -9,7 +9,7 @@
 import UIKit
 
 enum ButtonsStyle {
-    static let action = Styling<Button> {
+    static let action = Styling<OButton> {
         $0.setBackgroundColor(Asset.Colors.tintColor.color)
         $0.disabledBackgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
         $0.setTintColor(.white)

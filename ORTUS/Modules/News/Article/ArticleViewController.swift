@@ -20,7 +20,7 @@ class ArticleViewController: Module, ModuleViewModel, AlertPresentable {
     
     let headerView = ArticleHeaderComponentView()
     
-    private let kTableHeaderHeight: CGFloat = 260
+    private let kTableHeaderHeight: CGFloat = 240
     
     lazy var adapter: ArticleTableViewAdapter = {
         let adapter = ArticleTableViewAdapter()
@@ -35,6 +35,8 @@ class ArticleViewController: Module, ModuleViewModel, AlertPresentable {
     )
     
     var statusBarStyle: UIStatusBarStyle = .lightContent
+    
+    var navigationBarObserver: NSKeyValueObservation?
     
     init(viewModel: ArticleViewModel) {
         self.viewModel = viewModel
@@ -79,19 +81,6 @@ class ArticleViewController: Module, ModuleViewModel, AlertPresentable {
         headerView.frame = headerRect
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.alpha = 0
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.navigationBar.alpha = 1
-        UIApplication.shared.statusBarView?.backgroundColor = .clear
-    }
-    
     func render() {
         renderer.render {
             Section(id: "article") {
@@ -131,10 +120,6 @@ class ArticleViewController: Module, ModuleViewModel, AlertPresentable {
         alert(type: .info, message: "This will be available soon!")
     }
     
-    @objc func back() {
-        viewModel.router.close()
-    }
-    
     fileprivate func updateStatusBar(offset: CGFloat) {
         let statusBarCurrentStyle = statusBarStyle
         
@@ -152,16 +137,25 @@ class ArticleViewController: Module, ModuleViewModel, AlertPresentable {
 
 extension ArticleViewController {
     func prepareNavigationItem() {
-        navigationItem.largeTitleDisplayMode = .never
-        
-//        translateBarButtonItem = UIBarButtonItem(image: UIImage(named: "translate"), style: .plain, target: self, action: #selector(translate))
-//        navigationItem.rightBarButtonItem = translateBarButtonItem
+        navigationBarObserver = navigationController?.navigationBar.observe(
+            \.bounds,
+            options: [.new],
+            changeHandler: { (navigationBar, changes) in
+                if let height = changes.newValue?.height {
+                    if height > 44 {
+                        self.updateStatusBar(offset: 0)
+                    } else {
+                        self.updateStatusBar(offset: 1)
+                    }
+                }
+            }
+        )
     }
     
     func prepareHeaderView() {
         tableView.addSubview(headerView)
-        tableView.contentInset = UIEdgeInsets(top: 260, left: 0, bottom: 0, right: 0)
-        tableView.contentOffset = CGPoint(x: 0, y: -260)
+        tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
         
         updateHeaderView()
     }
@@ -170,27 +164,21 @@ extension ArticleViewController {
         renderer.target = tableView
         
         if let imageURL = viewModel.article.imageURL {
-            headerView.imageView.kf.setImage(with: URL(string: imageURL))
+            headerView.imageView.kf.setImage(with: URL(string: imageURL), completionHandler:  { [weak self] result in
+                guard let self = self, case .success = result else {
+                    return
+                }
+                
+                self.headerView.imageViewOverlay.isHidden = false
+            })
         }
         
         headerView.titleLabel.text = viewModel.article.title
-        headerView.backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
     }
 }
 
 extension ArticleViewController: ArticleTableViewAdapterDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        var offset = (scrollView.contentOffset.y + 260) / 180
-        
-        if offset > 1 {
-            offset = 1
-            
-            navigationController?.navigationBar.alpha = offset
-        } else {
-            navigationController?.navigationBar.alpha = offset
-        }
-
-        updateStatusBar(offset: offset)
         updateHeaderView()
     }
 }

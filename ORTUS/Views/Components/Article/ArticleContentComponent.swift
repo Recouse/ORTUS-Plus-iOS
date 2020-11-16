@@ -11,7 +11,6 @@ import SnapKit
 import Carbon
 import WebKit
 import SafariServices
-import Models
 
 class ArticleContentComponent: IdentifiableComponent, Equatable, ArticleContentViewDelegate {    
     var onContentChange: (() -> Void)?
@@ -103,7 +102,7 @@ class ArticleContentView: UIView, WKNavigationDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         addSubview(webView)
         webView.snp.makeConstraints {

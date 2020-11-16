@@ -31,7 +31,7 @@ class LoginView: UIView {
         }
     }
     
-    let signInButton = Button(style: LoginStyle.signInButton)
+    let signInButton = OButton(style: LoginStyle.signInButton)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

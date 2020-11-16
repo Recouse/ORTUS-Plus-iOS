@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Models
-import Storage
 import Promises
 
 enum ContactsFilter: String, CaseIterable {
@@ -34,7 +32,7 @@ class ContactsViewModel: ViewModel {
     }
     
     func loadContacts() -> Promise<SortedContacts> {
-        if let cached = try? Cache.shared.fetch(Contacts.self, forKey: Global.Key.contactsCache) {
+        if let cached = try? Cache.shared.fetch(Contacts.self, forKey: .contacts) {
             sortContacts(from: cached)
             
             return Promise(self.contacts)
@@ -45,7 +43,7 @@ class ContactsViewModel: ViewModel {
                 ContactsResponse.self,
                 route: ContactsApi.publicContacts
             ).then { response in
-                Cache.shared.save(response.result, forKey: Global.Key.contactsCache)
+                Cache.shared.save(response.result, forKey: .contacts)
                 
                 self.sortContacts(from: response.result)
                 

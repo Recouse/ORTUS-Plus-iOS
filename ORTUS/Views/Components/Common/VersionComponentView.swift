@@ -15,7 +15,7 @@ class VersionComponentView: UIControl {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .medium)
         label.textAlignment = .center
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         
         return label
     }()
@@ -23,7 +23,7 @@ class VersionComponentView: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .groupTableViewBackground
+        backgroundColor = .systemGroupedBackground
         
         addSubview(textLabel)
         textLabel.snp.makeConstraints {

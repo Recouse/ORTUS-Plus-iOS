@@ -12,27 +12,18 @@ import WebKit
 class BrowserView: UIView {
     let loadingOverview: UIView = {
         let view = UIView()
-        view.backgroundColor = ColorCompatibility.systemBackground
+        view.backgroundColor = .systemBackground
         view.isHidden = true
         
         return view
     }()
     
-    let activityIndicator: UIActivityIndicatorView = {
-        let view: UIActivityIndicatorView
-        if #available(iOS 13.0, *) {
-            view = UIActivityIndicatorView(style: .large)
-        } else {
-            view = UIActivityIndicatorView(style: .gray)
-        }
-        
-        return view
-    }()
+    let activityIndicator = UIActivityIndicatorView(style: .large)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.systemBackground
+        backgroundColor = .systemBackground
         
         addSubview(loadingOverview)
         loadingOverview.snp.makeConstraints {

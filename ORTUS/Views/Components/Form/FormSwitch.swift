@@ -40,14 +40,19 @@ struct FormSwitch: IdentifiableComponent {
 class FormSwitchView: UIControl {
     let titleLabel = UILabel()
     
-    let switchControl = UISwitch()
+    let switchControl: UISwitch = {
+        let control = UISwitch()
+        control.onTintColor = Asset.Colors.tintColor.color
+        
+        return control
+    }()
     
     var onSwitch: ((Bool) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = ColorCompatibility.secondarySystemGroupedBackground
+        backgroundColor = .secondarySystemGroupedBackground
         
         addSubview(titleLabel)
         addSubview(switchControl)

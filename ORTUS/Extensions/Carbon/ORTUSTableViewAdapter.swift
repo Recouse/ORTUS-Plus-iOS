@@ -21,17 +21,9 @@ protocol ORTUSTableViewAdapterDelegate: AnyObject {
         configuration: UIContextMenuConfiguration,
         animator: UIContextMenuInteractionCommitAnimating
     )
+    
+    func separatorInset(forRowAt indexPath: IndexPath) -> UIEdgeInsets?
 }
-
-//extension ORTUSTableViewAdapterDelegate {
-//    @available(iOS 13.0, *)
-//    func contextMenuConfiguration(
-//        forRowAt indexPath: IndexPath,
-//        point: CGPoint
-//    ) -> UIContextMenuConfiguration? {
-//        return nil
-//    }
-//}
 
 class ORTUSTableViewAdapter: UITableViewAdapter {
     weak var delegate: ORTUSTableViewAdapterDelegate?
@@ -58,7 +50,13 @@ class ORTUSTableViewAdapter: UITableViewAdapter {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        super.tableView(tableView, cellForRowAt: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
+        if let separatorInset = delegate?.separatorInset(forRowAt: indexPath) {
+            cell.separatorInset = separatorInset
+        }
+        
+        return cell
     }
     
     @available(iOS 13.0, *)

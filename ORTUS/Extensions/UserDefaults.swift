@@ -9,6 +9,8 @@
 import Foundation
 
 extension UserDefaults {
+    static let appGroup = UserDefaults(suiteName: AppGroup.default.rawValue)
+    
     struct Key<Value> {
         let name: String
         
@@ -33,7 +35,7 @@ extension UserDefaults {
 extension UserDefaults.Key where Value == Bool {
     static let firstInstall = Self("first_install")
     static let showEvents = Self("show_events")
-    static let pinCodeSuggestion = Self(Global.Key.pinCodeSuggestion)
+    static let pinCodeSuggestion = Self("pin_code_suggestion")
 }
 
 extension UserDefaults.Key where Value == Int {

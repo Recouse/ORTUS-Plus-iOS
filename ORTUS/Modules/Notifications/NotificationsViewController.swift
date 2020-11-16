@@ -8,7 +8,6 @@
 
 import UIKit
 import Carbon
-import Models
 import Promises
 
 class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {

@@ -6,8 +6,6 @@
 //  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
-import Models
-
 class MarkViewModel: ViewModel {
     let mark: Mark
     

@@ -8,7 +8,6 @@
 
 import UIKit
 import Carbon
-import Models
 
 protocol ScheduleTableViewAdapterDataSource: class {
     func item(for indexPath: IndexPath) -> ScheduleItem?

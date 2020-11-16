@@ -12,7 +12,7 @@ class SemesterComponentView: UIView {
     let coursesCountLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
-        label.textColor = ColorCompatibility.secondaryLabel
+        label.textColor = .secondaryLabel
         
         return label
     }()
@@ -25,7 +25,7 @@ class SemesterComponentView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "chevronRight")
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = ColorCompatibility.tertiaryLabel
+        imageView.tintColor = .tertiaryLabel
         
         return imageView
     }()

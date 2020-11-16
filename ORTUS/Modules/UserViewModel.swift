@@ -8,7 +8,6 @@
 
 import UIKit
 import KeychainAccess
-import Storage
 
 class UserViewModel {
     static var isLoggedIn: Bool {
@@ -29,7 +28,7 @@ class UserViewModel {
         Cache.shared.clear()
         
         // App group cache
-        let sharedCache = Cache(path: FileManager.sharedContainerURL())
+        let sharedCache = Cache(path: AppGroup.default.containerURL)
         sharedCache.clear()
         
         // Reset pin code suggestion

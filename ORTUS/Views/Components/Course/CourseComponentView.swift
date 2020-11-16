@@ -38,7 +38,7 @@ class CourseComponentView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "chevronRight")
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = ColorCompatibility.tertiaryLabel
+        imageView.tintColor = .tertiaryLabel
         
         return imageView
     }()
