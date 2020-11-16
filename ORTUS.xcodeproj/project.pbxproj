@@ -2153,7 +2153,7 @@
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.15.6;
+				minimumVersion = 5.15.7;
 			};
 		};
 		FAE3D5A7245ED51100CE6654 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -2161,7 +2161,7 @@
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.0;
+				minimumVersion = 5.4.0;
 			};
 		};
 		FAE3D5AD245ED67F00CE6654 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -2177,7 +2177,7 @@
 			repositoryURL = "https://github.com/uias/Pageboy";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.6.0;
+				minimumVersion = 3.6.2;
 			};
 		};
 		FAE3D5B3245ED77400CE6654 /* XCRemoteSwiftPackageReference "Carbon" */ = {
