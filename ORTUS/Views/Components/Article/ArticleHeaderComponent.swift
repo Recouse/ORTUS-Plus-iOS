@@ -10,18 +10,18 @@ import UIKit
 import Carbon
 
 struct ArticleHeaderComponent: Carbon.Component, Equatable {
-    var article: Article
+    var imageURL: String?
     
     func renderContent() -> ArticleHeaderComponentView {
         return ArticleHeaderComponentView()
     }
     
     func render(in content: ArticleHeaderComponentView) {
-        if let imageURL = article.imageURL {
-            content.imageView.kf.setImage(with: URL(string: imageURL))
+        guard let imageURL = imageURL else {
+            return
         }
         
-        content.titleLabel.text = article.title
+        content.imageView.kf.setImage(with: URL(string: imageURL))
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
@@ -33,6 +33,6 @@ struct ArticleHeaderComponent: Carbon.Component, Equatable {
     }
     
     static func == (lhs: ArticleHeaderComponent, rhs: ArticleHeaderComponent) -> Bool {
-        return lhs.article.id == rhs.article.id
+        return lhs.imageURL == rhs.imageURL
     }
 }

@@ -20,7 +20,7 @@ class ArticleViewController: Module, ModuleViewModel, AlertPresentable {
     
     let headerView = ArticleHeaderComponentView()
     
-    private let kTableHeaderHeight: CGFloat = 240
+    private let kTableHeaderHeight: CGFloat = 220
     
     lazy var adapter: ArticleTableViewAdapter = {
         let adapter = ArticleTableViewAdapter()
@@ -84,6 +84,9 @@ class ArticleViewController: Module, ModuleViewModel, AlertPresentable {
     func render() {
         renderer.render {
             Section(id: "article") {
+                ArticleTitleComponent(article: viewModel.article)
+                    .identified(by: \.article.id)
+                
                 ArticleContentComponent(
                     id: viewModel.article.id,
                     article: viewModel.article,
@@ -172,8 +175,6 @@ extension ArticleViewController {
                 self.headerView.imageViewOverlay.isHidden = false
             })
         }
-        
-        headerView.titleLabel.text = viewModel.article.title
     }
 }
 

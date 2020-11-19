@@ -26,29 +26,9 @@ class ArticleHeaderComponentView: UIView {
         return view
     }()
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 26)
-        label.numberOfLines = 0
-        
-        return label
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        prepareImageView()
-        prepareTitleLabel()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension ArticleHeaderComponentView {
-    func prepareImageView() {
         addSubview(imageView)
         imageView.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -63,12 +43,7 @@ extension ArticleHeaderComponentView {
         }
     }
     
-    func prepareTitleLabel() {
-        addSubview(titleLabel)
-        titleLabel.snp.makeConstraints {
-//            $0.top.equalTo(safeAreaLayoutGuide).priority(250)
-            $0.left.right.equalToSuperview().offset(Global.UI.edgeInset).inset(Global.UI.edgeInset)
-            $0.bottom.equalToSuperview().inset(10)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

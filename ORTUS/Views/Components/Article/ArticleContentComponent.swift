@@ -35,6 +35,7 @@ class ArticleContentComponent: IdentifiableComponent, Equatable, ArticleContentV
         content.delegate = self
         
         let html = """
+            <!DOCTYPE html>
             <html>
                 <head>
                     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,11 +45,19 @@ class ArticleContentComponent: IdentifiableComponent, Equatable, ArticleContentV
                           color-scheme: light dark;
                         }
                         
-                        body {font: -apple-system-body !important;}
+                        body {
+                            font: -apple-system-body !important;
+                            margin: 0;
+                        }
                         table { width: 100% !important; }
         
                         a {
                             color: #569289;
+                        }
+
+                        iframe {
+                            width: 100%;
+                            height: auto;
                         }
                     </style>
                 </head>

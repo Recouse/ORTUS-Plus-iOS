@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA01C36D256705E100D93AF9 /* ArticleTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01C36C256705E100D93AF9 /* ArticleTitleComponent.swift */; };
+		FA01C371256705ED00D93AF9 /* ArticleTitleComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01C370256705ED00D93AF9 /* ArticleTitleComponentView.swift */; };
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
 		FA0A75A124D856C30086E878 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A75A024D856C30086E878 /* Overlay.swift */; };
 		FA0BEFDB2443293E00A10A0B /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BEFDA2443293E00A10A0B /* ButtonsStyle.swift */; };
@@ -309,6 +311,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA01C36C256705E100D93AF9 /* ArticleTitleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTitleComponent.swift; sourceTree = "<group>"; };
+		FA01C370256705ED00D93AF9 /* ArticleTitleComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTitleComponentView.swift; sourceTree = "<group>"; };
 		FA0927D02347D1E400D32827 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		FA0927D32347E3B000D32827 /* NotificationsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsApi.swift; sourceTree = "<group>"; };
 		FA0A75A024D856C30086E878 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
@@ -1195,6 +1199,8 @@
 				FA90FE072243D1E5005148AC /* ArticleSectionHeader.swift */,
 				FA327C1B2243FCE40061E604 /* ArticleHeaderComponent.swift */,
 				FA327C1D2243FCF00061E604 /* ArticleHeaderComponentView.swift */,
+				FA01C36C256705E100D93AF9 /* ArticleTitleComponent.swift */,
+				FA01C370256705ED00D93AF9 /* ArticleTitleComponentView.swift */,
 				FAD3CA242244F017009DA6AE /* ArticleContentComponent.swift */,
 			);
 			path = Article;
@@ -1746,9 +1752,11 @@
 				FA90FDFF2243CF0E005148AC /* ArticleRouter.swift in Sources */,
 				FACACC9A249A8F6E0075604F /* ORTUSTableViewAdapter.swift in Sources */,
 				FAE3AB42239D141600120F96 /* OButton.swift in Sources */,
+				FA01C371256705ED00D93AF9 /* ArticleTitleComponentView.swift in Sources */,
 				FA5B8E4A253B8C000010DD38 /* Lecture.swift in Sources */,
 				FA45908B244086CD00BF7E0F /* ContactRouter.swift in Sources */,
 				FA8714D723E40DD100DB728C /* PinSettingsViewModel.swift in Sources */,
+				FA01C36D256705E100D93AF9 /* ArticleTitleComponent.swift in Sources */,
 				FAD18D5623B1746600C0D89B /* BrowserModuleBuilder.swift in Sources */,
 				FA90FD9C22437D76005148AC /* Transition.swift in Sources */,
 				FAF183C822490FC600CA2492 /* ScheduleView.swift in Sources */,
