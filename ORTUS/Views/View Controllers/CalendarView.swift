@@ -14,6 +14,7 @@ class CalendarView: UIView {
         picker.datePickerMode = .date
         picker.preferredDatePickerStyle = .inline
         picker.calendar.firstWeekday = 2
+        picker.tintColor = Asset.Colors.tintColor.color
         
         return picker
     }()
