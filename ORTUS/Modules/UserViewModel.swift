@@ -34,8 +34,6 @@ class UserViewModel {
         // Reset pin code suggestion
         UserDefaults.standard.set(false, for: .pinCodeSuggestion)
         
-        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalNever)
-        
         Shortcut.deleteShortcuts {
             NotificationCenter.default.post(name: .userSignedOut, object: nil)
         }

@@ -9,21 +9,16 @@
 import UIKit
 
 extension UIApplication {
+    var activeScene: UIWindowScene? {
+        UIApplication.shared.connectedScenes
+            .filter { $0.activationState == .foregroundActive }
+            .compactMap { $0 as? UIWindowScene }
+            .first
+    }
     
-    // Source https://stackoverflow.com/a/57394751/7844080
-    var statusBarView : UIView? {
-        let tag = 38482458385 // Random tag
-        
-        if let statusBar = self.keyWindow?.viewWithTag(tag) {
-            return statusBar
-        }
-        
-        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
-        statusBarView.tag = tag
-
-        self.keyWindow?.addSubview(statusBarView)
-        
-        return statusBarView
+    var keyWindow: UIWindow? {
+        activeScene?.windows
+            .filter(\.isKeyWindow).first
     }
 }
 

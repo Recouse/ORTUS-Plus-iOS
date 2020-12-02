@@ -11,9 +11,11 @@ import UIKit
 class EventDescriptionView: UIView {
     let eventView = EventComponentView()
     
+    static let descriptionFont = UIFont.systemFont(ofSize: 16)
+    
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
+        label.font = EventDescriptionView.descriptionFont
         label.textColor = .secondaryLabel
         label.numberOfLines = 0
         

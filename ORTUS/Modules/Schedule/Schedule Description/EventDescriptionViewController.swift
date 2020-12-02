@@ -43,7 +43,7 @@ class EventDescriptionViewController: UIViewController {
         descriptionLabel.text = description
         
         let eventTitleSize = (event.title as NSString)
-            .size(withAttributes: [.font: eventView.titleLabel.font])
+            .size(withAttributes: [.font: EventComponentView.titleFont])
         let eventHeight = 7 + (eventTitleSize.height < 44 ? 44 : eventTitleSize.height) + 7
         
         let descriptionSize = (description as NSString)
@@ -52,7 +52,7 @@ class EventDescriptionViewController: UIViewController {
                     width: UIScreen.main.bounds.width - Global.UI.edgeInset * 2,
                     height: .greatestFiniteMagnitude),
                 options: [.usesFontLeading, .usesLineFragmentOrigin],
-                attributes: [.font: descriptionLabel.font],
+                attributes: [.font: EventDescriptionView.descriptionFont],
                 context: nil
         )
         

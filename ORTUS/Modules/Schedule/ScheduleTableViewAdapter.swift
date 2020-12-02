@@ -62,7 +62,7 @@ class ScheduleTableViewAdapter: UITableViewAdapter {
             }
         }
 
-        if let lecture = scheduleItem.item(as: Lecture.self) {
+        if scheduleItem.item(as: Lecture.self) != nil {
             return nil
         }
         

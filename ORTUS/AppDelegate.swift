@@ -33,9 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             prepareMainTabBarController(with: shortcutItem)
         }
         
-        // Set minimum background fetch interval to 1 hour
-        UIApplication.shared.setMinimumBackgroundFetchInterval(60 * 60)
-        
         // Appearance
         overrideAppearance()
         
@@ -59,10 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         processShortcut(shortcutItem, controller: window?.rootViewController)
-    }
-    
-    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        completionHandler(.newData)
     }
     
     private func prepareOnFirstInstall() {

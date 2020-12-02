@@ -32,9 +32,11 @@ class EventComponentView: UIView {
         return view
     }()
     
+    static let titleFont = UIFont.preferredFont(for: .headline, weight: .medium)
+    
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFont(for: .headline, weight: .medium)
+        label.font = EventComponentView.titleFont
         label.textColor = .label
         label.numberOfLines = 2
         
