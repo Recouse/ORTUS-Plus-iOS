@@ -112,9 +112,7 @@ class NotificationsViewController: ORTUSTableViewController, ModuleViewModel {
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
-    func open(_ notification: NotificationModel) {
-        EventLogger.log(.openedNotification)
-        
+    func open(_ notification: NotificationModel) {        
         viewModel.router.openBrowser(notification.link)
     }
 }

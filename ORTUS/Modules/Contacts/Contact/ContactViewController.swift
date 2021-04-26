@@ -47,9 +47,7 @@ class ContactViewController: Module, ModuleViewModel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        EventLogger.log(.openedContact(id: viewModel.contact.id))
-        
+                
         prepareNavigationItem()
         prepareData()
         

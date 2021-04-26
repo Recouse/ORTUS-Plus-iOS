@@ -59,11 +59,6 @@ class ArticleViewController: Module, ModuleViewModel, AlertPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EventLogger.log(.openedArticle(
-            id: viewModel.article.id,
-            title: viewModel.article.title
-        ))
-        
         prepareNavigationItem()
         prepareHeaderView()
         prepareData()

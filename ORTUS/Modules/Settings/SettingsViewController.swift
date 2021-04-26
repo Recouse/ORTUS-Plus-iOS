@@ -218,9 +218,7 @@ class SettingsViewController: ORTUSTableViewController, ModuleViewModel, AlertPr
         present(alert, animated: true, completion: nil)
     }
     
-    @objc func signedOut() {
-        EventLogger.log(.signedOut)
-        
+    @objc func signedOut() {        
         viewModel.router.openLogin()
     }
 }

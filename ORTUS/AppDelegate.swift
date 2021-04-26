@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import YandexMobileMetrica
 import KeychainAccess
 
 @UIApplicationMain
@@ -19,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Clear keychain on a new installation
         prepareOnFirstInstall()
-        
-        prepareAnalytics()
-        
+                
         // If launchOptions contains the appropriate launch options key, a Home screen quick action
         // is responsible for launching the app. Store the action for processing once the app has
         // completed initialization.
@@ -129,9 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard let selectedNavigationController = mainTabBarController.viewControllers?[mainTabBarController.selectedIndex] as? NavigationController else {
                 return
             }
-            
-            EventLogger.log(.openedOrtusShortcut)
-            
+                        
             let browserModule = BrowserModuleBuilder.build(with: Global.ortusURL, customTransition: nil)
             browserModule.hidesBottomBarWhenPushed = true
             selectedNavigationController.pushViewController(browserModule, animated: true)
@@ -156,12 +151,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch Global.Module(rawValue: module) {
         case .schedule:
             mainTabBarController.selectedIndex = Global.UI.TabBar.schedule.rawValue
-            
-            if urlComponents.queryItems?.first(where: {
-                $0.name == "from"
-            })?.value == "widget" {
-                EventLogger.log(.openedScheduleWidget)
-            }
         default:
             return false
         }
@@ -172,20 +161,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func preselectIndex(for item: UIApplicationShortcutItem?, on tabBarController: MainTabBarController) {
         switch item?.type {
         case Global.QuickAction.schedule:
-            EventLogger.log(.openedScheduleShortcut)
             tabBarController.selectedIndex = Global.UI.TabBar.schedule.rawValue
         case Global.QuickAction.notifications:
-            EventLogger.log(.openedNotificationsShortCut)
             tabBarController.selectedIndex = Global.UI.TabBar.notifications.rawValue
         default:
             break
         }
-    }
-    
-    fileprivate func prepareAnalytics() {
-        // Yandex App Metrica
-        let configuration = YMMYandexMetricaConfiguration(apiKey: Global.yandexAppMetricaKey)
-        YMMYandexMetrica.activate(with: configuration!)
     }
     
     fileprivate func overrideAppearance() {

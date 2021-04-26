@@ -36,9 +36,7 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        EventLogger.log(.openedSemester(name: viewModel.semester.name ?? "Other"))
-                
+                        
         render()
     }
     
@@ -68,9 +66,7 @@ class SemesterViewController: ORTUSTableViewController, ModuleViewModel {
         }
     }
     
-    func open(course: Course) {
-        EventLogger.log(.openedCourse(id: course.id, name: course.name))
-        
+    func open(course: Course) {        
         courseShortcut = Shortcut(
             activity: .course,
             identifier: .student,

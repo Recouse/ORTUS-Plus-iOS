@@ -153,9 +153,7 @@ class ScheduleViewController: Module, ModuleViewModel {
         loadData(forceUpdate: true)
     }
     
-    func open(event: Event) {
-        EventLogger.log(.openedEvent)
-        
+    func open(event: Event) {        
         OAuth.refreshToken().then { accessTokenEncrypted in
             guard let url = event.link.generatePinAuthURL(withToken: accessTokenEncrypted) else {
                 return

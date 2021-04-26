@@ -27,9 +27,7 @@ class GradesViewController: ORTUSTableViewController, ModuleViewModel {
         super.viewDidLoad()
         
         userActivity = Shortcut(activity: .grades).activity
-        
-        EventLogger.log(.openedGrades)
-        
+                
         loadData()
     }
     
