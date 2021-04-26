@@ -30,8 +30,6 @@ Create an extension of `Global` struct, and add:
 extension Global {
     static let clientID = "*YOUR CLIENT ID*"
     static let clientSecret = "*YOUR CLIENT SECRET*"
-    
-    static let yandexAppMetricaKey = "*YOUR APP METRICA KEY OR EMPTY*"
 }
 ```
 
