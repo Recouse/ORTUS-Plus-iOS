@@ -9,11 +9,11 @@
 import UIKit
 import Carbon
 
-protocol ScheduleTableViewAdapterDataSource: class {
+protocol ScheduleTableViewAdapterDataSource: AnyObject {
     func item(for indexPath: IndexPath) -> ScheduleItem?
 }
 
-protocol ScheduleTableViewAdapterDelegate: class {
+protocol ScheduleTableViewAdapterDelegate: AnyObject {
     func openLink(_ url: URL)
 }
 

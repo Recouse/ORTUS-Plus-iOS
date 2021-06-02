@@ -6,7 +6,7 @@
 //  Copyright © 2019 Firdavs. All rights reserved.
 //
 
-protocol ModuleBuilder: class {
+protocol ModuleBuilder: AnyObject {
     associatedtype M // Module Type
     associatedtype P // Parameter Types
     

@@ -9,7 +9,7 @@
 import UIKit
 import Carbon
 
-protocol ArticleTableViewAdapterDelegate: class {
+protocol ArticleTableViewAdapterDelegate: AnyObject {
     func scrollViewDidScroll(_ scrollView: UIScrollView)
 }
 

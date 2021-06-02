@@ -15,7 +15,7 @@ enum AlertType: String {
     case warning
 }
 
-protocol AlertPresentable: class {
+protocol AlertPresentable: AnyObject {
     func alert(type: AlertType, message: String?, onOk: ((UIAlertAction) -> Void)?)
     func prompt(title: String?, message: String?, onOk: ((UIAlertAction) -> Void)?,
                 onCancel: ((UIAlertAction) -> Void)?)

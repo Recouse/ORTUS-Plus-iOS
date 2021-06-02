@@ -91,7 +91,7 @@ class ArticleContentComponent: IdentifiableComponent, Equatable, ArticleContentV
     }
 }
 
-protocol ArticleContentViewDelegate: class {
+protocol ArticleContentViewDelegate: AnyObject {
     func contentChanged()
     func linkActivated(_ url: URL)
 }
