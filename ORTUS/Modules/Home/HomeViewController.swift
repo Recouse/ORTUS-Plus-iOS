@@ -137,7 +137,7 @@ class HomeViewController: ORTUSTableViewController, ModuleViewModel {
     }
     
     override func refresh() {
-        loadData()
+        loadData(forceUpdate: true)
     }
     
     @available(iOS 13.0, *)

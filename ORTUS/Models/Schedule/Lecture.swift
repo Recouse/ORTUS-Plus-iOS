@@ -11,7 +11,8 @@ import Foundation
 public typealias Lectures = [Lecture]
 
 public struct Lecture: Codable {
-    public let id, date, timeFrom, timeTill, name, type: String
+    public let id, date, timeFrom, timeTill, name: String
+    public let type: String?
     public let lecturers: [Lecturer]
     public let address: String
     
