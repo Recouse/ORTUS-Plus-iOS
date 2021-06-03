@@ -26,7 +26,9 @@ class GradesViewModel: ViewModel {
                 Cache.shared.save(response, forKey: .grades)
                 
                 fulfill(true)
-            }.catch { reject($0) }
+            }.catch { error in
+                reject(error)
+            }
         }
     }
     

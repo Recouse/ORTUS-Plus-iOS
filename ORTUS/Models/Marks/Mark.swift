@@ -16,5 +16,5 @@ public struct Mark: Codable {
     public let lecturerFullName: String
     public let mark: String?
     public let markType: String
-    public let date: String
+    public let date: String?
 }

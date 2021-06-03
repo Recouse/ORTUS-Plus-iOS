@@ -77,7 +77,7 @@ class MarkViewController: Module, ModuleViewModel {
                 
                 TextDescriptionComponent(
                     text: "Date",
-                    description: formatDate(viewModel.mark.date)
+                    description: formatDate(viewModel.mark.date ?? "")
                 ).identified(by: ID.date)
             }
         }
