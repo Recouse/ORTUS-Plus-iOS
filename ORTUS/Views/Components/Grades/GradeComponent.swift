@@ -19,7 +19,20 @@ struct GradeComponent: Component {
     func render(in content: GradeComponentView) {
         content.courseLabel.text = mark.courseFullName
         content.lecturerLabel.text = mark.lecturerFullName
-        content.gradeLabel.text = mark.mark ?? "0"
+        
+        let grade: String
+        
+        if let mark = mark.mark {
+            if self.mark.markType == "Ieskaite" {
+                grade = mark == "11" ? "P" : "-"
+            } else {
+                grade = mark
+            }
+        } else {
+            grade = self.mark.markType == "Ieskaite" ? "-" : "0"
+        }
+        
+        content.gradeLabel.text = grade
     }
     
     func referenceSize(in bounds: CGRect) -> CGSize? {
