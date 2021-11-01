@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F655094273094A4002BA993 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6F655093273094A4002BA993 /* Kingfisher */; };
 		FA01C36D256705E100D93AF9 /* ArticleTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01C36C256705E100D93AF9 /* ArticleTitleComponent.swift */; };
 		FA01C371256705ED00D93AF9 /* ArticleTitleComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01C370256705ED00D93AF9 /* ArticleTitleComponentView.swift */; };
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
@@ -145,8 +146,6 @@
 		FA90FE0A2243D413005148AC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE092243D413005148AC /* Date.swift */; };
 		FA90FE0C2243E398005148AC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE0B2243E397005148AC /* TabBarController.swift */; };
 		FA90FE0E2243E3C4005148AC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90FE0D2243E3C4005148AC /* UIColor.swift */; };
-		FA92D7B2253D5B50007CBA64 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA92D7B1253D5B50007CBA64 /* Kingfisher */; };
-		FA92D7B4253D5B50007CBA64 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA92D7B3253D5B50007CBA64 /* KingfisherSwiftUI */; };
 		FA941BEA224BA7E800D7B170 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA941BE9224BA7E800D7B170 /* Keys.swift */; };
 		FA94FE2C2545E1EA00DB3B67 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA94FE2B2545E1EA00DB3B67 /* WidgetKit.framework */; };
 		FA94FE2E2545E1EA00DB3B67 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA94FE2D2545E1EA00DB3B67 /* SwiftUI.framework */; };
@@ -580,9 +579,8 @@
 				FAE3D5B2245ED6BE00CE6654 /* Pageboy in Frameworks */,
 				FAE3D5A9245ED51100CE6654 /* Alamofire in Frameworks */,
 				FAE3D5BB245ED89600CE6654 /* KeychainAccess in Frameworks */,
-				FA92D7B4253D5B50007CBA64 /* KingfisherSwiftUI in Frameworks */,
 				FAE3D5B8245ED7E100CE6654 /* Promises in Frameworks */,
-				FA92D7B2253D5B50007CBA64 /* Kingfisher in Frameworks */,
+				6F655094273094A4002BA993 /* Kingfisher in Frameworks */,
 				FAE3D5C9245EDB5400CE6654 /* DifferenceKit in Frameworks */,
 				FAE3D5B5245ED77400CE6654 /* Carbon in Frameworks */,
 				FAE3D5AF245ED67F00CE6654 /* SnapKit in Frameworks */,
@@ -1466,8 +1464,7 @@
 				FAE3D5B7245ED7E100CE6654 /* Promises */,
 				FAE3D5BA245ED89600CE6654 /* KeychainAccess */,
 				FAE3D5C8245EDB5400CE6654 /* DifferenceKit */,
-				FA92D7B1253D5B50007CBA64 /* Kingfisher */,
-				FA92D7B3253D5B50007CBA64 /* KingfisherSwiftUI */,
+				6F655093273094A4002BA993 /* Kingfisher */,
 			);
 			productName = ORTUS;
 			productReference = FA90FD64224377A1005148AC /* ORTUS.app */;
@@ -1534,7 +1531,7 @@
 				FAE3D5B6245ED7E100CE6654 /* XCRemoteSwiftPackageReference "promises" */,
 				FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */,
-				FA92D7B0253D5B50007CBA64 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				6F655092273094A3002BA993 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = FA90FD65224377A1005148AC /* Products */;
 			projectDirPath = "";
@@ -2107,12 +2104,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FA92D7B0253D5B50007CBA64 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		6F655092273094A3002BA993 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.15.7;
+				minimumVersion = 7.0.0;
 			};
 		};
 		FAE3D5A7245ED51100CE6654 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -2152,7 +2149,7 @@
 			repositoryURL = "https://github.com/google/promises";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.8;
+				minimumVersion = 2.0.0;
 			};
 		};
 		FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
@@ -2174,15 +2171,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FA92D7B1253D5B50007CBA64 /* Kingfisher */ = {
+		6F655093273094A4002BA993 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FA92D7B0253D5B50007CBA64 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 6F655092273094A3002BA993 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		FA92D7B3253D5B50007CBA64 /* KingfisherSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA92D7B0253D5B50007CBA64 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = KingfisherSwiftUI;
 		};
 		FAE3D5A8245ED51100CE6654 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
