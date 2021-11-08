@@ -8,55 +8,49 @@
 
 import Foundation
 import Promises
+import Combine
 
 class NewsViewModel: ViewModel {
     typealias SortedArticles = [Date: [Article]]
     
     let router: NewsRouter.Routes
     
-    var articles: SortedArticles = [:]
+    @Published var articles: SortedArticles = [:]
+    
+    private let urlSession = URLSession.shared
+    
+    private var cancellables = Set<AnyCancellable>()
         
     init(router: NewsRouter.Routes) {
         self.router = router
     }
     
-    @discardableResult
-    func loadArticles() -> Promise<Bool> {
-        return Promise { fulfill, reject in
-            APIClient.performRequest(
+    func loadArticles(forceUpdate: Bool = false) {
+        if !forceUpdate {
+            if let response = try? Cache.shared.fetch(
                 ArticlesResponse.self,
-                route: UserViewModel.isLoggedIn ? NewsApi.articles : NewsApi.publicArticles,
-                isPublic: !UserViewModel.isLoggedIn,
-                decoder: ArticleDecoder()
-            ).then { response in
-                self.articles = self.groupArticles(response.result.articles)
-                
-                Cache.shared.save(response, forKey: .news)
-                                
-                fulfill(true)
-            }.catch { error in
-                reject(error)
+                forKey: .news
+            ) {
+                articles = groupArticles(response.result.articles)
+                return
             }
         }
-    }
-    
-    func loadCachedArticles() -> Promise<Bool> {
-        return Promise { fulfill, reject in
-            do {
-                let response = try Cache.shared.fetch(
-                    ArticlesResponse.self,
-                    forKey: .news
-                )
-                
-                self.articles = self.groupArticles(response.result.articles)
-                
-                fulfill(true)
-            } catch StorageError.notFound {
-                fulfill(true)
-            } catch {
-                reject(error)
+        
+        urlSession.publisher(
+            for: .news,
+            decoder: ArticleDecoder()
+        ).sink(receiveCompletion: { completion in
+            switch completion {
+            case .failure(let error):
+                print("Error on loading News:", error.localizedDescription)
+            default:
+                break
             }
-        }
+        }, receiveValue: { response in
+            self.articles = self.groupArticles(response.result.articles)
+            
+            Cache.shared.save(response, forKey: .news)
+        }).store(in: &cancellables)
     }
     
     private func groupArticles(_ articles: [Article]) -> SortedArticles {

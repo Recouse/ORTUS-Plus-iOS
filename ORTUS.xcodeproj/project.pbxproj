@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6F655094273094A4002BA993 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6F655093273094A4002BA993 /* Kingfisher */; };
+		6F655097273095D5002BA993 /* EndpointKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F655096273095D5002BA993 /* EndpointKind.swift */; };
+		6F65509927309626002BA993 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F65509827309626002BA993 /* Endpoint.swift */; };
+		6F65509D2730983F002BA993 /* EndpointHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F65509C2730983F002BA993 /* EndpointHost.swift */; };
+		6F6550A127309AAA002BA993 /* NewsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6550A027309AAA002BA993 /* NewsEndpoint.swift */; };
+		6F6550A327309C05002BA993 /* InvalidEndpointError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6550A227309C05002BA993 /* InvalidEndpointError.swift */; };
+		6F6550A82730A013002BA993 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6550A72730A013002BA993 /* Parameters.swift */; };
+		6F6550AA2730A0A3002BA993 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6550A92730A0A3002BA993 /* HTTPMethod.swift */; };
 		FA01C36D256705E100D93AF9 /* ArticleTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01C36C256705E100D93AF9 /* ArticleTitleComponent.swift */; };
 		FA01C371256705ED00D93AF9 /* ArticleTitleComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01C370256705ED00D93AF9 /* ArticleTitleComponentView.swift */; };
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
@@ -296,6 +303,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6F655096273095D5002BA993 /* EndpointKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointKind.swift; sourceTree = "<group>"; };
+		6F65509827309626002BA993 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		6F65509C2730983F002BA993 /* EndpointHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointHost.swift; sourceTree = "<group>"; };
+		6F6550A027309AAA002BA993 /* NewsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndpoint.swift; sourceTree = "<group>"; };
+		6F6550A227309C05002BA993 /* InvalidEndpointError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidEndpointError.swift; sourceTree = "<group>"; };
+		6F6550A72730A013002BA993 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		6F6550A92730A0A3002BA993 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		FA01C36C256705E100D93AF9 /* ArticleTitleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTitleComponent.swift; sourceTree = "<group>"; };
 		FA01C370256705ED00D93AF9 /* ArticleTitleComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTitleComponentView.swift; sourceTree = "<group>"; };
 		FA0927D02347D1E400D32827 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
@@ -599,6 +613,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F655095273095C7002BA993 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6F65509E27309A8A002BA993 /* Endpoints */,
+				6F6550A72730A013002BA993 /* Parameters.swift */,
+				6F6550A92730A0A3002BA993 /* HTTPMethod.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6F65509E27309A8A002BA993 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				6F65509F27309A99002BA993 /* News */,
+				6F65509827309626002BA993 /* Endpoint.swift */,
+				6F655096273095D5002BA993 /* EndpointKind.swift */,
+				6F65509C2730983F002BA993 /* EndpointHost.swift */,
+				6F6550A227309C05002BA993 /* InvalidEndpointError.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		6F65509F27309A99002BA993 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				6F6550A027309AAA002BA993 /* NewsEndpoint.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		FA0927CF2347D1CE00D32827 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -876,6 +920,7 @@
 				FA6642842413BE99002A3315 /* ORTUS.entitlements */,
 				FA90FD7C22437B10005148AC /* Extensions */,
 				FA5B8E6A253B8F990010DD38 /* Services */,
+				6F655095273095C7002BA993 /* Networking */,
 				FA90FD7B22437B09005148AC /* API */,
 				FA5B8E2D253B8BC90010DD38 /* Models */,
 				FA90FD7E22437B1D005148AC /* Views */,
@@ -1602,6 +1647,7 @@
 				FAD18D5723B1746600C0D89B /* BrowserRouter.swift in Sources */,
 				FA1AC40E24EDA904009C4E31 /* ORTUSSelectionNoneTableViewCell.swift in Sources */,
 				FAB74C1523E9F391004C7BC6 /* GradesViewModel.swift in Sources */,
+				6F65509D2730983F002BA993 /* EndpointHost.swift in Sources */,
 				FAB74C4823EBE43D004C7BC6 /* FormSection.swift in Sources */,
 				FA8714D423E40DD100DB728C /* PinSettingsRouter.swift in Sources */,
 				FABF939C2389CB6100F78FF1 /* String.swift in Sources */,
@@ -1723,11 +1769,13 @@
 				FA62521A2387F8D2009C3FF7 /* UINavigationController.swift in Sources */,
 				FAB74C5823EC4A50004C7BC6 /* ScheduleSettingsView.swift in Sources */,
 				FA45907A243F44A700BF7E0F /* ContactsTableViewAdapter.swift in Sources */,
+				6F655097273095D5002BA993 /* EndpointKind.swift in Sources */,
 				FA90FDA522437DC5005148AC /* Route.swift in Sources */,
 				FA459070243F30A100BF7E0F /* ContactsViewModel.swift in Sources */,
 				FAB74C2E23E9FAB8004C7BC6 /* NewsRoute.swift in Sources */,
 				FAE3AB3F239D119200120F96 /* LoginStyle.swift in Sources */,
 				FA90FE052243CF3B005148AC /* ArticleRoute.swift in Sources */,
+				6F6550A327309C05002BA993 /* InvalidEndpointError.swift in Sources */,
 				FA45908C244086CD00BF7E0F /* ContactViewController.swift in Sources */,
 				FA90FE022243CF0E005148AC /* ArticleViewModel.swift in Sources */,
 				FA39AEDC23E9ED3800C4A70C /* HomeViewController.swift in Sources */,
@@ -1745,10 +1793,12 @@
 				FAE5284B2443744B009851C9 /* OpenMapDirections.swift in Sources */,
 				FA5B8E33253B8BEB0010DD38 /* EmptyResponse.swift in Sources */,
 				FAB74C2323E9F60D004C7BC6 /* SemesterViewController.swift in Sources */,
+				6F6550AA2730A0A3002BA993 /* HTTPMethod.swift in Sources */,
 				FABF6DC3239C4CAB00F57F8A /* LoginModuleBuilder.swift in Sources */,
 				FA1DEF8D2417605400704B6E /* VersionComponentView.swift in Sources */,
 				FA0A75A124D856C30086E878 /* Overlay.swift in Sources */,
 				FA55171324E45F880043DC98 /* AppearanceSettingsViewModel.swift in Sources */,
+				6F6550A127309AAA002BA993 /* NewsEndpoint.swift in Sources */,
 				FA5B8E6E253B8FB70010DD38 /* DiskStorage.swift in Sources */,
 				FABBF3F923511BA600D4D593 /* EventComponent.swift in Sources */,
 				FA55171024E45F880043DC98 /* AppearanceSettingsRouter.swift in Sources */,
@@ -1771,6 +1821,7 @@
 				FA90FD68224377A1005148AC /* AppDelegate.swift in Sources */,
 				FA90FDF52243C5B5005148AC /* ArticleComponent.swift in Sources */,
 				FA90FDB122437F25005148AC /* NewsViewModel.swift in Sources */,
+				6F65509927309626002BA993 /* Endpoint.swift in Sources */,
 				FA1AC41424EDAB59009C4E31 /* MarkComponent.swift in Sources */,
 				FA5B8E6C253B8FB70010DD38 /* CodableStorage.swift in Sources */,
 				FA459081243F6E1200BF7E0F /* ContactComponentView.swift in Sources */,
@@ -1796,6 +1847,7 @@
 				FA1AC40624EDA3B7009C4E31 /* MarkViewController.swift in Sources */,
 				FAB74C2823E9F636004C7BC6 /* SemesterRoute.swift in Sources */,
 				FA90FE082243D1E5005148AC /* ArticleSectionHeader.swift in Sources */,
+				6F6550A82730A013002BA993 /* Parameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

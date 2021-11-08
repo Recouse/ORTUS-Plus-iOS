@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 import Carbon
 import Promises
 
@@ -22,6 +23,8 @@ class NewsViewController: Module, ModuleViewModel {
         adapter: UITableViewAdapter(),
         updater: UITableViewUpdater()
     )
+    
+    private var cancellables = Set<AnyCancellable>()
     
     init(viewModel: NewsViewModel) {
         self.viewModel = viewModel
@@ -74,21 +77,7 @@ class NewsViewController: Module, ModuleViewModel {
     }
 
     func loadData(forceUpdate: Bool = false) {
-        if forceUpdate {
-            viewModel.loadArticles().always {
-                self.render()
-            }
-            
-            return
-        }
-        
-        viewModel.loadCachedArticles().then { _ -> Promise<Bool> in
-            self.render()
-            
-            return self.viewModel.loadArticles()
-        }.then { _ in
-            self.render()
-        }
+        viewModel.loadArticles(forceUpdate: forceUpdate)
     }
     
     @objc func refresh() {
@@ -115,6 +104,13 @@ extension NewsViewController {
     
     func prepareData() {
         renderer.target = tableView
+        
+        viewModel.$articles
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                self.render()
+            }
+            .store(in: &cancellables)
     }
 }
 
