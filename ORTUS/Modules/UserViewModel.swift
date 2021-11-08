@@ -7,22 +7,21 @@
 //
 
 import UIKit
-import KeychainAccess
 
 class UserViewModel {
     static var isLoggedIn: Bool {
-        let keychain = Keychain()
+        let keychain = Keychain.default
         
-        return keychain[Global.Key.accessToken] != nil
+        return keychain[.accessToken] != nil
     }
     
     static func signOut() {
-        let keychain = Keychain()
-        keychain[Global.Key.accessToken] = nil
-        keychain[Global.Key.refreshToken] = nil
-        keychain[Global.Key.tokenExpiresOn] = nil
-        keychain[Global.Key.accessTokenEncrypted] = nil
-        keychain[Global.Key.ortusPinCode] = nil
+        let keychain = Keychain.default
+        keychain[.accessToken] = nil
+        keychain[.refreshToken] = nil
+        keychain[.tokenExpiresOn] = nil
+        keychain[.accessTokenEncrypted] = nil
+        keychain[.ortusPinCode] = nil
         
         // App cache
         Cache.shared.clear()

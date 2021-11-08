@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import KeychainAccess
 
 enum APIMethod: String {
     case getPublicArticles
@@ -21,14 +20,14 @@ enum APIMethod: String {
     var parameters: [String] {
         var values: [String] = []
         
-        let keychain = Keychain()
+        let keychain = Keychain.default
         
         switch self {
         case .getPublicArticles, .getPublicContacts:
             values.append(Global.clientID)
             values.append(Global.Locale.current)
         default:
-            values.append(keychain[Global.Key.accessToken] ?? "")
+            values.append(keychain[.accessToken] ?? "")
             values.append(Global.Locale.current)
         }
         

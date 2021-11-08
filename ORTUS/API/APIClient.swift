@@ -9,7 +9,6 @@
 import Alamofire
 import Promises
 import UIKit
-import KeychainAccess
 
 class APIClient {
     @discardableResult

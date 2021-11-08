@@ -6,18 +6,16 @@
 //  Copyright (c) 2020 Firdavs. All rights reserved.
 //
 
-import KeychainAccess
-
 class PinSettingsViewModel: ViewModel {
     let router: PinSettingsRouter.Routes
     
-    let keychain = Keychain()
+    let keychain = Keychain.default
     
     init(router: PinSettingsRouter.Routes) {
         self.router = router
     }
     
     func save(_ pin: String) {
-        keychain[Global.Key.ortusPinCode] = pin
+        keychain[.ortusPinCode] = pin
     }
 }

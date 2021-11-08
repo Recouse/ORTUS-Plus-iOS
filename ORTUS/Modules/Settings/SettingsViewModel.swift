@@ -6,8 +6,6 @@
 //  Copyright (c) 2019 Firdavs. All rights reserved.
 //
 
-import KeychainAccess
-
 class SettingsViewModel: ViewModel {
     let router: SettingsRouter.Routes
     

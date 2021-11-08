@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import KeychainAccess
 
 protocol API: URLRequestConvertible {
     var method: HTTPMethod { get }

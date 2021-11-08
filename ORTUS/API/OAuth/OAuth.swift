@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import Promises
-import KeychainAccess
 
 final class OAuth {
     static let redirectURI = "ortus://auth"
@@ -47,12 +46,12 @@ final class OAuth {
     }
     
     static func refreshToken(forced: Bool = false) -> Promise<String> {
-        let keychain = Keychain()
+        let keychain = Keychain.default
         let currentDate = Date()
         
         if !forced,
-            let accessTokenEncrypted = keychain[Global.Key.accessTokenEncrypted],
-            let expiresOn = keychain[Global.Key.tokenExpiresOn],
+            let accessTokenEncrypted = keychain[.accessTokenEncrypted],
+            let expiresOn = keychain[.tokenExpiresOn],
             let expiresOnDate = TimeInterval(expiresOn),
             currentDate.timeIntervalSince1970 < expiresOnDate  {
             return Promise(accessTokenEncrypted)
@@ -71,17 +70,17 @@ final class OAuth {
     }
     
     fileprivate static func storeTokenData(from response: TokenResponse) {
-        let keychain = Keychain()
-        keychain[Global.Key.accessToken] = response.accessToken
-        keychain[Global.Key.refreshToken] = response.refreshToken
-        keychain[Global.Key.tokenExpiresOn] = expiresInToDate(response.expiresIn)
+        let keychain = Keychain.default
+        keychain[.accessToken] = response.accessToken
+        keychain[.refreshToken] = response.refreshToken
+        keychain[.tokenExpiresOn] = expiresInToDate(response.expiresIn)
     }
     
     fileprivate static func updateTokenData(from response: RefreshTokenResponse) {
-        let keychain = Keychain()
-        keychain[Global.Key.accessToken] = response.accessToken
-        keychain[Global.Key.accessTokenEncrypted] = response.accessTokenEncrypted
-        keychain[Global.Key.tokenExpiresOn] = expiresInToDate(response.expiresIn)
+        let keychain = Keychain.default
+        keychain[.accessToken] = response.accessToken
+        keychain[.accessTokenEncrypted] = response.accessTokenEncrypted
+        keychain[.tokenExpiresOn] = expiresInToDate(response.expiresIn)
     }
     
     fileprivate static func expiresInToDate(_ expiresIn: Int) -> String {

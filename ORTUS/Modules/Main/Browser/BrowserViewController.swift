@@ -53,7 +53,7 @@ class BrowserViewController: Module, ModuleViewModel {
         prepareProgressView()
         prepareData()
         
-        if viewModel.keychain[Global.Key.ortusPinCode] != nil {
+        if viewModel.keychain[.ortusPinCode] != nil {
             showLoadingOverview(animated: false)
         }
     }
@@ -179,7 +179,7 @@ extension BrowserViewController {
         let config = WKWebViewConfiguration()
         config.dataDetectorTypes = [.all]
         
-        if let pinCode = viewModel.keychain[Global.Key.ortusPinCode] {
+        if let pinCode = viewModel.keychain[.ortusPinCode] {
             let contentController = WKUserContentController()
             let js = viewModel.loadBrowserJS()
             let script = String(format: js, pinCode)

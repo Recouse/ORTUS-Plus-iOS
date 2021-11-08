@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import KeychainAccess
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
-    let keychain = Keychain()
+    let keychain = Keychain.default
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Clear keychain on a new installation
@@ -24,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // completed initialization.
         let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem
         
-        if keychain[Global.Key.accessToken] == nil {
+        if keychain[.accessToken] == nil {
             prepareLoginController()
         } else {
             prepareMainTabBarController(with: shortcutItem)
@@ -57,10 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func prepareOnFirstInstall() {
         if UserDefaults.standard.value(for: .firstInstall) == nil {
-            keychain[Global.Key.accessToken] = nil
-            keychain[Global.Key.refreshToken] = nil
-            keychain[Global.Key.tokenExpiresOn] = nil
-            keychain[Global.Key.ortusPinCode] = nil
+            keychain[.accessToken] = nil
+            keychain[.refreshToken] = nil
+            keychain[.tokenExpiresOn] = nil
+            keychain[.ortusPinCode] = nil
             
             UserDefaults(suiteName: Global.Key.appGroup)?.set(true, for: .showEvents)
             UserDefaults.standard.set(false, for: .firstInstall)

@@ -58,7 +58,7 @@ class PinSettingsViewController: Module, ModuleViewModel, AlertPresentable {
                 cells: {
                     FormTextField(
                         title: "PIN",
-                        text: viewModel.keychain[Global.Key.ortusPinCode],
+                        text: viewModel.keychain[.ortusPinCode],
                         isSecureTextEntry: true,
                         keyboardType: .numberPad,
                         onInput: { [unowned self] text in

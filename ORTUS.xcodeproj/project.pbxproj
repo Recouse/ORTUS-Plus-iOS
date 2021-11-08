@@ -15,6 +15,7 @@
 		6F6550A327309C05002BA993 /* InvalidEndpointError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6550A227309C05002BA993 /* InvalidEndpointError.swift */; };
 		6F6550A82730A013002BA993 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6550A72730A013002BA993 /* Parameters.swift */; };
 		6F6550AA2730A0A3002BA993 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6550A92730A0A3002BA993 /* HTTPMethod.swift */; };
+		6FD8DAD32739C98B00DD02E8 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8DAD22739C98B00DD02E8 /* Keychain.swift */; };
 		FA01C36D256705E100D93AF9 /* ArticleTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01C36C256705E100D93AF9 /* ArticleTitleComponent.swift */; };
 		FA01C371256705ED00D93AF9 /* ArticleTitleComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01C370256705ED00D93AF9 /* ArticleTitleComponentView.swift */; };
 		FA0927D42347E3B000D32827 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0927D32347E3B000D32827 /* NotificationsApi.swift */; };
@@ -257,7 +258,6 @@
 		FAE3D5B2245ED6BE00CE6654 /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B1245ED6BE00CE6654 /* Pageboy */; };
 		FAE3D5B5245ED77400CE6654 /* Carbon in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B4245ED77400CE6654 /* Carbon */; };
 		FAE3D5B8245ED7E100CE6654 /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5B7245ED7E100CE6654 /* Promises */; };
-		FAE3D5BB245ED89600CE6654 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5BA245ED89600CE6654 /* KeychainAccess */; };
 		FAE3D5C9245EDB5400CE6654 /* DifferenceKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE3D5C8245EDB5400CE6654 /* DifferenceKit */; };
 		FAE5284924432E69009851C9 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284824432E69009851C9 /* CircleButton.swift */; };
 		FAE5284B2443744B009851C9 /* OpenMapDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5284A2443744B009851C9 /* OpenMapDirections.swift */; };
@@ -310,6 +310,7 @@
 		6F6550A227309C05002BA993 /* InvalidEndpointError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidEndpointError.swift; sourceTree = "<group>"; };
 		6F6550A72730A013002BA993 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		6F6550A92730A0A3002BA993 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		6FD8DAD22739C98B00DD02E8 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		FA01C36C256705E100D93AF9 /* ArticleTitleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTitleComponent.swift; sourceTree = "<group>"; };
 		FA01C370256705ED00D93AF9 /* ArticleTitleComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTitleComponentView.swift; sourceTree = "<group>"; };
 		FA0927D02347D1E400D32827 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
@@ -592,7 +593,6 @@
 			files = (
 				FAE3D5B2245ED6BE00CE6654 /* Pageboy in Frameworks */,
 				FAE3D5A9245ED51100CE6654 /* Alamofire in Frameworks */,
-				FAE3D5BB245ED89600CE6654 /* KeychainAccess in Frameworks */,
 				FAE3D5B8245ED7E100CE6654 /* Promises in Frameworks */,
 				6F655094273094A4002BA993 /* Kingfisher in Frameworks */,
 				FAE3D5C9245EDB5400CE6654 /* DifferenceKit in Frameworks */,
@@ -641,6 +641,14 @@
 				6F6550A027309AAA002BA993 /* NewsEndpoint.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		6FD8DAD12739C98100DD02E8 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				6FD8DAD22739C98B00DD02E8 /* Keychain.swift */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 		FA0927CF2347D1CE00D32827 /* Notifications */ = {
@@ -854,6 +862,7 @@
 		FA5B8E6A253B8F990010DD38 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6FD8DAD12739C98100DD02E8 /* Keychain */,
 				FA66428D24144C7A002A3315 /* Storage */,
 			);
 			path = Services;
@@ -1507,7 +1516,6 @@
 				FAE3D5B1245ED6BE00CE6654 /* Pageboy */,
 				FAE3D5B4245ED77400CE6654 /* Carbon */,
 				FAE3D5B7245ED7E100CE6654 /* Promises */,
-				FAE3D5BA245ED89600CE6654 /* KeychainAccess */,
 				FAE3D5C8245EDB5400CE6654 /* DifferenceKit */,
 				6F655093273094A4002BA993 /* Kingfisher */,
 			);
@@ -1574,7 +1582,6 @@
 				FAE3D5B0245ED6BE00CE6654 /* XCRemoteSwiftPackageReference "Pageboy" */,
 				FAE3D5B3245ED77400CE6654 /* XCRemoteSwiftPackageReference "Carbon" */,
 				FAE3D5B6245ED7E100CE6654 /* XCRemoteSwiftPackageReference "promises" */,
-				FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */,
 				6F655092273094A3002BA993 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
@@ -1656,6 +1663,7 @@
 				FA459083243F753800BF7E0F /* CircleImageView.swift in Sources */,
 				FAF77B242246A64200197641 /* OAuthApi.swift in Sources */,
 				FA90FDBF224380FE005148AC /* SettingsRouter.swift in Sources */,
+				6FD8DAD32739C98B00DD02E8 /* Keychain.swift in Sources */,
 				FA94FE5D2546A4D600DB3B67 /* AppGroup.swift in Sources */,
 				FA55171124E45F880043DC98 /* AppearanceSettingsViewController.swift in Sources */,
 				FA90FDE322439676005148AC /* APIClient.swift in Sources */,
@@ -2204,14 +2212,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.2.1;
-			};
-		};
 		FAE3D5C7245EDB5400CE6654 /* XCRemoteSwiftPackageReference "DifferenceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ra1028/DifferenceKit";
@@ -2252,11 +2252,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAE3D5B6245ED7E100CE6654 /* XCRemoteSwiftPackageReference "promises" */;
 			productName = Promises;
-		};
-		FAE3D5BA245ED89600CE6654 /* KeychainAccess */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAE3D5B9245ED89600CE6654 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
-			productName = KeychainAccess;
 		};
 		FAE3D5C8245EDB5400CE6654 /* DifferenceKit */ = {
 			isa = XCSwiftPackageProductDependency;

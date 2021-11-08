@@ -7,14 +7,13 @@
 //
 
 import Foundation
-import KeychainAccess
 
 class BrowserViewModel: ViewModel {
     let url: String
     
     let router: BrowserRouter.Routes
     
-    let keychain = Keychain()
+    let keychain = Keychain.default
     
     init(url: String, router: BrowserRouter.Routes) {
         self.url = url
